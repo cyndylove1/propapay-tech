@@ -85,7 +85,7 @@ const PropertiesView: React.FC = () => {
           </div>
           <div className="flex justify-between px-4">
             <div>
-              <h2 className="text-[24px] font-[600] leading-[32px] text-[#1C1D1E]">
+              <h2 className="md:text-[24px] text-[15px] font-[600] leading-[32px] text-[#1C1D1E]">
                 Diamond Manco Apartment
               </h2>
               <h6 className="text-[14px] font-[500] leading-[20px] text-[#434547]">
