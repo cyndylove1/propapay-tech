@@ -61,8 +61,8 @@ const PropertiesView: React.FC = () => {
           </h2>
         </button>
       </div>
-      <div className=" flex flex-grow min-w-full">
-        <div className="mx-4 w-[700px] rounded-2xl border-[1px] border-[#E0E0E0]">
+      <div className="lg:flex-row flex flex-col mx-4">
+        <div className="lg:w-[700px] w-full rounded-2xl border-[1px] border-[#E0E0E0]">
           {/* carousel */}
           <div className="p-4">
             <Swiper
@@ -206,11 +206,11 @@ const PropertiesView: React.FC = () => {
               setting.
             </h6>
           </div>
-          <div className="mx-4 mt-[30px] h-[144px] rounded-lg border-[1px] border-[#E0E0E0] bg-[#fafafa]">
+          <div className="mx-4 mt-[30px] lg:h-[144px] rounded-lg border-[1px] border-[#E0E0E0] bg-[#fafafa]">
             <h4 className="px-4 py-[10px] text-[18px] font-[500] leading-[24px] text-[#2E2E2E]">
               Property Facilities
             </h4>
-            <div className="grid grid-cols-4 gap-[16px] pl-2">
+            <div className="grid lg:grid-cols-4 grid-cols-2 md:grid-cols-3 gap-[16px] pl-2">
               <div className="flex items-center gap-2">
                 <span>
                   <svg
@@ -596,7 +596,7 @@ const PropertiesView: React.FC = () => {
             Location
           </h2>
         </div>
-        <div className="w-[270px] rounded-xl border-[1px] border-[#E5E6E8]">
+        <div className="lg:w-[270px] w-full mt-4 lg:mt-0 rounded-xl border-[1px] border-[#E5E6E8]">
           <div className="m-2 rounded-xl border-[1px] border-[#F5F6F6] bg-[#f5f6f6] p-2">
             <div className="ml-[10px]">
               <h2 className="py-[10px] text-[18px] font-[500] leading-[24px] text-[#2E2E2E]">

@@ -20,7 +20,7 @@ const Buyer:React.FC = () => {
         />
         {isSidebarOpen && (
           <div
-            className="fixed inset-0 z-40 bg-[#000] opacity-50"
+            className="fixed inset-0 z-40 bg-[#000] opacity-50 lg:hidden flex"
             onClick={toggleSidebar}
           ></div>
         )}

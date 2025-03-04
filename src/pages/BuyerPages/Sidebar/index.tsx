@@ -932,10 +932,10 @@ const Sidebar: React.FC<SidebarProps> = ({
 
       {/* Mobile sidebar */}
       <div
-        className={`fixed left-0 top-0 z-50 h-screen w-[250px] bg-white shadow-md transition-transform duration-300 lg:hidden overflow-y-auto ${
-    isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-  } flex flex-col justify-between`}
->
+        className={`fixed left-0 top-0 z-50 h-screen w-[250px] overflow-y-autopro bg-white shadow-md transition-transform duration-300 lg:hidden ${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        } flex flex-col justify-between`}
+      >
         {/* Logo */}
         <div className="flex h-[72px] items-center justify-between gap-6 border-[1px] border-[#E6E7E7] px-4">
           <div className="flex items-center justify-center gap-4">
@@ -1617,7 +1617,7 @@ const Sidebar: React.FC<SidebarProps> = ({
               )}
             </NavLink>
           </div>
-          <div className="pt-[10rem]">
+          <div className="pt-[5rem]">
             <NavLink
               to="/settings"
               className={({ isActive }: { isActive: boolean }) =>
