@@ -38,7 +38,7 @@ const Otp = () => {
 
   return (
     <>
-      <div className="my-[40px] flex justify-center gap-3 xl:mx-0 xl:gap-4">
+      <div className="my-[40px] flex justify-center xl:mx-0 xl:gap-4 md:gap-3 gap-2 mx-4">
         {otp.map((digit, index) => (
           <input
             key={index}
@@ -48,7 +48,7 @@ const Otp = () => {
             value={digit}
             onChange={(e) => handleChange(index, e.target.value)}
             onKeyDown={(e) => handleKeyDown(index, e)}
-            className="h-12 w-12 rounded-xl border-[1px] border-[#cfd2d1] bg-[#f5f6f6] text-center text-[24px] font-[500] focus:border-[#12725b] focus:bg-[#ffff] focus:outline-none xl:h-16 xl:w-16"
+            className="h-12 w-12 rounded-xl border-[1px] border-[#CFD1D2] bg-[#f5f6f6] text-center text-[24px] font-[500] focus:border-[#12725b] focus:bg-[#ffff] focus:outline-none xl:h-16 xl:w-16 "
           />
         ))}
       </div>

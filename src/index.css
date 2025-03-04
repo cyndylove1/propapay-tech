@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Labil Grotesk Basic';
+  src: url('./fonts/._LabilGroteskLite-Thin.otf') format('otf');
+  font-weight: 400; 
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Labil Grotesk Basic';
+  src: url('./fonts/._LabilGroteskLite-Medium.otf') format('otf');
+  font-weight: 500; 
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Labil Grotesk Basic';
+  src: url('./fonts/._LabilGroteskLite-Regular.otf') format('otf');
+  font-weight: 600; 
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Labil Grotesk Basic';
+  src: url('./fonts/._LabilGroteskLite-Bold.otf') format('otf');
+  font-weight: 700; 
+  font-style: normal;
+}
+
+
+*{
+  font-family: 'Labil Grotesk Basic', sans-serif;
+}
+

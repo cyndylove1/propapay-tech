@@ -13,7 +13,7 @@ const Timer = () => {
   }, [timer]);
     return (
       <>
-        <p className="mt-[3rem] text-center text-[#414444]">
+        <p className="mt-[1rem] text-center text-[#414444] font-[500]">
           Didn’t receive the code?{" "}
           {timer > 0 ? (
             <span className="font-[600] text-[#12725b]">{timer}s</span>

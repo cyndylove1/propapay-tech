@@ -1,72 +1,328 @@
-const RegisterHeader: React.FC = () => {
-    return (
-      <>
-        <div className="xl:px-[100px] px-2 flex h-[80px] items-center justify-between">
-          <div>
+import { Link } from "react-router";
+import Btn from "./common/Btn";
+  
+
+interface RegisterHeaderProps {
+  btnText?: string;
+  linkTo?: string;
+  account?: string;
+}
+
+const RegisterHeader: React.FC<RegisterHeaderProps> = ({
+  btnText = "Sign In",
+  linkTo = "/login",
+  account = " Have an account?",
+}) => {
+  return (
+    <>
+      <div className="flex items-center justify-between px-4 pt-[20px]">
+        <Link to="/">
+          <span>
             <svg
-              width="160"
-              height="36"
-              viewBox="0 0 160 36"
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <circle cx="18" cy="18" r="18" fill="#12725B" />
-              <circle cx="22.5" cy="12.375" r="4.5" fill="white" />
-              <path
-                d="M44 27.8116V8.18481H47.5119V10.139C48.5881 8.66627 50.1741 7.84495 52.1566 7.84495C55.98 7.84495 58.6989 10.932 58.6989 15.3218C58.6989 19.6833 55.98 22.7704 52.1566 22.7704C50.1741 22.7704 48.5881 21.9491 47.5119 20.4763V27.8116H44ZM47.3136 15.3218C47.3136 18.0124 48.9279 19.8816 51.222 19.8816C53.4877 19.8816 55.1587 17.9557 55.1587 15.3218C55.1587 12.6596 53.4877 10.7337 51.222 10.7337C48.9279 10.7337 47.3136 12.603 47.3136 15.3218Z"
-                fill="#12725B"
-              />
-              <path
-                d="M60.2428 22.4305V8.18481H63.7547L63.6697 12.0932C64.2928 8.77956 66.6435 7.67502 69.0508 8.15649V11.64C66.3036 11.2435 63.7547 12.4897 63.7547 16.3697V22.4305H60.2428Z"
-                fill="#12725B"
-              />
-              <path
-                d="M76.7596 22.8553C72.4264 22.8553 69.311 19.7117 69.311 15.2935C69.311 10.9037 72.4264 7.75999 76.7596 7.75999C81.0644 7.75999 84.1798 10.9037 84.1798 15.2935C84.1798 19.7117 81.0644 22.8553 76.7596 22.8553ZM72.8512 15.2935C72.8512 17.984 74.4372 19.8816 76.7596 19.8816C79.0536 19.8816 80.6396 17.984 80.6396 15.2935C80.6396 12.6313 79.0536 10.7337 76.7596 10.7337C74.4372 10.7337 72.8512 12.6313 72.8512 15.2935Z"
-                fill="#12725B"
-              />
-              <path
-                d="M85.8417 27.8116V8.18481H89.3536V10.139C90.4298 8.66627 92.0158 7.84495 93.9983 7.84495C97.8217 7.84495 100.541 10.932 100.541 15.3218C100.541 19.6833 97.8217 22.7704 93.9983 22.7704C92.0158 22.7704 90.4298 21.9491 89.3536 20.4763V27.8116H85.8417ZM89.1553 15.3218C89.1553 18.0124 90.7696 19.8816 93.0637 19.8816C95.3294 19.8816 97.0004 17.9557 97.0004 15.3218C97.0004 12.6596 95.3294 10.7337 93.0637 10.7337C90.7696 10.7337 89.1553 12.603 89.1553 15.3218Z"
-                fill="#12725B"
-              />
-              <path
-                d="M106.219 22.7421C103.642 22.7421 101.688 21.2127 101.688 18.7487C101.688 16.1432 103.897 14.4722 108.485 14.019L110.723 13.8208V13.4243C110.723 11.4701 109.335 10.5355 107.89 10.5355C106.531 10.5355 105.143 11.4135 104.973 13.1694L101.546 13.1411C101.801 9.57256 104.888 7.81663 107.947 7.75999C111.091 7.70334 114.206 9.65753 114.206 13.6225V18.2106C114.206 19.74 114.348 21.3826 114.546 22.4305H111.119C110.977 21.8358 110.864 21.1561 110.864 20.0232C110.156 21.7508 108.145 22.7421 106.219 22.7421ZM105.2 18.5222C105.2 19.74 106.219 20.3347 107.352 20.3347C108.938 20.3347 110.751 19.2019 110.751 16.7379V16.0015L108.882 16.1998C106.389 16.483 105.2 17.2477 105.2 18.5222Z"
-                fill="#12725B"
-              />
-              <path
-                d="M116.17 27.8116V8.18481H119.682V10.139C120.758 8.66627 122.344 7.84495 124.327 7.84495C128.15 7.84495 130.869 10.932 130.869 15.3218C130.869 19.6833 128.15 22.7704 124.327 22.7704C122.344 22.7704 120.758 21.9491 119.682 20.4763V27.8116H116.17ZM119.484 15.3218C119.484 18.0124 121.098 19.8816 123.392 19.8816C125.658 19.8816 127.329 17.9557 127.329 15.3218C127.329 12.6596 125.658 10.7337 123.392 10.7337C121.098 10.7337 119.484 12.603 119.484 15.3218Z"
-                fill="#12725B"
-              />
-              <path
-                d="M136.548 22.7421C133.971 22.7421 132.016 21.2127 132.016 18.7487C132.016 16.1432 134.225 14.4722 138.814 14.019L141.051 13.8208V13.4243C141.051 11.4701 139.663 10.5355 138.219 10.5355C136.859 10.5355 135.472 11.4135 135.302 13.1694L131.875 13.1411C132.13 9.57256 135.217 7.81663 138.275 7.75999C141.419 7.70334 144.534 9.65753 144.534 13.6225V18.2106C144.534 19.74 144.676 21.3826 144.874 22.4305H141.447C141.306 21.8358 141.193 21.1561 141.193 20.0232C140.484 21.7508 138.474 22.7421 136.548 22.7421ZM135.528 18.5222C135.528 19.74 136.548 20.3347 137.681 20.3347C139.267 20.3347 141.079 19.2019 141.079 16.7379V16.0015L139.21 16.1998C136.718 16.483 135.528 17.2477 135.528 18.5222Z"
-                fill="#12725B"
-              />
-              <path
-                d="M145.641 25.0644C147.255 25.4892 149.181 25.3193 150.229 23.0819L150.654 22.0907L144.678 8.18481H148.417L152.58 18.154L156.431 8.18481H160L153.939 22.9686C152.212 27.2735 149.238 28.8878 145.641 28.0099V25.0644Z"
-                fill="#12725B"
-              />
-            </svg>
-          </div>
-          <div className="flex h-[48px] w-[120px] items-center justify-center gap-[4px] rounded-[12px] bg-[#f5f6f6]">
-            <h2>
-              <svg
-                width="14"
-                height="13"
-                viewBox="0 0 14 13"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M13.0117 5.78369V7.26025H3.87109L8.05469 11.479L7 12.5337L0.988281 6.52197L7 0.510254L8.05469 1.56494L3.87109 5.78369H13.0117Z"
-                  fill="#6A7070"
+              <g filter="url(#filter0_i_1772_224482)">
+                <rect width="40" height="40" rx="20" fill="#23A681" />
+                <rect
+                  width="40"
+                  height="40"
+                  rx="20"
+                  fill="white"
+                  fill-opacity="0.1"
                 />
-              </svg>
-            </h2>
-            <h3 className="text-[14px] leading-[21px] text-[#6a7070]">
-              Go Back
-            </h3>
-          </div>
+                <path
+                  d="M20.0003 23.2534C19.1821 21.9337 18.0665 20.818 16.7468 19.9999C18.0665 19.1817 19.1821 18.066 20.0003 16.7463C20.8185 18.066 21.9342 19.1817 23.2539 19.9999C21.9341 20.818 20.8185 21.9337 20.0003 23.2534Z"
+                  fill="url(#paint0_linear_1772_224482)"
+                  stroke="url(#paint1_linear_1772_224482)"
+                  stroke-linecap="round"
+                />
+                <g filter="url(#filter1_d_1772_224482)">
+                  <path
+                    d="M33.2964 19C32.8095 12.4334 27.5666 7.1905 21 6.70361V11.4667C21 15.6272 24.3727 19 28.5333 19H33.2964Z"
+                    fill="url(#paint2_linear_1772_224482)"
+                    fill-opacity="0.8"
+                    shape-rendering="crispEdges"
+                  />
+                  <path
+                    d="M21.5 11.4667V7.25337C27.3886 7.93871 32.0613 12.6114 32.7466 18.5H28.5333C24.6489 18.5 21.5 15.3511 21.5 11.4667Z"
+                    stroke="url(#paint3_linear_1772_224482)"
+                    stroke-linecap="round"
+                    shape-rendering="crispEdges"
+                  />
+                </g>
+                <g filter="url(#filter2_d_1772_224482)">
+                  <path
+                    d="M19 6.70361C12.4334 7.1905 7.1905 12.4334 6.70361 19H11.4667C15.6272 19 19 15.6272 19 11.4667V6.70361Z"
+                    fill="url(#paint4_linear_1772_224482)"
+                    fill-opacity="0.8"
+                    shape-rendering="crispEdges"
+                  />
+                  <path
+                    d="M11.4667 18.5H7.25337C7.93871 12.6114 12.6114 7.93871 18.5 7.25337V11.4667C18.5 15.3511 15.3511 18.5 11.4667 18.5Z"
+                    stroke="url(#paint5_linear_1772_224482)"
+                    stroke-linecap="round"
+                    shape-rendering="crispEdges"
+                  />
+                </g>
+                <path
+                  d="M28.5333 21.5H32.7466C32.0613 27.3886 27.3886 32.0613 21.5 32.7466V28.5333C21.5 24.6489 24.6489 21.5 28.5333 21.5Z"
+                  fill="url(#paint6_linear_1772_224482)"
+                  fill-opacity="0.8"
+                  stroke="url(#paint7_linear_1772_224482)"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M18.5 28.5333V32.7466C12.6114 32.0613 7.93871 27.3886 7.25337 21.5H11.4667C15.3511 21.5 18.5 24.6489 18.5 28.5333Z"
+                  fill="url(#paint8_linear_1772_224482)"
+                  fill-opacity="0.8"
+                  stroke="url(#paint9_linear_1772_224482)"
+                  stroke-linecap="round"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_i_1772_224482"
+                  x="0"
+                  y="-4"
+                  width="40"
+                  height="44"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="BackgroundImageFix"
+                    result="shape"
+                  />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset dy="-4" />
+                  <feGaussianBlur stdDeviation="4" />
+                  <feComposite
+                    in2="hardAlpha"
+                    operator="arithmetic"
+                    k2="-1"
+                    k3="1"
+                  />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.64 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="shape"
+                    result="effect1_innerShadow_1772_224482"
+                  />
+                </filter>
+                <filter
+                  id="filter1_d_1772_224482"
+                  x="16.5556"
+                  y="6.70361"
+                  width="16.7408"
+                  height="20.0742"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset dx="-2.22222" dy="5.55556" />
+                  <feGaussianBlur stdDeviation="1.11111" />
+                  <feComposite in2="hardAlpha" operator="out" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0.1728 0 0 0 0 0.7872 0 0 0 0 0.273338 0 0 0 0.32 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="BackgroundImageFix"
+                    result="effect1_dropShadow_1772_224482"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_1772_224482"
+                    result="shape"
+                  />
+                </filter>
+                <filter
+                  id="filter2_d_1772_224482"
+                  x="6.70361"
+                  y="6.70361"
+                  width="16.7408"
+                  height="20.0742"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset dx="2.22222" dy="5.55556" />
+                  <feGaussianBlur stdDeviation="1.11111" />
+                  <feComposite in2="hardAlpha" operator="out" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0.1728 0 0 0 0 0.7872 0 0 0 0 0.273338 0 0 0 0.32 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="BackgroundImageFix"
+                    result="effect1_dropShadow_1772_224482"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_1772_224482"
+                    result="shape"
+                  />
+                </filter>
+                <linearGradient
+                  id="paint0_linear_1772_224482"
+                  x1="20.0003"
+                  y1="15.7217"
+                  x2="20.0003"
+                  y2="28.6961"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.313079" stop-color="white" />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint1_linear_1772_224482"
+                  x1="35.1031"
+                  y1="-5.04556"
+                  x2="9.9282"
+                  y2="15.3774"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint2_linear_1772_224482"
+                  x1="27.1482"
+                  y1="6.70361"
+                  x2="27.1482"
+                  y2="25.3493"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.313079" stop-color="white" />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint3_linear_1772_224482"
+                  x1="48.8525"
+                  y1="-23.1413"
+                  x2="12.6734"
+                  y2="6.20879"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint4_linear_1772_224482"
+                  x1="12.8518"
+                  y1="6.70361"
+                  x2="12.8518"
+                  y2="25.3493"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.313079" stop-color="white" />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint5_linear_1772_224482"
+                  x1="34.5561"
+                  y1="-23.1413"
+                  x2="-1.62297"
+                  y2="6.20885"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint6_linear_1772_224482"
+                  x1="27.1482"
+                  y1="21"
+                  x2="27.1482"
+                  y2="39.6457"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.313079" stop-color="white" />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint7_linear_1772_224482"
+                  x1="48.8525"
+                  y1="-8.84483"
+                  x2="12.6734"
+                  y2="20.5052"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint8_linear_1772_224482"
+                  x1="12.8518"
+                  y1="21"
+                  x2="12.8518"
+                  y2="39.6457"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.313079" stop-color="white" />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint9_linear_1772_224482"
+                  x1="34.5561"
+                  y1="-8.84483"
+                  x2="-1.62293"
+                  y2="20.5053"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+        </Link>
+
+        <div className="flex items-center gap-[10px]">
+          <h1 className="text-[14px] font-[500] leading-[20px] text-[#696E71]">
+            {account}
+          </h1>
+          <Link to={linkTo}>
+            <Btn
+              type="button"
+              text={btnText}
+              className="h-[32px] w-[67px] rounded-[8px] border-[1px] border-[#E2E4E9] text-[14px] font-[600] text-[#696E71]"
+            />
+          </Link>
         </div>
-      </>
-    );
-}
+      </div>
+    </>
+  );
+};
 export default RegisterHeader;

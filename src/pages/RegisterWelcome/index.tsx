@@ -1,182 +1,450 @@
-import Button from "@/components/Button";
-import Label from "@/components/Label";
-import RegisterHeader from "@/components/RegisterHeader";
+import Header from "@/components/Header";
+import Label from "@/components/common/Label";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import Button from "@/components/common/Button";
+import Line from "@/components/Line";
 import { Link } from "react-router";
+import BottomIcon from "@/components/common/BottomIcon";
 
 const RegisterWelcome = () => {
   return (
     <>
-      <RegisterHeader />
-      <div className="mt-[60px] flex min-h-screen justify-center">
-        <div className="mx-[50px] h-[500px] rounded-xl border-[1px] border-[#c2c2c2]">
-          <div className="w-[448px] px-[35px] text-center">
-            <h2 className="pt-[20px] text-[36px] font-[600] leading-[48px] tracking-tighter text-[#142c07]">
-              Sign in to Propa Homes
-            </h2>
-            <h6 className="pt-[10px] text-[16px] font-[500] leading-[24px] text-[#414444]">
-              Get started by providing your valid details to set up your account
-              and begin your real estate journey.
-            </h6>
-            <div className="mx-[25px] my-4 flex items-center">
-              <div className="w-[216px] border-[1px] border-[#cfd2d1]"></div>
-              <div className="w-4"></div>
-              <div className="w-[216px] border-[1px] border-[#cfd2d1]"></div>
-            </div>
-          </div>
-          <form action="" className="px-[25px] md:w-[448px]">
-            <div className="pb-[10px] pt-[7px]">
-              <Label text="Country" htmlFor="country" />
-              <select className="h-[56px] w-full rounded-xl border-[1px] border-[#cfd2d1] py-2 outline-none">
-                <option value="">Choose country</option>
-                <option value="NG">Nigeria</option>
-                <option value="US">United States</option>
-                <option value="UK">United Kingdom</option>
-              </select>
-            </div>
-            <div>
-              <Label text="Phone Number" htmlFor="phoneNumber" />
-              <PhoneInput
-                country={"ng"}
-                containerStyle={{ height: "56px" }}
-                inputStyle={{
-                  height: "56px",
-                  width: "100%",
-                  borderRadius: "12px",
-                  borderColor: "cfd2d1",
-                  marginTop:"5px"
-                }}
+      <Header />
+      <div className="mx-4 mt-[5rem] flex justify-center">
+        <div className="mb-[5rem] h-[644px] w-full rounded-xl border-[1px] border-[#CFD1D2] md:w-[500px]">
+          <span className="flex justify-center pt-[30px]">
+            <svg
+              width="88"
+              height="88"
+              viewBox="0 0 88 88"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="0.5"
+                y="0.5"
+                width="87"
+                height="87"
+                rx="43.5"
+                stroke="url(#paint0_linear_1773_229151)"
               />
-            </div>
-            <div className="mt-[30px]">
-              <Button text="Get Started-It's free" type="submit" />
-            </div>
-          </form>
-          <p className="flex items-center justify-center gap-[3px] pt-4 text-center text-[16px]">
-            <h5 className="tracking-tighter text-[#414444]">
-              Have an account?{" "}
-            </h5>
-            <Link to="/login" className="font-[500] text-[#12725b]">
-              Sign In
-            </Link>
-          </p>
+              <g filter="url(#filter0_i_1773_229151)">
+                <rect
+                  x="16"
+                  y="16"
+                  width="56"
+                  height="56"
+                  rx="28"
+                  fill="#23A681"
+                />
+                <rect
+                  x="16"
+                  y="16"
+                  width="56"
+                  height="56"
+                  rx="28"
+                  fill="white"
+                  fill-opacity="0.1"
+                />
+                <path
+                  d="M44.0001 48.9416C42.8021 46.9027 41.0972 45.1977 39.0582 43.9997C41.0972 42.8017 42.8021 41.0967 44.0001 39.0577C45.1982 41.0967 46.9031 42.8017 48.9421 43.9997C46.9031 45.1977 45.1982 46.9027 44.0001 48.9416Z"
+                  fill="url(#paint1_linear_1773_229151)"
+                  stroke="url(#paint2_linear_1773_229151)"
+                  stroke-linecap="round"
+                />
+                <g filter="url(#filter1_d_1773_229151)">
+                  <path
+                    d="M62.6154 42.6002C61.9336 33.407 54.5936 26.0669 45.4004 25.3853V32.0535C45.4004 37.8783 50.1222 42.6002 55.9471 42.6002H62.6154Z"
+                    fill="url(#paint3_linear_1773_229151)"
+                    fill-opacity="0.8"
+                    shape-rendering="crispEdges"
+                  />
+                  <path
+                    d="M45.9004 32.0535V25.9317C54.4158 26.8165 61.1841 33.5847 62.0689 42.1002H55.9471C50.3984 42.1002 45.9004 37.6022 45.9004 32.0535Z"
+                    stroke="url(#paint4_linear_1773_229151)"
+                    stroke-linecap="round"
+                    shape-rendering="crispEdges"
+                  />
+                </g>
+                <g filter="url(#filter2_d_1773_229151)">
+                  <path
+                    d="M42.6002 25.3853C33.407 26.0669 26.0669 33.407 25.3853 42.6002H32.0535C37.8783 42.6002 42.6002 37.8783 42.6002 32.0535V25.3853Z"
+                    fill="url(#paint5_linear_1773_229151)"
+                    fill-opacity="0.8"
+                    shape-rendering="crispEdges"
+                  />
+                  <path
+                    d="M32.0535 42.1002H25.9317C26.8165 33.5847 33.5847 26.8165 42.1002 25.9317V32.0535C42.1002 37.6022 37.6022 42.1002 32.0535 42.1002Z"
+                    stroke="url(#paint6_linear_1773_229151)"
+                    stroke-linecap="round"
+                    shape-rendering="crispEdges"
+                  />
+                </g>
+                <path
+                  d="M55.9471 45.8999H62.0689C61.1841 54.4154 54.4159 61.1836 45.9004 62.0684V55.9466C45.9004 50.398 50.3984 45.8999 55.9471 45.8999Z"
+                  fill="url(#paint7_linear_1773_229151)"
+                  fill-opacity="0.8"
+                  stroke="url(#paint8_linear_1773_229151)"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M42.1002 55.9466V62.0684C33.5847 61.1836 26.8165 54.4154 25.9317 45.8999H32.0535C37.6022 45.8999 42.1002 50.398 42.1002 55.9466Z"
+                  fill="url(#paint9_linear_1773_229151)"
+                  fill-opacity="0.8"
+                  stroke="url(#paint10_linear_1773_229151)"
+                  stroke-linecap="round"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_i_1773_229151"
+                  x="16"
+                  y="12"
+                  width="56"
+                  height="60"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="BackgroundImageFix"
+                    result="shape"
+                  />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset dy="-4" />
+                  <feGaussianBlur stdDeviation="4" />
+                  <feComposite
+                    in2="hardAlpha"
+                    operator="arithmetic"
+                    k2="-1"
+                    k3="1"
+                  />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.64 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="shape"
+                    result="effect1_innerShadow_1773_229151"
+                  />
+                </filter>
+                <filter
+                  id="filter1_d_1773_229151"
+                  x="40.9559"
+                  y="25.3853"
+                  width="21.6593"
+                  height="24.9926"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset dx="-2.22222" dy="5.55556" />
+                  <feGaussianBlur stdDeviation="1.11111" />
+                  <feComposite in2="hardAlpha" operator="out" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0.1728 0 0 0 0 0.7872 0 0 0 0 0.273338 0 0 0 0.32 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="BackgroundImageFix"
+                    result="effect1_dropShadow_1773_229151"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_1773_229151"
+                    result="shape"
+                  />
+                </filter>
+                <filter
+                  id="filter2_d_1773_229151"
+                  x="25.3853"
+                  y="25.3853"
+                  width="21.6595"
+                  height="24.9926"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset dx="2.22222" dy="5.55556" />
+                  <feGaussianBlur stdDeviation="1.11111" />
+                  <feComposite in2="hardAlpha" operator="out" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0.1728 0 0 0 0 0.7872 0 0 0 0 0.273338 0 0 0 0.32 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="BackgroundImageFix"
+                    result="effect1_dropShadow_1773_229151"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_1773_229151"
+                    result="shape"
+                  />
+                </filter>
+                <linearGradient
+                  id="paint0_linear_1773_229151"
+                  x1="44"
+                  y1="0"
+                  x2="44"
+                  y2="88"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#E5E6E8" />
+                  <stop offset="0.7" stop-color="#E5E6E8" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint1_linear_1773_229151"
+                  x1="44.0002"
+                  y1="38.0103"
+                  x2="44.0002"
+                  y2="56.1745"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.313079" stop-color="white" />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint2_linear_1773_229151"
+                  x1="65.144"
+                  y1="8.93611"
+                  x2="29.8992"
+                  y2="37.5282"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint3_linear_1773_229151"
+                  x1="54.0079"
+                  y1="25.3853"
+                  x2="54.0079"
+                  y2="51.4893"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.313079" stop-color="white" />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint4_linear_1773_229151"
+                  x1="84.3939"
+                  y1="-16.3976"
+                  x2="33.7431"
+                  y2="24.6925"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint5_linear_1773_229151"
+                  x1="33.9928"
+                  y1="25.3853"
+                  x2="33.9928"
+                  y2="51.4893"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.313079" stop-color="white" />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint6_linear_1773_229151"
+                  x1="64.3788"
+                  y1="-16.3976"
+                  x2="13.728"
+                  y2="24.6926"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint7_linear_1773_229151"
+                  x1="54.0079"
+                  y1="45.3999"
+                  x2="54.0079"
+                  y2="71.5039"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.313079" stop-color="white" />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint8_linear_1773_229151"
+                  x1="84.3939"
+                  y1="3.61714"
+                  x2="33.7432"
+                  y2="44.7072"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint9_linear_1773_229151"
+                  x1="33.9928"
+                  y1="45.3999"
+                  x2="33.9928"
+                  y2="71.5039"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.313079" stop-color="white" />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint10_linear_1773_229151"
+                  x1="64.3788"
+                  y1="3.61714"
+                  x2="13.7281"
+                  y2="44.7073"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <div className="py-[30px] text-center">
+            <h2 className="md:text-[36px] text-[25px] font-[600] leading-[48px] tracking-tight text-[#1C1D1E]">
+              Sign up for Propa Homes
+            </h2>
+            <h3 className="pt-2 text-[13px] font-[500] leading-[24px] text-[#595D61] md:text-[16px]">
+              Get started by providing your valid details to set up your <br />
+              account and begin your real estate journey.
+            </h3>
+          </div>
+          <div className="md:px-8 px-4">
+            <Line />
+            <form action="">
+              <div className="mt-[20px]">
+                <Label text="Select Country" htmlFor="Country" /> <br />
+                <div className="w-full">
+                  <div className="relative">
+                    <span className="left-3 top-4 absolute flex items-center">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="10.0001"
+                          cy="9.99984"
+                          r="8.33333"
+                          stroke="#84898C"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          d="M6.66675 9.99984C6.66675 14.9998 10.0001 18.3332 10.0001 18.3332C10.0001 18.3332 13.3334 14.9998 13.3334 9.99984C13.3334 4.99984 10.0001 1.6665 10.0001 1.6665C10.0001 1.6665 6.66675 4.99984 6.66675 9.99984Z"
+                          stroke="#84898C"
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M17.5 12.5L2.5 12.5"
+                          stroke="#84898C"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M17.5 7.5L2.5 7.5"
+                          stroke="#84898C"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                    <select className="h-[48px] w-full appearance-none rounded-xl border-[1px] border-[#CFD1D2] bg-white px-10 py-3 text-[#1C1D1E] outline-none focus:border-[#23A681]">
+                      <option value="" className="text-[#84898C]">
+                        Select a country...
+                      </option>
+                      <option value="">Nigeria</option>
+                    </select>
+                    <svg
+                      className="right-3 top-4 absolute w-4 h-4 text-gray-500"
+                      width="12"
+                      height="8"
+                      viewBox="0 0 12 8"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11 1.50004C11 1.50004 7.31756 6.49999 5.99996 6.5C4.68237 6.50001 1 1.5 1 1.5"
+                        stroke="#84898C"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-[5px]">
+                <Label text="Phone Number" htmlFor="phoneNumber" />
+                <PhoneInput
+                  country={"ng"}
+                  containerStyle={{ height: "48px", borderRadius: "12px" }}
+                  inputStyle={{
+                    height: "48px",
+                    width: "100%",
+                    borderRadius: "12px",
+                    borderColor: "cfd2d1",
+                    marginTop: "5px",
+                  }}
+                  onFocus={(e) => (e.target.style.borderColor = "#23A681")}
+                  onBlur={(e) => (e.target.style.borderColor = "#cfd2d1")}
+                />
+              </div>
+              <Button
+                text="Get Started - It’s free"
+                type="submit"
+                className="mt-[30px] h-[48px] w-full rounded-xl bg-[#12725b] text-white"
+              />
+              <p className="flex items-center justify-center gap-[3px] pb-10 pt-4 text-center text-[16px]">
+                <h5 className="tracking-tighter text-[#414444]">
+                  Have an account?{" "}
+                </h5>
+                <Link to="/login" className="font-[500] text-[#12725b]">
+                  {" "}
+                  Sign In
+                </Link>
+              </p>
+            </form>
+          </div>
         </div>
-        <div className="md:flex fixed bottom-0 right-0 hidden">
-          <svg
-            width="406"
-            height="180"
-            viewBox="0 0 406 270"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M539 159.592L494.976 107L406.607 107.811L353 160.243L354.083 160.942H353.696V270H538.882V160.942L539 159.592Z"
-              fill="#F2F2F2"
-            />
-            <rect x="390" y="212" width="20" height="18" fill="white" />
-            <rect x="390" y="181" width="20" height="17" fill="white" />
-            <rect x="366" y="109" width="18" height="62" fill="#F2F2F2" />
-            <path
-              d="M396 159.592L351.976 107L263.607 107.811L210 160.243L211.083 160.942H210.696V270H395.882V160.942L396 159.592Z"
-              fill="#F2F2F2"
-            />
-            <path
-              d="M352.077 107L297 171.794V270H396V159.468L352.077 107Z"
-              fill="#E6E6E6"
-            />
-            <rect x="337" y="216" width="20" height="18" fill="#072721" />
-            <rect x="337" y="185" width="20" height="17" fill="#072721" />
-            <rect x="337" y="216" width="20" height="18" fill="white" />
-            <rect x="337" y="185" width="20" height="17" fill="white" />
-            <rect x="247" y="212" width="20" height="18" fill="white" />
-            <rect x="247" y="181" width="20" height="17" fill="white" />
-            <rect x="214" y="55" width="24" height="84" fill="#F2F2F2" />
-            <path
-              d="M254 123.015L195.064 53L76.7633 54.0796L5 123.881L6.44968 124.812H5.93198V270H253.841V124.812L254 123.015Z"
-              fill="#F2F2F2"
-            />
-            <path
-              d="M194.993 53L121 139.259V270H254V122.85L194.993 53Z"
-              fill="#E6E6E6"
-            />
-            <rect x="175" y="198" width="27" height="24" fill="#072721" />
-            <rect x="175" y="157" width="27" height="23" fill="#072721" />
-            <rect x="175" y="198" width="27" height="24" fill="white" />
-            <rect x="175" y="157" width="27" height="23" fill="white" />
-            <rect x="54" y="191" width="27" height="24" fill="white" />
-            <rect x="54" y="151" width="27" height="23" fill="white" />
-            <ellipse cx="76.5" cy="212" rx="17.5" ry="36" fill="#072721" />
-            <path
-              d="M77.4827 270C69.686 228.132 77.4042 186.416 77.4831 186L78.9996 186.23C78.9211 186.644 71.2473 228.141 79 269.774L77.4827 270Z"
-              fill="#12725B"
-            />
-            <path
-              d="M75.8394 212.582L91.6607 204.124L92.3129 205.343L76.4915 213.8L75.8394 212.582Z"
-              fill="#12725B"
-            />
-            <path
-              d="M59.1411 209.579L59.7936 208.361L75.6131 216.823L74.9606 218.041L59.1411 209.579Z"
-              fill="#12725B"
-            />
-            <ellipse cx="34.5" cy="156.5" rx="34.5" ry="69.5" fill="#12725B" />
-            <path
-              d="M37.541 271C22.8978 188.759 37.3933 106.818 37.5414 106L38.9996 106.231C38.8519 107.047 24.399 188.768 39 270.773L37.541 271Z"
-              fill="#072721"
-            />
-            <path
-              d="M33.7131 158.892L64.6586 142.35L65.3108 143.569L34.3653 160.111L33.7131 158.892Z"
-              fill="#072721"
-            />
-            <path
-              d="M1.0542 151.855L1.7067 150.637L32.6476 167.188L31.9951 168.406L1.0542 151.855Z"
-              fill="#072721"
-            />
-            <ellipse cx="115.5" cy="114.5" rx="46.5" ry="95.5" fill="#12725B" />
-            <path
-              d="M120.598 271C101.35 158.853 120.404 47.1154 120.598 46L122 46.2305C121.805 47.3439 102.793 158.862 122 270.774L120.598 271Z"
-              fill="#072721"
-            />
-            <path
-              d="M114.696 117.898L157.043 95.2619L157.695 96.4804L115.348 119.117L114.696 117.898Z"
-              fill="#072721"
-            />
-            <path
-              d="M70.0049 107.82L70.6574 106.601L112.998 129.249L112.345 130.467L70.0049 107.82Z"
-              fill="#072721"
-            />
-            <path
-              d="M339.387 61.3569L345 57.0602C340.64 56.5997 338.848 58.8758 338.115 60.6774C334.708 59.3235 331 61.0978 331 61.0978L342.23 65C341.664 63.5516 340.677 62.2879 339.387 61.3569Z"
-              fill="#072721"
-            />
-            <path
-              d="M204.387 21.3569L210 17.0602C205.64 16.5997 203.848 18.8758 203.115 20.6774C199.708 19.3235 196 21.0978 196 21.0978L207.23 25C206.664 23.5516 205.677 22.2879 204.387 21.3569Z"
-              fill="#072721"
-            />
-            <path
-              d="M154.5 262.2C153.008 262.2 151.544 262.587 150.253 263.322C147.574 260.937 143.72 260.331 140.42 261.776C137.12 263.22 134.996 266.444 135 270H163C162.683 265.607 158.972 262.202 154.5 262.2Z"
-              fill="#072721"
-            />
-            <path
-              d="M298.5 262.2C297.008 262.2 295.544 262.587 294.253 263.322C291.574 260.937 287.72 260.331 284.42 261.776C281.12 263.22 278.996 266.444 279 270H307C306.683 265.607 302.972 262.202 298.5 262.2Z"
-              fill="#072721"
-            />
-            <path
-              d="M269 243H189V245.571H201.477V270H204.057V245.571H252.652V270H255.233V245.571H269V243Z"
-              fill="#072721"
-            />
-            <rect x="189" y="236" width="80" height="2" fill="#072721" />
-            <rect x="189" y="229" width="80" height="2" fill="#072721" />
-            <rect x="189" y="223" width="80" height="2" fill="#072721" />
-            <path
-              d="M393 243H313V245.571H325.477V270H328.057V245.571H376.652V270H379.233V245.571H393V243Z"
-              fill="#072721"
-            />
-            <rect x="313" y="236" width="80" height="2" fill="#072721" />
-            <rect x="313" y="229" width="80" height="2" fill="#072721" />
-            <rect x="313" y="223" width="80" height="2" fill="#072721" />
-          </svg>
-        </div>
+      </div>
+      <div className="md:flex hidden">
+        <BottomIcon width={"406"} height={"200"} />
       </div>
     </>
   );

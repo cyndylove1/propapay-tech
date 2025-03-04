@@ -8,7 +8,11 @@ export default {
       "neutral-500": "#697170",
       "neutral-800": "#434747",
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        'bodyFont': ["Labil Grotesk Basic"],
+      },
+    },
   },
   plugins: [require("daisyui")],
 };
