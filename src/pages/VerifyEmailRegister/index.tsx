@@ -9,7 +9,7 @@ import Timer from "@/components/Timer";
 const VerifyEmailRegister = () => {
   return (
     <>
-      <div className="md:ml-0 md:mr-4 md:grid-cols-2 grid h-screen grid-cols-1 mx-4">
+      <div className="md:ml-0 md:mr-4 md:grid-cols-2 grid h-screen grid-cols-1 mx-4 bg-white">
         <Cover />
         <div>
           <RegisterHeader />
@@ -136,7 +136,7 @@ const VerifyEmailRegister = () => {
             </svg>
           </span>
           <div className="flex justify-center">
-            <div className="w-full xl:w-[480px]">
+            <div className="w-full h-full xl:w-[480px]">
               <div className="text-center">
                 <h2 className="md:text-[36px] text-[25px] font-[600] leading-[48px] tracking-tight text-[#1C1D1E]">
                   Enter 6-digits code

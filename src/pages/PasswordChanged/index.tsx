@@ -6,7 +6,7 @@ import { Link } from "react-router";
 const PasswordChanged = () => {
   return (
     <>
-      <div className="">
+      <div className="bg-white">
         <div className="px-4 pt-[20px]">
           <Logo className="h-[40px] w-[150px]" />
         </div>

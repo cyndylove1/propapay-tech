@@ -38,7 +38,7 @@ const CreateNewPassword = () => {
 
   return (
     <>
-      <div className="md:mr-0 md:ml-4 md:grid-cols-2 grid h-screen grid-cols-1 mx-4">
+      <div className="md:mr-0 md:ml-4 md:grid-cols-2 grid h-screen grid-cols-1 mx-4 bg-white">
         <div className="">
           <RegisterHeader
             btnText="Sign Up"

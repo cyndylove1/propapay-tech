@@ -12,7 +12,7 @@ const Input: React.FC<InputProps> = ({ type, placeholder, id, className }) => {
     <>
       <div className="">
         <div
-          className={`flex items-center gap-[7px] rounded-xl border-[1px] border-[#cfd2d1] px-4 bg-white ${className}`}
+          className={`flex items-center gap-[7px] bg-transparent rounded-xl border-[1px] border-[#cfd2d1] px-4 bg-none ${className}`}
         >
           <input
             id={id}

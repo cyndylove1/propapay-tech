@@ -11,7 +11,7 @@ const RegisterWelcome = () => {
   return (
     <>
       <Header />
-      <div className="mx-4 mt-[5rem] flex justify-center">
+      <div className="mx-4 bg-white mt-[5rem] flex justify-center">
         <div className="mb-[5rem] h-[644px] w-full rounded-xl border-[1px] border-[#CFD1D2] md:w-[500px]">
           <span className="flex justify-center pt-[30px]">
             <svg

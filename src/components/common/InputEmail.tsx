@@ -18,7 +18,7 @@ const InputEmail: React.FC<InputProps> = ({
   return (
     <div className="">
       <div
-        className={`flex bg-white h-[48px] items-center gap-[7px] rounded-xl border-[1px] border-[#cfd2d1] px-4 focus-within:border-[#23A681] ${className}`}
+        className={`flex bg-none h-[48px] items-center gap-[7px] rounded-xl border-[1px] border-[#cfd2d1] px-4 focus-within:border-[#23A681] ${className}`}
       >
         <span>
           <svg

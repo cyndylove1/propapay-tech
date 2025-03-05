@@ -170,7 +170,7 @@ const SignUp: React.FC = () => {
                 />
               </div>
             </form>
-            <div className="text-center pt-4 text-[12px] md:text-[14px] font-[500] leading-[20px]">
+            <div className="text-center bg-white pt-4 text-[12px] md:text-[14px] font-[500] leading-[20px]">
               <h6 className="text-[#434547]">
                 By clicking create account, you agree to accept Propapay's{" "}
                 <br />{" "}

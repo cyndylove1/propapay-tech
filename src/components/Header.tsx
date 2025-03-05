@@ -3,7 +3,7 @@ import Logo from "./common/Logo";
 const Header: React.FC = () => {
   return (
     <>
-      <div className="flex h-[80px] items-center justify-between px-2 xl:px-[60px]">
+      <div className="flex bg-white h-[80px] items-center justify-between px-2 xl:px-[60px]">
         <div>
           <Logo/>
         </div>

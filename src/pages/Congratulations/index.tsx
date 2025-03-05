@@ -7,7 +7,7 @@ const Congratulations = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="">
+      <div className="bg-white">
         <div className="px-4 pt-[20px]">
           <Logo className="h-[40px] w-[150px]" />
         </div>
