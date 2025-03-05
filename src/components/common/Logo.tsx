@@ -8,7 +8,7 @@ const Logo: React.FC<LogoProps> = ({ className }) => {
     <>
       <Link to="/">
         <svg
-          className={`md:h-[40px h-[30px] w-[100px] md:w-[179px] ${className}`}
+          className={`md:h-[40px h-[50px] w-[110px] md:w-[179px] ${className}`}
           width="179"
           height="40"
           viewBox="0 0 179 40"

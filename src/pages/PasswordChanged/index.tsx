@@ -11,7 +11,7 @@ const PasswordChanged = () => {
           <Logo className="h-[40px] w-[150px]" />
         </div>
 
-        <div className="flex items-center justify-center pt-[70px]">
+        <div className="flex items-center justify-center pt-[50px]">
           <svg
             width="182"
             height="125"
@@ -78,7 +78,10 @@ const PasswordChanged = () => {
       </div>
 
       {/* bottomIcon */}
-      <BottomIcon width={"406"} height={"200"} />
+      <div className="md:flex hidden">
+        <BottomIcon width={"406"} height={"200"} />
+      </div>
+      
     </>
   );
 };

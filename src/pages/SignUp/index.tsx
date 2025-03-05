@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Button from "@/components/common/Button";
 import Cover from "@/components/common/Cover";
-import Input from "@/components/common/InputName";
 import InputEmail from "@/components/common/InputEmail";
 import InputPassword from "@/components/common/InputPassword";
 import Label from "@/components/common/Label";
@@ -9,6 +8,7 @@ import RegisterHeader from "@/components/RegisterHeader";
 import RegisterFooter from "@/components/RegisterFooter";
 import PasswordChecker from "@/components/PasswordChecker";
 import PasswordStrength from "@/components/PasswordStrength"
+import InputName from "@/components/common/InputName";
 
 
 const SignUp: React.FC = () => {
@@ -57,11 +57,11 @@ const SignUp: React.FC = () => {
                 <div className="flex flex-col gap-[15px] xl:flex-row">
                   <div className="mt-[5px]">
                     <Label text="First Name" htmlFor="firstName" />
-                    <Input type="text" placeholder="Enter your first name" />
+                    <InputName type="text" placeholder="Enter your first name" />
                   </div>
                   <div className="mt-[5px]">
                     <Label text="Last Name" htmlFor="lastName" />
-                    <Input
+                    <InputName
                       type="text"
                       placeholder="Enter your last name"
                     />{" "}

@@ -4,9 +4,14 @@ import BottomIcon from "./common/BottomIcon";
 interface PreloaderProps {
   className: string;
   onComplete: () => void;
+  showBottomIcon?: boolean;
 }
 
-const Preloader: React.FC<PreloaderProps> = ({ onComplete, className }) => {
+const Preloader: React.FC<PreloaderProps> = ({
+  onComplete,
+  className,
+  showBottomIcon = true,
+}) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -37,9 +42,11 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete, className }) => {
       </div>
 
       {/* Bottom Icon */}
-      <div className="">
-        <BottomIcon width={"406"} height={"270"} />
-      </div>
+      {showBottomIcon && (
+        <div className="">
+          <BottomIcon width={"406"} height={"270"} />
+        </div>
+      )}
     </div>
   );
 };
