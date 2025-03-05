@@ -18,7 +18,7 @@ const Input: React.FC<InputProps> = ({ type, placeholder, id, className }) => {
             id={id}
             type={type}
             placeholder={placeholder}
-            className="w-full bg-transparent outline-none"
+            className="bg-none w-full outline-none"
           />
         </div>
       </div>
