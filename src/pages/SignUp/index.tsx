@@ -39,7 +39,7 @@ const SignUp: React.FC = () => {
     <>
       <div className="md:grid-cols-2 md:mr-4 md:ml-0 grid h-screen grid-cols-1 mx-4">
        <Cover />
-        <div>
+        <div className="h-full">
           <RegisterHeader />
           <div className=" flex justify-center">
             <div className="pt-[50px] xl:w-[480px] w-full ">
@@ -170,7 +170,7 @@ const SignUp: React.FC = () => {
                 />
               </div>
             </form>
-            <div className="text-center bg-white pt-4 text-[12px] md:text-[14px] font-[500] leading-[20px]">
+            <div className="text-center pt-4 text-[12px] md:text-[14px] font-[500] leading-[20px]">
               <h6 className="text-[#434547]">
                 By clicking create account, you agree to accept Propapay's{" "}
                 <br />{" "}

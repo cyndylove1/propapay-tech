@@ -18,7 +18,7 @@ const InputEmail: React.FC<InputProps> = ({
   return (
     <div className="">
       <div
-        className={`flex bg-none h-[48px] items-center gap-[7px] rounded-xl border-[1px] border-[#cfd2d1] px-4 focus-within:border-[#23A681] ${className}`}
+        className={`flex h-[48px] items-center gap-[7px] rounded-xl border-[1px] border-[#cfd2d1] px-4 focus-within:border-[#23A681] ${className}`}
       >
         <span>
           <svg
@@ -47,7 +47,7 @@ const InputEmail: React.FC<InputProps> = ({
           name={id}
           type={type}
           placeholder={placeholder}
-          className="w-full outline-none"
+          className="w-full bg-transparent outline-none"
         />
       </div>
     </div>

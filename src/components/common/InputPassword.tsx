@@ -22,7 +22,7 @@ const InputPassword: React.FC<InputPasswordProps> = ({
   return (
     <div className="">
       <div
-        className={`flex h-[48px] bg-transparent items-center justify-between gap-[7px] rounded-xl border-[1px] border-[#cfd2d1] px-4 focus-within:border-[#23A681] ${className}`}
+        className={`flex h-[48px] items-center justify-between gap-[7px] rounded-xl border-[1px] border-[#cfd2d1] px-4 focus-within:border-[#23A681] ${className}`}
       >
         <span className="flex w-full gap-[5px]">
           <svg
@@ -58,7 +58,7 @@ const InputPassword: React.FC<InputPasswordProps> = ({
             onChange={onChange}
             type={showVisibility ? "text" : "password"}
             placeholder={placeholder}
-            className="w-full outline-none"
+            className="w-full bg-transparent outline-none"
           />
         </span>
         <button

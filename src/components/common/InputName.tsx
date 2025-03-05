@@ -12,7 +12,7 @@ const InputName: React.FC<InputProps> = ({ type, placeholder, id, className }) =
     <>
       <div className="">
         <div
-          className={`flex h-[48px] items-center gap-[7px] rounded-xl border-[1px] border-[#cfd2d1] bg-transparent focus-within:border-[#23A681] px-4 ${className}`}
+          className={`flex h-[48px] items-center gap-[7px] rounded-xl border-[1px] border-[#cfd2d1] focus-within:border-[#23A681] px-4 ${className}`}
         >
           <span>
             <svg
@@ -40,7 +40,7 @@ const InputName: React.FC<InputProps> = ({ type, placeholder, id, className }) =
             id={id}
             type={type}
             placeholder={placeholder}
-            className="w-full outline-none"
+            className="w-full bg-transparent outline-none"
           />
         </div>
       </div>

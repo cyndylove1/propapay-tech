@@ -12,13 +12,13 @@ const Input: React.FC<InputProps> = ({ type, placeholder, id, className }) => {
     <>
       <div className="">
         <div
-          className={`flex items-center gap-[7px] bg-transparent rounded-xl border-[1px] border-[#cfd2d1] px-4 bg-none ${className}`}
+          className={`flex items-center gap-[7px] rounded-xl border-[1px] border-[#cfd2d1] px-4 ${className}`}
         >
           <input
             id={id}
             type={type}
             placeholder={placeholder}
-            className="w-full outline-none"
+            className="w-full bg-transparent outline-none"
           />
         </div>
       </div>
