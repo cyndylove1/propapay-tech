@@ -11,7 +11,7 @@ const AssetLists = () => {
           .map(() => (
             <div className="relative mx-4 mb-6 md:flex items-start gap-4 rounded-xl border-[1px] border-[#E5E6E8] p-2 shadow-md hidden">
               {/* Image Section */}
-              <div className="relative">
+              <div className="relative w-full">
                 <img
                   src={favourites}
                   alt="House"
@@ -173,7 +173,7 @@ const AssetLists = () => {
               </div>
 
               {/* Favorite & Share Icons  */}
-              <div className="right-4 lg:pt-4 absolute flex items-start gap-2">
+              <div className="right-4 absolute flex items-start gap-2 pt-2">
                 <span>
                   <svg
                     width="52"

@@ -11,7 +11,7 @@ const FavouriteLists = () => {
           .map(() => (
             <div className="relative mx-4 mb-6 lg:flex hidden items-start gap-4 rounded-xl border-[1px] border-[#E5E6E8] p-2 shadow-md">
               {/* Image Section */}
-              <div className="relative">
+              <div className="relative w-full">
                 <img
                   src={favourites}
                   alt="House"
@@ -173,7 +173,7 @@ const FavouriteLists = () => {
               </div>
 
               {/* Favorite & Share Icons  */}
-              <div className="right-4 absolute flex items-start gap-2 pt-4">
+              <div className="right-4 absolute flex items-start gap-2 pt-2">
                 <span>
                   <svg
                     width="44"
