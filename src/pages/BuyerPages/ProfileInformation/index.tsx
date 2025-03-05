@@ -1,6 +1,5 @@
 import Btn from "@/components/common/Btn";
-
-import profile from "@/assets/images/avatar.png";
+import profile from "@/assets/images/Avatar.png";
 import Label from "@/components/common/Label";
 import Input from "@/components/common/Input";
 const ProfileInformation = () => {
