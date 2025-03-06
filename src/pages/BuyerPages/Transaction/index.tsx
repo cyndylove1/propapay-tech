@@ -1,859 +1,755 @@
-// import Modal from "@/components/Modal";
-// import SearchBar from "@/components/SearchBar";
-// import { useState } from "react";
+import { useState } from "react";
+import Checkbox from "@/components/common/Checkbox";
+import SelectTag from "@/components/common/SelectTag";
+import Modal from "@/components/Modal";
+import SearchBar from "@/components/SearchBar";
+import ExportModal from "@/components/ExportModal";
 
-// const Transactions: React.FC = () => {
-//    const [isOpen, setIsOpen] = useState(false);
-//   return (
-//     <>
-//       <h2 className="px-[20px] pt-[30px] text-[24px] font-[600] leading-[36px]">
-//         Transaction
-//       </h2>
-//       <div className="overflow-x-auto pt-[30px]">
-//         <div className="flex items-center justify-between px-[20px] py-4">
-//           <SearchBar
-//             placeholder="Search for transactions..."
-//             className="w-[295px]"
-//           />
-//           <div className="flex gap-[24px]">
-//             <div
-//               className="flex h-[48px] w-[94px] cursor-pointer items-center justify-center gap-[5px] rounded-[12px] border-[1px] border-[#E8E8E8] bg-white"
-//               onClick={() => setIsOpen(true)}
-//             >
-//               <span>
-//                 <svg
-//                   width="20"
-//                   height="20"
-//                   viewBox="0 0 20 20"
-//                   fill="none"
-//                   xmlns="http://www.w3.org/2000/svg"
-//                 >
-//                   <path
-//                     d="M2.5 5.8335H17.5"
-//                     stroke="#303030"
-//                     stroke-width="1.5"
-//                     stroke-linecap="round"
-//                   />
-//                   <path
-//                     d="M5 10H15"
-//                     stroke="#303030"
-//                     stroke-width="1.5"
-//                     stroke-linecap="round"
-//                   />
-//                   <path
-//                     d="M8.33331 14.1665H11.6666"
-//                     stroke="#303030"
-//                     stroke-width="1.5"
-//                     stroke-linecap="round"
-//                   />
-//                 </svg>
-//               </span>
-//               <h2 className="text-[14px] font-[400] leading-[21px] text-[#303030]">
-//                 Filter
-//               </h2>
-//             </div>
-//             <div className="flex h-[48px] w-[94px] cursor-pointer items-center justify-center gap-[5px] rounded-[12px] border-[1px] border-[#E8E8E8] bg-white">
-//               <span>
-//                 <svg
-//                   width="20"
-//                   height="20"
-//                   viewBox="0 0 20 20"
-//                   fill="none"
-//                   xmlns="http://www.w3.org/2000/svg"
-//                 >
-//                   <path
-//                     d="M10 1.6665C5.40002 1.6665 1.66669 5.39984 1.66669 9.99984C1.66669 14.5998 5.40002 18.3332 10 18.3332C14.6 18.3332 18.3334 14.5998 18.3334 9.99984"
-//                     stroke="#303030"
-//                     stroke-width="1.5"
-//                     stroke-miterlimit="10"
-//                     stroke-linecap="round"
-//                     stroke-linejoin="round"
-//                   />
-//                   <path
-//                     d="M10.8333 9.16683L17.6666 2.3335"
-//                     stroke="#303030"
-//                     stroke-width="1.5"
-//                     stroke-linecap="round"
-//                     stroke-linejoin="round"
-//                   />
-//                   <path
-//                     d="M18.3334 5.6915V1.6665H14.3083"
-//                     stroke="#303030"
-//                     stroke-width="1.5"
-//                     stroke-linecap="round"
-//                     stroke-linejoin="round"
-//                   />
-//                 </svg>
-//               </span>
-//               <h2 className="text-[14px] font-[400] leading-[21px] text-[#303030]">
-//                 Export
-//               </h2>
-//             </div>
-//           </div>
-//         </div>
-//         <table className="table">
-//           {/* head */}
-//           <thead className="">
-//             <tr className="mx-[20px]">
-//               <th>
-//                 <span className="flex items-center gap-[5px]">
-//                   <h2 className="text-[16px] font-[500] leading-[24px] text-[#718096]">
-//                     Property
-//                   </h2>
-//                   <svg
-//                     width="16"
-//                     height="16"
-//                     viewBox="0 0 16 16"
-//                     fill="none"
-//                     xmlns="http://www.w3.org/2000/svg"
-//                   >
-//                     <path
-//                       d="M11.3333 2V14"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                     <path
-//                       d="M6.66666 12L4.66666 14L2.66666 12"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                     <path
-//                       d="M4.66666 14V2"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                     <path
-//                       d="M13.3333 4L11.3333 2L9.33333 4"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                   </svg>
-//                 </span>
-//               </th>
-//               <th className="">
-//                 <span className="flex items-center gap-[5px]">
-//                   <h2 className="text-[16px] font-[500] leading-[24px] text-[#718096]">
-//                     Date
-//                   </h2>
-//                   <svg
-//                     width="16"
-//                     height="16"
-//                     viewBox="0 0 16 16"
-//                     fill="none"
-//                     xmlns="http://www.w3.org/2000/svg"
-//                   >
-//                     <path
-//                       d="M11.3333 2V14"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                     <path
-//                       d="M6.66666 12L4.66666 14L2.66666 12"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                     <path
-//                       d="M4.66666 14V2"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                     <path
-//                       d="M13.3333 4L11.3333 2L9.33333 4"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                   </svg>
-//                 </span>
-//               </th>
-//               <th>
-//                 <span className="flex items-center gap-[5px]">
-//                   <h2 className="text-[16px] font-[500] leading-[24px] text-[#718096]">
-//                     Invoice
-//                   </h2>
-//                   <svg
-//                     width="16"
-//                     height="16"
-//                     viewBox="0 0 16 16"
-//                     fill="none"
-//                     xmlns="http://www.w3.org/2000/svg"
-//                   >
-//                     <path
-//                       d="M11.3333 2V14"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                     <path
-//                       d="M6.66666 12L4.66666 14L2.66666 12"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                     <path
-//                       d="M4.66666 14V2"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                     <path
-//                       d="M13.3333 4L11.3333 2L9.33333 4"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                   </svg>
-//                 </span>
-//               </th>
-//               <th>
-//                 <span className="flex items-center gap-[5px]">
-//                   <h2 className="text-[16px] font-[500] leading-[24px] text-[#718096]">
-//                     Amount
-//                   </h2>
-//                   <svg
-//                     width="16"
-//                     height="16"
-//                     viewBox="0 0 16 16"
-//                     fill="none"
-//                     xmlns="http://www.w3.org/2000/svg"
-//                   >
-//                     <path
-//                       d="M11.3333 2V14"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                     <path
-//                       d="M6.66666 12L4.66666 14L2.66666 12"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                     <path
-//                       d="M4.66666 14V2"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                     <path
-//                       d="M13.3333 4L11.3333 2L9.33333 4"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                   </svg>
-//                 </span>
-//               </th>
-//               <th>
-//                 <span className="flex items-center gap-[5px]">
-//                   <h2 className="text-[16px] font-[500] leading-[24px] text-[#718096]">
-//                     Status
-//                   </h2>
-//                   <svg
-//                     width="16"
-//                     height="16"
-//                     viewBox="0 0 16 16"
-//                     fill="none"
-//                     xmlns="http://www.w3.org/2000/svg"
-//                   >
-//                     <path
-//                       d="M11.3333 2V14"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                     <path
-//                       d="M6.66666 12L4.66666 14L2.66666 12"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                     <path
-//                       d="M4.66666 14V2"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                     <path
-//                       d="M13.3333 4L11.3333 2L9.33333 4"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                   </svg>
-//                 </span>
-//               </th>
-//               <th>
-//                 <span className="flex items-center gap-[5px]">
-//                   <h2 className="text-[16px] font-[500] leading-[24px] text-[#718096]">
-//                     Actions
-//                   </h2>
-//                   <svg
-//                     width="16"
-//                     height="16"
-//                     viewBox="0 0 16 16"
-//                     fill="none"
-//                     xmlns="http://www.w3.org/2000/svg"
-//                   >
-//                     <path
-//                       d="M11.3333 2V14"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                     <path
-//                       d="M6.66666 12L4.66666 14L2.66666 12"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                     <path
-//                       d="M4.66666 14V2"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                     <path
-//                       d="M13.3333 4L11.3333 2L9.33333 4"
-//                       stroke="#718096"
-//                       stroke-width="1.5"
-//                       stroke-linecap="round"
-//                       stroke-linejoin="round"
-//                     />
-//                   </svg>
-//                 </span>
-//               </th>
-//               <th></th>
-//             </tr>
-//           </thead>
-//           <tbody>
-//             {/* row 1 */}
-//             <tr className="">
-//               <td>
-//                 <div className="flex items-center gap-3">
-//                   <span className="">
-//                     <svg
-//                       width="44"
-//                       height="44"
-//                       viewBox="0 0 44 44"
-//                       fill="none"
-//                       xmlns="http://www.w3.org/2000/svg"
-//                     >
-//                       <rect width="44" height="44" rx="16" fill="#EEF8EE" />
-//                       <path
-//                         d="M28.0104 24.5737L28.0104 15.9894L19.4261 15.9894"
-//                         stroke="#007600"
-//                         stroke-width="1.5"
-//                         stroke-miterlimit="10"
-//                         stroke-linecap="round"
-//                         stroke-linejoin="round"
-//                       />
-//                       <path
-//                         d="M15.9896 28.01L27.8902 16.1094"
-//                         stroke="#007600"
-//                         stroke-width="1.5"
-//                         stroke-miterlimit="10"
-//                         stroke-linecap="round"
-//                         stroke-linejoin="round"
-//                       />
-//                     </svg>
-//                   </span>
-//                   <div>
-//                     <div className="text-[14px] font-[700] leading-[24px] text-[#000929]">
-//                       Beverly Springfield
-//                     </div>
-//                     <div className="text-[14px] leading-[21px] text-[#718096] text-[400]">
-//                       Witdraw
-//                     </div>
-//                   </div>
-//                 </div>
-//               </td>
-//               <td>
-//                 <div className="flex items-center gap-3">
-//                   <div>
-//                     <div className="text-[16px] font-[500] leading-[24px] text-[#1A202C]">
-//                       Nov 15, 2024
-//                     </div>
-//                     <div className="text[#718096] text-[14px] leading-[21px] text-[500]">
-//                       at 08.00 PM
-//                     </div>
-//                   </div>
-//                 </div>
-//               </td>
-//               <td className="text-[14px] font-[500] leading-[24px] text-[#1A202C]">
-//                 PMX09812
-//               </td>
-//               <td className="text-[16px] font-[700] leading-[24px] text-[#1A202C]">
-//                 N300,00.00
-//               </td>
-//               <th>
-//                 <button className="h-[40px] w-[96px] rounded-[8px] bg-[#FFF7F5] font-[400] text-[#FF784B]">
-//                   Pending
-//                 </button>
-//               </th>
-//               <th>
-//                 <button className="h-[40px] w-[96px] rounded-[8px] border-[1px] border-[#EDF2F7] text-[14px] font-[800] leading-[21px] text-[#1A202C]">
-//                   details
-//                 </button>
-//               </th>
-//             </tr>
-//             <tr className="">
-//               <td>
-//                 <div className="flex items-center gap-3">
-//                   <span>
-//                     <svg
-//                       width="44"
-//                       height="44"
-//                       viewBox="0 0 44 44"
-//                       fill="none"
-//                       xmlns="http://www.w3.org/2000/svg"
-//                     >
-//                       <rect width="44" height="44" rx="16" fill="#EEF8EE" />
-//                       <path
-//                         d="M28.0104 24.5737L28.0104 15.9894L19.4261 15.9894"
-//                         stroke="#007600"
-//                         stroke-width="1.5"
-//                         stroke-miterlimit="10"
-//                         stroke-linecap="round"
-//                         stroke-linejoin="round"
-//                       />
-//                       <path
-//                         d="M15.9896 28.01L27.8902 16.1094"
-//                         stroke="#007600"
-//                         stroke-width="1.5"
-//                         stroke-miterlimit="10"
-//                         stroke-linecap="round"
-//                         stroke-linejoin="round"
-//                       />
-//                     </svg>
-//                   </span>
-//                   <div>
-//                     <div className="text-[14px] font-[700] leading-[24px] text-[#000929]">
-//                       Beverly Springfield
-//                     </div>
-//                     <div className="text-[14px] leading-[21px] text-[#718096] text-[400]">
-//                       Deposit
-//                     </div>
-//                   </div>
-//                 </div>
-//               </td>
-//               <td>
-//                 <div className="flex items-center gap-3">
-//                   <div>
-//                     <div className="text-[16px] font-[500] leading-[24px] text-[#1A202C]">
-//                       Nov 15, 2024
-//                     </div>
-//                     <div className="text[#718096] text-[14px] leading-[21px] text-[500]">
-//                       at 08.00 PM
-//                     </div>
-//                   </div>
-//                 </div>
-//               </td>
-//               <td className="text-[14px] font-[500] leading-[24px] text-[#1A202C]">
-//                 PMX09812
-//               </td>
-//               <td className="text-[16px] font-[700] leading-[24px] text-[#1A202C]">
-//                 N300,00.00
-//               </td>
-//               <th>
-//                 <button className="h-[40px] w-[96px] rounded-[8px] bg-[#F6FDF9] font-[400] text-[#22C55E]">
-//                   Success
-//                 </button>
-//               </th>
-//               <th>
-//                 <button className="h-[40px] w-[96px] rounded-[8px] border-[1px] border-[#EDF2F7] text-[14px] font-[800] leading-[21px] text-[#1A202C]">
-//                   details
-//                 </button>
-//               </th>
-//             </tr>
-//             <tr className="">
-//               <td>
-//                 <div className="flex items-center gap-3">
-//                   <span className="">
-//                     <svg
-//                       width="44"
-//                       height="44"
-//                       viewBox="0 0 44 44"
-//                       fill="none"
-//                       xmlns="http://www.w3.org/2000/svg"
-//                     >
-//                       <rect width="44" height="44" rx="16" fill="#EEF8EE" />
-//                       <path
-//                         d="M28.0104 24.5737L28.0104 15.9894L19.4261 15.9894"
-//                         stroke="#007600"
-//                         stroke-width="1.5"
-//                         stroke-miterlimit="10"
-//                         stroke-linecap="round"
-//                         stroke-linejoin="round"
-//                       />
-//                       <path
-//                         d="M15.9896 28.01L27.8902 16.1094"
-//                         stroke="#007600"
-//                         stroke-width="1.5"
-//                         stroke-miterlimit="10"
-//                         stroke-linecap="round"
-//                         stroke-linejoin="round"
-//                       />
-//                     </svg>
-//                   </span>
-//                   <div>
-//                     <div className="text-[14px] font-[700] leading-[24px] text-[#000929]">
-//                       Beverly Springfield
-//                     </div>
-//                     <div className="text-[14px] leading-[21px] text-[#718096] text-[400]">
-//                       Advertising
-//                     </div>
-//                   </div>
-//                 </div>
-//               </td>
-//               <td>
-//                 <div className="flex items-center gap-3">
-//                   <div>
-//                     <div className="text-[16px] font-[500] leading-[24px] text-[#1A202C]">
-//                       Nov 15, 2024
-//                     </div>
-//                     <div className="text[#718096] text-[14px] leading-[21px] text-[500]">
-//                       at 08.00 PM
-//                     </div>
-//                   </div>
-//                 </div>
-//               </td>
-//               <td className="text-[14px] font-[500] leading-[24px] text-[#1A202C]">
-//                 PMX09812
-//               </td>
-//               <td className="text-[16px] font-[700] leading-[24px] text-[#1A202C]">
-//                 N300,00.00
-//               </td>
-//               <th>
-//                 <button className="h-[40px] w-[96px] rounded-[8px] bg-[#F6FDF9] font-[400] text-[#22C55E]">
-//                   Success
-//                 </button>
-//               </th>
-//               <th>
-//                 <button className="h-[40px] w-[96px] rounded-[8px] border-[1px] border-[#EDF2F7] text-[14px] font-[800] leading-[21px] text-[#1A202C]">
-//                   details
-//                 </button>
-//               </th>
-//             </tr>
-//             <tr className="">
-//               <td>
-//                 <div className="flex items-center gap-3">
-//                   <span>
-//                     <svg
-//                       width="44"
-//                       height="44"
-//                       viewBox="0 0 44 44"
-//                       fill="none"
-//                       xmlns="http://www.w3.org/2000/svg"
-//                     >
-//                       <rect width="44" height="44" rx="16" fill="#EEF8EE" />
-//                       <path
-//                         d="M28.0104 24.5737L28.0104 15.9894L19.4261 15.9894"
-//                         stroke="#007600"
-//                         stroke-width="1.5"
-//                         stroke-miterlimit="10"
-//                         stroke-linecap="round"
-//                         stroke-linejoin="round"
-//                       />
-//                       <path
-//                         d="M15.9896 28.01L27.8902 16.1094"
-//                         stroke="#007600"
-//                         stroke-width="1.5"
-//                         stroke-miterlimit="10"
-//                         stroke-linecap="round"
-//                         stroke-linejoin="round"
-//                       />
-//                     </svg>
-//                   </span>
-//                   <div>
-//                     <div className="text-[14px] font-[700] leading-[24px] text-[#000929]">
-//                       Beverly Springfield
-//                     </div>
-//                     <div className="text-[14px] leading-[21px] text-[#718096] text-[400]">
-//                       Business
-//                     </div>
-//                   </div>
-//                 </div>
-//               </td>
-//               <td>
-//                 <div className="flex items-center gap-3">
-//                   <div>
-//                     <div className="text-[16px] font-[500] leading-[24px] text-[#1A202C]">
-//                       Nov 15, 2024
-//                     </div>
-//                     <div className="text[#718096] text-[14px] leading-[21px] text-[500]">
-//                       at 08.00 PM
-//                     </div>
-//                   </div>
-//                 </div>
-//               </td>
-//               <td className="text-[14px] font-[500] leading-[24px] text-[#1A202C]">
-//                 PMX09812
-//               </td>
-//               <td className="text-[16px] font-[700] leading-[24px] text-[#1A202C]">
-//                 N300,00.00
-//               </td>
-//               <th>
-//                 <button className="h-[40px] w-[96px] rounded-[8px] bg-[#FFF7F5] font-[400] text-[#FF784B]">
-//                   Pending
-//                 </button>
-//               </th>
-//               <th>
-//                 <button className="h-[40px] w-[96px] rounded-[8px] border-[1px] border-[#EDF2F7] text-[14px] font-[800] leading-[21px] text-[#1A202C]">
-//                   details
-//                 </button>
-//               </th>
-//             </tr>
-//             <tr className="">
-//               <td>
-//                 <div className="flex items-center gap-3">
-//                   <span>
-//                     <svg
-//                       width="44"
-//                       height="44"
-//                       viewBox="0 0 44 44"
-//                       fill="none"
-//                       xmlns="http://www.w3.org/2000/svg"
-//                     >
-//                       <rect width="44" height="44" rx="16" fill="#EEF8EE" />
-//                       <path
-//                         d="M28.0104 24.5737L28.0104 15.9894L19.4261 15.9894"
-//                         stroke="#007600"
-//                         stroke-width="1.5"
-//                         stroke-miterlimit="10"
-//                         stroke-linecap="round"
-//                         stroke-linejoin="round"
-//                       />
-//                       <path
-//                         d="M15.9896 28.01L27.8902 16.1094"
-//                         stroke="#007600"
-//                         stroke-width="1.5"
-//                         stroke-miterlimit="10"
-//                         stroke-linecap="round"
-//                         stroke-linejoin="round"
-//                       />
-//                     </svg>
-//                   </span>
-//                   <div>
-//                     <div className="text-[14px] font-[700] leading-[24px] text-[#000929]">
-//                       Beverly Springfield
-//                     </div>
-//                     <div className="text-[14px] leading-[21px] text-[#718096] text-[400]">
-//                       Transfer
-//                     </div>
-//                   </div>
-//                 </div>
-//               </td>
-//               <td>
-//                 <div className="flex items-center gap-3">
-//                   <div>
-//                     <div className="text-[16px] font-[500] leading-[24px] text-[#1A202C]">
-//                       Nov 15, 2024
-//                     </div>
-//                     <div className="text[#718096] text-[14px] leading-[21px] text-[500]">
-//                       at 08.00 PM
-//                     </div>
-//                   </div>
-//                 </div>
-//               </td>
-//               <td className="text-[14px] font-[500] leading-[24px] text-[#1A202C]">
-//                 PMX09812
-//               </td>
-//               <td className="text-[16px] font-[700] leading-[24px] text-[#1A202C]">
-//                 N300,00.00
-//               </td>
-//               <th>
-//                 <button className="h-[40px] w-[96px] rounded-[8px] bg-[#fff5f5] font-[400] text-[#FF4747]">
-//                   Failed
-//                 </button>
-//               </th>
-//               <th>
-//                 <button className="h-[40px] w-[96px] rounded-[8px] border-[1px] border-[#EDF2F7] text-[14px] font-[800] leading-[21px] text-[#1A202C]">
-//                   details
-//                 </button>
-//               </th>
-//             </tr>
-//             <tr className="">
-//               <td>
-//                 <div className="flex items-center gap-3">
-//                   <span>
-//                     <svg
-//                       width="44"
-//                       height="44"
-//                       viewBox="0 0 44 44"
-//                       fill="none"
-//                       xmlns="http://www.w3.org/2000/svg"
-//                     >
-//                       <rect width="44" height="44" rx="16" fill="#EEF8EE" />
-//                       <path
-//                         d="M28.0104 24.5737L28.0104 15.9894L19.4261 15.9894"
-//                         stroke="#007600"
-//                         stroke-width="1.5"
-//                         stroke-miterlimit="10"
-//                         stroke-linecap="round"
-//                         stroke-linejoin="round"
-//                       />
-//                       <path
-//                         d="M15.9896 28.01L27.8902 16.1094"
-//                         stroke="#007600"
-//                         stroke-width="1.5"
-//                         stroke-miterlimit="10"
-//                         stroke-linecap="round"
-//                         stroke-linejoin="round"
-//                       />
-//                     </svg>
-//                   </span>
-//                   <div>
-//                     <div className="text-[14px] font-[700] leading-[24px] text-[#000929]">
-//                       Beverly Springfield
-//                     </div>
-//                     <div className="text-[14px] leading-[21px] text-[#718096] text-[400]">
-//                       Payment
-//                     </div>
-//                   </div>
-//                 </div>
-//               </td>
-//               <td>
-//                 <div className="flex items-center gap-3">
-//                   <div>
-//                     <div className="text-[16px] font-[500] leading-[24px] text-[#1A202C]">
-//                       Nov 15, 2024
-//                     </div>
-//                     <div className="text[#718096] text-[14px] leading-[21px] text-[500]">
-//                       at 08.00 PM
-//                     </div>
-//                   </div>
-//                 </div>
-//               </td>
-//               <td className="text-[14px] font-[500] leading-[24px] text-[#1A202C]">
-//                 PMX09812
-//               </td>
-//               <td className="text-[16px] font-[700] leading-[24px] text-[#1A202C]">
-//                 N300,00.00
-//               </td>
-//               <th>
-//                 <button className="h-[40px] w-[96px] rounded-[8px] bg-[#F6FDF9] font-[400] text-[#22C55E]">
-//                   Success
-//                 </button>
-//               </th>
-//               <th>
-//                 <button className="h-[40px] w-[96px] rounded-[8px] border-[1px] border-[#EDF2F7] text-[14px] font-[800] leading-[21px] text-[#1A202C]">
-//                   details
-//                 </button>
-//               </th>
-//             </tr>
-//             <tr className="border-[1px] border-[#DFE8F6]">
-//               <td>
-//                 <div className="flex items-center gap-3">
-//                   <span>
-//                     <svg
-//                       width="44"
-//                       height="44"
-//                       viewBox="0 0 44 44"
-//                       fill="none"
-//                       xmlns="http://www.w3.org/2000/svg"
-//                     >
-//                       <rect width="44" height="44" rx="16" fill="#EEF8EE" />
-//                       <path
-//                         d="M28.0104 24.5737L28.0104 15.9894L19.4261 15.9894"
-//                         stroke="#007600"
-//                         stroke-width="1.5"
-//                         stroke-miterlimit="10"
-//                         stroke-linecap="round"
-//                         stroke-linejoin="round"
-//                       />
-//                       <path
-//                         d="M15.9896 28.01L27.8902 16.1094"
-//                         stroke="#007600"
-//                         stroke-width="1.5"
-//                         stroke-miterlimit="10"
-//                         stroke-linecap="round"
-//                         stroke-linejoin="round"
-//                       />
-//                     </svg>
-//                   </span>
-//                   <div>
-//                     <div className="text-[14px] font-[700] leading-[24px] text-[#000929]">
-//                       Beverly Springfield
-//                     </div>
-//                     <div className="text[#718096] text-[14px] leading-[21px] text-[400]">
-//                       Witdraw
-//                     </div>
-//                   </div>
-//                 </div>
-//               </td>
-//               <td>
-//                 <div className="flex items-center gap-3">
-//                   <div>
-//                     <div className="text-[16px] font-[500] leading-[24px] text-[#1A202C]">
-//                       Nov 15, 2024
-//                     </div>
-//                     <div className="text[#718096] text-[14px] leading-[21px] text-[500]">
-//                       at 08.00 PM
-//                     </div>
-//                   </div>
-//                 </div>
-//               </td>
-//               <td className="text-[14px] font-[500] leading-[24px] text-[#1A202C]">
-//                 PMX09812
-//               </td>
-//               <td className="text-[16px] font-[700] leading-[24px] text-[#1A202C]">
-//                 N300,00.00
-//               </td>
-//               <th>
-//                 <button className="h-[40px] w-[96px] rounded-[8px] bg-[#FFF7F5] font-[400] text-[#FF784B]">
-//                   pending
-//                 </button>
-//               </th>
-//               <th>
-//                 <button className="h-[40px] w-[96px] rounded-[8px] border-[1px] border-[#EDF2F7] text-[14px] font-[800] leading-[21px] text-[#1A202C]">
-//                   details
-//                 </button>
-//               </th>
-//             </tr>
-//           </tbody>
-//         </table>
-//       </div>
-//       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} />
-//     </>
-//   );
-// };
-// export default Transactions;
-const Transaction = () => {
+const Transaction: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [Open, setOpen] = useState<boolean>(false);
   return (
     <>
-      <h1>Transaction</h1>
+      {/* Header title */}
+      <div className="flex items-center justify-between px-4 pt-[20px]">
+        <h2 className="text-[24px] font-[600] leading-[32px] text-[#1C1D1E]">
+          Transactions
+        </h2>
+        <div className="flex items-center gap-[12px]">
+          <button
+            className="flex items-center gap-[4px] rounded-lg border-[1px] border-[#DEE1E4] p-2"
+            onClick={() => setOpen(true)}
+          >
+            <span>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.50012 11.667L2.69499 12.2191C3.45345 14.3681 3.83269 15.4426 4.69797 16.0548C5.56325 16.667 6.7027 16.667 8.98159 16.667H11.0187C13.2975 16.667 14.437 16.667 15.3023 16.0548C16.1676 15.4426 16.5468 14.3681 17.3053 12.2191L17.5001 11.667"
+                  stroke="#4E5257"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M10.0001 11.6668V3.3335M10.0001 11.6668C9.41662 11.6668 8.32642 10.0049 7.91681 9.5835M10.0001 11.6668C10.5837 11.6668 11.6739 10.0049 12.0835 9.5835"
+                  stroke="#4E5257"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <h3 className="text-[14px] font-[600] leading-[20px] text-[#4E5257]">
+              Export
+            </h3>
+          </button>
+
+          <button className="flex items-center gap-[4px] rounded-lg bg-[#12725B] p-2">
+            <span>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16.25 14.5833C16.25 15.7339 15.3173 16.6667 14.1667 16.6667C13.0161 16.6667 12.0834 15.7339 12.0834 14.5833C12.0834 13.4327 13.0161 12.5 14.1667 12.5C15.3173 12.5 16.25 13.4327 16.25 14.5833Z"
+                  stroke="white"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M7.91667 14.5833C7.91667 15.7339 6.98393 16.6667 5.83333 16.6667C4.68274 16.6667 3.75 15.7339 3.75 14.5833C3.75 13.4327 4.68274 12.5 5.83333 12.5C6.98393 12.5 7.91667 13.4327 7.91667 14.5833Z"
+                  stroke="white"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M12.0834 14.5835H7.91669M16.25 14.5835H16.886C17.0693 14.5835 17.161 14.5835 17.238 14.5739C17.8057 14.5031 18.253 14.0559 18.3238 13.4881C18.3334 13.4111 18.3334 13.3194 18.3334 13.1361V10.8335C18.3334 7.84195 15.9082 5.41683 12.9167 5.41683M1.66669 3.3335L10 3.3335C11.1785 3.3335 11.7678 3.3335 12.1339 3.69961C12.5 4.06573 12.5 4.65498 12.5 5.8335L12.5 12.9168M1.66669 10.6252L1.66669 12.5002C1.66669 13.279 1.66669 13.6684 1.83416 13.9585C1.94387 14.1485 2.10166 14.3063 2.29169 14.416C2.58175 14.5835 2.97117 14.5835 3.75002 14.5835"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M1.66669 5.8335L6.66669 5.8335M1.66669 8.3335H5.00002"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <h3 className="text-[14px] font-[600] leading-[20px] text-[#FFF]">
+              Synchronize
+            </h3>
+          </button>
+        </div>
+      </div>
+
+      {/* content header */}
+      <div className="m-4 rounded-xl border-[1px] border-[#E8EAEC]">
+        <div className="flex items-center justify-between px-4 py-4">
+          <SearchBar
+            placeholder="Search documents..."
+            showShortcut={false}
+            className="w-[295px]"
+          />
+          <div className="flex gap-[16px]">
+            <div className="relative hidden items-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] p-[8px] shadow-sm md:flex">
+              <span>
+                <svg
+                  width="18"
+                  height="20"
+                  viewBox="0 0 18 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14 1.6665V3.33317M4 1.6665V3.33317"
+                    stroke="#6D7177"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M8.99622 10.833H9.0037M8.99622 14.1663H9.0037M12.3258 10.833H12.3333M5.66663 10.833H5.6741M5.66663 14.1663H5.6741"
+                    stroke="#6D7177"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M1.91663 6.6665H16.0833"
+                    stroke="#6D7177"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M1.08331 10.2027C1.08331 6.57161 1.08331 4.75607 2.12675 3.62803C3.17018 2.5 4.84956 2.5 8.20831 2.5H9.79165C13.1504 2.5 14.8298 2.5 15.8732 3.62803C16.9166 4.75607 16.9166 6.57161 16.9166 10.2027V10.6306C16.9166 14.2617 16.9166 16.0773 15.8732 17.2053C14.8298 18.3333 13.1504 18.3333 9.79165 18.3333H8.20831C4.84956 18.3333 3.17018 18.3333 2.12675 17.2053C1.08331 16.0773 1.08331 14.2617 1.08331 10.6306V10.2027Z"
+                    stroke="#6D7177"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M1.5 6.6665H16.5"
+                    stroke="#6D7177"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <SelectTag className="border-none bg-transparent pr-8 text-[14px] font-[500] leading-[20px] text-[#4E5257]">
+                <option className="">Last 30 Days</option>
+                <option>Last 30 Days</option>
+              </SelectTag>
+            </div>
+            <button
+              className="flex items-center gap-[4px] rounded-lg border-[1px] border-[#DEE1E4] p-2"
+              onClick={() => setIsOpen(true)}
+            >
+              <span>
+                <svg
+                  width="18"
+                  height="16"
+                  viewBox="0 0 18 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.5 3.8335H4"
+                    stroke="#6D7177"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M1.5 12.167H6.5"
+                    stroke="#6D7177"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M14 12.167L16.5 12.167"
+                    stroke="#6D7177"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M11.5 3.8335L16.5 3.8335"
+                    stroke="#6D7177"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M4 3.8335C4 3.05693 4 2.66864 4.12687 2.36236C4.29602 1.95398 4.62048 1.62952 5.02886 1.46036C5.33515 1.3335 5.72343 1.3335 6.5 1.3335C7.27657 1.3335 7.66485 1.3335 7.97114 1.46036C8.37952 1.62952 8.70398 1.95398 8.87313 2.36236C9 2.66864 9 3.05693 9 3.8335C9 4.61007 9 4.99835 8.87313 5.30464C8.70398 5.71302 8.37952 6.03747 7.97114 6.20663C7.66485 6.3335 7.27657 6.3335 6.5 6.3335C5.72343 6.3335 5.33515 6.3335 5.02886 6.20663C4.62048 6.03747 4.29602 5.71302 4.12687 5.30464C4 4.99835 4 4.61007 4 3.8335Z"
+                    stroke="#6D7177"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M9 12.167C9 11.3904 9 11.0021 9.12687 10.6959C9.29602 10.2875 9.62048 9.96302 10.0289 9.79386C10.3351 9.66699 10.7234 9.66699 11.5 9.66699C12.2766 9.66699 12.6649 9.66699 12.9711 9.79386C13.3795 9.96302 13.704 10.2875 13.8731 10.6959C14 11.0021 14 11.3904 14 12.167C14 12.9436 14 13.3318 13.8731 13.6381C13.704 14.0465 13.3795 14.371 12.9711 14.5401C12.6649 14.667 12.2766 14.667 11.5 14.667C10.7234 14.667 10.3351 14.667 10.0289 14.5401C9.62048 14.371 9.29602 14.0465 9.12687 13.6381C9 13.3318 9 12.9436 9 12.167Z"
+                    stroke="#6D7177"
+                    stroke-width="1.5"
+                  />
+                </svg>
+              </span>
+              <h3 className="text-[14px] font-[500] leading-[20px] text-[#4E5257]">
+                Filter
+              </h3>
+            </button>
+            <div className="relative hidden items-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] p-[8px] shadow-sm md:flex">
+              <span>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.16669 6.6665L17.5 6.66657"
+                    stroke="#6D7177"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M9.16669 10H17.5"
+                    stroke="#6D7177"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M9.16669 13.3335H17.5"
+                    stroke="#6D7177"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M9.16669 3.3335H17.5"
+                    stroke="#6D7177"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M4.58333 17.5V2.5M4.58333 17.5C3.99981 17.5 2.90961 15.8381 2.5 15.4167M4.58333 17.5C5.16686 17.5 6.25706 15.8381 6.66667 15.4167"
+                    stroke="#6D7177"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <SelectTag className="border-none bg-transparent pr-8 text-[14px] font-[500] leading-[20px] text-[#4E5257]">
+                <option className="">Sort By</option>
+                <option>Sort By</option>
+              </SelectTag>
+            </div>
+          </div>
+        </div>
+
+        {/* Table content */}
+        <div>
+          <div className="overflow-x-auto">
+            <table className="table">
+              {/* head */}
+
+              <thead className="bg-[#F7F8F9]">
+                <tr>
+                  <th>
+                    <Checkbox />
+                  </th>
+                  <th>
+                    <span className="flex items-center gap-[5px]">
+                      <h2 className="text-[12px] font-[500] leading-[16px] text-[#6D7177]">
+                        ACTIVITY
+                      </h2>
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2.96824 6.07339C3.06252 6.28253 3.27063 6.41699 3.50004 6.41699L10.5 6.41697C10.7294 6.41697 10.9376 6.2825 11.0318 6.07336C11.1261 5.86422 11.0891 5.61923 10.9371 5.44734L10.9359 5.44597C10.9149 5.42243 10.856 5.35665 10.8197 5.31656C10.7456 5.2348 10.6391 5.11851 10.5086 4.97917C10.2482 4.70105 9.88954 4.32851 9.49982 3.95446C9.11258 3.5828 8.68295 3.19831 8.28186 2.90298C8.08169 2.7556 7.87608 2.62104 7.67707 2.52106C7.49005 2.42711 7.25118 2.33366 7.00001 2.33366C6.74884 2.33366 6.50997 2.42711 6.32295 2.52106C6.12394 2.62104 5.91833 2.7556 5.71816 2.90299C5.31708 3.19831 4.88745 3.58281 4.50022 3.95447C4.11051 4.32852 3.75189 4.70107 3.49142 4.9792C3.36094 5.11854 3.25448 5.23483 3.18038 5.31659C3.14372 5.35703 3.08442 5.42334 3.06386 5.44633L3.06319 5.44708C2.91127 5.61898 2.87396 5.86425 2.96824 6.07339Z"
+                          fill="#888D93"
+                        />
+                        <path
+                          d="M2.96824 7.9271C3.06252 7.71796 3.27063 7.5835 3.50004 7.5835L10.5 7.58352C10.7294 7.58352 10.9376 7.71799 11.0318 7.92713C11.1261 8.13627 11.0891 8.38126 10.9371 8.55315L10.9359 8.55449C10.9149 8.57801 10.856 8.64382 10.8197 8.68393C10.7456 8.76569 10.6391 8.88198 10.5086 9.02132C10.2482 9.29944 9.88954 9.67198 9.49982 10.046C9.11258 10.4177 8.68295 10.8022 8.28186 11.0975C8.08169 11.2449 7.87608 11.3794 7.67707 11.4794C7.49005 11.5734 7.25118 11.6668 7.00001 11.6668C6.74884 11.6668 6.50997 11.5734 6.32295 11.4794C6.12394 11.3794 5.91833 11.2449 5.71816 11.0975C5.31708 10.8022 4.88745 10.4177 4.50022 10.046C4.11051 9.67197 3.75189 9.29942 3.49142 9.02129C3.36094 8.88195 3.25448 8.76566 3.18038 8.6839C3.14373 8.64347 3.08446 8.57719 3.06388 8.55418L3.06319 8.55341C2.91127 8.38151 2.87396 8.13624 2.96824 7.9271Z"
+                          fill="#888D93"
+                        />
+                      </svg>
+                    </span>
+                  </th>
+                  <th>
+                    <span className="flex items-center gap-[5px]">
+                      <h2 className="text-[12px] font-[500] leading-[16px] text-[#6D7177]">
+                        TYPE
+                      </h2>
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2.96824 6.07339C3.06252 6.28253 3.27063 6.41699 3.50004 6.41699L10.5 6.41697C10.7294 6.41697 10.9376 6.2825 11.0318 6.07336C11.1261 5.86422 11.0891 5.61923 10.9371 5.44734L10.9359 5.44597C10.9149 5.42243 10.856 5.35665 10.8197 5.31656C10.7456 5.2348 10.6391 5.11851 10.5086 4.97917C10.2482 4.70105 9.88954 4.32851 9.49982 3.95446C9.11258 3.5828 8.68295 3.19831 8.28186 2.90298C8.08169 2.7556 7.87608 2.62104 7.67707 2.52106C7.49005 2.42711 7.25118 2.33366 7.00001 2.33366C6.74884 2.33366 6.50997 2.42711 6.32295 2.52106C6.12394 2.62104 5.91833 2.7556 5.71816 2.90299C5.31708 3.19831 4.88745 3.58281 4.50022 3.95447C4.11051 4.32852 3.75189 4.70107 3.49142 4.9792C3.36094 5.11854 3.25448 5.23483 3.18038 5.31659C3.14372 5.35703 3.08442 5.42334 3.06386 5.44633L3.06319 5.44708C2.91127 5.61898 2.87396 5.86425 2.96824 6.07339Z"
+                          fill="#888D93"
+                        />
+                        <path
+                          d="M2.96824 7.9271C3.06252 7.71796 3.27063 7.5835 3.50004 7.5835L10.5 7.58352C10.7294 7.58352 10.9376 7.71799 11.0318 7.92713C11.1261 8.13627 11.0891 8.38126 10.9371 8.55315L10.9359 8.55449C10.9149 8.57801 10.856 8.64382 10.8197 8.68393C10.7456 8.76569 10.6391 8.88198 10.5086 9.02132C10.2482 9.29944 9.88954 9.67198 9.49982 10.046C9.11258 10.4177 8.68295 10.8022 8.28186 11.0975C8.08169 11.2449 7.87608 11.3794 7.67707 11.4794C7.49005 11.5734 7.25118 11.6668 7.00001 11.6668C6.74884 11.6668 6.50997 11.5734 6.32295 11.4794C6.12394 11.3794 5.91833 11.2449 5.71816 11.0975C5.31708 10.8022 4.88745 10.4177 4.50022 10.046C4.11051 9.67197 3.75189 9.29942 3.49142 9.02129C3.36094 8.88195 3.25448 8.76566 3.18038 8.6839C3.14373 8.64347 3.08446 8.57719 3.06388 8.55418L3.06319 8.55341C2.91127 8.38151 2.87396 8.13624 2.96824 7.9271Z"
+                          fill="#888D93"
+                        />
+                      </svg>
+                    </span>
+                  </th>
+                  <th>
+                    <span className="flex items-center gap-[5px]">
+                      <h2 className="text-[12px] font-[500] leading-[16Px] text-[#6D7177]">
+                        TRANSACTION ID
+                      </h2>
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2.96824 6.07339C3.06252 6.28253 3.27063 6.41699 3.50004 6.41699L10.5 6.41697C10.7294 6.41697 10.9376 6.2825 11.0318 6.07336C11.1261 5.86422 11.0891 5.61923 10.9371 5.44734L10.9359 5.44597C10.9149 5.42243 10.856 5.35665 10.8197 5.31656C10.7456 5.2348 10.6391 5.11851 10.5086 4.97917C10.2482 4.70105 9.88954 4.32851 9.49982 3.95446C9.11258 3.5828 8.68295 3.19831 8.28186 2.90298C8.08169 2.7556 7.87608 2.62104 7.67707 2.52106C7.49005 2.42711 7.25118 2.33366 7.00001 2.33366C6.74884 2.33366 6.50997 2.42711 6.32295 2.52106C6.12394 2.62104 5.91833 2.7556 5.71816 2.90299C5.31708 3.19831 4.88745 3.58281 4.50022 3.95447C4.11051 4.32852 3.75189 4.70107 3.49142 4.9792C3.36094 5.11854 3.25448 5.23483 3.18038 5.31659C3.14372 5.35703 3.08442 5.42334 3.06386 5.44633L3.06319 5.44708C2.91127 5.61898 2.87396 5.86425 2.96824 6.07339Z"
+                          fill="#888D93"
+                        />
+                        <path
+                          d="M2.96824 7.9271C3.06252 7.71796 3.27063 7.5835 3.50004 7.5835L10.5 7.58352C10.7294 7.58352 10.9376 7.71799 11.0318 7.92713C11.1261 8.13627 11.0891 8.38126 10.9371 8.55315L10.9359 8.55449C10.9149 8.57801 10.856 8.64382 10.8197 8.68393C10.7456 8.76569 10.6391 8.88198 10.5086 9.02132C10.2482 9.29944 9.88954 9.67198 9.49982 10.046C9.11258 10.4177 8.68295 10.8022 8.28186 11.0975C8.08169 11.2449 7.87608 11.3794 7.67707 11.4794C7.49005 11.5734 7.25118 11.6668 7.00001 11.6668C6.74884 11.6668 6.50997 11.5734 6.32295 11.4794C6.12394 11.3794 5.91833 11.2449 5.71816 11.0975C5.31708 10.8022 4.88745 10.4177 4.50022 10.046C4.11051 9.67197 3.75189 9.29942 3.49142 9.02129C3.36094 8.88195 3.25448 8.76566 3.18038 8.6839C3.14373 8.64347 3.08446 8.57719 3.06388 8.55418L3.06319 8.55341C2.91127 8.38151 2.87396 8.13624 2.96824 7.9271Z"
+                          fill="#888D93"
+                        />
+                      </svg>
+                    </span>
+                  </th>
+                  <th>
+                    <span className="flex items-center gap-[5px]">
+                      <h2 className="text-[12px] font-[500] leading-[16px] text-[#6D7177]">
+                        DATE
+                      </h2>
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2.96824 6.07339C3.06252 6.28253 3.27063 6.41699 3.50004 6.41699L10.5 6.41697C10.7294 6.41697 10.9376 6.2825 11.0318 6.07336C11.1261 5.86422 11.0891 5.61923 10.9371 5.44734L10.9359 5.44597C10.9149 5.42243 10.856 5.35665 10.8197 5.31656C10.7456 5.2348 10.6391 5.11851 10.5086 4.97917C10.2482 4.70105 9.88954 4.32851 9.49982 3.95446C9.11258 3.5828 8.68295 3.19831 8.28186 2.90298C8.08169 2.7556 7.87608 2.62104 7.67707 2.52106C7.49005 2.42711 7.25118 2.33366 7.00001 2.33366C6.74884 2.33366 6.50997 2.42711 6.32295 2.52106C6.12394 2.62104 5.91833 2.7556 5.71816 2.90299C5.31708 3.19831 4.88745 3.58281 4.50022 3.95447C4.11051 4.32852 3.75189 4.70107 3.49142 4.9792C3.36094 5.11854 3.25448 5.23483 3.18038 5.31659C3.14372 5.35703 3.08442 5.42334 3.06386 5.44633L3.06319 5.44708C2.91127 5.61898 2.87396 5.86425 2.96824 6.07339Z"
+                          fill="#888D93"
+                        />
+                        <path
+                          d="M2.96824 7.9271C3.06252 7.71796 3.27063 7.5835 3.50004 7.5835L10.5 7.58352C10.7294 7.58352 10.9376 7.71799 11.0318 7.92713C11.1261 8.13627 11.0891 8.38126 10.9371 8.55315L10.9359 8.55449C10.9149 8.57801 10.856 8.64382 10.8197 8.68393C10.7456 8.76569 10.6391 8.88198 10.5086 9.02132C10.2482 9.29944 9.88954 9.67198 9.49982 10.046C9.11258 10.4177 8.68295 10.8022 8.28186 11.0975C8.08169 11.2449 7.87608 11.3794 7.67707 11.4794C7.49005 11.5734 7.25118 11.6668 7.00001 11.6668C6.74884 11.6668 6.50997 11.5734 6.32295 11.4794C6.12394 11.3794 5.91833 11.2449 5.71816 11.0975C5.31708 10.8022 4.88745 10.4177 4.50022 10.046C4.11051 9.67197 3.75189 9.29942 3.49142 9.02129C3.36094 8.88195 3.25448 8.76566 3.18038 8.6839C3.14373 8.64347 3.08446 8.57719 3.06388 8.55418L3.06319 8.55341C2.91127 8.38151 2.87396 8.13624 2.96824 7.9271Z"
+                          fill="#888D93"
+                        />
+                      </svg>
+                    </span>
+                  </th>
+                  <th>
+                    <span className="flex items-center gap-[5px]">
+                      <h2 className="text-[12px] font-[500] leading-[16px] text-[#6D7177]">
+                        AMOUNT
+                      </h2>
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2.96824 6.07339C3.06252 6.28253 3.27063 6.41699 3.50004 6.41699L10.5 6.41697C10.7294 6.41697 10.9376 6.2825 11.0318 6.07336C11.1261 5.86422 11.0891 5.61923 10.9371 5.44734L10.9359 5.44597C10.9149 5.42243 10.856 5.35665 10.8197 5.31656C10.7456 5.2348 10.6391 5.11851 10.5086 4.97917C10.2482 4.70105 9.88954 4.32851 9.49982 3.95446C9.11258 3.5828 8.68295 3.19831 8.28186 2.90298C8.08169 2.7556 7.87608 2.62104 7.67707 2.52106C7.49005 2.42711 7.25118 2.33366 7.00001 2.33366C6.74884 2.33366 6.50997 2.42711 6.32295 2.52106C6.12394 2.62104 5.91833 2.7556 5.71816 2.90299C5.31708 3.19831 4.88745 3.58281 4.50022 3.95447C4.11051 4.32852 3.75189 4.70107 3.49142 4.9792C3.36094 5.11854 3.25448 5.23483 3.18038 5.31659C3.14372 5.35703 3.08442 5.42334 3.06386 5.44633L3.06319 5.44708C2.91127 5.61898 2.87396 5.86425 2.96824 6.07339Z"
+                          fill="#888D93"
+                        />
+                        <path
+                          d="M2.96824 7.9271C3.06252 7.71796 3.27063 7.5835 3.50004 7.5835L10.5 7.58352C10.7294 7.58352 10.9376 7.71799 11.0318 7.92713C11.1261 8.13627 11.0891 8.38126 10.9371 8.55315L10.9359 8.55449C10.9149 8.57801 10.856 8.64382 10.8197 8.68393C10.7456 8.76569 10.6391 8.88198 10.5086 9.02132C10.2482 9.29944 9.88954 9.67198 9.49982 10.046C9.11258 10.4177 8.68295 10.8022 8.28186 11.0975C8.08169 11.2449 7.87608 11.3794 7.67707 11.4794C7.49005 11.5734 7.25118 11.6668 7.00001 11.6668C6.74884 11.6668 6.50997 11.5734 6.32295 11.4794C6.12394 11.3794 5.91833 11.2449 5.71816 11.0975C5.31708 10.8022 4.88745 10.4177 4.50022 10.046C4.11051 9.67197 3.75189 9.29942 3.49142 9.02129C3.36094 8.88195 3.25448 8.76566 3.18038 8.6839C3.14373 8.64347 3.08446 8.57719 3.06388 8.55418L3.06319 8.55341C2.91127 8.38151 2.87396 8.13624 2.96824 7.9271Z"
+                          fill="#888D93"
+                        />
+                      </svg>
+                    </span>
+                  </th>
+                  <th>
+                    <span className="flex items-center gap-[5px]">
+                      <h2 className="text-[12px] font-[500] leading-[16px] text-[#6D7177]">
+                        STATUS
+                      </h2>
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2.96824 6.07339C3.06252 6.28253 3.27063 6.41699 3.50004 6.41699L10.5 6.41697C10.7294 6.41697 10.9376 6.2825 11.0318 6.07336C11.1261 5.86422 11.0891 5.61923 10.9371 5.44734L10.9359 5.44597C10.9149 5.42243 10.856 5.35665 10.8197 5.31656C10.7456 5.2348 10.6391 5.11851 10.5086 4.97917C10.2482 4.70105 9.88954 4.32851 9.49982 3.95446C9.11258 3.5828 8.68295 3.19831 8.28186 2.90298C8.08169 2.7556 7.87608 2.62104 7.67707 2.52106C7.49005 2.42711 7.25118 2.33366 7.00001 2.33366C6.74884 2.33366 6.50997 2.42711 6.32295 2.52106C6.12394 2.62104 5.91833 2.7556 5.71816 2.90299C5.31708 3.19831 4.88745 3.58281 4.50022 3.95447C4.11051 4.32852 3.75189 4.70107 3.49142 4.9792C3.36094 5.11854 3.25448 5.23483 3.18038 5.31659C3.14372 5.35703 3.08442 5.42334 3.06386 5.44633L3.06319 5.44708C2.91127 5.61898 2.87396 5.86425 2.96824 6.07339Z"
+                          fill="#888D93"
+                        />
+                        <path
+                          d="M2.96824 7.9271C3.06252 7.71796 3.27063 7.5835 3.50004 7.5835L10.5 7.58352C10.7294 7.58352 10.9376 7.71799 11.0318 7.92713C11.1261 8.13627 11.0891 8.38126 10.9371 8.55315L10.9359 8.55449C10.9149 8.57801 10.856 8.64382 10.8197 8.68393C10.7456 8.76569 10.6391 8.88198 10.5086 9.02132C10.2482 9.29944 9.88954 9.67198 9.49982 10.046C9.11258 10.4177 8.68295 10.8022 8.28186 11.0975C8.08169 11.2449 7.87608 11.3794 7.67707 11.4794C7.49005 11.5734 7.25118 11.6668 7.00001 11.6668C6.74884 11.6668 6.50997 11.5734 6.32295 11.4794C6.12394 11.3794 5.91833 11.2449 5.71816 11.0975C5.31708 10.8022 4.88745 10.4177 4.50022 10.046C4.11051 9.67197 3.75189 9.29942 3.49142 9.02129C3.36094 8.88195 3.25448 8.76566 3.18038 8.6839C3.14373 8.64347 3.08446 8.57719 3.06388 8.55418L3.06319 8.55341C2.91127 8.38151 2.87396 8.13624 2.96824 7.9271Z"
+                          fill="#888D93"
+                        />
+                      </svg>
+                    </span>
+                  </th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {/* row 1 */}
+                <tr>
+                  <th>
+                    <Checkbox />
+                  </th>
+                  <td className="">
+                    <div className="flex items-center gap-3">
+                      <div className="avatar">
+                        <div className="">
+                          <span>
+                            <svg
+                              width="40"
+                              height="40"
+                              viewBox="0 0 40 40"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0.5 20C0.5 9.23045 9.23045 0.5 20 0.5C30.7696 0.5 39.5 9.23045 39.5 20C39.5 30.7696 30.7696 39.5 20 39.5C9.23045 39.5 0.5 30.7696 0.5 20Z"
+                                fill="#32B56A"
+                              />
+                              <path
+                                d="M0.5 20C0.5 9.23045 9.23045 0.5 20 0.5C30.7696 0.5 39.5 9.23045 39.5 20C39.5 30.7696 30.7696 39.5 20 39.5C9.23045 39.5 0.5 30.7696 0.5 20Z"
+                                stroke="#32B56A"
+                              />
+                              <path
+                                d="M20 26.6664L20 13.333"
+                                stroke="#1C1D1E"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M24.1666 22.4994C24.1666 22.4994 21.0979 26.666 19.9999 26.666C18.9019 26.666 15.8333 22.4993 15.8333 22.4993"
+                                stroke="#1C1D1E"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="text-[14px] font-[600] leading-[20px] text-[#1C1D1E]">
+                          Watercress Crescent Home
+                        </div>
+                        <div className="text-overflow text-[12px] font-[500] leading-[16px] text-[#4E5257]">
+                          210 Jericho Highway, Comfort Island, Ibadan
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="text-[14px] font-[500] leading-[20px] text-[#1C1D1E]">
+                    Deposit
+                  </td>
+                  <td className="text-[14px] font-[500] leading-[20px] text-[#1C1D1E]">
+                    PD1468373HM1
+                  </td>
+                  <td className="text-[14px] font-[500] leading-[20px] text-[#1C1D1E]">
+                    October 10, 2025
+                  </td>
+                  <td className="text-[14px] font-[500] leading-[20px] text-[#1C1D1E]">
+                    ₦25,000,000
+                  </td>
+
+                  <th>
+                    <button className="flex w-[100px] items-center justify-center rounded-full bg-[#F1FCF5] p-[4px] text-[14px] font-[500] text-[#936DFF]">
+                      <span>
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle cx="8" cy="8" r="3" fill="#32B56A" />
+                        </svg>
+                      </span>
+                      <h3 className="text-[12px] text-[#32B56A]">Collected</h3>
+                    </button>
+                  </th>
+                  <td>
+                    <button className="flex h-[32px] w-[32px] items-center justify-center rounded-[8px]">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5 10C17.5 9.30964 16.9404 8.75 16.25 8.75C15.5596 8.75 15 9.30964 15 10C15 10.6904 15.5596 11.25 16.25 11.25C16.9404 11.25 17.5 10.6904 17.5 10Z"
+                          stroke="#1C1D1E"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          d="M11.25 10C11.25 9.30964 10.6904 8.75 10 8.75C9.30964 8.75 8.75 9.30964 8.75 10C8.75 10.6904 9.30964 11.25 10 11.25C10.6904 11.25 11.25 10.6904 11.25 10Z"
+                          stroke="#1C1D1E"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          d="M5 10C5 9.30964 4.44036 8.75 3.75 8.75C3.05964 8.75 2.5 9.30964 2.5 10C2.5 10.6904 3.05964 11.25 3.75 11.25C4.44036 11.25 5 10.6904 5 10Z"
+                          stroke="#1C1D1E"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                {/* row 2 */}
+                <tr>
+                  <th>
+                    <Checkbox />
+                  </th>
+                  <td className="">
+                    <div className="flex items-center gap-3">
+                      <div className="avatar">
+                        <div className="">
+                          <span>
+                            <svg
+                              width="40"
+                              height="40"
+                              viewBox="0 0 40 40"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0.5 20C0.5 9.23045 9.23045 0.5 20 0.5C30.7696 0.5 39.5 9.23045 39.5 20C39.5 30.7696 30.7696 39.5 20 39.5C9.23045 39.5 0.5 30.7696 0.5 20Z"
+                                fill="#32B56A"
+                              />
+                              <path
+                                d="M0.5 20C0.5 9.23045 9.23045 0.5 20 0.5C30.7696 0.5 39.5 9.23045 39.5 20C39.5 30.7696 30.7696 39.5 20 39.5C9.23045 39.5 0.5 30.7696 0.5 20Z"
+                                stroke="#32B56A"
+                              />
+                              <path
+                                d="M20 26.6664L20 13.333"
+                                stroke="#1C1D1E"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M24.1666 22.4994C24.1666 22.4994 21.0979 26.666 19.9999 26.666C18.9019 26.666 15.8333 22.4993 15.8333 22.4993"
+                                stroke="#1C1D1E"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="text-[14px] font-[600] leading-[20px] text-[#1C1D1E]">
+                          Watercress Crescent Home
+                        </div>
+                        <div className="text-overflow text-[12px] font-[500] leading-[16px] text-[#4E5257]">
+                          210 Jericho Highway, Comfort Island, Ibadan
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="text-[14px] font-[500] leading-[20px] text-[#1C1D1E]">
+                    Deposit
+                  </td>
+                  <td className="text-[14px] font-[500] leading-[20px] text-[#1C1D1E]">
+                    PD1468373HM1
+                  </td>
+                  <td className="text-[14px] font-[500] leading-[20px] text-[#1C1D1E]">
+                    October 10, 2025
+                  </td>
+                  <td className="text-[14px] font-[500] leading-[20px] text-[#1C1D1E]">
+                    ₦25,000,000
+                  </td>
+
+                  <th>
+                    <button className="flex w-[100px] items-center justify-center rounded-full bg-[#FDF3F3] p-[4px] text-[14px] font-[500] text-[#936DFF]">
+                      <span>
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle cx="8" cy="8" r="3" fill="#D84E4E" />
+                        </svg>
+                      </span>
+                      <h3 className="text-[12px] text-[#D84E4E]">Failed</h3>
+                    </button>
+                  </th>
+                  <td>
+                    <button className="flex h-[32px] w-[32px] items-center justify-center rounded-[8px]">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5 10C17.5 9.30964 16.9404 8.75 16.25 8.75C15.5596 8.75 15 9.30964 15 10C15 10.6904 15.5596 11.25 16.25 11.25C16.9404 11.25 17.5 10.6904 17.5 10Z"
+                          stroke="#1C1D1E"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          d="M11.25 10C11.25 9.30964 10.6904 8.75 10 8.75C9.30964 8.75 8.75 9.30964 8.75 10C8.75 10.6904 9.30964 11.25 10 11.25C10.6904 11.25 11.25 10.6904 11.25 10Z"
+                          stroke="#1C1D1E"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          d="M5 10C5 9.30964 4.44036 8.75 3.75 8.75C3.05964 8.75 2.5 9.30964 2.5 10C2.5 10.6904 3.05964 11.25 3.75 11.25C4.44036 11.25 5 10.6904 5 10Z"
+                          stroke="#1C1D1E"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    <Checkbox />
+                  </th>
+                  <td className="">
+                    <div className="flex items-center gap-3">
+                      <div className="avatar">
+                        <div className="">
+                          <span>
+                            <svg
+                              width="40"
+                              height="40"
+                              viewBox="0 0 40 40"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0.5 20C0.5 9.23045 9.23045 0.5 20 0.5C30.7696 0.5 39.5 9.23045 39.5 20C39.5 30.7696 30.7696 39.5 20 39.5C9.23045 39.5 0.5 30.7696 0.5 20Z"
+                                fill="#32B56A"
+                              />
+                              <path
+                                d="M0.5 20C0.5 9.23045 9.23045 0.5 20 0.5C30.7696 0.5 39.5 9.23045 39.5 20C39.5 30.7696 30.7696 39.5 20 39.5C9.23045 39.5 0.5 30.7696 0.5 20Z"
+                                stroke="#32B56A"
+                              />
+                              <path
+                                d="M20 26.6664L20 13.333"
+                                stroke="#1C1D1E"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M24.1666 22.4994C24.1666 22.4994 21.0979 26.666 19.9999 26.666C18.9019 26.666 15.8333 22.4993 15.8333 22.4993"
+                                stroke="#1C1D1E"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="text-[14px] font-[600] leading-[20px] text-[#1C1D1E]">
+                          Watercress Crescent Home
+                        </div>
+                        <div className="text-overflow text-[12px] font-[500] leading-[16px] text-[#4E5257]">
+                          210 Jericho Highway, Comfort Island, Ibadan
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="text-[14px] font-[500] leading-[20px] text-[#1C1D1E]">
+                    Deposit
+                  </td>
+                  <td className="text-[14px] font-[500] leading-[20px] text-[#1C1D1E]">
+                    PD1468373HM1
+                  </td>
+                  <td className="text-[14px] font-[500] leading-[20px] text-[#1C1D1E]">
+                    October 10, 2025
+                  </td>
+                  <td className="text-[14px] font-[500] leading-[20px] text-[#1C1D1E]">
+                    ₦25,000,000
+                  </td>
+
+                  <th>
+                    <button className="flex w-[100px] items-center justify-center rounded-full bg-[#FFFFEA] p-[4px] text-[14px] font-[500] text-[#936DFF]">
+                      <span>
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle cx="8" cy="8" r="3" fill="#FFC107" />
+                        </svg>
+                      </span>
+                      <h3 className="text-[12px] text-[#FFC107]">Pending</h3>
+                    </button>
+                  </th>
+                  <td>
+                    <button className="flex h-[32px] w-[32px] items-center justify-center rounded-[8px]">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5 10C17.5 9.30964 16.9404 8.75 16.25 8.75C15.5596 8.75 15 9.30964 15 10C15 10.6904 15.5596 11.25 16.25 11.25C16.9404 11.25 17.5 10.6904 17.5 10Z"
+                          stroke="#1C1D1E"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          d="M11.25 10C11.25 9.30964 10.6904 8.75 10 8.75C9.30964 8.75 8.75 9.30964 8.75 10C8.75 10.6904 9.30964 11.25 10 11.25C10.6904 11.25 11.25 10.6904 11.25 10Z"
+                          stroke="#1C1D1E"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          d="M5 10C5 9.30964 4.44036 8.75 3.75 8.75C3.05964 8.75 2.5 9.30964 2.5 10C2.5 10.6904 3.05964 11.25 3.75 11.25C4.44036 11.25 5 10.6904 5 10Z"
+                          stroke="#1C1D1E"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      <ExportModal Open={Open} Close={() => setOpen(false)} />
     </>
-  )
-}
+  );
+};
 export default Transaction;

@@ -2,6 +2,7 @@ import favourites from "@/assets/images/Rectangle 2911 (1).png";
 import ContentHeader from "@/components/ContentHeader";
 import Button from "@/components/common/Button";
 const FavouriteLists = () => {
+  
   return (
     <>
       <ContentHeader text="Favourites" path="/favourites/lists" route="/favourites" />

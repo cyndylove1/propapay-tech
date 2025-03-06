@@ -1,6 +1,7 @@
 import BottomIcon from "@/components/common/BottomIcon";
-import Btn from "@/components/common/Btn";
+import Button from "@/components/common/Button";
 import Logo from "@/components/common/Logo";
+import { Link } from "react-router";
 
 const SuccessInformation = () => {
   return (
@@ -9,7 +10,7 @@ const SuccessInformation = () => {
         <Logo className="h-[40px] w-[150px]" />
       </div>
       <div className="">
-        <div className="flex justify-center pt-[10rem]">
+        <div className="flex justify-center pt-[2rem]">
           <svg
             width="182"
             height="125"
@@ -62,16 +63,20 @@ const SuccessInformation = () => {
             and respond shortly.
           </h5>
         </div>
-        <div className="flex justify-center">
-          <Btn
-            text="Continue"
-            type="submit"
-            className="mt-[30px] w-[208px] text-white"
-          />
-        </div>
+        <Link to="/login">
+          <div className="flex justify-center">
+            <Button
+              text="Continue"
+              type="submit"
+              className="mt-[30px] h-[48px] w-[250px] rounded-xl bg-[#12725B] text-white"
+            />
+          </div>
+        </Link>
       </div>
       {/* bottomIcon */}
-      <BottomIcon width={"406"} height={"200"} />
+      <div className="md:flex hidden">
+        <BottomIcon width={"406"} height={"200"} />
+      </div>
     </>
   );
 };

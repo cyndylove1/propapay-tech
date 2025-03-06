@@ -1,4 +1,6 @@
 import { useLocation, useNavigate } from "react-router";
+import ExportModal from "./ExportModal";
+import { useState } from "react";
 interface HeaderProps{
   text: string;
   path: string;
@@ -10,14 +12,15 @@ const ContentHeader: React.FC<HeaderProps> = ({ text, path, route }) => {
   const location = useLocation();
   const isActive = location.pathname === route;
   const Active = location.pathname === path;
+  const [Open, setOpen] = useState<boolean>(false);
 
     return (
       <>
-        <div className="md:flex  flex hidden items-center justify-between p-[20px] ">
+        <div className="flex items-center justify-between p-[20px] ">
           <h2 className="text-[24px] font-[600] leading-[32px] text-[#1C1D1E]">
             {text}
           </h2>
-          <div className="flex items-center gap-4">
+          <div className="md:flex items-center hidden gap-4">
             <button
               className={`flex h-[36px] w-[93px] items-center justify-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] ${isActive ? "bg-[#12725B] text-white" : "bg-white text-[#595D61]"}`}
               onClick={() => navigate(route)}
@@ -150,7 +153,10 @@ const ContentHeader: React.FC<HeaderProps> = ({ text, path, route }) => {
                 Filter
               </h2>
             </button>
-            <button className="flex h-[36px] w-[93px] items-center justify-center gap-[8px] rounded-lg bg-[#12725b]">
+            <button
+              className="flex h-[36px] w-[93px] items-center justify-center gap-[8px] rounded-lg bg-[#12725b]"
+              onClick={() => setOpen(true)}
+            >
               <span>
                 <svg
                   width="18"
@@ -181,6 +187,7 @@ const ContentHeader: React.FC<HeaderProps> = ({ text, path, route }) => {
             </button>
           </div>
         </div>
+        <ExportModal Open={Open} Close={() => setOpen(false)} />
       </>
     );
 }

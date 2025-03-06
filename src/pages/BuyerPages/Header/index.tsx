@@ -52,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({ isCollapsed, setIsCollapsed,  onMenuCli
               />
             </svg>
           </span>
-          <div className="relative hidden h-[40px] w-[160px] items-center rounded-lg border-[1px] border-[#E5E6E8] shadow-sm md:flex">
+          <div className="relative hidden h-[40px] w-[170px] items-center rounded-lg border-[1px] border-[#E5E6E8] shadow-sm md:flex">
             {/* Icon before Select */}
             <span>
               <svg
@@ -347,8 +347,8 @@ const Header: React.FC<HeaderProps> = ({ isCollapsed, setIsCollapsed,  onMenuCli
             </span>
 
             {/* Select Dropdown */}
-            <SelectTag className="border-none bg-transparent pr-8 font-[600]">
-              <option className="text-[14px] font-[600] leading-[20px] text-[#1C1D1E]">
+            <SelectTag className="border-none text-[14px] leading-[20px] text-[#1C1D1E] bg-transparent pr-8 font-[600]">
+              <option className="">
                 Propa Homes
               </option>
               <option>Nigeria</option>

@@ -20,7 +20,7 @@ const Sidebar: React.FC<SidebarProps> = ({
       >
         {/* Logo */}
         <div className="flex h-[72px] items-center justify-between gap-6 border-[1px] border-[#E6E7E7] px-6">
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center justify-center gap-2">
             <span>
               <svg
                 width="40"
@@ -38,7 +38,7 @@ const Sidebar: React.FC<SidebarProps> = ({
               </svg>
             </span>
             {!isCollapsed && (
-              <span className="text-[25px] font-[500] text-[#12725B]">
+              <span className="text-[25px] font-[600] text-[#12725B]">
                 PropaPay
               </span>
             )}
@@ -113,310 +113,6 @@ const Sidebar: React.FC<SidebarProps> = ({
                 </div>
               )}
             </NavLink>
-            <NavLink
-              to="/properties"
-              className={({ isActive }: { isActive: boolean }) =>
-                `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                  isActive ? "font-bold text-white" : "text-[#595D61]"
-                }`
-              }
-            >
-              {({ isActive }: { isActive: boolean }) => (
-                <div className="relative flex items-center w-full">
-                  {/* Green Left Border when Active */}
-                  {isActive && (
-                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
-                  )}
-                  {/* Green Background  */}
-                  <div
-                    className={`flex items-center gap-2 rounded-[8px] px-3 ${
-                      isActive
-                        ? isCollapsed
-                          ? "mx-4 h-[44px] w-[44px] bg-gradient-to-r from-[#12725B] to-[#23A681] text-center"
-                          : "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
-                        : "mx-4 text-[#595D61]"
-                    }`}
-                  >
-                    {/* Icon */}
-                    <span>
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="white"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M1.66666 18.3333L18.3333 18.3333"
-                          stroke={isActive ? "#12725b" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                        />
-                        <path
-                          d="M15 7.5L11.6667 7.5C9.59832 7.5 9.16666 7.93167 9.16666 10L9.16666 18.3333H17.5V10C17.5 7.93167 17.0683 7.5 15 7.5Z"
-                          stroke={isActive ? "#12725b" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.5 18.3333L2.5 18.3333L2.5 4.16663C2.5 2.09829 2.93167 1.66663 5 1.66663L10 1.66663C12.0683 1.66663 12.5 2.09829 12.5 4.16663L12.5 7.49996"
-                          stroke={isActive ? "#12725b" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M2.5 5L5 5M2.5 8.33333H5M2.5 11.6667H5"
-                          stroke={isActive ? "#12725b" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                        />
-                        <path
-                          d="M12.5 10.8333H14.1667M12.5 13.3333H14.1667"
-                          stroke={isActive ? "#12725b" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                        />
-                        <path
-                          d="M13.3333 18.3333L13.3333 15.8333"
-                          stroke={isActive ? "#12725b" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </span>
-
-                    {/* Properties Text */}
-                    <h2 className="text-[14px] font-[600] leading-[20px]">
-                      {!isCollapsed && <span> Properties </span>}
-                    </h2>
-                  </div>
-                </div>
-              )}
-            </NavLink>
-            <NavLink
-              to="/favourites"
-              className={({ isActive }: { isActive: boolean }) =>
-                `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                  isActive ? "font-bold text-white" : "text-[#595D61]"
-                }`
-              }
-            >
-              {({ isActive }: { isActive: boolean }) => (
-                <div className="relative flex items-center w-full">
-                  {/* Green Left Border when Active */}
-                  {isActive && (
-                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
-                  )}
-                  {/* Green Background  */}
-                  <div
-                    className={`flex items-center gap-2 rounded-[8px] px-3 ${
-                      isActive
-                        ? isCollapsed
-                          ? "mx-4 h-[44px] w-[44px] bg-gradient-to-r from-[#12725B] to-[#23A681] text-center"
-                          : "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
-                        : "mx-4 text-[#595D61]"
-                    }`}
-                  >
-                    {/* Icon */}
-                    <span>
-                      <svg
-                        width="20"
-                        height="18"
-                        viewBox="0 0 20 18"
-                        fill="white"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M16.2188 2.32846C13.9841 0.957691 12.0336 1.51009 10.8619 2.39001C10.3815 2.7508 10.1413 2.93119 9.99999 2.93119C9.85866 2.93119 9.61845 2.7508 9.13803 2.39001C7.96634 1.51009 6.01589 0.957691 3.78119 2.32846C0.84838 4.12745 0.184757 10.0624 6.9496 15.0695C8.23809 16.0232 8.88233 16.5 9.99999 16.5C11.1176 16.5 11.7619 16.0232 13.0504 15.0695C19.8152 10.0624 19.1516 4.12745 16.2188 2.32846Z"
-                          stroke={isActive ? "#fff" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                        />
-                      </svg>
-                    </span>
-
-                    {/* Favourites Text */}
-                    <h2 className="text-[14px] font-[600] leading-[20px]">
-                      {!isCollapsed && <span>Favourites</span>}
-                    </h2>
-                  </div>
-                </div>
-              )}
-            </NavLink>
-            <NavLink
-              to="/assets"
-              className={({ isActive }: { isActive: boolean }) =>
-                `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                  isActive ? "font-bold text-white" : "text-[#595D61]"
-                }`
-              }
-            >
-              {({ isActive }: { isActive: boolean }) => (
-                <div className="relative flex items-center w-full">
-                  {/* Green Left Border when Active */}
-                  {isActive && (
-                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
-                  )}
-                  {/* Green Background  */}
-                  <div
-                    className={`flex items-center gap-2 rounded-[8px] px-3 ${
-                      isActive
-                        ? isCollapsed
-                          ? "mx-4 h-[44px] w-[44px] bg-gradient-to-r from-[#12725B] to-[#23A681] text-center"
-                          : "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
-                        : "mx-4 text-[#595D61]"
-                    }`}
-                  >
-                    {/* Icon */}
-                    <span>
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="white"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M6.25 7.54646H13.5625C15.1425 7.54646 15.9325 7.54646 16.5 7.92097C16.7457 8.0831 16.9567 8.29144 17.1208 8.53408C17.5 9.09458 17.5 9.87483 17.5 11.4353C17.5 14.0362 17.5 15.3366 16.868 16.2708C16.5944 16.6752 16.2429 17.0224 15.8334 17.2926C14.8875 17.9168 13.5709 17.9168 10.9375 17.9168H10C6.46447 17.9168 4.6967 17.9168 3.59835 16.832C2.5 15.7473 2.5 14.0013 2.5 10.5094V8.24592C2.5 6.90038 2.5 6.22762 2.78524 5.7228C2.98857 5.36295 3.2892 5.06603 3.65355 4.86521C4.16467 4.5835 4.84585 4.5835 6.2082 4.5835C7.08102 4.5835 7.51742 4.5835 7.89944 4.72498C8.77167 5.04803 9.13134 5.83059 9.52492 6.60803L10 7.54646"
-                          stroke={isActive ? "#fff" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                        />
-                        <path
-                          d="M2.5 2.08344H7.08333C7.89174 2.08344 8.68182 2.05984 9.36558 2.54612C10.2417 3.16918 10.5917 4.33102 11.4677 4.95408C12.1515 5.44036 12.9416 5.41677 13.75 5.41677H17.5"
-                          stroke={isActive ? "#fff" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                        />
-                      </svg>
-                    </span>
-
-                    {/* Assets Text */}
-                    <h2 className="text-[14px] font-[600] leading-[20px]">
-                      {!isCollapsed && <span>Assets</span>}
-                    </h2>
-                  </div>
-                </div>
-              )}
-            </NavLink>
-
-            {/* <NavLink
-            to="/favourites"
-            className={({ isActive }: { isActive: boolean }) =>
-              `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                isActive ? "font-bold text-[#12725b]" : "text-[#414444]"
-              }`
-            }
-          >
-            {({ isActive }: { isActive: boolean }) => (
-              <div className="relative flex items-center justify-between w-full">
-                {isActive && (
-                  <div className="absolute top-0 h-full w-[5px] rounded-[5px] bg-[#12725b]"></div>
-                )}
-
-                <div
-                  className={`ml-2 flex px-4 ${isActive ? "text-[#12725b]" : "text-[#414444]"}`}
-                >
-                  <span>
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M16.2188 3.32846C13.9841 1.95769 12.0336 2.51009 10.8619 3.39001C10.3815 3.7508 10.1413 3.93119 9.99999 3.93119C9.85866 3.93119 9.61845 3.7508 9.13803 3.39001C7.96634 2.51009 6.01589 1.95769 3.78119 3.32846C0.84838 5.12745 0.184757 11.0624 6.9496 16.0695C8.23809 17.0232 8.88233 17.5 9.99999 17.5C11.1176 17.5 11.7619 17.0232 13.0504 16.0695C19.8152 11.0624 19.1516 5.12745 16.2188 3.32846Z"
-                        stroke="#595D61"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                      />
-                    </svg>
-                  </span>
-                  <h2 className="px-4 text-[14px] font-[600] leading-[20px]">
-                    Favourites
-                  </h2>
-                </div>
-
-                <div className="mx-6 flex h-[18px] w-[18px] items-center justify-center rounded-full bg-[#32b56a]">
-                  <h2 className="px-2 text-[12px] font-[600] leading-[16px] text-white">
-                    4
-                  </h2>
-                </div>
-              </div>
-            )}
-          </NavLink> */}
-            <NavLink
-              to="/document"
-              className={({ isActive }: { isActive: boolean }) =>
-                `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                  isActive ? "font-bold text-white" : "text-[#595D61]"
-                }`
-              }
-            >
-              {({ isActive }: { isActive: boolean }) => (
-                <div className="relative flex items-center w-full">
-                  {/* Green Left Border when Active */}
-                  {isActive && (
-                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
-                  )}
-                  {/* Green Background  */}
-                  <div
-                    className={`flex items-center gap-2 rounded-[8px] px-3 ${
-                      isActive
-                        ? isCollapsed
-                          ? "mx-4 h-[44px] w-[44px] bg-gradient-to-r from-[#12725B] to-[#23A681] text-center"
-                          : "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
-                        : "mx-4 text-[#595D61]"
-                    }`}
-                  >
-                    {/* Icon */}
-                    <span>
-                      <svg
-                        width="16"
-                        height="20"
-                        viewBox="0 0 16 20"
-                        fill="white"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M4.66669 14.1665H11.3334"
-                          stroke={isActive ? "#12725b" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M4.66669 10.833H8.00002"
-                          stroke={isActive ? "#12725b" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M8.83334 2.08317V2.49984C8.83334 4.85686 8.83334 6.03537 9.56558 6.7676C10.2978 7.49984 11.4763 7.49984 13.8333 7.49984H14.25M14.6667 8.88055V11.6665C14.6667 14.8092 14.6667 16.3806 13.6904 17.3569C12.7141 18.3332 11.1427 18.3332 8.00001 18.3332C4.85731 18.3332 3.28596 18.3332 2.30965 17.3569C1.33334 16.3806 1.33334 14.8092 1.33334 11.6665V7.87971C1.33334 5.17552 1.33334 3.82343 2.07174 2.90761C2.22091 2.7226 2.38944 2.55407 2.57445 2.4049C3.49027 1.6665 4.84236 1.6665 7.54655 1.6665C8.13449 1.6665 8.42846 1.6665 8.69766 1.76151C8.75365 1.78127 8.80854 1.80401 8.8621 1.82963C9.11964 1.9528 9.32751 2.16067 9.74325 2.57641L13.6904 6.52353C14.1721 7.00524 14.4129 7.2461 14.5398 7.55239C14.6667 7.85867 14.6667 8.1993 14.6667 8.88055Z"
-                          stroke={isActive ? "#12725b" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </span>
-
-                    {/* Document Text */}
-                    <h2 className="text-[14px] font-[600] leading-[20px]">
-                      {!isCollapsed && <span>Document</span>}
-                    </h2>
-                  </div>
-                </div>
-              )}
-            </NavLink>
-          </div>
-          <div>
-            <h2 className="px-3 py-[10px] text-[12px] font-[600] leading-[16px] text-[#84898C]">
-              FINANCE
-            </h2>
             <NavLink
               to="/wallet"
               className={({ isActive }: { isActive: boolean }) =>
@@ -624,6 +320,265 @@ const Sidebar: React.FC<SidebarProps> = ({
                 </div>
               )}
             </NavLink>
+            
+            <NavLink
+              to="/document"
+              className={({ isActive }: { isActive: boolean }) =>
+                `relative flex h-[40px] w-[250px] items-center gap-4 ${
+                  isActive ? "font-bold text-white" : "text-[#595D61]"
+                }`
+              }
+            >
+              {({ isActive }: { isActive: boolean }) => (
+                <div className="relative flex items-center w-full">
+                  {/* Green Left Border when Active */}
+                  {isActive && (
+                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
+                  )}
+                  {/* Green Background  */}
+                  <div
+                    className={`flex items-center gap-2 rounded-[8px] px-3 ${
+                      isActive
+                        ? isCollapsed
+                          ? "mx-4 h-[44px] w-[44px] bg-gradient-to-r from-[#12725B] to-[#23A681] text-center"
+                          : "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
+                        : "mx-4 text-[#595D61]"
+                    }`}
+                  >
+                    {/* Icon */}
+                    <span>
+                      <svg
+                        width="16"
+                        height="20"
+                        viewBox="0 0 16 20"
+                        fill="white"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M4.66669 14.1665H11.3334"
+                          stroke={isActive ? "#12725b" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M4.66669 10.833H8.00002"
+                          stroke={isActive ? "#12725b" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M8.83334 2.08317V2.49984C8.83334 4.85686 8.83334 6.03537 9.56558 6.7676C10.2978 7.49984 11.4763 7.49984 13.8333 7.49984H14.25M14.6667 8.88055V11.6665C14.6667 14.8092 14.6667 16.3806 13.6904 17.3569C12.7141 18.3332 11.1427 18.3332 8.00001 18.3332C4.85731 18.3332 3.28596 18.3332 2.30965 17.3569C1.33334 16.3806 1.33334 14.8092 1.33334 11.6665V7.87971C1.33334 5.17552 1.33334 3.82343 2.07174 2.90761C2.22091 2.7226 2.38944 2.55407 2.57445 2.4049C3.49027 1.6665 4.84236 1.6665 7.54655 1.6665C8.13449 1.6665 8.42846 1.6665 8.69766 1.76151C8.75365 1.78127 8.80854 1.80401 8.8621 1.82963C9.11964 1.9528 9.32751 2.16067 9.74325 2.57641L13.6904 6.52353C14.1721 7.00524 14.4129 7.2461 14.5398 7.55239C14.6667 7.85867 14.6667 8.1993 14.6667 8.88055Z"
+                          stroke={isActive ? "#12725b" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+
+                    {/* Document Text */}
+                    <h2 className="text-[14px] font-[600] leading-[20px]">
+                      {!isCollapsed && <span>Document</span>}
+                    </h2>
+                  </div>
+                </div>
+              )}
+            </NavLink>
+          </div>
+          <div>
+            <h2 className="px-4 py-[10px] text-[12px] font-[600] leading-[16px] text-[#84898C]">
+              MORE
+            </h2>
+            <NavLink
+              to="/properties"
+              className={({ isActive }: { isActive: boolean }) =>
+                `relative flex h-[40px] w-[250px] items-center gap-4 ${
+                  isActive ? "font-bold text-white" : "text-[#595D61]"
+                }`
+              }
+            >
+              {({ isActive }: { isActive: boolean }) => (
+                <div className="relative flex items-center w-full">
+                  {/* Green Left Border when Active */}
+                  {isActive && (
+                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
+                  )}
+                  {/* Green Background  */}
+                  <div
+                    className={`flex items-center gap-2 rounded-[8px] px-3 ${
+                      isActive
+                        ? isCollapsed
+                          ? "mx-4 h-[44px] w-[44px] bg-gradient-to-r from-[#12725B] to-[#23A681] text-center"
+                          : "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
+                        : "mx-4 text-[#595D61]"
+                    }`}
+                  >
+                    {/* Icon */}
+                    <span>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="white"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.66666 18.3333L18.3333 18.3333"
+                          stroke={isActive ? "#12725b" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M15 7.5L11.6667 7.5C9.59832 7.5 9.16666 7.93167 9.16666 10L9.16666 18.3333H17.5V10C17.5 7.93167 17.0683 7.5 15 7.5Z"
+                          stroke={isActive ? "#12725b" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12.5 18.3333L2.5 18.3333L2.5 4.16663C2.5 2.09829 2.93167 1.66663 5 1.66663L10 1.66663C12.0683 1.66663 12.5 2.09829 12.5 4.16663L12.5 7.49996"
+                          stroke={isActive ? "#12725b" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M2.5 5L5 5M2.5 8.33333H5M2.5 11.6667H5"
+                          stroke={isActive ? "#12725b" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M12.5 10.8333H14.1667M12.5 13.3333H14.1667"
+                          stroke={isActive ? "#12725b" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M13.3333 18.3333L13.3333 15.8333"
+                          stroke={isActive ? "#12725b" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+
+                    {/* Properties Text */}
+                    <h2 className="text-[14px] font-[600] leading-[20px]">
+                      {!isCollapsed && <span> Properties </span>}
+                    </h2>
+                  </div>
+                </div>
+              )}
+            </NavLink>
+            <NavLink
+              to="/favourites"
+              className={({ isActive }: { isActive: boolean }) =>
+                `relative flex h-[40px] w-[250px] items-center gap-4 ${
+                  isActive ? "font-bold text-white" : "text-[#595D61]"
+                }`
+              }
+            >
+              {({ isActive }: { isActive: boolean }) => (
+                <div className="relative flex items-center w-full">
+                  {/* Green Left Border when Active */}
+                  {isActive && (
+                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
+                  )}
+                  {/* Green Background  */}
+                  <div
+                    className={`flex items-center gap-2 rounded-[8px] px-3 ${
+                      isActive
+                        ? isCollapsed
+                          ? "mx-4 h-[44px] w-[44px] bg-gradient-to-r from-[#12725B] to-[#23A681] text-center"
+                          : "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
+                        : "mx-4 text-[#595D61]"
+                    }`}
+                  >
+                    {/* Icon */}
+                    <span>
+                      <svg
+                        width="20"
+                        height="18"
+                        viewBox="0 0 20 18"
+                        fill="white"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16.2188 2.32846C13.9841 0.957691 12.0336 1.51009 10.8619 2.39001C10.3815 2.7508 10.1413 2.93119 9.99999 2.93119C9.85866 2.93119 9.61845 2.7508 9.13803 2.39001C7.96634 1.51009 6.01589 0.957691 3.78119 2.32846C0.84838 4.12745 0.184757 10.0624 6.9496 15.0695C8.23809 16.0232 8.88233 16.5 9.99999 16.5C11.1176 16.5 11.7619 16.0232 13.0504 15.0695C19.8152 10.0624 19.1516 4.12745 16.2188 2.32846Z"
+                          stroke={isActive ? "#fff" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    </span>
+
+                    {/* Favourites Text */}
+                    <h2 className="text-[14px] font-[600] leading-[20px]">
+                      {!isCollapsed && <span>Favourites</span>}
+                    </h2>
+                  </div>
+                </div>
+              )}
+            </NavLink>
+            <NavLink
+              to="/assets"
+              className={({ isActive }: { isActive: boolean }) =>
+                `relative flex h-[40px] w-[250px] items-center gap-4 ${
+                  isActive ? "font-bold text-white" : "text-[#595D61]"
+                }`
+              }
+            >
+              {({ isActive }: { isActive: boolean }) => (
+                <div className="relative flex items-center w-full">
+                  {/* Green Left Border when Active */}
+                  {isActive && (
+                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
+                  )}
+                  {/* Green Background  */}
+                  <div
+                    className={`flex items-center gap-2 rounded-[8px] px-3 ${
+                      isActive
+                        ? isCollapsed
+                          ? "mx-4 h-[44px] w-[44px] bg-gradient-to-r from-[#12725B] to-[#23A681] text-center"
+                          : "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
+                        : "mx-4 text-[#595D61]"
+                    }`}
+                  >
+                    {/* Icon */}
+                    <span>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="white"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.25 7.54646H13.5625C15.1425 7.54646 15.9325 7.54646 16.5 7.92097C16.7457 8.0831 16.9567 8.29144 17.1208 8.53408C17.5 9.09458 17.5 9.87483 17.5 11.4353C17.5 14.0362 17.5 15.3366 16.868 16.2708C16.5944 16.6752 16.2429 17.0224 15.8334 17.2926C14.8875 17.9168 13.5709 17.9168 10.9375 17.9168H10C6.46447 17.9168 4.6967 17.9168 3.59835 16.832C2.5 15.7473 2.5 14.0013 2.5 10.5094V8.24592C2.5 6.90038 2.5 6.22762 2.78524 5.7228C2.98857 5.36295 3.2892 5.06603 3.65355 4.86521C4.16467 4.5835 4.84585 4.5835 6.2082 4.5835C7.08102 4.5835 7.51742 4.5835 7.89944 4.72498C8.77167 5.04803 9.13134 5.83059 9.52492 6.60803L10 7.54646"
+                          stroke={isActive ? "#fff" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M2.5 2.08344H7.08333C7.89174 2.08344 8.68182 2.05984 9.36558 2.54612C10.2417 3.16918 10.5917 4.33102 11.4677 4.95408C12.1515 5.44036 12.9416 5.41677 13.75 5.41677H17.5"
+                          stroke={isActive ? "#fff" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    </span>
+
+                    {/* Assets Text */}
+                    <h2 className="text-[14px] font-[600] leading-[20px]">
+                      {!isCollapsed && <span>My Assets</span>}
+                    </h2>
+                  </div>
+                </div>
+              )}
+            </NavLink>
+            
             <NavLink
               to="/insight"
               className={({ isActive }: { isActive: boolean }) =>
@@ -1048,306 +1003,6 @@ const Sidebar: React.FC<SidebarProps> = ({
               )}
             </NavLink>
             <NavLink
-              to="/properties"
-              className={({ isActive }: { isActive: boolean }) =>
-                `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                  isActive ? "font-bold text-white" : "text-[#595D61]"
-                }`
-              }
-              onClick={toggleSidebar}
-            >
-              {({ isActive }: { isActive: boolean }) => (
-                <div className="relative flex items-center w-full">
-                  {/* Green Left Border when Active */}
-                  {isActive && (
-                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
-                  )}
-                  {/* Green Background  */}
-                  <div
-                    className={`flex items-center gap-2 rounded-[8px] px-3 ${
-                      isActive
-                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
-                        : "mx-4 text-[#595D61]"
-                    }`}
-                  >
-                    {/* Icon */}
-                    <span>
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="white"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M1.66666 18.3333L18.3333 18.3333"
-                          stroke={isActive ? "#12725b" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                        />
-                        <path
-                          d="M15 7.5L11.6667 7.5C9.59832 7.5 9.16666 7.93167 9.16666 10L9.16666 18.3333H17.5V10C17.5 7.93167 17.0683 7.5 15 7.5Z"
-                          stroke={isActive ? "#12725b" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.5 18.3333L2.5 18.3333L2.5 4.16663C2.5 2.09829 2.93167 1.66663 5 1.66663L10 1.66663C12.0683 1.66663 12.5 2.09829 12.5 4.16663L12.5 7.49996"
-                          stroke={isActive ? "#12725b" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M2.5 5L5 5M2.5 8.33333H5M2.5 11.6667H5"
-                          stroke={isActive ? "#12725b" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                        />
-                        <path
-                          d="M12.5 10.8333H14.1667M12.5 13.3333H14.1667"
-                          stroke={isActive ? "#12725b" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                        />
-                        <path
-                          d="M13.3333 18.3333L13.3333 15.8333"
-                          stroke={isActive ? "#12725b" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </span>
-
-                    {/* Properties Text */}
-                    <h2 className="text-[14px] font-[600] leading-[20px]">
-                      Properties
-                    </h2>
-                  </div>
-                </div>
-              )}
-            </NavLink>
-            <NavLink
-              to="/favourites"
-              className={({ isActive }: { isActive: boolean }) =>
-                `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                  isActive ? "font-bold text-white" : "text-[#595D61]"
-                }`
-              }
-              onClick={toggleSidebar}
-            >
-              {({ isActive }: { isActive: boolean }) => (
-                <div className="relative flex items-center w-full">
-                  {/* Green Left Border when Active */}
-                  {isActive && (
-                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
-                  )}
-                  {/* Green Background  */}
-                  <div
-                    className={`flex items-center gap-2 rounded-[8px] px-3 ${
-                      isActive
-                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
-                        : "mx-4 text-[#595D61]"
-                    }`}
-                  >
-                    {/* Icon */}
-                    <span>
-                      <svg
-                        width="20"
-                        height="18"
-                        viewBox="0 0 20 18"
-                        fill="white"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M16.2188 2.32846C13.9841 0.957691 12.0336 1.51009 10.8619 2.39001C10.3815 2.7508 10.1413 2.93119 9.99999 2.93119C9.85866 2.93119 9.61845 2.7508 9.13803 2.39001C7.96634 1.51009 6.01589 0.957691 3.78119 2.32846C0.84838 4.12745 0.184757 10.0624 6.9496 15.0695C8.23809 16.0232 8.88233 16.5 9.99999 16.5C11.1176 16.5 11.7619 16.0232 13.0504 15.0695C19.8152 10.0624 19.1516 4.12745 16.2188 2.32846Z"
-                          stroke={isActive ? "#fff" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                        />
-                      </svg>
-                    </span>
-
-                    {/* Favourites Text */}
-                    <h2 className="text-[14px] font-[600] leading-[20px]">
-                      Favourites
-                    </h2>
-                  </div>
-                </div>
-              )}
-            </NavLink>
-            <NavLink
-              to="/assets"
-              className={({ isActive }: { isActive: boolean }) =>
-                `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                  isActive ? "font-bold text-white" : "text-[#595D61]"
-                }`
-              }
-              onClick={toggleSidebar}
-            >
-              {({ isActive }: { isActive: boolean }) => (
-                <div className="relative flex items-center w-full">
-                  {/* Green Left Border when Active */}
-                  {isActive && (
-                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
-                  )}
-                  {/* Green Background  */}
-                  <div
-                    className={`flex items-center gap-2 rounded-[8px] px-3 ${
-                      isActive
-                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
-                        : "mx-4 text-[#595D61]"
-                    }`}
-                  >
-                    {/* Icon */}
-                    <span>
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="white"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M6.25 7.54646H13.5625C15.1425 7.54646 15.9325 7.54646 16.5 7.92097C16.7457 8.0831 16.9567 8.29144 17.1208 8.53408C17.5 9.09458 17.5 9.87483 17.5 11.4353C17.5 14.0362 17.5 15.3366 16.868 16.2708C16.5944 16.6752 16.2429 17.0224 15.8334 17.2926C14.8875 17.9168 13.5709 17.9168 10.9375 17.9168H10C6.46447 17.9168 4.6967 17.9168 3.59835 16.832C2.5 15.7473 2.5 14.0013 2.5 10.5094V8.24592C2.5 6.90038 2.5 6.22762 2.78524 5.7228C2.98857 5.36295 3.2892 5.06603 3.65355 4.86521C4.16467 4.5835 4.84585 4.5835 6.2082 4.5835C7.08102 4.5835 7.51742 4.5835 7.89944 4.72498C8.77167 5.04803 9.13134 5.83059 9.52492 6.60803L10 7.54646"
-                          stroke={isActive ? "#fff" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                        />
-                        <path
-                          d="M2.5 2.08344H7.08333C7.89174 2.08344 8.68182 2.05984 9.36558 2.54612C10.2417 3.16918 10.5917 4.33102 11.4677 4.95408C12.1515 5.44036 12.9416 5.41677 13.75 5.41677H17.5"
-                          stroke={isActive ? "#fff" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                        />
-                      </svg>
-                    </span>
-
-                    {/* Assets Text */}
-                    <h2 className="text-[14px] font-[600] leading-[20px]">
-                      Assets
-                    </h2>
-                  </div>
-                </div>
-              )}
-            </NavLink>
-
-            {/* <NavLink
-            to="/favourites"
-            className={({ isActive }: { isActive: boolean }) =>
-              `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                isActive ? "font-bold text-[#12725b]" : "text-[#414444]"
-              }`
-            }
-          >
-            {({ isActive }: { isActive: boolean }) => (
-              <div className="relative flex items-center justify-between w-full">
-                {isActive && (
-                  <div className="absolute top-0 h-full w-[5px] rounded-[5px] bg-[#12725b]"></div>
-                )}
-
-                <div
-                  className={`ml-2 flex px-4 ${isActive ? "text-[#12725b]" : "text-[#414444]"}`}
-                >
-                  <span>
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M16.2188 3.32846C13.9841 1.95769 12.0336 2.51009 10.8619 3.39001C10.3815 3.7508 10.1413 3.93119 9.99999 3.93119C9.85866 3.93119 9.61845 3.7508 9.13803 3.39001C7.96634 2.51009 6.01589 1.95769 3.78119 3.32846C0.84838 5.12745 0.184757 11.0624 6.9496 16.0695C8.23809 17.0232 8.88233 17.5 9.99999 17.5C11.1176 17.5 11.7619 17.0232 13.0504 16.0695C19.8152 11.0624 19.1516 5.12745 16.2188 3.32846Z"
-                        stroke="#595D61"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                      />
-                    </svg>
-                  </span>
-                  <h2 className="px-4 text-[14px] font-[600] leading-[20px]">
-                    Favourites
-                  </h2>
-                </div>
-
-                <div className="mx-6 flex h-[18px] w-[18px] items-center justify-center rounded-full bg-[#32b56a]">
-                  <h2 className="px-2 text-[12px] font-[600] leading-[16px] text-white">
-                    4
-                  </h2>
-                </div>
-              </div>
-            )}
-          </NavLink> */}
-            <NavLink
-              to="/document"
-              className={({ isActive }: { isActive: boolean }) =>
-                `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                  isActive ? "font-bold text-white" : "text-[#595D61]"
-                }`
-              }
-              onClick={toggleSidebar}
-            >
-              {({ isActive }: { isActive: boolean }) => (
-                <div className="relative flex items-center w-full">
-                  {/* Green Left Border when Active */}
-                  {isActive && (
-                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
-                  )}
-                  {/* Green Background  */}
-                  <div
-                    className={`flex items-center gap-2 rounded-[8px] px-3 ${
-                      isActive
-                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
-                        : "mx-4 text-[#595D61]"
-                    }`}
-                  >
-                    {/* Icon */}
-                    <span>
-                      <svg
-                        width="16"
-                        height="20"
-                        viewBox="0 0 16 20"
-                        fill="white"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M4.66669 14.1665H11.3334"
-                          stroke={isActive ? "#12725b" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M4.66669 10.833H8.00002"
-                          stroke={isActive ? "#12725b" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M8.83334 2.08317V2.49984C8.83334 4.85686 8.83334 6.03537 9.56558 6.7676C10.2978 7.49984 11.4763 7.49984 13.8333 7.49984H14.25M14.6667 8.88055V11.6665C14.6667 14.8092 14.6667 16.3806 13.6904 17.3569C12.7141 18.3332 11.1427 18.3332 8.00001 18.3332C4.85731 18.3332 3.28596 18.3332 2.30965 17.3569C1.33334 16.3806 1.33334 14.8092 1.33334 11.6665V7.87971C1.33334 5.17552 1.33334 3.82343 2.07174 2.90761C2.22091 2.7226 2.38944 2.55407 2.57445 2.4049C3.49027 1.6665 4.84236 1.6665 7.54655 1.6665C8.13449 1.6665 8.42846 1.6665 8.69766 1.76151C8.75365 1.78127 8.80854 1.80401 8.8621 1.82963C9.11964 1.9528 9.32751 2.16067 9.74325 2.57641L13.6904 6.52353C14.1721 7.00524 14.4129 7.2461 14.5398 7.55239C14.6667 7.85867 14.6667 8.1993 14.6667 8.88055Z"
-                          stroke={isActive ? "#12725b" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </span>
-
-                    {/* Document Text */}
-                    <h2 className="text-[14px] font-[600] leading-[20px]">
-                      Document
-                    </h2>
-                  </div>
-                </div>
-              )}
-            </NavLink>
-          </div>
-          <div>
-            <h2 className="px-3 py-[10px] text-[12px] font-[600] leading-[16px] text-[#84898C]">
-              FINANCE
-            </h2>
-            <NavLink
               to="/wallet"
               className={({ isActive }: { isActive: boolean }) =>
                 `relative flex h-[40px] w-[250px] items-center gap-4 ${
@@ -1551,6 +1206,261 @@ const Sidebar: React.FC<SidebarProps> = ({
                 </div>
               )}
             </NavLink>
+            
+            <NavLink
+              to="/document"
+              className={({ isActive }: { isActive: boolean }) =>
+                `relative flex h-[40px] w-[250px] items-center gap-4 ${
+                  isActive ? "font-bold text-white" : "text-[#595D61]"
+                }`
+              }
+              onClick={toggleSidebar}
+            >
+              {({ isActive }: { isActive: boolean }) => (
+                <div className="relative flex items-center w-full">
+                  {/* Green Left Border when Active */}
+                  {isActive && (
+                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
+                  )}
+                  {/* Green Background  */}
+                  <div
+                    className={`flex items-center gap-2 rounded-[8px] px-3 ${
+                      isActive
+                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
+                        : "mx-4 text-[#595D61]"
+                    }`}
+                  >
+                    {/* Icon */}
+                    <span>
+                      <svg
+                        width="16"
+                        height="20"
+                        viewBox="0 0 16 20"
+                        fill="white"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M4.66669 14.1665H11.3334"
+                          stroke={isActive ? "#12725b" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M4.66669 10.833H8.00002"
+                          stroke={isActive ? "#12725b" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M8.83334 2.08317V2.49984C8.83334 4.85686 8.83334 6.03537 9.56558 6.7676C10.2978 7.49984 11.4763 7.49984 13.8333 7.49984H14.25M14.6667 8.88055V11.6665C14.6667 14.8092 14.6667 16.3806 13.6904 17.3569C12.7141 18.3332 11.1427 18.3332 8.00001 18.3332C4.85731 18.3332 3.28596 18.3332 2.30965 17.3569C1.33334 16.3806 1.33334 14.8092 1.33334 11.6665V7.87971C1.33334 5.17552 1.33334 3.82343 2.07174 2.90761C2.22091 2.7226 2.38944 2.55407 2.57445 2.4049C3.49027 1.6665 4.84236 1.6665 7.54655 1.6665C8.13449 1.6665 8.42846 1.6665 8.69766 1.76151C8.75365 1.78127 8.80854 1.80401 8.8621 1.82963C9.11964 1.9528 9.32751 2.16067 9.74325 2.57641L13.6904 6.52353C14.1721 7.00524 14.4129 7.2461 14.5398 7.55239C14.6667 7.85867 14.6667 8.1993 14.6667 8.88055Z"
+                          stroke={isActive ? "#12725b" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+
+                    {/* Document Text */}
+                    <h2 className="text-[14px] font-[600] leading-[20px]">
+                      Document
+                    </h2>
+                  </div>
+                </div>
+              )}
+            </NavLink>
+          </div>
+          <div>
+            <h2 className="px-3 py-[10px] text-[12px] font-[600] leading-[16px] text-[#84898C]">
+              FINANCE
+            </h2>
+            <NavLink
+              to="/properties"
+              className={({ isActive }: { isActive: boolean }) =>
+                `relative flex h-[40px] w-[250px] items-center gap-4 ${
+                  isActive ? "font-bold text-white" : "text-[#595D61]"
+                }`
+              }
+              onClick={toggleSidebar}
+            >
+              {({ isActive }: { isActive: boolean }) => (
+                <div className="relative flex items-center w-full">
+                  {/* Green Left Border when Active */}
+                  {isActive && (
+                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
+                  )}
+                  {/* Green Background  */}
+                  <div
+                    className={`flex items-center gap-2 rounded-[8px] px-3 ${
+                      isActive
+                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
+                        : "mx-4 text-[#595D61]"
+                    }`}
+                  >
+                    {/* Icon */}
+                    <span>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="white"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.66666 18.3333L18.3333 18.3333"
+                          stroke={isActive ? "#12725b" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M15 7.5L11.6667 7.5C9.59832 7.5 9.16666 7.93167 9.16666 10L9.16666 18.3333H17.5V10C17.5 7.93167 17.0683 7.5 15 7.5Z"
+                          stroke={isActive ? "#12725b" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12.5 18.3333L2.5 18.3333L2.5 4.16663C2.5 2.09829 2.93167 1.66663 5 1.66663L10 1.66663C12.0683 1.66663 12.5 2.09829 12.5 4.16663L12.5 7.49996"
+                          stroke={isActive ? "#12725b" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M2.5 5L5 5M2.5 8.33333H5M2.5 11.6667H5"
+                          stroke={isActive ? "#12725b" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M12.5 10.8333H14.1667M12.5 13.3333H14.1667"
+                          stroke={isActive ? "#12725b" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M13.3333 18.3333L13.3333 15.8333"
+                          stroke={isActive ? "#12725b" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+
+                    {/* Properties Text */}
+                    <h2 className="text-[14px] font-[600] leading-[20px]">
+                      Properties
+                    </h2>
+                  </div>
+                </div>
+              )}
+            </NavLink>
+            <NavLink
+              to="/favourites"
+              className={({ isActive }: { isActive: boolean }) =>
+                `relative flex h-[40px] w-[250px] items-center gap-4 ${
+                  isActive ? "font-bold text-white" : "text-[#595D61]"
+                }`
+              }
+              onClick={toggleSidebar}
+            >
+              {({ isActive }: { isActive: boolean }) => (
+                <div className="relative flex items-center w-full">
+                  {/* Green Left Border when Active */}
+                  {isActive && (
+                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
+                  )}
+                  {/* Green Background  */}
+                  <div
+                    className={`flex items-center gap-2 rounded-[8px] px-3 ${
+                      isActive
+                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
+                        : "mx-4 text-[#595D61]"
+                    }`}
+                  >
+                    {/* Icon */}
+                    <span>
+                      <svg
+                        width="20"
+                        height="18"
+                        viewBox="0 0 20 18"
+                        fill="white"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16.2188 2.32846C13.9841 0.957691 12.0336 1.51009 10.8619 2.39001C10.3815 2.7508 10.1413 2.93119 9.99999 2.93119C9.85866 2.93119 9.61845 2.7508 9.13803 2.39001C7.96634 1.51009 6.01589 0.957691 3.78119 2.32846C0.84838 4.12745 0.184757 10.0624 6.9496 15.0695C8.23809 16.0232 8.88233 16.5 9.99999 16.5C11.1176 16.5 11.7619 16.0232 13.0504 15.0695C19.8152 10.0624 19.1516 4.12745 16.2188 2.32846Z"
+                          stroke={isActive ? "#fff" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    </span>
+
+                    {/* Favourites Text */}
+                    <h2 className="text-[14px] font-[600] leading-[20px]">
+                      Favourites
+                    </h2>
+                  </div>
+                </div>
+              )}
+            </NavLink>
+            <NavLink
+              to="/assets"
+              className={({ isActive }: { isActive: boolean }) =>
+                `relative flex h-[40px] w-[250px] items-center gap-4 ${
+                  isActive ? "font-bold text-white" : "text-[#595D61]"
+                }`
+              }
+              onClick={toggleSidebar}
+            >
+              {({ isActive }: { isActive: boolean }) => (
+                <div className="relative flex items-center w-full">
+                  {/* Green Left Border when Active */}
+                  {isActive && (
+                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
+                  )}
+                  {/* Green Background  */}
+                  <div
+                    className={`flex items-center gap-2 rounded-[8px] px-3 ${
+                      isActive
+                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
+                        : "mx-4 text-[#595D61]"
+                    }`}
+                  >
+                    {/* Icon */}
+                    <span>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="white"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.25 7.54646H13.5625C15.1425 7.54646 15.9325 7.54646 16.5 7.92097C16.7457 8.0831 16.9567 8.29144 17.1208 8.53408C17.5 9.09458 17.5 9.87483 17.5 11.4353C17.5 14.0362 17.5 15.3366 16.868 16.2708C16.5944 16.6752 16.2429 17.0224 15.8334 17.2926C14.8875 17.9168 13.5709 17.9168 10.9375 17.9168H10C6.46447 17.9168 4.6967 17.9168 3.59835 16.832C2.5 15.7473 2.5 14.0013 2.5 10.5094V8.24592C2.5 6.90038 2.5 6.22762 2.78524 5.7228C2.98857 5.36295 3.2892 5.06603 3.65355 4.86521C4.16467 4.5835 4.84585 4.5835 6.2082 4.5835C7.08102 4.5835 7.51742 4.5835 7.89944 4.72498C8.77167 5.04803 9.13134 5.83059 9.52492 6.60803L10 7.54646"
+                          stroke={isActive ? "#fff" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M2.5 2.08344H7.08333C7.89174 2.08344 8.68182 2.05984 9.36558 2.54612C10.2417 3.16918 10.5917 4.33102 11.4677 4.95408C12.1515 5.44036 12.9416 5.41677 13.75 5.41677H17.5"
+                          stroke={isActive ? "#fff" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    </span>
+
+                    {/* Assets Text */}
+                    <h2 className="text-[14px] font-[600] leading-[20px]">
+                      My Assets
+                    </h2>
+                  </div>
+                </div>
+              )}
+            </NavLink>
+            
             <NavLink
               to="/insight"
               className={({ isActive }: { isActive: boolean }) =>
