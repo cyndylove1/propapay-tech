@@ -60,7 +60,7 @@ function App() {
       {showPreloader ? (
         <Preloader
           onComplete={() => setLoading(false)}
-          className="flex items-center justify-center h-screen"
+          className="flex h-screen items-center justify-center"
         />
       ) : (
         <Routes>
@@ -87,7 +87,7 @@ function App() {
             <Route path="/properties" element={<Properties />} />
             <Route path="/properties/lists" element={<PropertiesLists />} />
             <Route path="/properties/view" element={<PropertiesView />} />
-            <Route path="/favourites" element={<Favourites />}/>
+            <Route path="/favourites" element={<Favourites />} />
             <Route path="/favourites/lists" element={<FavouriteLists />} />
             <Route path="/assets" element={<Assets />} />
             <Route path="/assets/lists" element={<AssetLists />} />
@@ -98,7 +98,7 @@ function App() {
               path="/wallet-transaction"
               element={<WalletTransactions />}
             />
-            <Route path="/document" element={<Document/>} />
+            <Route path="/document" element={<Document />} />
             <Route path="/insight" element={<Insight />} />
             <Route path="/flex-payment" element={<Instalment />} />
             <Route path="/settings" element={<Settings />}>
@@ -112,8 +112,8 @@ function App() {
                 element={<NotificationSettings />}
               />
               <Route path="/settings/preference" element={<Preference />} />
-              </Route>
-              <Route path="/integration" element={<Integration/>} />
+            </Route>
+            <Route path="/integration" element={<Integration />} />
             <Route path="/help-center" element={<HelpCenter />}>
               <Route path="/help-center/buy" element={<BuyLand />} />
             </Route>

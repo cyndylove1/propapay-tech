@@ -14,7 +14,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   return (
     <>
       <div
-        className={`hidden flex-col border-r border-[#e6e7e7] transition-all duration-300 lg:flex ${
+        className={`hidden flex-col bg-[#f7f8f9] border-r border-[#e6e7e7] transition-all duration-300 lg:flex ${
           isCollapsed ? "w-[80px]" : "w-[250px]"
         }`}
       >
@@ -38,7 +38,7 @@ const Sidebar: React.FC<SidebarProps> = ({
               </svg>
             </span>
             {!isCollapsed && (
-              <span className="text-[25px] font-[600] text-[#12725B]">
+              <span className="text-[25px] text-[#12725B]">
                 PropaPay
               </span>
             )}
@@ -844,7 +844,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         </div>
 
         {/* User Info */}
-        <div className="flex items-center justify-center border-t-[1px] border-[#e6e7e7]">
+        <div className="flex items-center border-t-[1px] border-[#e6e7e7]">
           <div className="mx-4 flex h-[72px] gap-3 py-[20px]">
             <div className="relative">
               <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-[#12725b] font-[600] text-white">
@@ -889,13 +889,13 @@ const Sidebar: React.FC<SidebarProps> = ({
 
       {/* Mobile sidebar */}
       <div
-        className={`fixed left-0 top-0 z-50 h-screen w-[250px] overflow-y-auto bg-white shadow-md transition-transform duration-300 lg:hidden ${
+        className={`fixed bg-[#f7f8f9] left-0 top-0 z-50 w-[250px] overflow-y-auto bg-white shadow-md transition-transform duration-300 lg:hidden ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } flex flex-col justify-between`}
       >
         {/* Logo */}
         <div className="flex h-[72px] items-center justify-between gap-6 border-[1px] border-[#E6E7E7] px-4">
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center justify-center gap-2">
             <span>
               <svg
                 width="40"
@@ -1274,7 +1274,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           </div>
           <div>
             <h2 className="px-3 py-[10px] text-[12px] font-[600] leading-[16px] text-[#84898C]">
-              FINANCE
+              MORE
             </h2>
             <NavLink
               to="/properties"
@@ -1723,7 +1723,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 
         {/* User Info */}
         <div className="flex items-center border-t-[1px] border-[#e6e7e7]">
-          <div className="mx-4 flex h-[72px] gap-3 py-[20px]">
+          <div className="mx-4 flex gap-3 py-[20px]">
             <div className="relative">
               <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-[#12725b] font-[600] text-white">
                 JO

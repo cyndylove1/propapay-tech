@@ -1,12 +1,14 @@
+import SelectTag from "./common/SelectTag";
+
 const RegisterFooter = () => {
   return (
     <>
-      <footer className=" flex items-center justify-between w-full py-4 mt-auto text-[12px] text-[#595D61]">
+      <footer className="mt-auto flex w-full bg-white items-center justify-between py-4 text-[12px] text-[#595D61]">
         {/* Left Side - Copyright */}
         <p>© 2025 PropaPay - All Rights Reserved</p>
 
         {/* Right Side - Language Selector */}
-        <div className="flex items-center gap-2 cursor-pointer">
+        <div className="md:flex gap-[2px] relative items-center rounded-lg">
           <span>
             <svg
               width="20"
@@ -44,24 +46,10 @@ const RegisterFooter = () => {
               />
             </svg>
           </span>
-          <select name="" id="" className="outline-none appearance-none">
-            <option value="">ENG</option>
-          </select>
-          <svg
-            width="12"
-            height="8"
-            viewBox="0 0 12 8"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1 1.5L6 6.5L11 1.5"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <SelectTag className="border-none pr-8 bg-transparent text-[14px] font-[500] leading-[20px] text-[#4E5257]">
+            <option className="">ENG</option>
+            <option>SPANISH</option>
+          </SelectTag>
         </div>
       </footer>
       <div></div>

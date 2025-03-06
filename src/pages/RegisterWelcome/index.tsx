@@ -6,12 +6,13 @@ import Button from "@/components/common/Button";
 import Line from "@/components/Line";
 import { Link } from "react-router";
 import BottomIcon from "@/components/common/BottomIcon";
+import SelectTag from "@/components/common/SelectTag";
 
 const RegisterWelcome = () => {
   return (
     <>
       <Header />
-      <div className="mx-4 bg-white mt-[5rem] flex justify-center">
+      <div className="mx-4 mt-[5rem] flex justify-center bg-white">
         <div className="mb-[5rem] h-[644px] w-full rounded-xl border-[1px] border-[#CFD1D2] md:w-[500px]">
           <span className="flex justify-center pt-[30px]">
             <svg
@@ -332,7 +333,7 @@ const RegisterWelcome = () => {
             </svg>
           </span>
           <div className="py-[30px] text-center">
-            <h2 className="md:text-[36px] text-[25px] font-[600] leading-[48px] tracking-tight text-[#1C1D1E]">
+            <h2 className="text-[25px] font-[600] leading-[48px] tracking-tight text-[#1C1D1E] md:text-[36px]">
               Sign up for Propa Homes
             </h2>
             <h3 className="pt-2 text-[13px] font-[500] leading-[24px] text-[#595D61] md:text-[16px]">
@@ -384,28 +385,11 @@ const RegisterWelcome = () => {
                         />
                       </svg>
                     </span>
-                    <select className="h-[48px] w-full appearance-none rounded-xl border-[1px] border-[#CFD1D2] bg-white px-10 py-3 text-[#1C1D1E] outline-none focus:border-[#23A681]">
-                      <option value="" className="text-[#84898C]">
-                        Select a country...
-                      </option>
-                      <option value="">Nigeria</option>
-                    </select>
-                    <svg
-                      className="right-3 top-4 absolute w-4 h-4 text-gray-500"
-                      width="12"
-                      height="8"
-                      viewBox="0 0 12 8"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M11 1.50004C11 1.50004 7.31756 6.49999 5.99996 6.5C4.68237 6.50001 1 1.5 1 1.5"
-                        stroke="#84898C"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
+                    <SelectTag className="h-[48px] w-full appearance-none rounded-xl border-[1px] border-[#CFD1D2] bg-white px-4 py-3 text-[#1C1D1E] text-[#84898C] outline-none focus:border-[#23A681]">
+                      <option className=""> Select a country...</option>
+                      <option>Nigeria</option>
+                    </SelectTag>
+                    
                   </div>
                 </div>
               </div>

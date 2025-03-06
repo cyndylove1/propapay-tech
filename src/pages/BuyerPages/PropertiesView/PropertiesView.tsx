@@ -10,7 +10,7 @@ import avatar from "@/assets/images/Avatar.png";
 const PropertiesView: React.FC = () => {
   return (
     <>
-      <div className="flex items-center justify-between px-4 py-[20px] ">
+      <div className="flex items-center justify-between px-4 py-[20px]">
         <div>
           <h2 className="text-[24px] font-[600] leading-[32px] text-[#1C1D1E]">
             Property Details
@@ -61,8 +61,8 @@ const PropertiesView: React.FC = () => {
           </h2>
         </button>
       </div>
-      <div className="lg:flex-row flex flex-col mx-4">
-        <div className="lg:w-[700px] w-full rounded-2xl border-[1px] border-[#E0E0E0]">
+      <div className="md:grid-cols-2 grid grid-cols-1 gap-3 mx-4">
+        <div className="w-full rounded-2xl border-[1px] border-[#E0E0E0]">
           {/* carousel */}
           <div className="p-4">
             <Swiper
@@ -77,7 +77,7 @@ const PropertiesView: React.FC = () => {
                   .fill({})
                   .map(() => (
                     <SwiperSlide>
-                      <img src={properties} alt="" />{" "}
+                      <img src={properties} alt="" className="w-full" />{" "}
                     </SwiperSlide>
                   ))}
               </div>
@@ -85,7 +85,7 @@ const PropertiesView: React.FC = () => {
           </div>
           <div className="flex justify-between px-4">
             <div>
-              <h2 className="md:text-[24px] text-[15px] font-[600] leading-[32px] text-[#1C1D1E]">
+              <h2 className="text-[15px] font-[600] leading-[32px] text-[#1C1D1E] md:text-[24px]">
                 Diamond Manco Apartment
               </h2>
               <h6 className="text-[14px] font-[500] leading-[20px] text-[#434547]">
@@ -197,20 +197,19 @@ const PropertiesView: React.FC = () => {
             </h2>
             <h6 className="text-[14px] font-[400] leading-[20px] text-[#2E2E2E]">
               Hayfield Ashton Place Residences at Willow Brook Valley" evokes an
-              elegant and serene residential <br /> community. It suggests a
-              picturesque neighborhood with modern yet charming homes, possibly{" "}
-              <br /> surrounded by lush greenery, rolling landscapes, or a
-              tranquil brook. The name conveys a sense of <br /> sophistication,
-              comfort, and exclusivity, ideal for those seeking a refined living
-              experience in a scenic <br />
-              setting.
+              elegant and serene residential community. It suggests a
+              picturesque neighborhood with modern yet charming homes, possibly
+              surrounded by lush greenery, rolling landscapes, or a tranquil
+              brook. The name conveys a sense of sophistication, comfort, and
+              exclusivity, ideal for those seeking a refined living experience
+              in a scenic setting.
             </h6>
           </div>
-          <div className="mx-4 mt-[30px] lg:h-[144px] rounded-lg border-[1px] border-[#E0E0E0] bg-[#fafafa]">
-            <h4 className="px-4 py-[10px] text-[18px] font-[500] leading-[24px] text-[#2E2E2E]">
+          <div className="mx-4 mt-[30px] rounded-lg border-[1px] border-[#E0E0E0] bg-[#fafafa]">
+            <h4 className="px-4 pt-[10px] text-[16px] font-[500] leading-[24px] text-[#2E2E2E]">
               Property Facilities
             </h4>
-            <div className="grid lg:grid-cols-4 grid-cols-2 md:grid-cols-3 gap-[16px] pl-2">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-2 gap-[16px] p-4">
               <div className="flex items-center gap-2">
                 <span>
                   <svg
@@ -596,9 +595,9 @@ const PropertiesView: React.FC = () => {
             Location
           </h2>
         </div>
-        <div className="lg:w-[270px] w-full mt-4 lg:mt-0 rounded-xl border-[1px] border-[#E5E6E8]">
-          <div className="m-2 rounded-xl border-[1px] border-[#F5F6F6] bg-[#f5f6f6] p-2">
-            <div className="ml-[10px]">
+        <div className="mt-4 md:mt-0 w-full rounded-xl border-[1px] border-[#E5E6E8] lg:mt-0">
+          <div className="m-4 rounded-xl border-[1px] border-[#F5F6F6] bg-[#f5f6f6] p-4">
+            <div className="">
               <h2 className="py-[10px] text-[18px] font-[500] leading-[24px] text-[#2E2E2E]">
                 Property Pricing
               </h2>
@@ -628,7 +627,7 @@ const PropertiesView: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="mx-2 mt-[20px] rounded-xl border-[1px] border-[#F5F6F6] bg-[#f5f6f6] px-[10px]">
+          <div className="mx-4 mt-[20px] rounded-xl border-[1px] border-[#F5F6F6] bg-[#f5f6f6] p-4">
             <h2 className="py-[10px] text-[18px] font-[500] leading-[24px] text-[#2E2E2E]">
               Agent Details
             </h2>
@@ -643,7 +642,7 @@ const PropertiesView: React.FC = () => {
                 </h6>
               </div>
             </div>
-            <div className="mt-[10px] flex items-center justify-center gap-[12px] pb-[20px]">
+            <div className="pt-4  flex items-center gap-[12px] pb-[20px]">
               <button className="flex h-[40px] w-[138px] items-center justify-center gap-[4px] rounded-md border-[1px] border-[#294CD6] bg-[#12725B]">
                 <span>
                   <svg
@@ -713,7 +712,7 @@ const PropertiesView: React.FC = () => {
               </button>
             </div>
           </div>
-          <div className="mx-2 mt-[20px] rounded-xl bg-[#f5f6f6] px-2 pb-[20px]">
+          <div className="m-4 mt-[20px] rounded-xl bg-[#f5f6f6] p-4 pb-[20px]">
             <h2 className="py-[10px] text-[18px] font-[500] leading-[24px] text-[#2E2E2E]">
               Inspection Times
             </h2>
@@ -723,7 +722,7 @@ const PropertiesView: React.FC = () => {
             <h6 className="pt-2 text-[12px] font-[400] leading-[16px] text-[#727272]">
               Monday-Friday at 10:00am-5:00PM
             </h6>
-            <button className="mt-[10px] flex h-[40px] w-full items-center justify-center gap-[5px] rounded-md border-[1px] border-[#294CD6] bg-[#12725B]">
+            <button className="mt-[10px] flex h-[40px] w-full items-center justify-center gap-2 rounded-md border-[1px] border-[#294CD6] bg-[#12725B]">
               <span>
                 <svg
                   width="15"
