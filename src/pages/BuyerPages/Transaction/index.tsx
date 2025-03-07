@@ -149,7 +149,7 @@ const Transaction: React.FC = () => {
                     />
                   </svg>
                 </span>
-                <SelectTag className="border-none pr-8 text-[14px] font-[500] leading-[20px] text-[#4E5257]">
+                <SelectTag className="border-none w-full pr-8 text-[14px] font-[500] leading-[20px] text-[#4E5257]">
                   <option className="">Last 30 Days</option>
                   <option>Last 30 Days</option>
                 </SelectTag>
@@ -210,7 +210,7 @@ const Transaction: React.FC = () => {
                   Filter
                 </h3>
               </button>
-              <div className="relative hidden items-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] p-[8px] shadow-sm dark:bg-[#fff] md:flex">
+              <div className="relative items-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] p-[8px] shadow-sm dark:bg-[#fff] flex">
                 <span className="">
                   <svg
                     width="20"
@@ -256,7 +256,7 @@ const Transaction: React.FC = () => {
                     />
                   </svg>
                 </span>
-                <SelectTag className="border-none bg-transparent pr-8 text-[14px] font-[500] leading-[20px] text-[#4E5257]">
+                <SelectTag className="border-none bg-transparent w-full pr-8 text-[14px] font-[500] leading-[20px] text-[#4E5257]">
                   <option className="">Sort By</option>
                   <option>Sort By</option>
                 </SelectTag>

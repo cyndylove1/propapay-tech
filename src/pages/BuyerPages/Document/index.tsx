@@ -150,7 +150,7 @@ const Document: React.FC = () => {
                     />
                   </svg>
                 </span>
-                <SelectTag className="border-none bg-transparent pr-8 text-[14px] font-[500] leading-[20px] text-[#4E5257]">
+                <SelectTag className="border-none bg-transparent pr-8 text-[14px] w-full font-[500] leading-[20px] text-[#4E5257]">
                   <option className="">Last 30 Days</option>
                   <option>Last 30 Days</option>
                 </SelectTag>
@@ -257,7 +257,7 @@ const Document: React.FC = () => {
                     />
                   </svg>
                 </span>
-                <SelectTag className="border-none bg-transparent pr-8 text-[14px] font-[500] leading-[20px] text-[#4E5257]">
+                <SelectTag className="border-none w-full bg-transparent pr-8 text-[14px] font-[500] leading-[20px] text-[#4E5257]">
                   <option className="">Sort By</option>
                   <option>Sort By</option>
                 </SelectTag>

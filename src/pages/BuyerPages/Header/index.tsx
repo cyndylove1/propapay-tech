@@ -72,7 +72,7 @@ const Header: React.FC<HeaderProps> = ({
               />
             </svg>
           </span>
-          <div className="relative hidden h-[40px] w-[170px] items-center rounded-lg border-[1px] border-[#E5E6E8] shadow-sm md:flex dark:bg-white">
+          <div className="relative hidden h-[40px] w-[170px] items-center rounded-lg border-[1px] border-[#E5E6E8] shadow-sm flex dark:bg-white md:flex">
             {/* Icon before Select */}
             <span>
               <svg
