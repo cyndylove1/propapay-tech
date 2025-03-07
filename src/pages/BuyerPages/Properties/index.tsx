@@ -11,11 +11,11 @@ const Properties = () => {
         route="/properties"
       />
       {/* content */}
-      <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 gap-6 p-[20px]">
+      <div className="grid h-[1000px] gap-6 p-[20px] md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 dark:bg-[#111827]">
         {Array(6)
           .fill({})
           .map(() => (
-            <div className="relative h-[460px] rounded-xl border-[1px] border-[#E5E6E8] p-2 shadow-md">
+            <div className="relative h-[460px] rounded-xl border-[1px] border-[#E5E6E8] p-2 shadow-md dark:bg-[#1F2937]">
               {/* Image Container */}
               <img
                 src={favourites}
@@ -97,10 +97,10 @@ const Properties = () => {
                 </span>
               </div>
               <div className="px-2 py-4">
-                <h2 className="text-[18px] font-[600] leading-[24px] text-[#1C1D1E]">
+                <h2 className="text-[18px] font-[600] leading-[24px] text-[#1C1D1E] dark:text-[#595D61] dark:text-[#c4c7cd]">
                   Watercress Crescent Home
                 </h2>
-                <h5 className="pt-2 text-[14px] font-[500] leading-[20px] text-[#595D61]">
+                <h5 className="pt-2 text-[14px] font-[500] leading-[20px] text-[#595D61] dark:text-[#c4c7cd]">
                   210 Jericho Highway, Comfort Island, Ibadan
                 </h5>
               </div>
@@ -142,7 +142,7 @@ const Properties = () => {
                       />
                     </svg>
                   </span>
-                  <h6 className="text-[14px] font-[500] leading-[20px] text-[#595D61]">
+                  <h6 className="text-[14px] font-[500] leading-[20px] text-[#595D61] dark:text-[#c4c7cd]">
                     4 Beds
                   </h6>
                 </div>
@@ -185,7 +185,7 @@ const Properties = () => {
                       />
                     </svg>
                   </span>
-                  <h6 className="text-[14px] font-[500] leading-[20px] text-[#595D61]">
+                  <h6 className="text-[14px] font-[500] leading-[20px] text-[#595D61] dark:text-[#c4c7cd]">
                     2 Bathrooms
                   </h6>
                 </div>
@@ -221,7 +221,7 @@ const Properties = () => {
                       />
                     </svg>
                   </span>
-                  <h6 className="text-[14px] font-[500] leading-[20px] text-[#595D61]">
+                  <h6 className="text-[14px] font-[500] leading-[20px] text-[#595D61] dark:text-[#c4c7cd]">
                     600 m2
                   </h6>
                 </div>

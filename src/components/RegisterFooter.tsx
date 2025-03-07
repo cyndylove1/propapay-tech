@@ -3,7 +3,7 @@ import SelectTag from "./common/SelectTag";
 const RegisterFooter = () => {
   return (
     <>
-      <footer className="mt-auto flex w-full bg-white items-center justify-between py-4 text-[12px] text-[#595D61]">
+      <footer className="mt-auto flex w-full items-center justify-between py-4 text-[12px] text-[#595D61]">
         {/* Left Side - Copyright */}
         <p>© 2025 PropaPay - All Rights Reserved</p>
 

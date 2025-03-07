@@ -39,7 +39,7 @@ const SignUp: React.FC = () => {
     <>
       <div className="md:grid-cols-2 md:mr-4 md:ml-0 grid h-screen grid-cols-1 mx-4">
        <Cover />
-        <div className="h-full bg-white">
+        <div className="h-full">
           <RegisterHeader />
           <div className=" flex justify-center">
             <div className="pt-[50px] xl:w-[480px] w-full ">

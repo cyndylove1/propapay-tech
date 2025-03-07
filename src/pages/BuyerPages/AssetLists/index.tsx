@@ -5,11 +5,11 @@ const AssetLists = () => {
   return (
     <>
       <ContentHeader text="My Assets" path="/assets/lists" route="/assets" />
-      <div>
+      <div className="h-[1200px] dark:bg-[#111827]">
         {Array(3)
           .fill({})
           .map(() => (
-            <div className="relative mx-4 mb-6 md:flex items-start gap-4 rounded-xl border-[1px] border-[#E5E6E8] p-2 shadow-md hidden">
+            <div className="relative mx-4 mb-6 hidden items-start gap-4 rounded-xl border-[1px] border-[#E5E6E8] p-2 shadow-md md:flex dark:bg-[#1F2937]">
               {/* Image Section */}
               <div className="relative w-full">
                 <img
@@ -26,10 +26,10 @@ const AssetLists = () => {
               <div className="flex flex-col w-full">
                 {/* Title & Address */}
                 <div className="pt-4">
-                  <h3 className="text-[20px] font-[600] leading-[28px] text-[#1C1D1E]">
+                  <h3 className="text-[20px] font-[600] leading-[28px] text-[#1C1D1E] dark:text-[#c4c7cd]">
                     Watercress Crescent Home
                   </h3>
-                  <p className="pt-2 text-[16px] font-[500] leading-[24px] text-[#595D61]">
+                  <p className="pt-2 text-[16px] font-[500] leading-[24px] text-[#595D61] dark:text-[#c4c7cd]">
                     210 Jericho Highway, Comfort Island, Ibadan
                   </p>
                 </div>
@@ -73,7 +73,7 @@ const AssetLists = () => {
                         />
                       </svg>
                     </span>
-                    <h6 className="text-[16px] font-[500] leading-[24px] text-[#595D61]">
+                    <h6 className="text-[16px] font-[500] leading-[24px] text-[#595D61] dark:text-[#c4c7cd]">
                       4 Beds
                     </h6>
                   </div>
@@ -116,7 +116,7 @@ const AssetLists = () => {
                         />
                       </svg>
                     </span>
-                    <h6 className="text-[16px] font-[500] leading-[24px] text-[#595D61]">
+                    <h6 className="text-[16px] font-[500] leading-[24px] text-[#595D61] dark:text-[#c4c7cd]">
                       2 Bathrooms
                     </h6>
                   </div>
@@ -152,7 +152,7 @@ const AssetLists = () => {
                         />
                       </svg>
                     </span>
-                    <h6 className="text-[16px] font-[500] leading-[24px] text-[#595D61]">
+                    <h6 className="text-[16px] font-[500] leading-[24px] text-[#595D61] dark:text-[#c4c7cd]">
                       600 m2
                     </h6>
                   </div>

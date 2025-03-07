@@ -5,12 +5,16 @@ const FavouriteLists = () => {
   
   return (
     <>
-      <ContentHeader text="Favourites" path="/favourites/lists" route="/favourites" />
-      <div>
+      <ContentHeader
+        text="Favourites"
+        path="/favourites/lists"
+        route="/favourites"
+      />
+      <div className="h-[1200px] dark:bg-[#111827]">
         {Array(3)
           .fill({})
           .map(() => (
-            <div className="relative mx-4 mb-6 lg:flex hidden items-start gap-4 rounded-xl border-[1px] border-[#E5E6E8] p-2 shadow-md">
+            <div className="relative mx-4 mb-6 hidden items-start gap-4 rounded-xl border-[1px] border-[#E5E6E8] p-2 shadow-md lg:flex dark:bg-[#1F2937]">
               {/* Image Section */}
               <div className="relative w-full">
                 <img
@@ -27,10 +31,10 @@ const FavouriteLists = () => {
               <div className="flex flex-col w-full">
                 {/* Title & Address */}
                 <div className="pt-4">
-                  <h3 className="text-[20px] font-[600] leading-[28px] text-[#1C1D1E]">
+                  <h3 className="text-[20px] font-[600] leading-[28px] text-[#1C1D1E] dark:text-[#c4c7cd]">
                     Watercress Crescent Home
                   </h3>
-                  <p className="pt-2 text-[16px] font-[500] leading-[24px] text-[#595D61]">
+                  <p className="pt-2 text-[16px] font-[500] leading-[24px] text-[#595D61] dark:text-[#c4c7cd]">
                     210 Jericho Highway, Comfort Island, Ibadan
                   </p>
                 </div>
@@ -74,7 +78,7 @@ const FavouriteLists = () => {
                         />
                       </svg>
                     </span>
-                    <h6 className="text-[16px] font-[500] leading-[24px] text-[#595D61]">
+                    <h6 className="text-[16px] font-[500] leading-[24px] text-[#595D61] dark:text-[#c4c7cd]">
                       4 Beds
                     </h6>
                   </div>
@@ -117,7 +121,7 @@ const FavouriteLists = () => {
                         />
                       </svg>
                     </span>
-                    <h6 className="text-[16px] font-[500] leading-[24px] text-[#595D61]">
+                    <h6 className="text-[16px] font-[500] leading-[24px] text-[#595D61] dark:text-[#c4c7cd]">
                       2 Bathrooms
                     </h6>
                   </div>
@@ -153,7 +157,7 @@ const FavouriteLists = () => {
                         />
                       </svg>
                     </span>
-                    <h6 className="text-[16px] font-[500] leading-[24px] text-[#595D61]">
+                    <h6 className="text-[16px] font-[500] leading-[24px] text-[#595D61] dark:text-[#c4c7cd]">
                       600 m2
                     </h6>
                   </div>
@@ -185,11 +189,11 @@ const FavouriteLists = () => {
                   >
                     <path
                       d="M0 22C0 9.84974 9.84974 0 22 0C34.1503 0 44 9.84974 44 22C44 34.1503 34.1503 44 22 44C9.84974 44 0 34.1503 0 22Z"
-                      stroke="#E5E6E8"
+                      fill="#FDF3F3"
                     />
                     <path
                       d="M15.4542 14.796C17.9383 13.2722 20.1668 13.8795 21.5131 14.8905C21.7346 15.0568 21.8866 15.1707 21.9998 15.2475C22.1129 15.1707 22.2649 15.0568 22.4864 14.8905C23.8327 13.8795 26.0612 13.2722 28.5454 14.796C30.2631 15.8496 31.2296 18.0505 30.8904 20.5793C30.5496 23.1202 28.905 25.9941 25.422 28.5721C24.2125 29.4678 23.3248 30.1253 21.9998 30.1253C20.6747 30.1253 19.787 29.4678 18.5775 28.5721C15.0945 25.9941 13.4499 23.1202 13.1091 20.5793C12.7699 18.0505 13.7365 15.8496 15.4542 14.796Z"
-                      stroke="#12725B"
+                      fill="#D84E4E"
                     />
                   </svg>
                 </span>

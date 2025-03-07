@@ -13,7 +13,7 @@ const Checkbox = () => {
         {isChecked ? (
           <PiCheckSquareFill className="h-[20px] w-[20px] text-[#12725b]" />
         ) : (
-          <BiSquareRounded className="h-[20px] w-[20px] text-[#1C1D1E1F]" />
+          <BiSquareRounded className="h-[20px] w-[20px] text-[#1C1D1E1F] dark:text-[#c4c7cd]" />
         )}
       </div>
     </>

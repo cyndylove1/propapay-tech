@@ -20,7 +20,7 @@ const SelectTag: React.FC<SelectTagProps> = ({
       <select
         value={value}
         onChange={onChange}
-        className={`appearance-none border-[1px] border-[#cfd2d1] focus:outline-none ${className}`}
+        className={`appearance-none border-[1px] border-[#cfd2d1] focus:outline-none bg-transparent ${className}`}
       >
         {children}
       </select>

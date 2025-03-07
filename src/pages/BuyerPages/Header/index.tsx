@@ -1,6 +1,9 @@
 import { RiMenuLine } from "react-icons/ri";
+import { MdOutlineLightMode } from "react-icons/md";
+import { BsMoon } from "react-icons/bs";
 import SelectTag from "@/components/common/SelectTag";
 import SearchBar from "@/components/SearchBar";
+import { useEffect, useState } from "react";
 
 interface HeaderProps {
   isCollapsed: boolean;
@@ -8,12 +11,29 @@ interface HeaderProps {
   onMenuClick: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ isCollapsed, setIsCollapsed,  onMenuClick  }) => {
+const Header: React.FC<HeaderProps> = ({
+  isCollapsed,
+  setIsCollapsed,
+  onMenuClick,
+}) => {
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+  const handleThemeSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
     <>
-      <div className="flex h-[72px] w-full items-center justify-between border-b-[1px] border-[#E5E6E8] bg-white px-4">
+      <div className="flex h-[72px] w-full items-center justify-between border-b-[1px] border-[#E5E6E8] bg-white px-4 dark:bg-[#1F2937]">
         <div
-          className="flex text-[30px] text-[#1C1D1E] lg:hidden"
+          className="flex text-[30px] text-[#1C1D1E] lg:hidden dark:text-[#c4c7cd]"
           onClick={onMenuClick}
         >
           <RiMenuLine />
@@ -23,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({ isCollapsed, setIsCollapsed,  onMenuCli
             onClick={() => {
               setIsCollapsed(!isCollapsed);
             }}
-            className="cursor-pointer"
+            className="cursor-pointer text-[#1C1D1E] dark:text-[#c4c7cd]"
           >
             <svg
               width="24"
@@ -34,25 +54,25 @@ const Header: React.FC<HeaderProps> = ({ isCollapsed, setIsCollapsed,  onMenuCli
             >
               <path
                 d="M2 12C2 8.31087 2 6.4663 2.81382 5.15877C3.1149 4.67502 3.48891 4.25427 3.91891 3.91554C5.08116 3 6.72077 3 10 3H14C17.2792 3 18.9188 3 20.0811 3.91554C20.5111 4.25427 20.8851 4.67502 21.1862 5.15877C22 6.4663 22 8.31087 22 12C22 15.6891 22 17.5337 21.1862 18.8412C20.8851 19.325 20.5111 19.7457 20.0811 20.0845C18.9188 21 17.2792 21 14 21H10C6.72077 21 5.08116 21 3.91891 20.0845C3.48891 19.7457 3.1149 19.325 2.81382 18.8412C2 17.5337 2 15.6891 2 12Z"
-                stroke="#1C1D1E"
+                stroke="currentColor"
                 stroke-width="1.5"
               />
               <path
                 d="M9.5 3L9.5 21"
-                stroke="#1C1D1E"
+                stroke="currentColor"
                 stroke-width="1.5"
                 stroke-linejoin="round"
               />
               <path
                 d="M5 7H6M5 10H6"
-                stroke="#1C1D1E"
+                stroke="currentColor"
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
             </svg>
           </span>
-          <div className="relative hidden h-[40px] w-[170px] items-center rounded-lg border-[1px] border-[#E5E6E8] shadow-sm md:flex">
+          <div className="relative hidden h-[40px] w-[170px] items-center rounded-lg border-[1px] border-[#E5E6E8] shadow-sm md:flex dark:bg-white">
             {/* Icon before Select */}
             <span>
               <svg
@@ -347,10 +367,8 @@ const Header: React.FC<HeaderProps> = ({ isCollapsed, setIsCollapsed,  onMenuCli
             </span>
 
             {/* Select Dropdown */}
-            <SelectTag className="border-none text-[14px] leading-[20px] text-[#1C1D1E] bg-transparent pr-8 font-[600]">
-              <option className="">
-                Propa Homes
-              </option>
+            <SelectTag className="border-none bg-transparent pr-8 text-[14px] font-[600] leading-[20px] text-[#1C1D1E]">
+              <option className="">Propa Homes</option>
               <option>Nigeria</option>
             </SelectTag>
           </div>
@@ -358,30 +376,22 @@ const Header: React.FC<HeaderProps> = ({ isCollapsed, setIsCollapsed,  onMenuCli
             <SearchBar placeholder="Search..." className="w-27 h-[36px" />
           </div>
         </div>
-        {/* Left Section - Dropdown */}
 
         {/* Right Section - Icons */}
         <div className="flex items-center gap-6 text-gray-500">
           {/* moon */}
-          <span>
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M17.9166 11.7319C16.9169 12.2657 15.7751 12.5683 14.5626 12.5683C10.6242 12.5683 7.43158 9.37565 7.43158 5.4373C7.43158 4.2248 7.73419 3.08299 8.26801 2.08325C4.72302 2.91407 2.08331 6.09586 2.08331 9.89419C2.08331 14.3248 5.67506 17.9166 10.1057 17.9166C13.904 17.9166 17.0858 15.2769 17.9166 11.7319Z"
-                stroke="#595D61"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
+          <span
+            onClick={handleThemeSwitch}
+            className="cursor-pointer text-[#4E5257] dark:text-[#c4c7cd]"
+          >
+            {theme === "dark" ? (
+              <MdOutlineLightMode size={20} />
+            ) : (
+              <BsMoon size={16} />
+            )}
           </span>
           {/* bell */}
-          <span>
+          <span className="cursor-pointer text-[#4E5257] dark:text-[#c4c7cd]">
             <svg
               width="20"
               height="20"
@@ -391,14 +401,14 @@ const Header: React.FC<HeaderProps> = ({ isCollapsed, setIsCollapsed,  onMenuCli
             >
               <path
                 d="M2.10825 12.3081C1.93104 13.4698 2.72331 14.2761 3.69336 14.678C7.41232 16.2186 12.5876 16.2186 16.3066 14.678C17.2766 14.2761 18.0689 13.4698 17.8917 12.3081C17.7828 11.5942 17.2443 10.9997 16.8453 10.4192C16.3227 9.64947 16.2708 8.80994 16.2707 7.91675C16.2707 4.46497 13.4632 1.66675 9.99998 1.66675C6.53675 1.66675 3.72925 4.46497 3.72925 7.91675C3.72917 8.80994 3.67725 9.64947 3.15465 10.4192C2.75568 10.9997 2.21716 11.5942 2.10825 12.3081Z"
-                stroke="#595D61"
+                stroke="currentColor"
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
               <path
                 d="M6.66663 15.8335C7.0487 17.2712 8.39624 18.3335 9.99996 18.3335C11.6037 18.3335 12.9512 17.2712 13.3333 15.8335"
-                stroke="#595D61"
+                stroke="currentColor"
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -406,7 +416,7 @@ const Header: React.FC<HeaderProps> = ({ isCollapsed, setIsCollapsed,  onMenuCli
             </svg>
           </span>
           {/* grid */}
-          <span>
+          <span className="cursor-pointer text-[#4E5257] dark:text-[#c4c7cd]">
             <svg
               width="20"
               height="20"
@@ -416,22 +426,22 @@ const Header: React.FC<HeaderProps> = ({ isCollapsed, setIsCollapsed,  onMenuCli
             >
               <path
                 d="M1.66669 15.0001C1.66669 13.7164 1.66669 13.0745 1.95563 12.603C2.11731 12.3392 2.33913 12.1174 2.60296 11.9557C3.07447 11.6667 3.71632 11.6667 5.00002 11.6667C6.28372 11.6667 6.92557 11.6667 7.39708 11.9557C7.66091 12.1174 7.88273 12.3392 8.04441 12.603C8.33335 13.0745 8.33335 13.7164 8.33335 15.0001C8.33335 16.2838 8.33335 16.9256 8.04441 17.3971C7.88273 17.661 7.66091 17.8828 7.39708 18.0445C6.92557 18.3334 6.28372 18.3334 5.00002 18.3334C3.71632 18.3334 3.07447 18.3334 2.60296 18.0445C2.33913 17.8828 2.11731 17.661 1.95563 17.3971C1.66669 16.9256 1.66669 16.2838 1.66669 15.0001Z"
-                stroke="#595D61"
+                stroke="currentColor"
                 stroke-width="1.5"
               />
               <path
                 d="M11.6667 15.0001C11.6667 13.7164 11.6667 13.0745 11.9556 12.603C12.1173 12.3392 12.3391 12.1174 12.603 11.9557C13.0745 11.6667 13.7163 11.6667 15 11.6667C16.2837 11.6667 16.9256 11.6667 17.3971 11.9557C17.6609 12.1174 17.8827 12.3392 18.0444 12.603C18.3334 13.0745 18.3334 13.7164 18.3334 15.0001C18.3334 16.2838 18.3334 16.9256 18.0444 17.3971C17.8827 17.661 17.6609 17.8828 17.3971 18.0445C16.9256 18.3334 16.2837 18.3334 15 18.3334C13.7163 18.3334 13.0745 18.3334 12.603 18.0445C12.3391 17.8828 12.1173 17.661 11.9556 17.3971C11.6667 16.9256 11.6667 16.2838 11.6667 15.0001Z"
-                stroke="#595D61"
+                stroke="currentColor"
                 stroke-width="1.5"
               />
               <path
                 d="M1.66669 5.00008C1.66669 3.71638 1.66669 3.07453 1.95563 2.60303C2.11731 2.33919 2.33913 2.11737 2.60296 1.95569C3.07447 1.66675 3.71632 1.66675 5.00002 1.66675C6.28372 1.66675 6.92557 1.66675 7.39708 1.95569C7.66091 2.11737 7.88273 2.33919 8.04441 2.60303C8.33335 3.07453 8.33335 3.71638 8.33335 5.00008C8.33335 6.28378 8.33335 6.92563 8.04441 7.39714C7.88273 7.66097 7.66091 7.8828 7.39708 8.04447C6.92557 8.33341 6.28372 8.33341 5.00002 8.33341C3.71632 8.33341 3.07447 8.33341 2.60296 8.04447C2.33913 7.8828 2.11731 7.66097 1.95563 7.39714C1.66669 6.92563 1.66669 6.28378 1.66669 5.00008Z"
-                stroke="#595D61"
+                stroke="currentColor"
                 stroke-width="1.5"
               />
               <path
                 d="M11.6667 5.00008C11.6667 3.71638 11.6667 3.07453 11.9556 2.60303C12.1173 2.33919 12.3391 2.11737 12.603 1.95569C13.0745 1.66675 13.7163 1.66675 15 1.66675C16.2837 1.66675 16.9256 1.66675 17.3971 1.95569C17.6609 2.11737 17.8827 2.33919 18.0444 2.60303C18.3334 3.07453 18.3334 3.71638 18.3334 5.00008C18.3334 6.28378 18.3334 6.92563 18.0444 7.39714C17.8827 7.66097 17.6609 7.8828 17.3971 8.04447C16.9256 8.33341 16.2837 8.33341 15 8.33341C13.7163 8.33341 13.0745 8.33341 12.603 8.04447C12.3391 7.8828 12.1173 7.66097 11.9556 7.39714C11.6667 6.92563 11.6667 6.28378 11.6667 5.00008Z"
-                stroke="#595D61"
+                stroke="currentColor"
                 stroke-width="1.5"
               />
             </svg>

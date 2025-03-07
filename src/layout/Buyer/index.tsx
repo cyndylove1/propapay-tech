@@ -1,7 +1,7 @@
 import Header from "../../pages/BuyerPages/Header";
 import { Outlet } from "react-router-dom";
 
-import Sidebar from "../../pages/BuyerPages/Sidebar";
+import Sidebar from "../../pages/BuyerPages/SidebarContent/Sidebar";
 import { useState } from "react";
 
 const Buyer:React.FC = () => {
