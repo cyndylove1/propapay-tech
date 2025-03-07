@@ -8,12 +8,12 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
   return (
     <>
       <div
-        className={`fixed left-0 top-0 z-50 w-[250px] overflow-y-auto border-r-[1px] border-[#e6e7e7] bg-[#f7f8f9] bg-white shadow-md transition-transform duration-300 lg:hidden dark:bg-[#1F2937] ${
+        className={`fixed left-0 top-0  z-50 w-[250px] overflow-y-auto border-r-[1px] border-[#e6e7e7] bg-[#f7f8f9] bg-white shadow-md transition-transform duration-300 lg:hidden dark:bg-[#1F2937] ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } flex flex-col justify-between`}
       >
         {/* Logo */}
-        <div className="flex h-[72px] items-center justify-between gap-6 border-[1px] border-[#E6E7E7] px-4">
+        <div className="flex h-[72px] items-center justify-between gap-6 border-b-[1px] border-[#E6E7E7] px-4">
           <div className="flex items-center justify-center gap-2">
             <span>
               <svg
@@ -651,7 +651,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
               )}
             </NavLink>
           </div>
-          <div className="h-[400px] pt-[5rem]">
+          <div className="pt-[5rem]">
             <NavLink
               to="/settings"
               className={({ isActive }: { isActive: boolean }) =>

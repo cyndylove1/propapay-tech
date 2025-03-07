@@ -387,7 +387,7 @@ const Header: React.FC<HeaderProps> = ({
             {theme === "dark" ? (
               <MdOutlineLightMode size={20} />
             ) : (
-              <BsMoon size={16} />
+              <BsMoon size={18} />
             )}
           </span>
           {/* bell */}

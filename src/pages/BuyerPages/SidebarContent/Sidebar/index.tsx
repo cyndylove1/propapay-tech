@@ -14,11 +14,11 @@ const Sidebar: React.FC<SidebarProps> = ({
 }) => {
   return (
     <>
-      <div>
+      <div className="">
         <DesktopSidebar isCollapsed={isCollapsed} />
       </div>
 
-      <div>
+      <div className="">
         <MobileSidebar
           isSidebarOpen={isSidebarOpen}
           toggleSidebar={toggleSidebar}

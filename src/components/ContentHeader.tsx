@@ -20,9 +20,9 @@ const ContentHeader: React.FC<HeaderProps> = ({ text, path, route }) => {
           <h2 className="text-[24px] font-[600] leading-[32px] text-[#1C1D1E] dark:text-[#c4c7cd]">
             {text}
           </h2>
-          <div className="md:flex items-center hidden gap-4">
+          <div className="flex items-center gap-4">
             <button
-              className={`flex h-[36px] w-[93px] items-center justify-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] ${isActive ? "bg-[#12725B] text-white" : ""}`}
+              className={`flex h-[36px] w-[93px] items-center justify-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] md:flex hidden ${isActive ? "bg-[#12725B] text-white" : ""}`}
               onClick={() => navigate(route)}
             >
               <span
@@ -64,7 +64,7 @@ const ContentHeader: React.FC<HeaderProps> = ({ text, path, route }) => {
               </h3>
             </button>
             <button
-              className={`flex h-[36px] w-[93px] items-center justify-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] ${Active ? "bg-[#12725B] text-white" : ""}`}
+              className={`flex h-[36px] w-[93px] items-center justify-center gap-[8px] md:flex hidden  rounded-lg border-[1px] border-[#E5E6E8] ${Active ? "bg-[#12725B] text-white" : ""}`}
               onClick={() => navigate(path)}
             >
               <span
