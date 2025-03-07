@@ -11,7 +11,7 @@ const Favourites = () => {
         route="/favourites"
       />
       {/* content */}
-      <div className="grid grid-cols-1 gap-6 p-[20px] md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 dark:bg-[#111827]">
+      <div className="grid grid-cols-1 gap-6 p-[20px] md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
         {Array(6)
           .fill({})
           .map(() => (
@@ -137,7 +137,7 @@ const Favourites = () => {
                       />
                     </svg>
                   </span>
-                  <h6 className="text-[14px] font-[500] leading-[20px] text-[#595D61] dark:text-[#c4c7cd] dark:text-white">
+                  <h6 className="text-[14px] font-[500] leading-[20px] text-[#595D61] dark:text-[#c4c7cd]">
                     4 Beds
                   </h6>
                 </div>
@@ -180,7 +180,7 @@ const Favourites = () => {
                       />
                     </svg>
                   </span>
-                  <h6 className="text-[14px] font-[500] leading-[20px] text-[#595D61] dark:text-[#c4c7cd] dark:text-white">
+                  <h6 className="text-[14px] font-[500] leading-[20px] text-[#595D61] dark:text-[#c4c7cd]">
                     2 Bathrooms
                   </h6>
                 </div>
@@ -216,7 +216,7 @@ const Favourites = () => {
                       />
                     </svg>
                   </span>
-                  <h6 className="text-[14px] font-[500] leading-[20px] text-[#595D61] dark:text-[#c4c7cd] dark:text-white">
+                  <h6 className="text-[14px] font-[500] leading-[20px] text-[#595D61] dark:text-[#c4c7cd]">
                     600 m2
                   </h6>
                 </div>

@@ -39,7 +39,7 @@ const SearchBar: React.FC<SearchProps> = ({
         <input
           type="text"
           placeholder={placeholder}
-          className={`py-2 pl-10 pr-4 text-[14px] text-[#84898C] outline-none ${className}`}
+          className={`py-2 pl-10 pr-4 text-[14px] bg-transparent text-[#84898C] outline-none ${className}`}
         />
         {showShortcut && (
           <span className="mx-[10px] h-[20px] w-[36px] rounded-[4px] border-[1px] border-[#E5E6E8] px-[6px] text-[14px] font-[500] leading-[20px] text-[#84898C]">

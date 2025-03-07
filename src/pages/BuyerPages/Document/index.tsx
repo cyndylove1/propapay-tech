@@ -12,9 +12,9 @@ const Document: React.FC = () => {
   return (
     <>
       {/* Header title */}
-      <div className="h-[1000px] dark:bg-[#111827]">
+      <div className="h-[1000px]">
         <div className="flex items-center justify-between px-4 pt-[20px]">
-          <h2 className="text-[24px] font-[600] leading-[32px] text-[#1C1D1E] dark:text-[#c4c7cd]">
+          <h2 className="text-[18px] font-[600] leading-[32px] text-[#1C1D1E] dark:text-[#c4c7cd] md:text-[24px]">
             Documents
           </h2>
           <div className="flex items-center gap-[12px]">
@@ -94,14 +94,17 @@ const Document: React.FC = () => {
 
         {/* content header */}
         <div className="m-4 rounded-xl border-[1px] border-[#E8EAEC] dark:bg-[#1F2937]">
-          <div className="flex items-center justify-between px-4 py-4">
-            <SearchBar
-              placeholder="Search documents..."
-              showShortcut={false}
-              className="w-[295px]"
-            />
-            <div className="flex gap-[16px]">
-              <div className="relative items-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] p-[8px] shadow-sm md:flex dark:bg-white">
+          <div className="md:flex-row flex flex-col items-center justify-between px-4 py-4">
+            <div className="md:w-[295px] w-full">
+              <SearchBar
+                placeholder="Search documents..."
+                showShortcut={false}
+                className=""
+              />
+            </div>
+
+            <div className="flex md:flex-row flex-col gap-[16px] mt-4 md:mt-0 w-full md:w-fit">
+              <div className="relative items-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] p-[8px] shadow-sm dark:bg-white flex">
                 <span>
                   <svg
                     width="18"
@@ -153,7 +156,7 @@ const Document: React.FC = () => {
                 </SelectTag>
               </div>
               <button
-                className="flex items-center gap-[4px] rounded-lg border-[1px] border-[#DEE1E4] p-2"
+                className="flex items-center gap-[4px]  rounded-lg border-[1px] border-[#DEE1E4] p-2"
                 onClick={() => setIsOpen(true)}
               >
                 <span className="text-[#6D7177] dark:text-[#c4c7cd]">
@@ -208,7 +211,7 @@ const Document: React.FC = () => {
                   Filter
                 </h3>
               </button>
-              <div className="relative items-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] bg-white p-[8px] shadow-sm md:flex">
+              <div className="relative items-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] bg-white p-[8px] shadow-sm flex">
                 <span>
                   <svg
                     width="20"
@@ -431,7 +434,7 @@ const Document: React.FC = () => {
                           <div className="text-[14px] font-[600] leading-[20px] text-[#1C1D1E] dark:text-[#c4c7cd]">
                             Watercress Crescent Home
                           </div>
-                          <div className="text-overflow text-[12px] font-[500] leading-[16px] text-[#4E5257] dark:text-[#c4c7cd]">
+                          <div className="text-[12px] font-[500] leading-[16px] text-[#4E5257] dark:text-[#c4c7cd]">
                             210 Jericho Highway, Comfort Island, Ibadan
                           </div>
                         </div>

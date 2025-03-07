@@ -10,7 +10,7 @@ const PropertiesLists = () => {
         path="/properties/lists"
         route="/properties"
       />
-      <div className="h-[1200px] dark:bg-[#111827]">
+      <div className="h-[1200px]">
         {Array(3)
           .fill({})
           .map(() => (
@@ -31,7 +31,7 @@ const PropertiesLists = () => {
               <div className="flex flex-col w-full">
                 {/* Title & Address */}
                 <div className="pt-4">
-                  <h3 className="text-[20px] md:text-[17px] font-[600] leading-[28px] text-[#1C1D1E] dark:text-[#c4c7cd]">
+                  <h3 className="lg:text-[20px] md:text-[17px] font-[600] leading-[28px] text-[#1C1D1E] dark:text-[#c4c7cd]">
                     Watercress Crescent Home
                   </h3>
                   <p className="pt-2 text-[16px] font-[500] leading-[24px] text-[#595D61] dark:text-[#c4c7cd]">

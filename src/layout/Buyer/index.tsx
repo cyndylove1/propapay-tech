@@ -30,7 +30,7 @@ const Buyer:React.FC = () => {
             setIsCollapsed={setIsCollapsed}
             onMenuClick={toggleSidebar}
           />
-          <div className="">
+          <div className="dark:bg-[#111827]">
             <Outlet />
           </div>
         </div>

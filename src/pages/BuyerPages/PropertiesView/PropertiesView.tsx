@@ -10,7 +10,7 @@ import avatar from "@/assets/images/Avatar.png";
 const PropertiesView: React.FC = () => {
   return (
     <>
-      <div className="h-[1200px] dark:bg-[#111827]">
+      <div className="h-[1200px]">
         <div className="flex items-center justify-between px-4 py-[20px]">
           <div>
             <h2 className="text-[24px] font-[600] leading-[32px] text-[#1C1D1E] dark:text-[#c4c7cd]">

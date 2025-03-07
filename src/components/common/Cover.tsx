@@ -16,7 +16,7 @@ const Cover: React.FC = () => {
   ];
 
   return (
-    <div className="md:flex xl:m-4 relative hidden m-4 overflow-hidden">
+    <div className="xl:m-4 md:flex relative flex hidden m-4 overflow-hidden">
       {/* Cover Image */}
       <div className="relative w-full">
         <img

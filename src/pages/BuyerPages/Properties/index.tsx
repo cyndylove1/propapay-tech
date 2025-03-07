@@ -11,7 +11,7 @@ const Properties = () => {
         route="/properties"
       />
       {/* content */}
-      <div className="grid gap-6 p-[20px] md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 dark:bg-[#111827]">
+      <div className="grid gap-6 p-[20px] md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
         {Array(6)
           .fill({})
           .map(() => (

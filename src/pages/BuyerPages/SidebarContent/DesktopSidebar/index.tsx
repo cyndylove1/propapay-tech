@@ -10,7 +10,7 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
   return (
     <>
       <div
-        className={`hidden flex-col h-full border-r border-[#e6e7e7] bg-[#f7f8f9] transition-all duration-300 lg:flex dark:bg-[#1F2937] ${
+        className={`hidden flex-col h-full border-r-[1px] border-[#e6e7e7] bg-[#f7f8f9] transition-all duration-300 lg:flex dark:bg-[#1F2937] ${
           isCollapsed ? "w-[80px]" : "w-[250px]"
         }`}
       >

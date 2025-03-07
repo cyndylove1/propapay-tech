@@ -6,7 +6,7 @@ const Assets = () => {
     <>
       <ContentHeader text="My Assets" path="/assets/lists" route="/assets" />
       {/* content */}
-      <div className="grid grid-cols-1 gap-6 p-[20px] md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 dark:bg-[#111827]">
+      <div className="grid grid-cols-1 gap-6 p-[20px] md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
         {Array(6)
           .fill({})
           .map(() => (

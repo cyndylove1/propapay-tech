@@ -20,7 +20,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         ></div>
 
         {/* Modal */}
-        <div className="relative left-[17rem] z-10 w-[390px] rounded-xl bg-white shadow-md">
+        <div className="relative z-10 w-[390px] rounded-xl bg-white shadow-md">
           {/* Modal Header */}
           <div className="border-b-[1px] border-[#E8E8E8]">
             <div className="item-center flex justify-between p-4">
