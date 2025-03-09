@@ -4,7 +4,7 @@ import { MdOutlineLightMode } from "react-icons/md";
 import { BsMoon } from "react-icons/bs";
 import SelectTag from "@/components/common/SelectTag";
 import SearchBar from "@/components/SearchBar";
-import profile from "@/assets/images/Avatar.png"
+import profile from "@/assets/images/Avatar.png";
 
 interface HeaderProps {
   isCollapsed: boolean;
@@ -34,17 +34,17 @@ const Header: React.FC<HeaderProps> = ({
     <>
       <div className="flex h-[72px] w-full items-center justify-between border-b-[1px] border-neutral-200 bg-white px-4">
         <div
-          className="flex text-[30px] text-neutral-950  lg:hidden"
+          className="flex text-[30px] text-neutral-950 lg:hidden"
           onClick={onMenuClick}
         >
           <RiMenuLine />
         </div>
-        <div className="lg:flex flex items-center hidden gap-4">
+        <div className="flex hidden items-center gap-4 lg:flex">
           <span
             onClick={() => {
               setIsCollapsed(!isCollapsed);
             }}
-            className="text-neutral-950 cursor-pointer"
+            className="cursor-pointer text-neutral-950"
           >
             <svg
               width="24"
@@ -373,17 +373,17 @@ const Header: React.FC<HeaderProps> = ({
               <option>Nigeria</option>
             </SelectTag>
           </div>
-          <div className="md:flex hidden">
+          <div className="hidden md:flex">
             <SearchBar placeholder="Search..." className="w-27 h-[36px" />
           </div>
         </div>
 
         {/* Right Section - Icons */}
-        <div className="flex items-center gap-6 text-gray-500">
+        <div className="text-gray-500 flex items-center gap-6">
           {/* moon */}
           <span
             onClick={handleThemeSwitch}
-            className="text-neutral-700 cursor-pointer"
+            className="cursor-pointer text-neutral-700"
           >
             {theme === "dark" ? (
               <MdOutlineLightMode size={20} />
@@ -392,24 +392,24 @@ const Header: React.FC<HeaderProps> = ({
             )}
           </span>
           {/* bell */}
-          <span className="text-neutral-700 cursor-pointer">
+          <span className="cursor-pointer text-neutral-700">
             <svg
-              width="20"
+              width="18"
               height="20"
-              viewBox="0 0 20 20"
+              viewBox="0 0 18 20"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M2.10825 12.3081C1.93104 13.4698 2.72331 14.2761 3.69336 14.678C7.41232 16.2186 12.5876 16.2186 16.3066 14.678C17.2766 14.2761 18.0689 13.4698 17.8917 12.3081C17.7828 11.5942 17.2443 10.9997 16.8453 10.4192C16.3227 9.64947 16.2708 8.80994 16.2707 7.91675C16.2707 4.46497 13.4632 1.66675 9.99998 1.66675C6.53675 1.66675 3.72925 4.46497 3.72925 7.91675C3.72917 8.80994 3.67725 9.64947 3.15465 10.4192C2.75568 10.9997 2.21716 11.5942 2.10825 12.3081Z"
-                stroke="currentColor"
+                d="M1.10825 12.3083C0.931037 13.47 1.72331 14.2763 2.69336 14.6782C6.41232 16.2188 11.5876 16.2188 15.3066 14.6782C16.2766 14.2763 17.0689 13.47 16.8917 12.3083C16.7828 11.5944 16.2443 10.9999 15.8453 10.4194C15.3227 9.64971 15.2708 8.81018 15.2707 7.91699C15.2707 4.46521 12.4632 1.66699 8.99998 1.66699C5.53675 1.66699 2.72925 4.46521 2.72925 7.91699C2.72917 8.81018 2.67725 9.64971 2.15465 10.4194C1.75568 10.9999 1.21716 11.5944 1.10825 12.3083Z"
+                stroke="#4E5257"
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
               <path
-                d="M6.66663 15.8335C7.0487 17.2712 8.39624 18.3335 9.99996 18.3335C11.6037 18.3335 12.9512 17.2712 13.3333 15.8335"
-                stroke="currentColor"
+                d="M5.66663 15.834C6.0487 17.2717 7.39624 18.334 8.99996 18.334C10.6037 18.334 11.9512 17.2717 12.3333 15.834"
+                stroke="#4E5257"
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"

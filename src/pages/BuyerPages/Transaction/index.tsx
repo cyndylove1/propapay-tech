@@ -468,16 +468,16 @@ const Transaction: React.FC = () => {
                         </div>
                         <div>
                           <div className="text-[14px] font-[600] leading-[20px] text-neutral-950">
-                            Watercress Crescent Home
+                            Send money to Farouq
                           </div>
                           <div className="text-[12px] font-[500] leading-[16px] text-neutral-700">
-                            210 Jericho Highway, Comfort Island, Ibadan
+                            Sent
                           </div>
                         </div>
                       </div>
                     </td>
                     <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
-                      Deposit
+                      Debit Card
                     </td>
                     <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
                       PD1468373HM1
@@ -490,7 +490,7 @@ const Transaction: React.FC = () => {
                     </td>
 
                     <th>
-                      <button className="bg-positive-50 flex w-[100px] items-center justify-center rounded-full p-[4px] text-[14px] font-[500]">
+                      <button className="flex w-[100px] items-center justify-center rounded-full bg-positive-50 p-[4px] text-[14px] font-[500]">
                         <span>
                           <svg
                             width="16"
@@ -502,7 +502,7 @@ const Transaction: React.FC = () => {
                             <circle cx="8" cy="8" r="3" fill="#32B56A" />
                           </svg>
                         </span>
-                        <h3 className="text-positive-500 text-[12px]">
+                        <h3 className="text-[12px] text-positive-500">
                           Collected
                         </h3>
                       </button>
@@ -605,7 +605,7 @@ const Transaction: React.FC = () => {
                     </td>
 
                     <th>
-                      <button className="bg-negative-50 text-negative-500 flex w-[100px] items-center justify-center rounded-full p-[4px] text-[14px] font-[500]">
+                      <button className="flex w-[100px] items-center justify-center rounded-full bg-negative-50 p-[4px] text-[14px] font-[500] text-negative-500">
                         <span>
                           <svg
                             width="16"
@@ -726,7 +726,9 @@ const Transaction: React.FC = () => {
                             <circle cx="8" cy="8" r="3" fill="#FFC107" />
                           </svg>
                         </span>
-                        <h3 className="text-[12px] text-warning-500">Pending</h3>
+                        <h3 className="text-[12px] text-warning-500">
+                          Pending
+                        </h3>
                       </button>
                     </th>
                     <td>
