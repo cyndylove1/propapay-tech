@@ -44,10 +44,10 @@ const SignUp: React.FC = () => {
           <div className=" flex justify-center">
             <div className="pt-[50px] xl:w-[480px] w-full ">
             <div className="text-center">
-              <h2 className="text-[25px] font-[600] leading-[48px] md:tracking-tight text-[#1C1D1E] md:text-[36px]">
+              <h2 className="text-[25px] font-[600] leading-[48px] md:tracking-tight text-neutral-950 md:text-[36px]">
                 Register with Propa Homes
               </h2>
-              <h6 className="mb-[30px] text-[16px] font-[500] leading-[24px] text-[#414444]">
+              <h6 className="mb-[30px] text-[16px] font-[500] leading-[24px] text-neutral-700">
                 Get started by providing your valid details to set up your
                 account and begin your real estate journey.
               </h6>
@@ -91,7 +91,7 @@ const SignUp: React.FC = () => {
                     }
                   />
                 </div>
-                <div className="my-6">
+                <div className="mt-[5px]">
                   <Label text="Confirm Password" htmlFor="confirmPassword" />
                   <InputPassword
                     id="confirm-password"
@@ -104,8 +104,8 @@ const SignUp: React.FC = () => {
                     }
                     className={
                       error
-                        ? "border-[#D84E4E] focus-within:border-[#D84E4E]"
-                        : "border-[#23A681]"
+                        ? "border-negative-500 focus-within:border-negative-500"
+                        : "border-brand-500"
                     }
                   />
                   {error && (
@@ -126,7 +126,7 @@ const SignUp: React.FC = () => {
                           />
                         </svg>
                       </span>
-                      <p className="text-[12px] font-[500] leading-[16px] text-[#D84E4E]">
+                      <p className="text-[12px] font-[500] leading-[16px] text-negative-500">
                         {error}
                       </p>
                     </div>
@@ -149,7 +149,7 @@ const SignUp: React.FC = () => {
                           />
                         </svg>
                       </span>
-                      <h6 className="text-[12px] font-[500] leading-[16px] text-[#696E71]">
+                      <h6 className="text-[12px] font-[500] leading-[16px] text-neutral-600">
                         Must contain 1 uppercase letter, 1 number, min. 8
                         characters.
                       </h6>
@@ -166,18 +166,18 @@ const SignUp: React.FC = () => {
                 <Button
                   text="Create Account"
                   type="submit"
-                  className="mx-0 bg-[#12725b] text-white h-[48px] rounded-xl w-full"
+                  className="mx-0 bg-brand-base text-white h-[48px] rounded-xl w-full mt-[20px]"
                 />
               </div>
             </form>
             <div className="text-center pt-4 text-[12px] md:text-[14px] font-[500] leading-[20px]">
-              <h6 className="text-[#434547]">
+              <h6 className="text-neutral-700">
                 By clicking create account, you agree to accept Propapay's{" "}
                 <br />{" "}
               </h6>
-              <span className="text-[#12725B]"> Terms of Service </span>
+              <span className="text-brand-base"> Terms of Service </span>
               and
-              <span className="text-[#12725B]"> Privacy Policy.</span>
+              <span className="text-brand-base"> Privacy Policy.</span>
             </div>
           </div>
           </div>

@@ -43,10 +43,10 @@ const Login: React.FC = () => {
           <div className="flex justify-center">
             <div className="mt-[5rem] w-full md:mt-[10rem] xl:mx-0 xl:w-[480px]">
               <div className="text-center">
-                <h2 className="md:text-[36px] text-[25px] font-[600] leading-[48px] tracking-tight text-[#1C1D1E]">
+                <h2 className="md:text-[36px] text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-950">
                   Sign in to Propa Homes
                 </h2>
-                <h6 className="text-[16px] font-[500] leading-[24px] text-[#414444]">
+                <h6 className="text-[16px] font-[500] leading-[24px] text-neutral-700">
                   Please enter your email address and password to <br /> access
                   your account.
                 </h6>
@@ -77,13 +77,13 @@ const Login: React.FC = () => {
                 </div>
                 <div className="mb-6 flex items-center justify-between pt-[10px]">
                   <div className="flex items-center">
-                    <Checkbox />
-                    <label className="ml-2 cursor-pointer text-[14px] font-[600] leading-[20px] text-[#434547]">
+                    <Checkbox/>
+                    <label className="ml-2 cursor-pointer text-[14px] font-[600] leading-[20px] text-neutral-800">
                       Remember me
                     </label>
                   </div>
                   <Link to="/forgot-password">
-                    <h1 className="text-[14px] font-[600] leading-[20px] text-[#12725B]">
+                    <h1 className="text-[14px] font-[600] leading-[20px] text-brand-base">
                       Forgot Password
                     </h1>
                   </Link>
@@ -91,7 +91,7 @@ const Login: React.FC = () => {
                 <Button
                   text="Continue"
                   type="submit"
-                  className="h-[48px] w-full rounded-xl bg-[#12725b] text-white"
+                  className="h-[48px] w-full rounded-xl bg-brand-base text-white"
                 />
               </form>
             </div>

@@ -142,12 +142,12 @@ const VerifyEmailLogin = () => {
           <div className="flex justify-center">
             <div className="w-full xl:w-[480px]">
               <div className="text-center">
-                <h2 className="md:text-[36px] text-[25px] font-[600] leading-[48px] tracking-tight text-[#1C1D1E]">
+                <h2 className="md:text-[36px] text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-950">
                   Verify it’s you
                 </h2>
-                <h6 className="pt-[5px] text-[16px] font-[500] leading-[24px] text-[#414444]">
+                <h6 className="pt-[5px] text-[16px] font-[500] leading-[24px] text-neutral-700">
                   Please enter the 6 digit code that was sent to <br />
-                  <span className="text-[#12725b]">
+                  <span className="text-brand-base">
                     {" "}
                     josiahovo@gmail.com
                   </span>{" "}
@@ -159,7 +159,7 @@ const VerifyEmailLogin = () => {
               <Button
                 text="Verify Account"
                 type="submit"
-                className="h-[48px] w-full rounded-xl bg-[#12725b] text-white "
+                className="h-[48px] w-full rounded-xl bg-brand-base text-white "
               />
               <Timer />
             </div>

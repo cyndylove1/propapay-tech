@@ -1,4 +1,5 @@
 import { NavLink } from "react-router";
+import profile from "@/assets/images/Avatar.png"
 
 interface MobileSidebarProps {
     isSidebarOpen: boolean;
@@ -8,12 +9,12 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
   return (
     <>
       <div
-        className={`fixed left-0 top-0  z-50 w-[250px] overflow-y-auto border-r-[1px] border-[#e6e7e7] bg-[#f7f8f9] bg-white shadow-md transition-transform duration-300 lg:hidden dark:bg-[#1F2937] ${
+        className={`fixed left-0 top-0 z-50 w-[250px] overflow-y-auto border-r-[1px] border-neutral-200 bg-neutral-50 bg-white shadow-md transition-transform duration-300 dark:bg-[#1F2937] lg:hidden ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } flex flex-col justify-between`}
       >
         {/* Logo */}
-        <div className="flex h-[72px] items-center justify-between gap-6 border-b-[1px] border-[#E6E7E7] px-4">
+        <div className="flex h-[72px] items-center justify-between gap-6 border-b-[1px] border-neutral-200 px-4">
           <div className="flex items-center justify-center gap-2">
             <span>
               <svg
@@ -31,14 +32,11 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                 />
               </svg>
             </span>
-            <span className="text-[25px] font-[500] text-[#12725B]">
+            <span className="text-brand-base text-[25px] font-[500]">
               PropaPay
             </span>
           </div>
-          <span
-            onClick={toggleSidebar}
-            className="text-[#696E71] dark:text-[#c4c7cd]"
-          >
+          <span onClick={toggleSidebar}>
             <svg
               width="25"
               height="25"
@@ -48,7 +46,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
             >
               <path
                 d="M15.8337 4.1665L4.16699 15.8332M4.16699 4.1665L15.8337 15.8332"
-                stroke="currentColor"
+                stroke="#696E71"
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -59,7 +57,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
 
         {/* Navigation Items */}
         <div className="h-[50px] w-[250px] flex-1">
-          <h2 className="px-6 pt-[20px] text-[12px] font-[600] leading-[16px] text-[#84898C]">
+          <h2 className="px-6 pt-[20px] text-[12px] font-[600] leading-[16px] text-neutral-500">
             MAIN
           </h2>
           <div className="py-4">
@@ -67,7 +65,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
               to="/dashboard"
               className={({ isActive }: { isActive: boolean }) =>
                 `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                  isActive ? "font-bold text-white" : "text-[#595D61]"
+                  isActive ? "font-bold text-white" : "text-neutral-700"
                 }`
               }
               onClick={toggleSidebar}
@@ -76,14 +74,14 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                 <div className="relative flex items-center w-full">
                   {/* Green Left Border when Active */}
                   {isActive && (
-                    <div className="absolute left-0 h-[24px] w-[4px] rounded-[5px] bg-[#12725b]"></div>
+                    <div className="absolute left-0 h-[24px] w-[4px] rounded-[5px] bg-brand-base"></div>
                   )}
                   {/* Green Background  */}
                   <div
                     className={`flex items-center gap-2 rounded-[8px] px-3 ${
                       isActive
-                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
-                        : "mx-4 text-[#595D61]"
+                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-brand-base to-[#23A681]"
+                        : "mx-4 text-neutral-700"
                     }`}
                   >
                     {/* Icon */}
@@ -117,7 +115,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                     </span>
 
                     {/* Dashboard Text */}
-                    <h2 className="fw-bold text-[14px] font-[600] leading-[20px] dark:text-[#c4c7cd]">
+                    <h2 className="fw-bold text-[14px] font-[600] leading-[20px]">
                       Dashboard
                     </h2>
                   </div>
@@ -128,7 +126,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
               to="/wallet"
               className={({ isActive }: { isActive: boolean }) =>
                 `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                  isActive ? "font-bold text-white" : "text-[#595D61]"
+                  isActive ? "font-bold text-white" : "text-neutral-700"
                 }`
               }
               onClick={toggleSidebar}
@@ -137,14 +135,14 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                 <div className="relative flex items-center w-full">
                   {/* Green Left Border when Active */}
                   {isActive && (
-                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
+                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-brand-base"></div>
                   )}
                   {/* Green Background  */}
                   <div
                     className={`flex items-center gap-2 rounded-[8px] px-3 ${
                       isActive
-                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
-                        : "mx-4 text-[#595D61]"
+                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-brand-base to-[#23A681]"
+                        : "mx-4 text-neutral-700"
                     }`}
                   >
                     {/* Icon */}
@@ -176,7 +174,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                     </span>
 
                     {/* Document Text */}
-                    <h2 className="text-[14px] font-[600] leading-[20px] dark:text-[#c4c7cd]">
+                    <h2 className="text-[14px] font-[600] leading-[20px]">
                       Wallet
                     </h2>
                   </div>
@@ -187,7 +185,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
               to="/flex-payment"
               className={({ isActive }: { isActive: boolean }) =>
                 `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                  isActive ? "font-bold text-white" : "text-[#595D61]"
+                  isActive ? "font-bold text-white" : "text-[neutral-700"
                 }`
               }
               onClick={toggleSidebar}
@@ -196,14 +194,14 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                 <div className="relative flex items-center w-full">
                   {/* Green Left Border when Active */}
                   {isActive && (
-                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
+                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-brand-base"></div>
                   )}
                   {/* Green Background  */}
                   <div
                     className={`flex items-center gap-2 rounded-[8px] px-3 ${
                       isActive
-                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
-                        : "mx-4 text-[#595D61]"
+                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-brand-base to-[#23A681]"
+                        : "mx-4 text-neutral-700"
                     }`}
                   >
                     {/* Icon */}
@@ -263,7 +261,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                     </span>
 
                     {/* Document Text */}
-                    <h2 className="text-[14px] font-[600] leading-[20px] dark:text-[#c4c7cd]">
+                    <h2 className="text-[14px] font-[600] leading-[20px]">
                       Flex Payment
                     </h2>
                   </div>
@@ -275,7 +273,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
               to="/transactions"
               className={({ isActive }: { isActive: boolean }) =>
                 `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                  isActive ? "font-bold text-white" : "text-[#595D61]"
+                  isActive ? "font-bold text-white" : "text-neutral-700"
                 }`
               }
               onClick={toggleSidebar}
@@ -284,14 +282,14 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                 <div className="relative flex items-center w-full">
                   {/* Green Left Border when Active */}
                   {isActive && (
-                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
+                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-brand-base"></div>
                   )}
                   {/* Green Background  */}
                   <div
                     className={`flex items-center gap-2 rounded-[8px] px-3 ${
                       isActive
-                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
-                        : "mx-4 text-[#595D61]"
+                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-brand-base to-[#23A681]"
+                        : "mx-4 text-neutral-700"
                     }`}
                   >
                     {/* Icon */}
@@ -321,19 +319,18 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                     </span>
 
                     {/* Document Text */}
-                    <h2 className="text-[14px] font-[600] leading-[20px] dark:text-[#c4c7cd]">
+                    <h2 className="text-[14px] font-[600] leading-[20px]">
                       Transaction
                     </h2>
                   </div>
                 </div>
               )}
             </NavLink>
-
             <NavLink
-              to="/document"
+              to="/assets"
               className={({ isActive }: { isActive: boolean }) =>
                 `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                  isActive ? "font-bold text-white" : "text-[#595D61]"
+                  isActive ? "font-bold text-white" : "text-neutral-700"
                 }`
               }
               onClick={toggleSidebar}
@@ -342,52 +339,43 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                 <div className="relative flex items-center w-full">
                   {/* Green Left Border when Active */}
                   {isActive && (
-                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
+                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-brand-base"></div>
                   )}
                   {/* Green Background  */}
                   <div
                     className={`flex items-center gap-2 rounded-[8px] px-3 ${
                       isActive
-                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
-                        : "mx-4 text-[#595D61]"
+                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-brand-base to-[#23A681]"
+                        : "mx-4 text-neutral-700"
                     }`}
                   >
                     {/* Icon */}
                     <span>
                       <svg
-                        width="16"
+                        width="20"
                         height="20"
-                        viewBox="0 0 16 20"
+                        viewBox="0 0 20 20"
                         fill="white"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M4.66669 14.1665H11.3334"
-                          stroke={isActive ? "#12725b" : "#595D61"}
+                          d="M6.25 7.54646H13.5625C15.1425 7.54646 15.9325 7.54646 16.5 7.92097C16.7457 8.0831 16.9567 8.29144 17.1208 8.53408C17.5 9.09458 17.5 9.87483 17.5 11.4353C17.5 14.0362 17.5 15.3366 16.868 16.2708C16.5944 16.6752 16.2429 17.0224 15.8334 17.2926C14.8875 17.9168 13.5709 17.9168 10.9375 17.9168H10C6.46447 17.9168 4.6967 17.9168 3.59835 16.832C2.5 15.7473 2.5 14.0013 2.5 10.5094V8.24592C2.5 6.90038 2.5 6.22762 2.78524 5.7228C2.98857 5.36295 3.2892 5.06603 3.65355 4.86521C4.16467 4.5835 4.84585 4.5835 6.2082 4.5835C7.08102 4.5835 7.51742 4.5835 7.89944 4.72498C8.77167 5.04803 9.13134 5.83059 9.52492 6.60803L10 7.54646"
+                          stroke={isActive ? "#fff" : "#595D61"}
                           stroke-width="1.5"
                           stroke-linecap="round"
-                          stroke-linejoin="round"
                         />
                         <path
-                          d="M4.66669 10.833H8.00002"
-                          stroke={isActive ? "#12725b" : "#595D61"}
+                          d="M2.5 2.08344H7.08333C7.89174 2.08344 8.68182 2.05984 9.36558 2.54612C10.2417 3.16918 10.5917 4.33102 11.4677 4.95408C12.1515 5.44036 12.9416 5.41677 13.75 5.41677H17.5"
+                          stroke={isActive ? "#fff" : "#595D61"}
                           stroke-width="1.5"
                           stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M8.83334 2.08317V2.49984C8.83334 4.85686 8.83334 6.03537 9.56558 6.7676C10.2978 7.49984 11.4763 7.49984 13.8333 7.49984H14.25M14.6667 8.88055V11.6665C14.6667 14.8092 14.6667 16.3806 13.6904 17.3569C12.7141 18.3332 11.1427 18.3332 8.00001 18.3332C4.85731 18.3332 3.28596 18.3332 2.30965 17.3569C1.33334 16.3806 1.33334 14.8092 1.33334 11.6665V7.87971C1.33334 5.17552 1.33334 3.82343 2.07174 2.90761C2.22091 2.7226 2.38944 2.55407 2.57445 2.4049C3.49027 1.6665 4.84236 1.6665 7.54655 1.6665C8.13449 1.6665 8.42846 1.6665 8.69766 1.76151C8.75365 1.78127 8.80854 1.80401 8.8621 1.82963C9.11964 1.9528 9.32751 2.16067 9.74325 2.57641L13.6904 6.52353C14.1721 7.00524 14.4129 7.2461 14.5398 7.55239C14.6667 7.85867 14.6667 8.1993 14.6667 8.88055Z"
-                          stroke={isActive ? "#12725b" : "#595D61"}
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
                         />
                       </svg>
                     </span>
 
-                    {/* Document Text */}
-                    <h2 className="text-[14px] font-[600] leading-[20px] dark:text-[#c4c7cd]">
-                      Document
+                    {/* Assets Text */}
+                    <h2 className="text-[14px] font-[600] leading-[20px]">
+                      My Assets
                     </h2>
                   </div>
                 </div>
@@ -395,14 +383,14 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
             </NavLink>
           </div>
           <div>
-            <h2 className="px-3 py-[10px] text-[12px] font-[600] leading-[16px] text-[#84898C]">
-              MORE
+            <h2 className="px-3 py-[10px] text-[12px] font-[600] leading-[16px] text-neutral-500">
+              OTHERS
             </h2>
             <NavLink
               to="/properties"
               className={({ isActive }: { isActive: boolean }) =>
                 `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                  isActive ? "font-bold text-white" : "text-[#595D61]"
+                  isActive ? "font-bold text-white" : "text-neutral-700"
                 }`
               }
               onClick={toggleSidebar}
@@ -411,14 +399,14 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                 <div className="relative flex items-center w-full">
                   {/* Green Left Border when Active */}
                   {isActive && (
-                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
+                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-brand-base"></div>
                   )}
                   {/* Green Background  */}
                   <div
                     className={`flex items-center gap-2 rounded-[8px] px-3 ${
                       isActive
-                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
-                        : "mx-4 text-[#595D61]"
+                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-brand-base to-[#23A681]"
+                        : "mx-4 text-neutral-700"
                     }`}
                   >
                     {/* Icon */}
@@ -471,7 +459,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                     </span>
 
                     {/* Properties Text */}
-                    <h2 className="text-[14px] font-[600] leading-[20px] dark:text-[#c4c7cd]">
+                    <h2 className="text-[14px] font-[600] leading-[20px]">
                       Properties
                     </h2>
                   </div>
@@ -482,7 +470,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
               to="/favourites"
               className={({ isActive }: { isActive: boolean }) =>
                 `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                  isActive ? "font-bold text-white" : "text-[#595D61]"
+                  isActive ? "font-bold text-white" : "text-neutral-700"
                 }`
               }
               onClick={toggleSidebar}
@@ -491,14 +479,14 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                 <div className="relative flex items-center w-full">
                   {/* Green Left Border when Active */}
                   {isActive && (
-                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
+                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-brand-base"></div>
                   )}
                   {/* Green Background  */}
                   <div
                     className={`flex items-center gap-2 rounded-[8px] px-3 ${
                       isActive
-                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
-                        : "mx-4 text-[#595D61]"
+                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-brand-base to-[#23A681]"
+                        : "mx-4 text-neutral-700"
                     }`}
                   >
                     {/* Icon */}
@@ -520,7 +508,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                     </span>
 
                     {/* Favourites Text */}
-                    <h2 className="text-[14px] font-[600] leading-[20px] dark:text-[#c4c7cd]">
+                    <h2 className="text-[14px] font-[600] leading-[20px]">
                       Favourites
                     </h2>
                   </div>
@@ -528,10 +516,10 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
               )}
             </NavLink>
             <NavLink
-              to="/assets"
+              to="/document"
               className={({ isActive }: { isActive: boolean }) =>
                 `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                  isActive ? "font-bold text-white" : "text-[#595D61]"
+                  isActive ? "font-bold text-white" : "text-neutral-700"
                 }`
               }
               onClick={toggleSidebar}
@@ -540,43 +528,52 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                 <div className="relative flex items-center w-full">
                   {/* Green Left Border when Active */}
                   {isActive && (
-                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
+                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-brand-base"></div>
                   )}
                   {/* Green Background  */}
                   <div
                     className={`flex items-center gap-2 rounded-[8px] px-3 ${
                       isActive
                         ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
-                        : "mx-4 text-[#595D61]"
+                        : "mx-4 text-neutral-700"
                     }`}
                   >
                     {/* Icon */}
                     <span>
                       <svg
-                        width="20"
+                        width="16"
                         height="20"
-                        viewBox="0 0 20 20"
+                        viewBox="0 0 16 20"
                         fill="white"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M6.25 7.54646H13.5625C15.1425 7.54646 15.9325 7.54646 16.5 7.92097C16.7457 8.0831 16.9567 8.29144 17.1208 8.53408C17.5 9.09458 17.5 9.87483 17.5 11.4353C17.5 14.0362 17.5 15.3366 16.868 16.2708C16.5944 16.6752 16.2429 17.0224 15.8334 17.2926C14.8875 17.9168 13.5709 17.9168 10.9375 17.9168H10C6.46447 17.9168 4.6967 17.9168 3.59835 16.832C2.5 15.7473 2.5 14.0013 2.5 10.5094V8.24592C2.5 6.90038 2.5 6.22762 2.78524 5.7228C2.98857 5.36295 3.2892 5.06603 3.65355 4.86521C4.16467 4.5835 4.84585 4.5835 6.2082 4.5835C7.08102 4.5835 7.51742 4.5835 7.89944 4.72498C8.77167 5.04803 9.13134 5.83059 9.52492 6.60803L10 7.54646"
-                          stroke={isActive ? "#fff" : "#595D61"}
+                          d="M4.66669 14.1665H11.3334"
+                          stroke={isActive ? "#12725b" : "#595D61"}
                           stroke-width="1.5"
                           stroke-linecap="round"
+                          stroke-linejoin="round"
                         />
                         <path
-                          d="M2.5 2.08344H7.08333C7.89174 2.08344 8.68182 2.05984 9.36558 2.54612C10.2417 3.16918 10.5917 4.33102 11.4677 4.95408C12.1515 5.44036 12.9416 5.41677 13.75 5.41677H17.5"
-                          stroke={isActive ? "#fff" : "#595D61"}
+                          d="M4.66669 10.833H8.00002"
+                          stroke={isActive ? "#12725b" : "#595D61"}
                           stroke-width="1.5"
                           stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M8.83334 2.08317V2.49984C8.83334 4.85686 8.83334 6.03537 9.56558 6.7676C10.2978 7.49984 11.4763 7.49984 13.8333 7.49984H14.25M14.6667 8.88055V11.6665C14.6667 14.8092 14.6667 16.3806 13.6904 17.3569C12.7141 18.3332 11.1427 18.3332 8.00001 18.3332C4.85731 18.3332 3.28596 18.3332 2.30965 17.3569C1.33334 16.3806 1.33334 14.8092 1.33334 11.6665V7.87971C1.33334 5.17552 1.33334 3.82343 2.07174 2.90761C2.22091 2.7226 2.38944 2.55407 2.57445 2.4049C3.49027 1.6665 4.84236 1.6665 7.54655 1.6665C8.13449 1.6665 8.42846 1.6665 8.69766 1.76151C8.75365 1.78127 8.80854 1.80401 8.8621 1.82963C9.11964 1.9528 9.32751 2.16067 9.74325 2.57641L13.6904 6.52353C14.1721 7.00524 14.4129 7.2461 14.5398 7.55239C14.6667 7.85867 14.6667 8.1993 14.6667 8.88055Z"
+                          stroke={isActive ? "#12725b" : "#595D61"}
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
                         />
                       </svg>
                     </span>
 
-                    {/* Assets Text */}
-                    <h2 className="text-[14px] font-[600] leading-[20px] dark:text-[#c4c7cd]">
-                      My Assets
+                    {/* Document Text */}
+                    <h2 className="text-[14px] font-[600] leading-[20px]">
+                      Document
                     </h2>
                   </div>
                 </div>
@@ -587,7 +584,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
               to="/insight"
               className={({ isActive }: { isActive: boolean }) =>
                 `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                  isActive ? "font-bold text-white" : "text-[#595D61]"
+                  isActive ? "font-bold text-white" : "text-neutral-700"
                 }`
               }
               onClick={toggleSidebar}
@@ -596,14 +593,14 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                 <div className="relative flex items-center w-full">
                   {/* Green Left Border when Active */}
                   {isActive && (
-                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
+                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-brand-base"></div>
                   )}
                   {/* Green Background  */}
                   <div
                     className={`flex items-center gap-2 rounded-[8px] px-3 ${
                       isActive
-                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
-                        : "mx-4 text-[#595D61]"
+                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-brand-base to-[#23A681]"
+                        : "mx-4 text-neutral-700"
                     }`}
                   >
                     {/* Icon */}
@@ -643,7 +640,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                     </span>
 
                     {/* Document Text */}
-                    <h2 className="text-[14px] font-[600] leading-[20px] dark:text-[#c4c7cd]">
+                    <h2 className="text-[14px] font-[600] leading-[20px]">
                       Insight
                     </h2>
                   </div>
@@ -656,7 +653,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
               to="/settings"
               className={({ isActive }: { isActive: boolean }) =>
                 `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                  isActive ? "font-bold text-white" : "text-[#595D61]"
+                  isActive ? "font-bold text-white" : "text-neutral-700"
                 }`
               }
               onClick={toggleSidebar}
@@ -665,14 +662,14 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                 <div className="relative flex items-center w-full">
                   {/* Green Left Border when Active */}
                   {isActive && (
-                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
+                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-brand-base"></div>
                   )}
                   {/* Green Background  */}
                   <div
                     className={`flex items-center gap-2 rounded-[8px] px-3 ${
                       isActive
-                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
-                        : "mx-4 text-[#595D61]"
+                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-brand-base to-[#23A681]"
+                        : "mx-4 text-neutral-700"
                     }`}
                   >
                     {/* Icon */}
@@ -699,7 +696,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                     </span>
 
                     {/* Document Text */}
-                    <h2 className="text-[14px] font-[600] leading-[20px] dark:text-[#c4c7cd]">
+                    <h2 className="text-[14px] font-[600] leading-[20px]">
                       Settings
                     </h2>
                   </div>
@@ -711,7 +708,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
               to="/integration"
               className={({ isActive }: { isActive: boolean }) =>
                 `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                  isActive ? "font-bold text-white" : "text-[#595D61]"
+                  isActive ? "font-bold text-white" : "text-neutral-700"
                 }`
               }
               onClick={toggleSidebar}
@@ -720,14 +717,14 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                 <div className="relative flex items-center w-full">
                   {/* Green Left Border when Active */}
                   {isActive && (
-                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
+                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-brand-base"></div>
                   )}
                   {/* Green Background  */}
                   <div
                     className={`flex items-center gap-2 rounded-[8px] px-3 ${
                       isActive
-                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
-                        : "mx-4 text-[#595D61]"
+                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-brand-base to-[#23A681]"
+                        : "mx-4 text-neutral-700"
                     }`}
                   >
                     {/* Icon */}
@@ -765,7 +762,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                     </span>
 
                     {/* Document Text */}
-                    <h2 className="text-[14px] font-[600] leading-[20px] dark:text-[#c4c7cd]">
+                    <h2 className="text-[14px] font-[600] leading-[20px]">
                       Integration
                     </h2>
                   </div>
@@ -776,7 +773,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
               to="/help-center"
               className={({ isActive }: { isActive: boolean }) =>
                 `relative flex h-[40px] w-[250px] items-center gap-4 ${
-                  isActive ? "font-bold text-white" : "text-[#595D61]"
+                  isActive ? "font-bold text-white" : "text-neutral-700"
                 }`
               }
               onClick={toggleSidebar}
@@ -785,14 +782,14 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                 <div className="relative flex items-center w-full">
                   {/* Green Left Border when Active */}
                   {isActive && (
-                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-[#12725b]"></div>
+                    <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-brand-base"></div>
                   )}
                   {/* Green Background  */}
                   <div
                     className={`flex items-center gap-2 rounded-[8px] px-3 ${
                       isActive
-                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-[#12725B] to-[#23A681]"
-                        : "mx-4 text-[#595D61]"
+                        ? "mx-4 h-[40px] w-[240px] bg-gradient-to-r from-brand-base to-[#23A681]"
+                        : "mx-4 text-neutral-700"
                     }`}
                   >
                     {/* Icon */}
@@ -832,7 +829,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
                     </span>
 
                     {/* Document Text */}
-                    <h2 className="text-[14px] font-[600] leading-[20px] dark:text-[#c4c7cd]">
+                    <h2 className="text-[14px] font-[600] leading-[20px] ">
                       Help Center
                     </h2>
                   </div>
@@ -847,16 +844,16 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
         <div className="flex items-center border-t-[1px] border-[#e6e7e7]">
           <div className="mx-4 flex gap-3 py-[20px]">
             <div className="relative">
-              <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-[#12725b] font-[600] text-white">
-                JO
+              <div className="h-[40px] w-[40px] rounded-full object-cover">
+                <img src={profile} alt="" />
               </div>
               <span className="absolute right-0 top-[25px] h-[10px] w-[10px] rounded-full border-2 border-white bg-[#32B56A]"></span>
             </div>
             <div>
-              <h3 className="text-[14px] font-[600] leading-[20px] text-[#252627] dark:text-[#c4c7cd]">
+              <h3 className="text-[14px] font-[600] leading-[20px] text-neutral-950">
                 Joshiah Ovo
               </h3>
-              <h4 className="text-[12px] font-[500] leading-[12px] text-[#6a7070] dark:text-[#c4c7cd]">
+              <h4 className="text-[12px] font-[500] leading-[12px] text-neutral-700">
                 Joshiahovo@gmail.com
               </h4>
             </div>

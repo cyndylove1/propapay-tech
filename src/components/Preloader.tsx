@@ -33,9 +33,9 @@ const Preloader: React.FC<PreloaderProps> = ({
     <div className={`bg-white ${className}`}>
       <div className="relative w-[300px]">
         {/* Progress Bar */}
-        <div className="h-[8px] w-[320px] overflow-hidden rounded-xl bg-[#f5f6f6]">
+        <div className="h-[8px] w-[320px] overflow-hidden rounded-xl bg-neutral-50">
           <div
-            className="h-full rounded-xl bg-[#12725b] transition-all duration-300"
+            className="rounded-xl bg-brand-base h-full transition-all duration-300"
             style={{ width: `${progress}%` }}
           ></div>
         </div>

@@ -1,28 +1,28 @@
-import { useState } from "react";
+// import { useState } from "react";
 
 interface ExportProps {
   Open: boolean;
   Close: () => void;
 }
 const ExportModal: React.FC<ExportProps> = ({ Open, Close }) => {
-  const [status, setStatus] = useState("idle"); 
-  const [progress, setProgress] = useState(0);
-  const handleExport = () => {
-    setStatus("uploading");
-    setProgress(0);
+  // const [status, setStatus] = useState("idle"); 
+  // const [progress, setProgress] = useState(0);
+  // const handleExport = () => {
+  //   setStatus("uploading");
+  //   setProgress(0);
 
 
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          setStatus("completed");
-          return 100;
-        }
-        return prev + 1; 
-      });
-    }, 1000); 
-  };
+  //   const interval = setInterval(() => {
+  //     setProgress((prev) => {
+  //       if (prev >= 100) {
+  //         clearInterval(interval);
+  //         setStatus("completed");
+  //         return 100;
+  //       }
+  //       return prev + 1; 
+  //     });
+  //   }, 1000); 
+  // };
 
   if (!Open) return null;
 
@@ -32,8 +32,8 @@ const ExportModal: React.FC<ExportProps> = ({ Open, Close }) => {
         {/* Modal Container */}
         <div className="w-[512px] rounded-[12px] bg-white p-2 shadow-lg">
           {/* Modal Header */}
-          <div className="rounded-[12px] border-[1px] border-[#E8EAEC]">
-            <div className="flex items-center justify-between border-b-[1px] border-[#E8EAEC] p-4 pb-3">
+          <div className="rounded-[12px] border-[1px] border-neutral-200">
+            <div className="flex items-center justify-between border-b-[1px] border-neutral-200 p-4 pb-3">
               <div className="flex items-center gap-[8px]">
                 <span>
                   <svg
@@ -109,10 +109,10 @@ const ExportModal: React.FC<ExportProps> = ({ Open, Close }) => {
                   </svg>
                 </span>
                 <div>
-                  <h2 className="text-[16px] font-[600] leading-[24px] text-[#1C1D1E]">
+                  <h2 className="text-[16px] font-[600] leading-[24px] text-neutral-950">
                     Export Documents
                   </h2>
-                  <h6 className="text-[14px] font-[500] leading-[20px] text-[#1C1D1E]">
+                  <h6 className="text-[14px] font-[500] leading-[20px] text-neutral-950">
                     Total export : 4 files
                   </h6>
                 </div>
@@ -120,15 +120,14 @@ const ExportModal: React.FC<ExportProps> = ({ Open, Close }) => {
 
               <button
                 onClick={Close}
-                className="w-[80px] rounded-[8px] border p-[8px] text-[14px] font-[600] leading-[20px] text-[#D84E4E]"
+                className="w-[80px] rounded-[8px] border-[1px] border-negative-500 p-[8px] text-[14px] font-[600] leading-[20px] text-negative-500"
               >
                 Cancel
               </button>
             </div>
             {/* Export CSV List */}
-            {status === "idle" && (
               <div className="p-2 mt-4">
-                <div className="rounded-lg border-[1px] border-[#E8EAEC] bg-[#f7f8f9] p-3">
+                <div className="rounded-lg border-[1px] border-neutral-200 bg-neutral-50 p-3">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-[16px]">
                       <div className="relative">
@@ -149,17 +148,16 @@ const ExportModal: React.FC<ExportProps> = ({ Open, Close }) => {
                       </div>
 
                       <div>
-                        <h2 className="text-[14px] font-[600] leading-[20px] text-[#1C1D1E]">
+                        <h2 className="text-[14px] font-[600] leading-[20px] text-neutral-950">
                           documents.csv
                         </h2>
-                        <h4 className="text-[12px] font-[500] leading-[16px]">
+                        <h4 className="text-[12px] font-[500] leading-[16px] text-neutral-600">
                           File size : 800 KB
                         </h4>
                       </div>
                     </div>
                     <button
-                      className="flex w-[118px] items-center justify-center gap-[4px] rounded-lg bg-[#12725B] p-[8px]"
-                      onClick={handleExport}
+                      className="flex w-[118px] items-center justify-center gap-[4px] rounded-lg bg-brand-base p-[8px]"
                     >
                       <span>
                         <svg
@@ -191,11 +189,10 @@ const ExportModal: React.FC<ExportProps> = ({ Open, Close }) => {
                   </div>
                 </div>
               </div>
-            )}
+            
             {/* Export XLS LIST */}
-            {status === "completed" && (
               <div className="p-2">
-                <div className="rounded-lg border-[1px] border-[#E8EAEC] bg-[#f7f8f9] p-3">
+                <div className="rounded-lg border-[1px] border-neutral-200 bg-neutral-50 p-3">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-[16px]">
                       <div className="relative">
@@ -224,15 +221,15 @@ const ExportModal: React.FC<ExportProps> = ({ Open, Close }) => {
                       </div>
 
                       <div>
-                        <h2 className="text-[14px] font-[600] leading-[20px] text-[#1C1D1E]">
+                        <h2 className="text-[14px] font-[600] leading-[20px] text-neutral-950">
                           documents.xls
                         </h2>
-                        <h4 className="text-[12px] font-[500] leading-[16px]">
+                        <h4 className="text-[12px] font-[500] leading-[16px] text-neutral-600">
                           File size : 800 KB
                         </h4>
                       </div>
                     </div>
-                    <button className="flex w-[118px] items-center justify-center gap-[4px] rounded-lg border-[1px] border-[#E8EAEC] bg-white p-[8px]">
+                    <button className="flex w-[118px] items-center justify-center gap-[4px] rounded-lg border-[1px] border-neutral-200 bg-white p-[8px]">
                       <span>
                         <svg
                           width="16"
@@ -247,18 +244,17 @@ const ExportModal: React.FC<ExportProps> = ({ Open, Close }) => {
                           />
                         </svg>
                       </span>
-                      <h1 className="text-[14px] font-[600] leading-[20px] text-[#32B56A]">
+                      <h1 className="text-[14px] font-[600] leading-[20px] text-positive-500">
                         Completed
                       </h1>
                     </button>
                   </div>
                 </div>
               </div>
-            )}
+            
             {/* JSON EXPORT LIST */}
-            {status === "uploading" && (
               <div className="p-2">
-                <div className="rounded-lg border-[1px] border-[#E8EAEC] bg-[#f7f8f9] p-3">
+                <div className="rounded-lg border-[1px] border-neutral-200 bg-neutral-50 p-3">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-[16px]">
                       <div className="relative">
@@ -279,30 +275,30 @@ const ExportModal: React.FC<ExportProps> = ({ Open, Close }) => {
                       </div>
 
                       <div>
-                        <h2 className="text-[14px] font-[600] leading-[20px] text-[#1C1D1E]">
+                        <h2 className="text-[14px] font-[600] leading-[20px] text-neutral-950">
                           documents.json
                         </h2>
-                        <h4 className="text-[12px] font-[500] leading-[16px]">
+                        <h4 className="text-[12px] font-[500] leading-[16px] text-neutral-600">
                           File size : 800 KB
                         </h4>
                       </div>
                     </div>
-                    <button className="flex w-[118px] items-center justify-center gap-[4px] rounded-lg border-[1px] border-[#E8EAEC] bg-white p-[8px] text-[14px] font-[600] leading-[20px] text-[#7C58FA]">
-                      {progress}% exporting
+                    <button className="flex w-[118px] items-center justify-center gap-[4px] rounded-lg border-[1px] border-neutral-200 bg-white p-[8px] text-[14px] font-[600] leading-[20px] text-melRose-500">
+                      65% exporting
                     </button>
                   </div>
-                  <div className="w-full mt-2 bg-gray-200 rounded-full">
+                  {/* <div className="w-full mt-2 bg-gray-200 rounded-full">
                     <div
-                      className="h-[3px] rounded-full bg-[#7C58FA] text-center text-xs font-medium leading-none text-white"
+                      className="h-[3px] rounded-full bg-melRose text-center text-[14px] font-medium leading-none text-white"
                       style={{ width: `${progress}%` }}
                     ></div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
-            )}
+            
             {/* PDF EXPORT LIST */}
             <div className="p-2">
-              <div className="rounded-lg border-[1px] border-[#E8EAEC] bg-[#f7f8f9] p-3">
+              <div className="rounded-lg border-[1px] border-neutral-200 bg-neutral-50 p-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-[16px]">
                     <div className="relative">
@@ -323,22 +319,22 @@ const ExportModal: React.FC<ExportProps> = ({ Open, Close }) => {
                     </div>
 
                     <div>
-                      <h2 className="text-[14px] font-[600] leading-[20px] text-[#1C1D1E]">
+                      <h2 className="text-[14px] font-[600] leading-[20px] text-neutral-950">
                         documents.pdf
                       </h2>
-                      <h4 className="text-[12px] font-[500] leading-[16px]">
+                      <h4 className="text-[12px] font-[500] leading-[16px] text-neutral-600">
                         File size : 800 KB
                       </h4>
                     </div>
                   </div>
-                  <button className="flex w-[118px] items-center justify-center gap-[4px] rounded-lg border-[1px] border-[#E8EAEC] bg-white p-[8px] text-[14px] font-[600] leading-[20px] text-[#7C58FA]">
+                  <button className="flex w-[118px] items-center justify-center gap-[4px] rounded-lg border-[1px] border-neutral-200 bg-white p-[8px] text-[14px] font-[600] leading-[20px] text-melRose-500">
                     40% exporting
                   </button>
                 </div>
               </div>
             </div>
             <div className="p-2">
-              <div className="rounded-lg border-[1px] border-[#E8EAEC] bg-[#f7f8f9] p-3">
+              <div className="rounded-lg border-[1px] border-neutral-200 bg-neutral-50 p-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-[16px]">
                     <div className="relative">
@@ -359,15 +355,15 @@ const ExportModal: React.FC<ExportProps> = ({ Open, Close }) => {
                     </div>
 
                     <div>
-                      <h2 className="text-[14px] font-[600] leading-[20px] text-[#1C1D1E]">
+                      <h2 className="text-[14px] font-[600] leading-[20px] text-neutral-950">
                         documents.docx
                       </h2>
-                      <h4 className="text-[12px] font-[500] leading-[16px]">
+                      <h4 className="text-[12px] font-[500] leading-[16px] text-neutral-600">
                         File size : 800 KB
                       </h4>
                     </div>
                   </div>
-                  <button className="flex w-[118px] items-center justify-center gap-[4px] rounded-lg border-[1px] border-[#E8EAEC] bg-white p-[8px] text-[14px] font-[600] leading-[20px] text-[#7C58FA]">
+                  <button className="flex w-[118px] items-center justify-center gap-[4px] rounded-lg border-[1px] border-neutral-200 bg-white p-[8px] text-[14px] font-[600] leading-[20px] text-melRose-500">
                     33% exporting
                   </button>
                 </div>

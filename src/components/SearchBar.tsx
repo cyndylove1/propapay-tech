@@ -10,8 +10,8 @@ const SearchBar: React.FC<SearchProps> = ({
 }) => {
   return (
     <>
-      <div className="relative overflow-hidden rounded-lg border-[1px] border-[#E5E6E8]">
-        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#84898C]">
+      <div className="relative overflow-hidden rounded-lg border-[1px] border-neutral-200">
+        <span className="left-3 top-1/2 text-neutral-500 absolute -translate-y-1/2">
           <svg
             width="20"
             height="20"

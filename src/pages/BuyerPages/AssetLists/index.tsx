@@ -9,7 +9,7 @@ const AssetLists = () => {
         {Array(3)
           .fill({})
           .map(() => (
-            <div className="relative mx-4 mb-6 hidden items-start gap-4 rounded-xl border-[1px] border-[#E5E6E8] p-2 shadow-md md:flex dark:bg-[#1F2937]">
+            <div className="relative mx-4 mb-6 hidden items-start gap-4 rounded-xl border-[1px] border-neutral-200 p-2 shadow-md md:flex flex">
               {/* Image Section */}
               <div className="relative w-full">
                 <img
@@ -18,7 +18,7 @@ const AssetLists = () => {
                   className="h-[250px] w-full rounded-lg object-cover"
                 />
                 {/* Badge */}
-                <span className="absolute left-2 top-2 flex h-[24px] w-[61px] items-center justify-center rounded-full bg-[#D6F5E6] text-[12px] font-[600] leading-[14px] text-[#12725B]">
+                <span className="absolute left-2 top-2 flex h-[24px] w-[61px] items-center justify-center rounded-full bg-brand-100 text-[12px] font-[600] leading-[14px] text-brand-base">
                   House
                 </span>
               </div>
@@ -26,10 +26,10 @@ const AssetLists = () => {
               <div className="flex flex-col w-full">
                 {/* Title & Address */}
                 <div className="pt-4">
-                  <h3 className="lg:text-[20px] md:text-[17px] font-[600] leading-[28px] text-[#1C1D1E] dark:text-[#c4c7cd]">
+                  <h3 className="lg:text-[20px] md:text-[17px] font-[600] leading-[28px] text-neutral-950">
                     Watercress Crescent Home
                   </h3>
-                  <p className="pt-2 text-[16px] font-[500] leading-[24px] text-[#595D61] dark:text-[#c4c7cd]">
+                  <p className="pt-2 text-[16px] font-[500] leading-[24px] text-neutral-700">
                     210 Jericho Highway, Comfort Island, Ibadan
                   </p>
                 </div>
@@ -73,7 +73,7 @@ const AssetLists = () => {
                         />
                       </svg>
                     </span>
-                    <h6 className="text-[16px] font-[500] leading-[24px] text-[#595D61] dark:text-[#c4c7cd]">
+                    <h6 className="text-[16px] font-[500] leading-[24px] text-neutral-700">
                       4 Beds
                     </h6>
                   </div>
@@ -116,7 +116,7 @@ const AssetLists = () => {
                         />
                       </svg>
                     </span>
-                    <h6 className="text-[16px] font-[500] leading-[24px] text-[#595D61] dark:text-[#c4c7cd]">
+                    <h6 className="text-[16px] font-[500] leading-[24px] text-neutral-700">
                       2 Bathrooms
                     </h6>
                   </div>
@@ -152,7 +152,7 @@ const AssetLists = () => {
                         />
                       </svg>
                     </span>
-                    <h6 className="text-[16px] font-[500] leading-[24px] text-[#595D61] dark:text-[#c4c7cd]">
+                    <h6 className="text-[16px] font-[500] leading-[24px] text-neutral-700">
                       600 m2
                     </h6>
                   </div>
@@ -160,14 +160,14 @@ const AssetLists = () => {
 
                 {/* Price & View Button */}
                 <div className="flex items-center justify-between pt-3 mt-2">
-                  <span className="text-[20px] font-[700] leading-[28px] text-[#12725B]">
+                  <span className="text-[20px] font-[700] leading-[28px] text-brand-base">
                     ₦25,000,000
                   </span>
                   <Button
                     text="Document"
                     stroke="#12725B"
                     type="button"
-                    className="mr-4 h-[36px] w-[132px] rounded-[8px] border-[1px] border-[#12725B] text-[14px] text-[#12725B]"
+                    className="mr-4 h-[36px] w-[132px] rounded-[8px] border-[1px] border-brand-base text-[14px] text-brand-base"
                   />
                 </div>
               </div>

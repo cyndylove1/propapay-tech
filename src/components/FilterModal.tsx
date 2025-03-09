@@ -15,31 +15,32 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto">
         {/* Overlay */}
         <div
-          className="absolute inset-0 bg-[#000] opacity-70"
+          className="absolute inset-0 bg-[#000] opacity-50"
           onClick={onClose}
         ></div>
 
         {/* Modal */}
         <div className="relative z-10 w-[390px] rounded-xl bg-white shadow-md">
           {/* Modal Header */}
-          <div className="border-b-[1px] border-[#E8E8E8]">
+          <div className="border-b-[1px] border-neutral-200">
             <div className="item-center flex justify-between p-4">
-              <h2 className="text-[16px] font-[600] leading-[19px] text-[#1A1A1A]">
+              <h2 className="text-[16px] font-[600] leading-[19px] text-neutral-950">
                 Filter Transaction
               </h2>
-              <button onClick={onClose} className="text-[#1A1A1A]">
+              <button onClick={onClose}>
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
+                  width="24"
+                  height="24"
                   viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-6 h-6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
+                    d="M17.8337 6.1665L6.16699 17.8332M6.16699 6.1665L17.8337 17.8332"
+                    stroke="#888D93"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                   />
                 </svg>
               </button>
@@ -52,7 +53,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
               <Label text="Status" htmlFor="status" />
               <SelectTag
                 // onChange={(e) => setTitle(e.target.value)}
-                className="h-[56px] w-full rounded-[12px] border-[1px] border-[#cfd2d1] px-2"
+                className="h-[56px] w-full rounded-[12px] border-neutral-200 px-2"
               >
                 <option
                   value=""
@@ -86,7 +87,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 <Label text="Property" htmlFor="status" />
                 <SelectTag
                   // onChange={(e) => setTitle(e.target.value)}
-                  className="h-[56px] w-full rounded-[12px] border-[1px] border-[#cfd2d1] px-2"
+                  className="h-[56px] w-full rounded-[12px] border-neutral-200 px-2"
                 >
                   <option
                     value=""

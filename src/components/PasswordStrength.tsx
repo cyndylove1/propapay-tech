@@ -15,16 +15,16 @@ const PasswordStrength: React.FC<PasswordStrengthProps> = ({ password }) => {
   if (hasNumber) strength += 2;
   if (isLongEnough) strength += 2;
 
-  // Determine bar colors based on strength
+  // bar colors based on strength
   const getBarColor = (index: number) => {
-    if (strength >= 6) return "bg-[#32b56a]"; // Strong password (all bars green)
+    if (strength >= 6) return "bg-[#32b56a]"; 
     if (index < strength) {
       return index < 2 ? "bg-[#d84e4e]" : index < 4 ? "bg-[#ffc107]" : "bg-[#32b56a]";
     }
     return "bg-[#e5e6e8]"; 
   };
 
-  // Determine password strength text
+  // password strength text
   const getStrengthText = () => {
     if (strength >= 6) return "Strong password. Must contain at least:";
     if (strength >= 4) return "Medium password. Must contain at least:";
@@ -43,7 +43,7 @@ const PasswordStrength: React.FC<PasswordStrengthProps> = ({ password }) => {
         ))}
       </div>
       {password.length > 0 && (
-        <h2 className="pt-[5px] text-[12px] font-[500] leading-[16px] text-[#696E71]">
+        <h2 className="pt-[5px] text-[12px] font-[500] leading-[16px] text-neutral-600">
           {getStrengthText()}
         </h2>
       )}

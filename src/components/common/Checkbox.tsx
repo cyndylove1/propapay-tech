@@ -2,7 +2,8 @@ import { useState } from "react";
 import { BiSquareRounded } from "react-icons/bi";
 import { PiCheckSquareFill} from "react-icons/pi";
 
-const Checkbox = () => {
+
+const Checkbox  = () => {
      const [isChecked, setIsChecked] = useState(false);
   return (
     <>
@@ -11,9 +12,9 @@ const Checkbox = () => {
         className="text-xl cursor-pointer"
       >
         {isChecked ? (
-          <PiCheckSquareFill className="h-[20px] w-[20px] text-[#12725b]" />
+          <PiCheckSquareFill className="h-[20px] w-[20px] text-brand-base"  />
         ) : (
-          <BiSquareRounded className="h-[20px] w-[20px] text-[#1C1D1E1F] dark:text-[#c4c7cd]" />
+          <BiSquareRounded className="h-[20px] w-[20px] text-neutral-200" />
         )}
       </div>
     </>

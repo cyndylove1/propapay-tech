@@ -1,5 +1,3 @@
-
-
 interface InputProps {
   type?: string;
   placeholder?: string;
@@ -11,34 +9,33 @@ const InputEmail: React.FC<InputProps> = ({
   type,
   placeholder,
   id,
-  className ,
+  className,
 }) => {
- 
-
   return (
     <div className="">
       <div
-        className={`flex h-[48px] items-center gap-[7px] rounded-xl border-[1px] border-[#cfd2d1] px-4 focus-within:border-[#23A681] ${className}`}
+        className={`focus-within:border-brand-500 flex h-[48px] items-center gap-[7px] rounded-xl border-[1px] border-neutral-200 px-4 ${className}`}
       >
         <span>
           <svg
             width="20"
-            height="20"
-            viewBox="0 0 20 20"
+            height="16"
+            viewBox="0 0 20 16"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M1.6665 5L7.42735 8.26414C9.55117 9.4675 10.4485 9.4675 12.5723 8.26414L18.3332 5"
-              stroke="#6A7070"
-              strokeWidth="1.5"
-              strokeLinejoin="round"
+              d="M5.83301 5.08301L8.28469 6.53253C9.71402 7.37761 10.2853 7.37761 11.7147 6.53253L14.1663 5.08301"
+              stroke="#888D93"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             />
             <path
-              d="M1.67965 11.2295C1.73412 13.7842 1.76136 15.0614 2.70397 16.0077C3.64657 16.9538 4.95845 16.9868 7.5822 17.0527C9.19925 17.0933 10.8004 17.0933 12.4175 17.0527C15.0413 16.9868 16.3531 16.9538 17.2958 16.0077C18.2383 15.0614 18.2656 13.7842 18.32 11.2295C18.3376 10.4081 18.3376 9.59159 18.32 8.77017C18.2656 6.21555 18.2383 4.93825 17.2958 3.99205C16.3531 3.04586 15.0413 3.0129 12.4175 2.94698C10.8004 2.90635 9.19925 2.90635 7.58219 2.94697C4.95845 3.01289 3.64657 3.04585 2.70396 3.99205C1.76135 4.93824 1.73412 6.21555 1.67964 8.77017C1.66212 9.59159 1.66213 10.4081 1.67965 11.2295Z"
-              stroke="#6A7070"
-              strokeWidth="1.5"
-              strokeLinejoin="round"
+              d="M1.67964 9.22952C1.73412 11.7841 1.76136 13.0614 2.70397 14.0076C3.64657 14.9538 4.95845 14.9868 7.58219 15.0527C9.19926 15.0933 10.8004 15.0933 12.4175 15.0527C15.0412 14.9868 16.3531 14.9538 17.2957 14.0076C18.2383 13.0614 18.2656 11.7841 18.32 9.22952C18.3376 8.40812 18.3376 7.59157 18.32 6.77017C18.2656 4.21555 18.2383 2.93825 17.2957 1.99206C16.3531 1.04586 15.0412 1.0129 12.4175 0.946978C10.8004 0.906348 9.19926 0.906346 7.58219 0.946972C4.95844 1.01289 3.64657 1.04585 2.70396 1.99204C1.76136 2.93824 1.73412 4.21554 1.67964 6.77015C1.66212 7.59156 1.66212 8.40812 1.67964 9.22952Z"
+              stroke="#888D93"
+              stroke-width="1.5"
+              stroke-linejoin="round"
             />
           </svg>
         </span>
@@ -47,7 +44,7 @@ const InputEmail: React.FC<InputProps> = ({
           name={id}
           type={type}
           placeholder={placeholder}
-          className="w-full bg-transparent outline-none"
+          className="w-full bg-transparent text-neutral-500 outline-none"
         />
       </div>
     </div>

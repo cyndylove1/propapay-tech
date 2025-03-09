@@ -1,4 +1,4 @@
-import Modal from "@/components/Modal";
+import Modal from "@/components/FilterModal";
 import SearchBar from "@/components/SearchBar";
 import { useState } from "react";
 

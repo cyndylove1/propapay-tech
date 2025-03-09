@@ -10,7 +10,7 @@ const Assets = () => {
         {Array(6)
           .fill({})
           .map(() => (
-            <div className="relative h-[460px] rounded-xl border-[1px] border-[#E5E6E8] p-2 shadow-md dark:bg-[#1F2937]">
+            <div className="relative h-[460px] rounded-xl border-[1px] border-neutral-200 p-2 shadow-md">
               {/* Image Container */}
               <img
                 src={favourites}
@@ -21,7 +21,7 @@ const Assets = () => {
               {/* Overlay Content */}
               <div className="top-3 absolute left-0 flex items-center justify-between w-full px-3">
                 {/* House Label */}
-                <h2 className="flex h-[24px] w-[61px] items-center justify-center rounded-[999px] bg-[#D6F5E6] text-[12px] font-[600] leading-[14px] text-[#12725B]">
+                <h2 className="flex h-[24px] w-[61px] items-center justify-center rounded-[999px] bg-brand-100 text-[12px] font-[600] leading-[14px] text-brand-base">
                   House
                 </h2>
 
@@ -92,14 +92,14 @@ const Assets = () => {
                 </span>
               </div>
               <div className="px-2 py-4">
-                <h2 className="text-[18px] font-[600] leading-[24px] text-[#1C1D1E] dark:text-[#c4c7cd]">
+                <h2 className="text-[18px] font-[600] leading-[24px] text-neutral-950">
                   Watercress Crescent Home
                 </h2>
-                <h5 className="pt-2 text-[14px] font-[500] leading-[20px] text-[#595D61] dark:text-[#c4c7cd]">
+                <h5 className="pt-2 text-[14px] font-[500] leading-[20px] text-neutral-700">
                   210 Jericho Highway, Comfort Island, Ibadan
                 </h5>
               </div>
-              <div className="mx-2 flex justify-between border-b-[1px] border-dashed border-[#E5E6E8] pb-[10px]">
+              <div className="mx-2 flex justify-between border-b-[1px] border-dashed border-neutral-200 pb-[10px]">
                 <div className="flex items-center gap-[4px]">
                   <span>
                     <svg
@@ -137,7 +137,7 @@ const Assets = () => {
                       />
                     </svg>
                   </span>
-                  <h6 className="text-[14px] font-[500] leading-[20px] text-[#595D61] dark:text-[#c4c7cd]">
+                  <h6 className="text-[14px] font-[500] leading-[20px] text-neutral-700">
                     4 Beds
                   </h6>
                 </div>
@@ -180,7 +180,7 @@ const Assets = () => {
                       />
                     </svg>
                   </span>
-                  <h6 className="text-[14px] font-[500] leading-[20px] text-[#595D61] dark:text-[#c4c7cd]">
+                  <h6 className="text-[14px] font-[500] leading-[20px] text-neutral-700">
                     2 Bathrooms
                   </h6>
                 </div>
@@ -216,20 +216,20 @@ const Assets = () => {
                       />
                     </svg>
                   </span>
-                  <h6 className="text-[14px] font-[500] leading-[20px] text-[#595D61] dark:text-[#c4c7cd]">
+                  <h6 className="text-[14px] font-[500] leading-[20px] text-neutral-700">
                     600 m2
                   </h6>
                 </div>
               </div>
               <div className="flex items-center justify-between px-2 pt-[10px]">
-                <h2 className="text-[18px] font-[700] leading-[24px] text-[#12725B]">
+                <h2 className="text-[18px] font-[700] leading-[24px] text-brand-base">
                   ₦25,000,000
                 </h2>
                 <Button
                   text="Document"
                   stroke="#12725B"
                   type="button"
-                  className="h-[36px] w-[132px] rounded-[8px] border-[1px] border-[#12725B] text-[14px] text-[#12725B]"
+                  className="h-[36px] w-[132px] rounded-[8px] border-[1px] border-brand-base text-[14px] text-brand-base"
                 />
               </div>
             </div>

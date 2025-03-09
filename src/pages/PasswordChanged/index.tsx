@@ -57,11 +57,11 @@ const PasswordChanged = () => {
         </div>
         
         <div className="text-center">
-          <h2 className="pt-[30px] md:text-[36px] text-[25px] font-[600] leading-[48px] tracking-tight text-[#142c07]">
+          <h2 className="pt-[30px] md:text-[36px] text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-950">
             Great! your password <br />
             has been changed.
           </h2>
-          <h5 className="pt-[5px] text-[16px] font-[500] leading-[24px] text-[#414444]">
+          <h5 className="pt-[5px] text-[16px] font-[500] leading-[24px] text-neutral-700">
             Your password has been successfully reset. Please <br /> use your
             new password to access your account.
           </h5>
@@ -71,7 +71,7 @@ const PasswordChanged = () => {
             <Button
               text="Sign In"
               type="submit"
-              className="mt-[30px] h-[48px] w-[250px] rounded-xl bg-[#12725b] text-white"
+              className="mt-[30px] h-[48px] w-[250px] rounded-xl bg-brand-base text-white"
             />
           </div>
         </Link>

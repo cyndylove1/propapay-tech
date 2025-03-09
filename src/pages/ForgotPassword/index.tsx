@@ -10,7 +10,7 @@ import { Link } from "react-router";
 const ForgotPassword = () => {
   return (
     <>
-      <div className="md:mr-0 md:ml-4 md:grid-cols-2 grid h-screen grid-cols-1 mx-4 bg-white">
+      <div className="md:ml-4 md:mr-0 md:grid-cols-2 grid h-screen grid-cols-1 mx-4 bg-white">
         <div className="">
           <RegisterHeader
             btnText="Sign Up"
@@ -142,10 +142,10 @@ const ForgotPassword = () => {
           <div className="flex justify-center">
             <div className="w-full xl:w-[480px]">
               <div className="text-center">
-                <h2 className="md:text-[36px] text-[25px] font-[600] leading-[48px] tracking-tight text-[#1C1D1E]">
+                <h2 className="text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-950 md:text-[36px]">
                   Forgot Password
                 </h2>
-                <h6 className="text-[16px] font-[500] leading-[24px] text-[#414444]">
+                <h6 className="text-[16px] font-[500] leading-[24px] text-neutral-700">
                   Enter your email address, and we'll send you a 6-digit code to
                   verify your identity and reset your password.
                 </h6>
@@ -164,14 +164,14 @@ const ForgotPassword = () => {
                   <Button
                     text="Continue"
                     type="submit"
-                    className="h-[48px] w-full rounded-xl bg-[#12725b] text-white"
+                    className="bg-brand-base h-[48px] w-full rounded-xl text-white"
                   />
                 </div>
                 <p className="flex items-center justify-center gap-[3px] pt-4 text-center text-[16px]">
-                  <h5 className="tracking-tighter text-[#414444] font-[500]">
+                  <h5 className="text-neutral-700 font-[500] tracking-tighter">
                     Remember password?{" "}
                   </h5>
-                  <Link to="/login" className="font-[600] text-[#12725b]">
+                  <Link to="/login" className="font-[600] text-brand-base">
                     {" "}
                     Sign In
                   </Link>

@@ -13,7 +13,7 @@ const RegisterWelcome = () => {
     <>
       <Header />
       <div className="mx-4 mt-[5rem] flex justify-center bg-white">
-        <div className="mb-[5rem] h-[644px] w-full rounded-xl border-[1px] border-[#CFD1D2] md:w-[500px]">
+        <div className="mb-[5rem] h-[644px] w-full rounded-xl border-[1px] border-neutral-200 md:w-[500px]">
           <span className="flex justify-center pt-[30px]">
             <svg
               width="88"
@@ -333,10 +333,10 @@ const RegisterWelcome = () => {
             </svg>
           </span>
           <div className="py-[30px] text-center">
-            <h2 className="text-[25px] font-[600] leading-[48px] tracking-tight text-[#1C1D1E] md:text-[36px]">
+            <h2 className="text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-950 md:text-[36px]">
               Sign up for Propa Homes
             </h2>
-            <h3 className="pt-2 text-[13px] font-[500] leading-[24px] text-[#595D61] md:text-[16px]">
+            <h3 className="pt-2 text-[13px] font-[500] leading-[24px] text-neutral-700 md:text-[16px]">
               Get started by providing your valid details to set up your <br />
               account and begin your real estate journey.
             </h3>
@@ -348,7 +348,7 @@ const RegisterWelcome = () => {
                 <Label text="Select Country" htmlFor="Country" /> <br />
                 <div className="w-full">
                   <div className="relative">
-                    <span className="left-3 top-4 absolute flex items-center">
+                    <span className="absolute left-3 top-[14px] flex items-center">
                       <svg
                         width="20"
                         height="20"
@@ -360,36 +360,35 @@ const RegisterWelcome = () => {
                           cx="10.0001"
                           cy="9.99984"
                           r="8.33333"
-                          stroke="#84898C"
+                          stroke="#888D93"
                           stroke-width="1.5"
                         />
                         <path
                           d="M6.66675 9.99984C6.66675 14.9998 10.0001 18.3332 10.0001 18.3332C10.0001 18.3332 13.3334 14.9998 13.3334 9.99984C13.3334 4.99984 10.0001 1.6665 10.0001 1.6665C10.0001 1.6665 6.66675 4.99984 6.66675 9.99984Z"
-                          stroke="#84898C"
+                          stroke="#888D93"
                           stroke-width="1.5"
                           stroke-linejoin="round"
                         />
                         <path
                           d="M17.5 12.5L2.5 12.5"
-                          stroke="#84898C"
+                          stroke="#888D93"
                           stroke-width="1.5"
                           stroke-linecap="round"
                           stroke-linejoin="round"
                         />
                         <path
                           d="M17.5 7.5L2.5 7.5"
-                          stroke="#84898C"
+                          stroke="#888D93"
                           stroke-width="1.5"
                           stroke-linecap="round"
                           stroke-linejoin="round"
                         />
                       </svg>
                     </span>
-                    <SelectTag className="h-[48px] w-full appearance-none rounded-xl border-[1px] border-[#CFD1D2] bg-white px-4 py-3 text-[#1C1D1E] text-[#84898C] outline-none focus:border-[#23A681]">
+                    <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-10 py-3 text-neutral-500 focus:border-brand-500">
                       <option className=""> Select a country...</option>
                       <option>Nigeria</option>
                     </SelectTag>
-                    
                   </div>
                 </div>
               </div>
@@ -402,23 +401,24 @@ const RegisterWelcome = () => {
                     height: "48px",
                     width: "100%",
                     borderRadius: "12px",
-                    borderColor: "cfd2d1",
+                    borderColor: "#CFD2D1",
                     marginTop: "5px",
+                    color: "#888D93",
                   }}
-                  onFocus={(e) => (e.target.style.borderColor = "#23A681")}
-                  onBlur={(e) => (e.target.style.borderColor = "#cfd2d1")}
+                  onFocus={(e) => (e.target.style.borderColor = "#33A691")}
+                  onBlur={(e) => (e.target.style.borderColor = "#CFD2D1")}
                 />
               </div>
               <Button
                 text="Get Started - It’s free"
                 type="submit"
-                className="mt-[30px] h-[48px] w-full rounded-xl bg-[#12725b] text-white"
+                className="bg-brand-base mt-[30px] h-[48px] w-full rounded-xl text-white"
               />
               <p className="flex items-center justify-center gap-[3px] pb-10 pt-4 text-center text-[16px]">
-                <h5 className="tracking-tighter text-[#414444]">
+                <h5 className="text-neutral-800 tracking-tighter">
                   Have an account?{" "}
                 </h5>
-                <Link to="/login" className="font-[500] text-[#12725b]">
+                <Link to="/login" className="text-brand-base font-[600]">
                   {" "}
                   Sign In
                 </Link>

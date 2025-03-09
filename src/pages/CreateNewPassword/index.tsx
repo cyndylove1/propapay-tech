@@ -170,10 +170,10 @@ const CreateNewPassword = () => {
           <div className="flex justify-center">
             <div className="w-full xl:w-[480px]">
               <div className="text-center">
-                <h2 className="md:text-[36px] text-[25px] font-[600] leading-[48px] tracking-tight text-[#1C1D1E]">
+                <h2 className="md:text-[36px] text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-950">
                   Create new password
                 </h2>
-                <h6 className="text-[13px] font-[500] leading-[24px] text-[#414444] md:text-[16px]">
+                <h6 className="text-[13px] font-[500] leading-[24px] text-neutral-700 md:text-[16px]">
                   Create a password with at least 6 characters that is different{" "}
                   from your previous one to secure your account. Please enter
                   your
@@ -210,8 +210,8 @@ const CreateNewPassword = () => {
                     }
                     className={
                       error
-                        ? "border-[#D84E4E] focus-within:border-[#D84E4E]"
-                        : "border-[#23A681]"
+                        ? "border-negative-500 focus-within:border-negative-500"
+                        : "border-neutral-200"
                     }
                   />
                   {error && (
@@ -232,7 +232,7 @@ const CreateNewPassword = () => {
                           />
                         </svg>
                       </span>
-                      <p className="text-[12px] font-[500] leading-[16px] text-[#D84E4E]">
+                      <p className="text-[12px] font-[500] leading-[16px] text-negative-500">
                         {error}
                       </p>
                     </div>
@@ -255,7 +255,7 @@ const CreateNewPassword = () => {
                           />
                         </svg>
                       </span>
-                      <h6 className="text-[12px] font-[500] leading-[16px] text-[#696E71]">
+                      <h6 className="text-[12px] font-[500] leading-[16px] text-neutral-500">
                         Must contain 1 uppercase letter, 1 number, min. 8
                         characters.
                       </h6>
@@ -273,7 +273,7 @@ const CreateNewPassword = () => {
                   <Button
                     text="Change Password"
                     type="reset"
-                    className="mx-0 my-[10px] h-[48px] w-full rounded-xl bg-[#12725b] text-white"
+                    className="mx-0 my-[10px] h-[48px] w-full rounded-xl bg-brand-base text-white"
                   />
                 </div>
               </form>

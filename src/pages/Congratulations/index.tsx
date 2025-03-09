@@ -58,10 +58,10 @@ const Congratulations = () => {
         </div>
 
         <div className="text-center">
-          <h2 className="pt-[30px] text-[25px] font-[600] leading-[48px] tracking-tight text-[#142c07] md:text-[36px]">
+          <h2 className="pt-[30px] text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-950 md:text-[36px]">
             Creating your account<span className="dots"></span>
           </h2>
-          <h5 className="pt-[5px] text-[13px] font-[500] leading-[24px] text-[#414444] md:text-[16px]">
+          <h5 className="pt-[5px] text-[13px] font-[500] leading-[24px] text-neutral-700 md:text-[16px]">
             Your account has been successfully created! Signing you into <br />
             your dashboard to start exploring real estate opportunities.
           </h5>

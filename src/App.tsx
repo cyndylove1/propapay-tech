@@ -40,6 +40,7 @@ import PropertiesLists from "./pages/BuyerPages/PropertiesList";
 import PropertiesView from "./pages/BuyerPages/PropertiesView/PropertiesView";
 import Document from "./pages/BuyerPages/Document";
 import Integration from "./pages/BuyerPages/Integration";
+import EmptyState from "./components/EmptyState";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -81,6 +82,7 @@ function App() {
           <Route path="/next-kin" element={<NextOfKin />} />
           <Route path="/bank-details" element={<BankDetails />} />
           <Route path="/success-info" element={<SuccessInformation />} />
+          <Route path="/empty" element={<EmptyState />} />
 
           <Route element={<BuyerDashboard />}>
             <Route path="/dashboard" element={<DashBoard />} />

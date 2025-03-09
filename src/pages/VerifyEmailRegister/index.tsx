@@ -138,12 +138,12 @@ const VerifyEmailRegister = () => {
           <div className="flex justify-center">
             <div className="w-full h-full xl:w-[480px]">
               <div className="text-center">
-                <h2 className="md:text-[36px] text-[25px] font-[600] leading-[48px] tracking-tight text-[#1C1D1E]">
+                <h2 className="md:text-[36px] text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-950">
                   Enter 6-digits code
                 </h2>
-                <h6 className="py-[5px] text-[16px] font-[500] leading-[24px] text-[#414444]">
+                <h6 className="py-[5px] text-[16px] font-[500] leading-[24px] text-neutral-700">
                   A confirmation code has been sent to your email address
-                  <span className="text-[#12725b]">
+                  <span className="text-brand-base">
                     {" "}
                     josiahovo@gmail.com
                   </span>{" "}
@@ -155,7 +155,7 @@ const VerifyEmailRegister = () => {
               <Button
                 text="Verify Account"
                 type="submit"
-                className="h-[48px] w-full rounded-xl bg-[#12725b] text-white"
+                className="h-[48px] w-full rounded-xl bg-brand-base text-white"
               />
               <Timer />
             </div>

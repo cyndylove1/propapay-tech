@@ -1,9 +1,10 @@
+import { useEffect, useState } from "react";
 import { RiMenuLine } from "react-icons/ri";
 import { MdOutlineLightMode } from "react-icons/md";
 import { BsMoon } from "react-icons/bs";
 import SelectTag from "@/components/common/SelectTag";
 import SearchBar from "@/components/SearchBar";
-import { useEffect, useState } from "react";
+import profile from "@/assets/images/Avatar.png"
 
 interface HeaderProps {
   isCollapsed: boolean;
@@ -31,9 +32,9 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <>
-      <div className="flex h-[72px] w-full items-center justify-between border-b-[1px] border-[#E5E6E8] bg-white px-4 dark:bg-[#1F2937]">
+      <div className="flex h-[72px] w-full items-center justify-between border-b-[1px] border-neutral-200 bg-white px-4">
         <div
-          className="flex text-[30px] text-[#1C1D1E] lg:hidden dark:text-[#c4c7cd]"
+          className="flex text-[30px] text-neutral-950  lg:hidden"
           onClick={onMenuClick}
         >
           <RiMenuLine />
@@ -43,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({
             onClick={() => {
               setIsCollapsed(!isCollapsed);
             }}
-            className="cursor-pointer text-[#1C1D1E] dark:text-[#c4c7cd]"
+            className="text-neutral-950 cursor-pointer"
           >
             <svg
               width="24"
@@ -72,7 +73,7 @@ const Header: React.FC<HeaderProps> = ({
               />
             </svg>
           </span>
-          <div className="relative hidden h-[40px] w-[170px] items-center rounded-lg border-[1px] border-[#E5E6E8] shadow-sm flex dark:bg-white md:flex">
+          <div className="relative flex hidden h-[40px] w-[170px] items-center rounded-lg border-[1px] border-neutral-200 shadow-sm md:flex">
             {/* Icon before Select */}
             <span>
               <svg
@@ -367,7 +368,7 @@ const Header: React.FC<HeaderProps> = ({
             </span>
 
             {/* Select Dropdown */}
-            <SelectTag className="border-none bg-transparent pr-8 text-[14px] font-[600] leading-[20px] text-[#1C1D1E]">
+            <SelectTag className="border-none bg-transparent pr-8 text-[14px] font-[600] leading-[20px] text-neutral-950">
               <option className="">Propa Homes</option>
               <option>Nigeria</option>
             </SelectTag>
@@ -382,7 +383,7 @@ const Header: React.FC<HeaderProps> = ({
           {/* moon */}
           <span
             onClick={handleThemeSwitch}
-            className="cursor-pointer text-[#4E5257] dark:text-[#c4c7cd]"
+            className="text-neutral-700 cursor-pointer"
           >
             {theme === "dark" ? (
               <MdOutlineLightMode size={20} />
@@ -391,7 +392,7 @@ const Header: React.FC<HeaderProps> = ({
             )}
           </span>
           {/* bell */}
-          <span className="cursor-pointer text-[#4E5257] dark:text-[#c4c7cd]">
+          <span className="text-neutral-700 cursor-pointer">
             <svg
               width="20"
               height="20"
@@ -449,9 +450,9 @@ const Header: React.FC<HeaderProps> = ({
           {/* profile */}
           <div>
             <img
-              src=""
+              src={profile}
               alt=""
-              className="h-[40px] w-[40px] rounded-full bg-[#C2D6FF]"
+              className="h-[40px] w-[40px] rounded-full object-cover"
             />
           </div>
         </div>

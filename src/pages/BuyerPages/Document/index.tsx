@@ -1,28 +1,34 @@
 import { useState } from "react";
 import Checkbox from "@/components/common/Checkbox";
 import SelectTag from "@/components/common/SelectTag";
-import Modal from "@/components/Modal";
+import FilterModal from "@/components/FilterModal";
 import SearchBar from "@/components/SearchBar";
 import images from "@/assets/images/Rectangle 2911 (1).png";
 import ExportModal from "@/components/ExportModal";
+import DropdownMenu from "@/components/DropdownMenu";
 
 const Document: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [Open, setOpen] = useState<boolean>(false);
+  const [OpenMenu, setOpenMenu] = useState(false);
+
+   const toggleMenuDropdown = () => {
+     setOpenMenu((prev) => !prev);
+   };
   return (
     <>
       {/* Header title */}
       <div className="h-[1000px]">
         <div className="flex items-center justify-between px-4 pt-[20px]">
-          <h2 className="text-[18px] font-[600] leading-[32px] text-[#1C1D1E] dark:text-[#c4c7cd] md:text-[24px]">
+          <h2 className="text-[18px] font-[600] leading-[32px] text-neutral-950 md:text-[24px]">
             Documents
           </h2>
           <div className="flex items-center gap-[12px]">
             <button
-              className="flex items-center gap-[4px] rounded-lg border-[1px] border-[#DEE1E4] p-2"
+              className="flex items-center gap-[4px] rounded-lg border-[1px] border-neutral-200 p-2"
               onClick={() => setOpen(true)}
             >
-              <span className="text-[#4E5257] dark:text-[#c4c7cd]">
+              <span className="">
                 <svg
                   width="20"
                   height="20"
@@ -32,25 +38,25 @@ const Document: React.FC = () => {
                 >
                   <path
                     d="M2.50012 11.667L2.69499 12.2191C3.45345 14.3681 3.83269 15.4426 4.69797 16.0548C5.56325 16.667 6.7027 16.667 8.98159 16.667H11.0187C13.2975 16.667 14.437 16.667 15.3023 16.0548C16.1676 15.4426 16.5468 14.3681 17.3053 12.2191L17.5001 11.667"
-                    stroke="currentColor"
+                    stroke="#4E5257"
                     stroke-width="1.5"
                     stroke-linecap="round"
                   />
                   <path
                     d="M10.0001 11.6668V3.3335M10.0001 11.6668C9.41662 11.6668 8.32642 10.0049 7.91681 9.5835M10.0001 11.6668C10.5837 11.6668 11.6739 10.0049 12.0835 9.5835"
-                    stroke="currentColor"
+                    stroke="#4E5257"
                     stroke-width="1.5"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   />
                 </svg>
               </span>
-              <h3 className="text-[14px] font-[600] leading-[20px] text-[#4E5257] dark:text-[#c4c7cd]">
+              <h3 className="text-[14px] font-[600] leading-[20px] text-neutral-700">
                 Export
               </h3>
             </button>
 
-            <button className="flex items-center gap-[4px] rounded-lg bg-[#12725B] p-2">
+            <button className="bg-brand-base flex items-center gap-[4px] rounded-lg p-2">
               <span>
                 <svg
                   width="20"
@@ -85,17 +91,17 @@ const Document: React.FC = () => {
                   />
                 </svg>
               </span>
-              <h3 className="text-[14px] font-[600] leading-[20px] text-[#FFF]">
-                Track Document
+              <h3 className="text-[14px] font-[600] leading-[20px] text-white">
+                Synchronize
               </h3>
             </button>
           </div>
         </div>
 
         {/* content header */}
-        <div className="m-4 rounded-xl border-[1px] border-[#E8EAEC] dark:bg-[#1F2937]">
+        <div className="m-4 rounded-xl border-[1px] border-neutral-200">
           <div className="md:flex-row flex flex-col items-center justify-between px-4 py-4">
-            <div className="md:w-[295px] w-full">
+            <div className="w-full md:w-[295px]">
               <SearchBar
                 placeholder="Search documents..."
                 showShortcut={false}
@@ -103,8 +109,8 @@ const Document: React.FC = () => {
               />
             </div>
 
-            <div className="flex md:flex-row flex-col gap-[16px] mt-4 md:mt-0 w-full md:w-fit">
-              <div className="relative items-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] p-[8px] shadow-sm dark:bg-white flex">
+            <div className="mt-4 flex w-full flex-col gap-[16px] md:mt-0 md:w-fit md:flex-row">
+              <div className="relative flex items-center gap-[8px] rounded-lg border-[1px] border-neutral-200 p-[8px] shadow-sm">
                 <span>
                   <svg
                     width="18"
@@ -150,13 +156,13 @@ const Document: React.FC = () => {
                     />
                   </svg>
                 </span>
-                <SelectTag className="border-none bg-transparent pr-8 text-[14px] w-full font-[500] leading-[20px] text-[#4E5257]">
+                <SelectTag className="w-full border-none bg-transparent pr-8 text-[14px] font-[500] leading-[20px] text-neutral-700">
                   <option className="">Last 30 Days</option>
                   <option>Last 30 Days</option>
                 </SelectTag>
               </div>
               <button
-                className="flex items-center gap-[4px]  rounded-lg border-[1px] border-[#DEE1E4] p-2"
+                className="flex items-center gap-[4px] rounded-lg border-[1px] border-[#DEE1E4] p-2"
                 onClick={() => setIsOpen(true)}
               >
                 <span className="text-[#6D7177] dark:text-[#c4c7cd]">
@@ -168,50 +174,50 @@ const Document: React.FC = () => {
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M1.5 3.8335H4"
-                      stroke="currentColor"
+                      d="M1.5 3.83301H4"
+                      stroke="#6D7177"
                       stroke-width="1.5"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                     <path
-                      d="M1.5 12.167H6.5"
-                      stroke="currentColor"
+                      d="M1.5 12.166H6.5"
+                      stroke="#6D7177"
                       stroke-width="1.5"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                     <path
-                      d="M14 12.167L16.5 12.167"
-                      stroke="currentColor"
+                      d="M14 12.166L16.5 12.166"
+                      stroke="#6D7177"
                       stroke-width="1.5"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                     <path
-                      d="M11.5 3.8335L16.5 3.8335"
-                      stroke="currentColor"
+                      d="M11.5 3.83301L16.5 3.83301"
+                      stroke="#6D7177"
                       stroke-width="1.5"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                     <path
-                      d="M4 3.8335C4 3.05693 4 2.66864 4.12687 2.36236C4.29602 1.95398 4.62048 1.62952 5.02886 1.46036C5.33515 1.3335 5.72343 1.3335 6.5 1.3335C7.27657 1.3335 7.66485 1.3335 7.97114 1.46036C8.37952 1.62952 8.70398 1.95398 8.87313 2.36236C9 2.66864 9 3.05693 9 3.8335C9 4.61007 9 4.99835 8.87313 5.30464C8.70398 5.71302 8.37952 6.03747 7.97114 6.20663C7.66485 6.3335 7.27657 6.3335 6.5 6.3335C5.72343 6.3335 5.33515 6.3335 5.02886 6.20663C4.62048 6.03747 4.29602 5.71302 4.12687 5.30464C4 4.99835 4 4.61007 4 3.8335Z"
-                      stroke="currentColor"
+                      d="M4 3.83301C4 3.05644 4 2.66815 4.12687 2.36187C4.29602 1.95349 4.62048 1.62903 5.02886 1.45988C5.33515 1.33301 5.72343 1.33301 6.5 1.33301C7.27657 1.33301 7.66485 1.33301 7.97114 1.45988C8.37952 1.62903 8.70398 1.95349 8.87313 2.36187C9 2.66815 9 3.05644 9 3.83301C9 4.60958 9 4.99786 8.87313 5.30415C8.70398 5.71253 8.37952 6.03698 7.97114 6.20614C7.66485 6.33301 7.27657 6.33301 6.5 6.33301C5.72343 6.33301 5.33515 6.33301 5.02886 6.20614C4.62048 6.03698 4.29602 5.71253 4.12687 5.30415C4 4.99786 4 4.60958 4 3.83301Z"
+                      stroke="#6D7177"
                       stroke-width="1.5"
                     />
                     <path
-                      d="M9 12.167C9 11.3904 9 11.0021 9.12687 10.6959C9.29602 10.2875 9.62048 9.96302 10.0289 9.79386C10.3351 9.66699 10.7234 9.66699 11.5 9.66699C12.2766 9.66699 12.6649 9.66699 12.9711 9.79386C13.3795 9.96302 13.704 10.2875 13.8731 10.6959C14 11.0021 14 11.3904 14 12.167C14 12.9436 14 13.3318 13.8731 13.6381C13.704 14.0465 13.3795 14.371 12.9711 14.5401C12.6649 14.667 12.2766 14.667 11.5 14.667C10.7234 14.667 10.3351 14.667 10.0289 14.5401C9.62048 14.371 9.29602 14.0465 9.12687 13.6381C9 13.3318 9 12.9436 9 12.167Z"
-                      stroke="currentColor"
+                      d="M9 12.166C9 11.3894 9 11.0012 9.12687 10.6949C9.29602 10.2865 9.62048 9.96204 10.0289 9.79288C10.3351 9.66602 10.7234 9.66602 11.5 9.66602C12.2766 9.66602 12.6649 9.66602 12.9711 9.79288C13.3795 9.96204 13.704 10.2865 13.8731 10.6949C14 11.0012 14 11.3894 14 12.166C14 12.9426 14 13.3309 13.8731 13.6372C13.704 14.0455 13.3795 14.37 12.9711 14.5391C12.6649 14.666 12.2766 14.666 11.5 14.666C10.7234 14.666 10.3351 14.666 10.0289 14.5391C9.62048 14.37 9.29602 14.0455 9.12687 13.6372C9 13.3309 9 12.9426 9 12.166Z"
+                      stroke="#6D7177"
                       stroke-width="1.5"
                     />
                   </svg>
                 </span>
-                <h3 className="text-[14px] font-[500] leading-[20px] text-[#4E5257] dark:text-[#c4c7cd]">
+                <h3 className="text-[14px] font-[500] leading-[20px] text-neutral-700">
                   Filter
                 </h3>
               </button>
-              <div className="relative items-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] bg-white p-[8px] shadow-sm flex">
+              <div className="relative flex items-center gap-[8px] rounded-lg border-[1px] border-neutral-200 bg-white p-[8px] shadow-sm">
                 <span>
                   <svg
                     width="20"
@@ -257,7 +263,7 @@ const Document: React.FC = () => {
                     />
                   </svg>
                 </span>
-                <SelectTag className="border-none w-full bg-transparent pr-8 text-[14px] font-[500] leading-[20px] text-[#4E5257]">
+                <SelectTag className="w-full border-none bg-transparent pr-8 text-[14px] font-[500] leading-[20px] text-neutral-700">
                   <option className="">Sort By</option>
                   <option>Sort By</option>
                 </SelectTag>
@@ -271,14 +277,14 @@ const Document: React.FC = () => {
               <table className="table">
                 {/* head */}
 
-                <thead className="bg-[#F7F8F9]">
+                <thead className="bg-neutral-50">
                   <tr>
                     <th>
                       <Checkbox />
                     </th>
                     <th>
                       <span className="flex items-center gap-[5px]">
-                        <h2 className="text-[12px] font-[500] leading-[16px] text-[#6D7177]">
+                        <h2 className="text-[12px] font-[500] leading-[16px] text-neutral-600">
                           PROPERTY
                         </h2>
                         <svg
@@ -301,7 +307,7 @@ const Document: React.FC = () => {
                     </th>
                     <th>
                       <span className="flex items-center gap-[5px]">
-                        <h2 className="text-[12px] font-[500] leading-[16px] text-[#6D7177]">
+                        <h2 className="text-[12px] font-[500] leading-[16px] text-neutral-600">
                           TITLE
                         </h2>
                         <svg
@@ -324,7 +330,7 @@ const Document: React.FC = () => {
                     </th>
                     <th>
                       <span className="flex items-center gap-[5px]">
-                        <h2 className="text-[12px] font-[500] leading-[16Px] text-[#6D7177]">
+                        <h2 className="text-[12px] font-[500] leading-[16Px] text-neutral-600">
                           DOCUMENT ID
                         </h2>
                         <svg
@@ -347,7 +353,7 @@ const Document: React.FC = () => {
                     </th>
                     <th>
                       <span className="flex items-center gap-[5px]">
-                        <h2 className="text-[12px] font-[500] leading-[16px] text-[#6D7177]">
+                        <h2 className="text-[12px] font-[500] leading-[16px] text-neutral-600">
                           ISSUE DATE
                         </h2>
                         <svg
@@ -370,7 +376,7 @@ const Document: React.FC = () => {
                     </th>
                     <th>
                       <span className="flex items-center gap-[5px]">
-                        <h2 className="text-[12px] font-[500] leading-[16px] text-[#6D7177]">
+                        <h2 className="text-[12px] font-[500] leading-[16px] text-neutral-600">
                           AMOUNT
                         </h2>
                         <svg
@@ -393,7 +399,7 @@ const Document: React.FC = () => {
                     </th>
                     <th>
                       <span className="flex items-center gap-[5px]">
-                        <h2 className="text-[12px] font-[500] leading-[16px] text-[#6D7177]">
+                        <h2 className="text-[12px] font-[500] leading-[16px] text-neutral-600">
                           STATUS
                         </h2>
                         <svg
@@ -431,30 +437,30 @@ const Document: React.FC = () => {
                           </div>
                         </div>
                         <div>
-                          <div className="text-[14px] font-[600] leading-[20px] text-[#1C1D1E] dark:text-[#c4c7cd]">
+                          <div className="text-[14px] font-[600] leading-[20px] text-neutral-700">
                             Watercress Crescent Home
                           </div>
-                          <div className="text-[12px] font-[500] leading-[16px] text-[#4E5257] dark:text-[#c4c7cd]">
+                          <div className="text-[12px] font-[500] leading-[16px] text-neutral-700">
                             210 Jericho Highway, Comfort Island, Ibadan
                           </div>
                         </div>
                       </div>
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-[#1C1D1E] dark:text-[#c4c7cd]">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
                       Title Deed
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-[#1C1D1E] dark:text-[#c4c7cd]">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
                       PD1468373HM1
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-[#1C1D1E] dark:text-[#c4c7cd]">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
                       October 10, 2025
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-[#1C1D1E] dark:text-[#c4c7cd]">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
                       ₦25,000,000
                     </td>
 
                     <th>
-                      <button className="flex w-[100px] items-center justify-center rounded-full bg-[#F1FCF5] p-[4px] text-[14px] font-[500] text-[#936DFF]">
+                      <button className="flex w-[100px] items-center justify-center rounded-full bg-positive-50 p-[4px] text-[14px] font-[500]">
                         <span>
                           <svg
                             width="16"
@@ -466,13 +472,16 @@ const Document: React.FC = () => {
                             <circle cx="8" cy="8" r="3" fill="#32B56A" />
                           </svg>
                         </span>
-                        <h3 className="text-[12px] text-[#32B56A]">
+                        <h3 className="text-[12px] text-positive-500">
                           Collected
                         </h3>
                       </button>
                     </th>
                     <td>
-                      <button className="flex h-[32px] w-[32px] items-center justify-center rounded-[8px] dark:bg-[#c4c7cd]">
+                      <button
+                        className="flex h-[32px] w-[32px] items-center justify-center rounded-[8px]"
+                        onClick={toggleMenuDropdown}
+                      >
                         <svg
                           width="20"
                           height="20"
@@ -504,7 +513,8 @@ const Document: React.FC = () => {
             </div>
           </div>
         </div>
-        <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+        {OpenMenu && <DropdownMenu CloseMenu={() => setOpenMenu(false)} />}
+        <FilterModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
         <ExportModal Open={Open} Close={() => setOpen(false)} />
       </div>
     </>

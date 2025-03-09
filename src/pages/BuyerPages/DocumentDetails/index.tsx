@@ -1,4 +1,4 @@
-import Modal from "@/components/Modal";
+import Modal from "@/components/FilterModal";
 import SearchBar from "@/components/SearchBar";
 import { useState } from "react";
 
@@ -10,10 +10,7 @@ const DocumentDetails: React.FC = () => {
         Documents
       </h2>
       <div className="flex items-center justify-between px-[20px] py-4">
-        <SearchBar
-          placeholder="Search for invoice"
-          className="w-[295px]"
-        />
+        <SearchBar placeholder="Search for invoice" className="w-[295px]" />
         <div className="flex gap-[24px]">
           <div
             className="flex h-[48px] w-[94px] cursor-pointer items-center justify-center gap-[5px] rounded-[12px] border-[1px] border-[#E8E8E8] bg-white"

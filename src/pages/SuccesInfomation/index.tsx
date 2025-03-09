@@ -55,10 +55,10 @@ const SuccessInformation = () => {
           </svg>
         </div>
         <div className="text-center">
-          <h2 className="pt-[30px] text-[25px] font-[600] leading-[48px] tracking-tighter text-[#142c07] md:text-[36px]">
+          <h2 className="pt-[30px] text-[25px] font-[600] leading-[48px] tracking-tighter text-neutral-950 md:text-[36px]">
             Your application is under <br /> review.
           </h2>
-          <h5 className="pt-[5px] text-[16px] font-[500] leading-[24px] text-[#414444]">
+          <h5 className="pt-[5px] text-[16px] font-[500] leading-[24px] text-neutral-700">
             Your data is being processed. We will verify <br /> your information
             and respond shortly.
           </h5>
@@ -68,7 +68,7 @@ const SuccessInformation = () => {
             <Button
               text="Continue"
               type="submit"
-              className="mt-[30px] h-[48px] w-[250px] rounded-xl bg-[#12725B] text-white"
+              className="mt-[30px] h-[48px] w-[250px] rounded-xl bg-brand-base text-white"
             />
           </div>
         </Link>

@@ -13,11 +13,11 @@ const PropertiesView: React.FC = () => {
       <div className="h-[1200px]">
         <div className="flex items-center justify-between px-4 py-[20px]">
           <div>
-            <h2 className="text-[24px] font-[600] leading-[32px] text-[#1C1D1E] dark:text-[#c4c7cd]">
+            <h2 className="text-[24px] font-[600] leading-[32px] text-neutral-950">
               Property Details
             </h2>
           </div>
-          <button className="flex h-[36px] w-[123px] items-center justify-center gap-[12px] rounded-lg bg-[#12725b]">
+          <button className="bg-brand-base flex h-[36px] w-[123px] items-center justify-center gap-[12px] rounded-lg">
             <span>
               <svg
                 width="20"
@@ -57,13 +57,13 @@ const PropertiesView: React.FC = () => {
                 />
               </svg>
             </span>
-            <h2 className="text-[14px] font-[600] leading-[20px] text-[#FFFFFF]">
+            <h2 className="text-[14px] font-[600] leading-[20px] text-white">
               Available
             </h2>
           </button>
         </div>
         <div className="md:grid-cols-2 grid grid-cols-1 gap-3 mx-4">
-          <div className="w-full rounded-2xl border-[1px] border-[#E0E0E0] dark:bg-[#1F2937]">
+          <div className="w-full rounded-2xl border-[1px] border-neutral-200">
             {/* carousel */}
             <div className="p-4">
               <Swiper
@@ -86,10 +86,10 @@ const PropertiesView: React.FC = () => {
             </div>
             <div className="flex justify-between px-4">
               <div>
-                <h2 className="text-[15px] font-[600] leading-[32px] text-[#1C1D1E] md:text-[24px] dark:text-[#c4c7cd]">
+                <h2 className="text-[15px] font-[600] leading-[32px] text-neutral-950 md:text-[24px]">
                   Diamond Manco Apartment
                 </h2>
-                <h6 className="text-[14px] font-[500] leading-[20px] text-[#434547] dark:text-[#c4c7cd]">
+                <h6 className="text-[14px] font-[500] leading-[20px] text-neutral-800">
                   210 Jericho Highway, Comfort Island, Ibadan
                 </h6>
               </div>
@@ -193,10 +193,10 @@ const PropertiesView: React.FC = () => {
               </div>
             </div>
             <div className="px-4">
-              <h2 className="pb-[10px] pt-[20px] text-[18px] font-[500] leading-[24px] text-[#2E2E2E] dark:text-[#c4c7cd]">
+              <h2 className="pb-[10px] pt-[20px] text-[18px] font-[500] leading-[24px] text-darkGray">
                 Description
               </h2>
-              <h6 className="text-[14px] font-[400] leading-[20px] text-[#2E2E2E] dark:text-[#c4c7cd]">
+              <h6 className="text-[14px] font-[400] leading-[20px] text-darkGray">
                 Hayfield Ashton Place Residences at Willow Brook Valley" evokes
                 an elegant and serene residential community. It suggests a
                 picturesque neighborhood with modern yet charming homes,
@@ -206,13 +206,13 @@ const PropertiesView: React.FC = () => {
                 living experience in a scenic setting.
               </h6>
             </div>
-            <div className="mx-4 mt-[30px] rounded-lg border-[1px] border-[#E0E0E0] bg-[#fafafa] dark:bg-[#1F2937]">
-              <h4 className="px-4 pt-[10px] text-[16px] font-[500] leading-[24px] text-[#2E2E2E] dark:text-[#c4c7cd]">
+            <div className="mx-4 mt-[30px] rounded-lg border-[1px] border-neutral-200 bg-neutral-50">
+              <h4 className="px-4 pt-[10px] text-[16px] font-[500] leading-[24px] text-darkGray">
                 Property Facilities
               </h4>
               <div className="grid grid-cols-2 gap-[16px] p-4 md:grid-cols-2 lg:grid-cols-3">
                 <div className="flex items-center gap-2">
-                  <span className="dark:text-[#12725B]">
+                  <span className="">
                     <svg
                       width="20"
                       height="20"
@@ -222,47 +222,47 @@ const PropertiesView: React.FC = () => {
                     >
                       <path
                         d="M15.061 10.0952V6.14789C15.061 5.62349 15.061 5.36129 14.9853 5.1511C14.8561 4.79217 14.5734 4.50958 14.2146 4.38036C14.0043 4.30469 13.7422 4.30469 13.2178 4.30469H6.04633C5.52193 4.30469 5.25973 4.30469 5.04954 4.38036C4.69061 4.50958 4.40802 4.79217 4.2788 5.1511C4.20312 5.36129 4.20312 5.62349 4.20312 6.14789V10.0952"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.44"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M8.83128 10.0952V9.61684C8.83128 9.28908 8.83128 9.12516 8.78392 8.9938C8.7032 8.76948 8.52656 8.59284 8.30224 8.51212C8.17088 8.46484 8.00696 8.46484 7.67925 8.46484H7.18325C6.85551 8.46484 6.69163 8.46484 6.56026 8.51212C6.33593 8.59284 6.15931 8.76948 6.07855 8.9938C6.03125 9.12516 6.03125 9.28908 6.03125 9.61684V10.0952"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.44"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M13.2312 10.0952V9.61684C13.2312 9.28908 13.2312 9.12516 13.1838 8.9938C13.1031 8.76948 12.9264 8.59284 12.7021 8.51212C12.5708 8.46484 12.4068 8.46484 12.0792 8.46484H11.5832C11.2554 8.46484 11.0915 8.46484 10.9601 8.51212C10.7358 8.59284 10.5592 8.76948 10.4784 8.9938C10.4312 9.12516 10.4312 9.28908 10.4312 9.61684V10.0952"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.44"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M16.8312 15.6952V11.9384C16.8312 11.414 16.8312 11.1519 16.7555 10.9417C16.6262 10.5827 16.3437 10.3002 15.9847 10.1709C15.7745 10.0952 15.5124 10.0952 14.988 10.0952H4.27435C3.74996 10.0952 3.48776 10.0952 3.27757 10.1709C2.91864 10.3002 2.63605 10.5827 2.50682 10.9417C2.43115 11.1519 2.43115 11.414 2.43115 11.9384V15.6952"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.44"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M2.43115 14.7048H16.8312"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.44"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                     </svg>
                   </span>
-                  <h3 className="text-[14px] font-[600] leading-[24px] text-[#2E2E2E] dark:text-[#c4c7cd]">
+                  <h2 className="text-[14px] font-[400] leading-[24px] text-darkGray">
                     4 Bedrooms
-                  </h3>
+                  </h2>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="dark:text-[#12725B]">
+                  <span className="">
                     <svg
                       width="21"
                       height="20"
@@ -272,40 +272,40 @@ const PropertiesView: React.FC = () => {
                     >
                       <path
                         d="M7.00049 9.1665H14.6131C15.8339 9.1665 16.4443 9.1665 16.8129 9.77924C17.1815 10.392 16.9644 10.7826 16.5303 11.5639C15.6685 13.1148 13.9967 14.1665 12.0756 14.1665C10.7885 14.1665 9.61327 13.6945 8.71862 12.9165"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M7.00033 9.1665V3.33317C7.00033 2.5475 7.00033 2.15466 6.75625 1.91058C6.51217 1.6665 6.11933 1.6665 5.33366 1.6665C4.54798 1.6665 4.15515 1.6665 3.91107 1.91058C3.66699 2.15466 3.66699 2.5475 3.66699 3.33317V9.1665C3.66699 9.95218 3.66699 10.345 3.91107 10.5891C4.15515 10.8332 4.54798 10.8332 5.33366 10.8332C6.11933 10.8332 6.51217 10.8332 6.75625 10.5891C7.00033 10.345 7.00033 9.95218 7.00033 9.1665Z"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M6.16699 5.83325L8.66699 5.83325"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M13.667 14.1666C12.8337 14.9999 13.667 17.4999 15.3333 18.3333H3.66699C4.50033 17.4999 5.91699 14.8333 4.91699 10.8333"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                     </svg>
                   </span>
-                  <h2 className="text-[14px] font-[600] leading-[24px] text-[#2E2E2E] dark:text-[#c4c7cd]">
+                  <h2 className="text-[14px] font-[400] leading-[24px] text-darkGray">
                     3 Bathrooms
                   </h2>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="dark:text-[#12725B]">
+                  <span className="">
                     <svg
                       width="21"
                       height="20"
@@ -315,71 +315,71 @@ const PropertiesView: React.FC = () => {
                     >
                       <path
                         d="M6.32035 17.5H15.0131C16.5423 17.5 17.7812 16.2603 17.7812 14.7319V8.75375C17.7812 8.01109 17.4471 7.30811 16.8714 6.83865L12.2263 3.05459C11.3182 2.31514 10.0153 2.31514 9.10709 3.05459L4.46198 6.83865C3.8863 7.30811 3.55225 8.01109 3.55225 8.75375V14.7319C3.55225 16.2603 4.79116 17.5 6.32035 17.5Z"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M7.7417 11.9353C8.45359 12.8621 9.50276 13.4401 10.6671 13.4401C11.8314 13.4401 12.8806 12.8621 13.5925 11.9353"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                     </svg>
                   </span>
-                  <h3 className="text-[14px] font-[600] leading-[24px] text-[#2E2E2E] dark:text-[#c4c7cd]">
+                  <h3 className="text-[14px] font-[400] leading-[24px] text-darkGray">
                     Smart Home System
                   </h3>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="dark:text-[#12725B]">
+                  <span className="">
                     <svg
-                      width="17"
-                      height="16"
-                      viewBox="0 0 17 16"
+                      width="21"
+                      height="20"
+                      viewBox="0 0 21 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M13.2497 0.5V5.5M4.08301 0.5V5.5M15.333 1.33333V3M15.333 3V4.66667M15.333 3H16.9997M1.99967 1.33333V3M1.99967 3V4.66667M1.99967 3H0.333008"
-                        stroke="currentColor"
+                        d="M15.2497 2.5V7.5M6.08301 2.5V7.5M17.333 3.33333V5M17.333 5V6.66667M17.333 5H18.9997M3.99967 3.33333V5M3.99967 5V6.66667M3.99967 5H2.33301"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linejoin="round"
                       />
                       <path
-                        d="M13.2495 3L4.08285 3"
-                        stroke="currentColor"
+                        d="M15.2495 5L6.08285 5"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linejoin="round"
                       />
                       <path
-                        d="M6.99951 3V6.33333M10.3328 3V6.33333"
-                        stroke="currentColor"
+                        d="M8.99951 5V8.33333M12.3328 5V8.33333"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linejoin="round"
                       />
                       <path
-                        d="M2.83301 11.3333L5.74967 6.33325H11.583L14.4997 11.3333M2.83301 11.3333H14.4997M2.83301 11.3333V13.8333H14.4997V11.3333"
-                        stroke="currentColor"
+                        d="M4.83301 13.3333L7.74967 8.33325H13.583L16.4997 13.3333M4.83301 13.3333H16.4997M4.83301 13.3333V15.8333H16.4997V13.3333"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linejoin="round"
                       />
                       <path
-                        d="M11.9997 13.8333V15.4999M5.33301 13.8333V15.4999"
-                        stroke="currentColor"
+                        d="M13.9997 15.8333V17.4999M7.33301 15.8333V17.4999"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linejoin="round"
                       />
                     </svg>
                   </span>
-                  <h3 className="text-[14px] font-[600] leading-[24px] text-[#2E2E2E] dark:text-[#c4c7cd]">
+                  <h3 className="text-[14px] font-[400] leading-[24px] text-darkGray">
                     Gyme
                   </h3>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="dark:text-[#12725B]">
+                  <span className="">
                     <svg
                       width="20"
                       height="20"
@@ -389,73 +389,73 @@ const PropertiesView: React.FC = () => {
                     >
                       <path
                         d="M2.08301 10L3.74967 10.8333"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M17.9165 10.4167L16.2498 10.8334"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M6.6665 14.5833L6.87123 14.0715C7.17568 13.3104 7.3279 12.9298 7.64534 12.7149C7.96278 12.5 8.37266 12.5 9.19242 12.5H10.8073C11.627 12.5 12.0369 12.5 12.3543 12.7149C12.6718 12.9298 12.824 13.3104 13.1284 14.0715L13.3332 14.5833"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M1.6665 14.1667V16.5684C1.6665 16.884 1.86713 17.1726 2.18474 17.3137C2.39082 17.4053 2.58766 17.5001 2.82532 17.5001H4.25769C4.49535 17.5001 4.69219 17.4053 4.89827 17.3137C5.21588 17.1726 5.4165 16.884 5.4165 16.5684V15.0001"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M14.583 15.0001V16.5684C14.583 16.884 14.7836 17.1726 15.1012 17.3137C15.3073 17.4053 15.5042 17.5001 15.7418 17.5001H17.1742C17.4119 17.5001 17.6087 17.4053 17.8148 17.3137C18.1324 17.1726 18.333 16.884 18.333 16.5684V14.1667"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M16.6665 7.08342L17.4998 6.66675"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M3.33301 7.08342L2.49967 6.66675"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M3.75 7.5L4.65692 4.77924C5.0236 3.67921 5.20694 3.12919 5.64341 2.8146C6.07989 2.5 6.65966 2.5 7.8192 2.5H12.1808C13.3403 2.5 13.9201 2.5 14.3566 2.8146C14.7931 3.12919 14.9764 3.67921 15.3431 4.77924L16.25 7.5"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M3.74984 7.5H16.2498C17.0475 8.3446 18.3332 9.52079 18.3332 10.833V13.7252C18.3332 14.2005 18.0169 14.6007 17.5972 14.6562L14.9998 15H4.99984L2.40247 14.6562C1.98279 14.6007 1.6665 14.2005 1.6665 13.7252V10.833C1.6665 9.52079 2.95216 8.3446 3.74984 7.5Z"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linejoin="round"
                       />
                     </svg>
                   </span>
-                  <h3 className="text-[14px] font-[600] leading-[24px] text-[#2E2E2E] dark:text-[#c4c7cd]">
+                  <h3 className="text-[14px] font-[400] leading-[24px] text-darkGray">
                     2 Parking
                   </h3>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="dark:text-[#12725B]">
+                  <span className="">
                     <svg
                       width="21"
                       height="20"
@@ -465,83 +465,83 @@ const PropertiesView: React.FC = () => {
                     >
                       <path
                         d="M4.73438 4.19995L7.93654 7.40211M4.73438 4.19995L4.74078 7.14172M4.73438 4.19995L7.67576 4.20674"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.44"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M4.73291 15.3986L7.93507 12.1973M7.67507 15.3928L4.73369 15.3992L4.74009 12.4578"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.44"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M15.9331 15.3986L12.731 12.1973M15.9331 15.3986L15.9269 12.457M15.9331 15.3986L12.9918 15.392"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.44"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M15.9346 4.20034L12.7324 7.4017M12.9918 4.20635L15.9332 4.19995L15.9268 7.14133"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.44"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                     </svg>
                   </span>
-                  <h3 className="text-[14px] font-[600] leading-[24px] text-[#2E2E2E] dark:text-[#c4c7cd]">
+                  <h3 className="text-[14px] font-[400] leading-[24px] text-darkGray">
                     1400 sq ft
                   </h3>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="dark:text-[#12725B]">
+                  <span className="">
                     <svg
-                      width="19"
-                      height="18"
-                      viewBox="0 0 19 18"
+                      width="21"
+                      height="20"
+                      viewBox="0 0 21 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M18.0002 16.4999H17.1668C15.9574 16.4999 14.8985 15.7842 14.6668 14.8333C14.4352 15.7842 13.3763 16.4999 12.1668 16.4999C10.9574 16.4999 9.89847 15.7842 9.66683 14.8333C9.43519 15.7842 8.37631 16.4999 7.16683 16.4999C5.95735 16.4999 4.89846 15.7842 4.66683 14.8333C4.43519 15.7842 3.37631 16.4999 2.16683 16.4999H1.3335"
-                        stroke="currentColor"
+                        d="M19.0002 17.4999H18.1668C16.9574 17.4999 15.8985 16.7842 15.6668 15.8333C15.4352 16.7842 14.3763 17.4999 13.1668 17.4999C11.9574 17.4999 10.8985 16.7842 10.6668 15.8333C10.4352 16.7842 9.37631 17.4999 8.16683 17.4999C6.95735 17.4999 5.89846 16.7842 5.66683 15.8333C5.43519 16.7842 4.37631 17.4999 3.16683 17.4999H2.3335"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
-                        d="M15.5 1.5L15.2792 1.57359C14.1792 1.94026 13.6292 2.1236 13.3146 2.56008C13 2.99656 13 3.57633 13 4.73586L13 13.1667"
-                        stroke="currentColor"
+                        d="M16.5 2.5L16.2792 2.57359C15.1792 2.94026 14.6292 3.1236 14.3146 3.56008C14 3.99656 14 4.57633 14 5.73586L14 14.1667"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
-                        d="M8.8335 1.5L8.61274 1.57359C7.51271 1.94026 6.96269 2.1236 6.64809 2.56008C6.3335 2.99656 6.3335 3.57633 6.3335 4.73586L6.3335 13.1667"
-                        stroke="currentColor"
+                        d="M9.8335 2.5L9.61274 2.57359C8.51271 2.94026 7.96269 3.1236 7.64809 3.56008C7.3335 3.99656 7.3335 4.57633 7.3335 5.73586L7.3335 14.1667"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
-                        d="M6.3335 4.83325H13.0002M6.3335 8.16659H13.0002M6.3335 11.4999H13.0002"
-                        stroke="currentColor"
+                        d="M7.3335 5.83325H14.0002M7.3335 9.16659H14.0002M7.3335 12.4999H14.0002"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                     </svg>
                   </span>
-                  <h3 className="text-[14px] font-[600] leading-[24px] text-[#2E2E2E] dark:text-[#c4c7cd]">
+                  <h3 className="text-[14px] font-[400] leading-[24px] text-darkGray">
                     Pool
                   </h3>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="dark:text-[#12725B]">
+                  <span className="">
                     <svg
                       width="21"
                       height="20"
@@ -551,62 +551,62 @@ const PropertiesView: React.FC = () => {
                     >
                       <path
                         d="M10.6668 7.49992C10.6668 3.74992 12.3335 3.33325 14.0002 3.33325C14.0002 5.83325 12.7502 7.49992 10.6668 7.49992ZM10.6668 7.49992C10.6668 3.74992 9.00016 3.33325 7.3335 3.33325C7.3335 5.83325 8.5835 7.49992 10.6668 7.49992Z"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M9 3.33317C9 3.33317 9.41667 2.08317 10.6667 1.6665C11.9167 2.08317 12.3333 3.33317 12.3333 3.33317"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M10.6665 7.5V12.5"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M10.6665 10.8332C10.8748 10.2776 11.6665 9.1665 13.1665 9.1665"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
                         d="M11.6257 12.5H9.70761C7.99729 12.5 7.14213 12.5 6.72009 12.9973C6.29804 13.4945 6.53297 14.2253 7.00284 15.6868L7.08087 15.9295C7.45059 17.0796 7.63546 17.6546 8.12791 17.9898L8.14998 18.0046C8.64793 18.3333 9.32084 18.3333 10.6667 18.3333C12.0125 18.3333 12.6854 18.3333 13.1834 18.0046L13.2054 17.9898C13.6979 17.6546 13.8827 17.0796 14.2525 15.9295L14.3305 15.6868C14.8004 14.2253 15.0353 13.4945 14.6132 12.9973C14.1912 12.5 13.336 12.5 11.6257 12.5Z"
-                        stroke="currentColor"
+                        stroke="#2E2E2E"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                     </svg>
                   </span>
-                  <h3 className="text-[14px] font-[600] leading-[24px] text-[#2E2E2E] dark:text-[#c4c7cd]">
+                  <h3 className="text-[14px] font-[400] leading-[24px] text-darkGray">
                     Garden View
                   </h3>
                 </div>
               </div>
             </div>
-            <h2 className="px-4 py-[20px] text-[18px] font-[500] leading-[24px] text-[#2E2E2E] dark:text-[#c4c7cd]">
+            <h2 className="px-4 py-[20px] text-[18px] font-[500] leading-[24px] text-darkGray">
               Location
             </h2>
           </div>
-          <div className="mt-4 w-full rounded-xl border-[1px] border-[#E5E6E8] md:mt-0 lg:mt-0 dark:bg-[#1F2937]">
-            <div className="m-4 rounded-xl border-[1px] border-[#F5F6F6] bg-[#f5f6f6] p-4 dark:bg-[#1F2937]">
+          <div className="mt-4 w-full rounded-xl border-[1px] border-neutral-200 md:mt-0 lg:mt-0">
+            <div className="m-4 rounded-xl border-[1px] border-neutral-200 bg-neutral-50 p-4">
               <div className="">
-                <h2 className="py-[10px] text-[18px] font-[500] leading-[24px] text-[#2E2E2E] dark:text-[#c4c7cd]">
+                <h2 className="py-[10px] text-[18px] font-[500] leading-[24px] text-darkGray">
                   Property Pricing
                 </h2>
                 <div className="flex items-center gap-[4px]">
                   <span>
                     <Checkbox />
                   </span>
-                  <h3 className="text-[16px] font-[400] leading-[24px] text-[#727272] dark:text-[#c4c7cd]">
+                  <h3 className="text-[16px] font-[400] leading-[24px] text-[#727272]">
                     Rent A House
                   </h3>
                 </div>
@@ -614,7 +614,7 @@ const PropertiesView: React.FC = () => {
                   <span>
                     <Checkbox />
                   </span>
-                  <h3 className="text-[16px] font-[400] leading-[24px] text-[#727272] dark:text-[#c4c7cd]">
+                  <h3 className="text-[16px] font-[400] leading-[24px] text-[#727272]">
                     Buy A House
                   </h3>
                 </div>
@@ -628,23 +628,23 @@ const PropertiesView: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="mx-4 mt-[20px] rounded-xl border-[1px] border-[#F5F6F6] bg-[#f5f6f6] p-4 dark:bg-[#1F2937]">
-              <h2 className="py-[10px] text-[18px] font-[500] leading-[24px] text-[#2E2E2E] dark:text-[#c4c7cd]">
+            <div className="mx-4 mt-[20px] rounded-xl border-[1px] border-neutral-200 bg-neutral-50 p-4">
+              <h2 className="py-[10px] text-[18px] font-[500] leading-[24px] text-darkGray">
                 Agent Details
               </h2>
               <div className="flex items-center gap-[20px]">
                 <img src={avatar} alt="" className="h-[48px] w-[48px]" />
                 <div>
-                  <h2 className="text-[18px] font-[500] leading-[24px] text-[#2E2E2E] dark:text-[#c4c7cd]">
+                  <h2 className="text-[18px] font-[500] leading-[24px] text-darkGray">
                     Sophia Williams
                   </h2>
-                  <h6 className="text-[12px] font-[400] leading-[16px] text-[#727272] dark:text-[#c4c7cd]">
+                  <h6 className="text-[12px] font-[400] leading-[16px] text-darkGray">
                     Real Estate Agent
                   </h6>
                 </div>
               </div>
               <div className="flex items-center gap-[12px] pb-[20px] pt-4">
-                <button className="flex h-[40px] w-[138px] items-center justify-center gap-[4px] rounded-md border-[1px] border-[#294CD6] bg-[#12725B]">
+                <button className="flex h-[40px] w-[138px] items-center justify-center gap-[4px] rounded-md border-[1px] border-[#294CD6] bg-brand-base">
                   <span>
                     <svg
                       width="21"
@@ -662,7 +662,7 @@ const PropertiesView: React.FC = () => {
                       />
                     </svg>
                   </span>
-                  <h4 className="text-[14px] font-[500] leading-[20px] text-[#fff]">
+                  <h4 className="text-[14px] font-[500] leading-[20px] text-white">
                     Call Us
                   </h4>
                 </button>
@@ -707,23 +707,23 @@ const PropertiesView: React.FC = () => {
                       />
                     </svg>
                   </span>
-                  <h4 className="text-[14px] font-[500] leading-[20px] text-[#1C1D1E]">
+                  <h4 className="text-[14px] font-[500] leading-[20px] text-neutral-950">
                     Message
                   </h4>
                 </button>
               </div>
             </div>
-            <div className="m-4 mt-[20px] rounded-xl border-[1px] border-[#F5F6F6] bg-[#f5f6f6] p-4 pb-[20px] dark:bg-[#1F2937]">
-              <h2 className="py-[10px] text-[18px] font-[500] leading-[24px] text-[#2E2E2E] dark:text-[#c4c7cd]">
+            <div className="m-4 mt-[20px] rounded-xl border-[1px] border-neutral-200 bg-neutral-50 p-4 pb-[20px]">
+              <h2 className="py-[10px] text-[18px] font-[500] leading-[24px] text-darkGray">
                 Inspection Times
               </h2>
-              <h5 className="text-[16px] font-[400] leading-[24px] text-[#2E2E2E] dark:text-[#c4c7cd]">
+              <h5 className="text-[16px] font-[400] leading-[24px] text-darkGray">
                 Inspections are actions are still happening{" "}
               </h5>
-              <h6 className="pt-2 text-[12px] font-[400] leading-[16px] text-[#727272] dark:text-[#c4c7cd]">
+              <h6 className="pt-2 text-[12px] font-[400] leading-[16px] text-[#727272]">
                 Monday-Friday at 10:00am-5:00PM
               </h6>
-              <button className="mt-[10px] flex h-[40px] w-full items-center justify-center gap-2 rounded-md border-[1px] border-[#294CD6] bg-[#12725B]">
+              <button className="mt-[10px] flex h-[40px] w-full items-center justify-center gap-2 rounded-md border-[1px] border-[#294CD6] bg-brand-base">
                 <span>
                   <svg
                     width="15"

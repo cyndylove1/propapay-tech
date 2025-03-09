@@ -310,14 +310,14 @@ const RegisterHeader: React.FC<RegisterHeaderProps> = ({
         </Link>
 
         <div className="flex items-center gap-[10px]">
-          <h1 className="text-[14px] font-[500] leading-[20px] text-[#696E71]">
+          <h1 className="text-[14px] font-[500] leading-[20px] text-neutral-700">
             {account}
           </h1>
           <Link to={linkTo}>
             <Btn
               type="button"
               text={btnText}
-              className="h-[32px] w-[67px] rounded-[8px] border-[1px] border-[#E2E4E9] text-[14px] font-[600] text-[#696E71]"
+              className="h-[32px] w-[67px] rounded-[8px] border-[1px] border-neutral-200 text-[14px] font-[600] text-neutral-700"
             />
           </Link>
         </div>

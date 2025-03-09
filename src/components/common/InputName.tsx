@@ -7,32 +7,37 @@ interface InputProps {
   className?: string;
 }
 
-const InputName: React.FC<InputProps> = ({ type, placeholder, id, className }) => {
+const InputName: React.FC<InputProps> = ({
+  type,
+  placeholder,
+  id,
+  className,
+}) => {
   return (
     <>
       <div className="">
         <div
-          className={`flex h-[48px] items-center gap-[7px] rounded-xl border-[1px] border-[#cfd2d1] focus-within:border-[#23A681] px-4 ${className}`}
+          className={`focus-within:border-brand-500 flex h-[48px] items-center gap-[7px] rounded-xl border-[1px] border-neutral-200 px-4 ${className}`}
         >
           <span>
             <svg
-              width="20"
+              width="18"
               height="20"
-              viewBox="0 0 20 20"
+              viewBox="0 0 18 20"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M5.48131 12.9012C4.30234 13.6032 1.21114 15.0366 3.09389 16.8304C4.01359 17.7065 5.03791 18.3332 6.32573 18.3332H13.6743C14.9621 18.3332 15.9864 17.7065 16.9061 16.8304C18.7888 15.0366 15.6977 13.6032 14.5187 12.9012C11.754 11.2549 8.24599 11.2549 5.48131 12.9012Z"
-                stroke="#6A7070"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+                d="M4.48131 12.9012C3.30234 13.6032 0.211137 15.0366 2.09388 16.8303C3.01359 17.7065 4.03791 18.3332 5.32572 18.3332H12.6743C13.9621 18.3332 14.9864 17.7065 15.9061 16.8303C17.7889 15.0366 14.6977 13.6032 13.5187 12.9012C10.754 11.255 7.24599 11.255 4.48131 12.9012Z"
+                stroke="#888D93"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
               />
               <path
-                d="M13.75 5.4165C13.75 7.48757 12.0711 9.1665 10 9.1665C7.92893 9.1665 6.25 7.48757 6.25 5.4165C6.25 3.34544 7.92893 1.6665 10 1.6665C12.0711 1.6665 13.75 3.34544 13.75 5.4165Z"
-                stroke="#6A7070"
-                strokeWidth="1.5"
+                d="M12.75 5.4165C12.75 7.48757 11.0711 9.1665 9 9.1665C6.92893 9.1665 5.25 7.48757 5.25 5.4165C5.25 3.34544 6.92893 1.6665 9 1.6665C11.0711 1.6665 12.75 3.34544 12.75 5.4165Z"
+                stroke="#888D93"
+                stroke-width="1.5"
               />
             </svg>
           </span>
@@ -40,7 +45,7 @@ const InputName: React.FC<InputProps> = ({ type, placeholder, id, className }) =
             id={id}
             type={type}
             placeholder={placeholder}
-            className="w-full bg-transparent outline-none"
+            className="w-full bg-transparent text-neutral-500 outline-none"
           />
         </div>
       </div>
