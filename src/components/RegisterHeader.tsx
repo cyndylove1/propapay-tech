@@ -317,7 +317,7 @@ const RegisterHeader: React.FC<RegisterHeaderProps> = ({
             <Btn
               type="button"
               text={btnText}
-              className="h-[32px] w-[67px] rounded-[8px] border-[1px] border-neutral-200 text-[14px] font-[600] text-neutral-700"
+              className="h-[32px] w-[74px] rounded-[8px] border-[1px] border-neutral-200 text-[14px] font-[600] text-neutral-700"
             />
           </Link>
         </div>

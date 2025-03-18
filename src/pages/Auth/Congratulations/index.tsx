@@ -1,16 +1,18 @@
-import BottomIcon from "@/components/common/BottomIcon";
-import Button from "@/components/common/Button";
+import { useNavigate } from "react-router-dom";
+import Preloader from "@/components/Preloader";
 import Logo from "@/components/common/Logo";
-import { Link } from "react-router";
+import BottomIcon from "@/components/common/BottomIcon";
 
-const SuccessInformation = () => {
+const Congratulations = () => {
+  const navigate = useNavigate();
   return (
     <>
-      <div className="px-4 pt-[20px]">
-        <Logo className="h-[40px] w-[150px]" />
-      </div>
-      <div className="">
-        <div className="flex justify-center pt-[2rem]">
+      <div className="bg-white">
+        <div className="px-4 md:px-10 pt-[20px]">
+          <Logo className="h-[40px] w-[150px]" />
+        </div>
+
+        <div className="flex items-center justify-center pt-[50px]">
           <svg
             width="182"
             height="125"
@@ -54,25 +56,22 @@ const SuccessInformation = () => {
             </defs>
           </svg>
         </div>
+
         <div className="text-center">
-          <h2 className="pt-[30px] text-[25px] font-[600] leading-[48px] tracking-tighter text-neutral-950 md:text-[36px]">
-            Your application is under <br /> review.
+          <h2 className="pt-[30px] text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-950 md:text-[36px]">
+            Creating your account<span className="dots"></span>
           </h2>
-          <h5 className="pt-[5px] text-[16px] font-[500] leading-[24px] text-neutral-700">
-            Your data is being processed. We will verify <br /> your information
-            and respond shortly.
+          <h5 className="pt-[5px] text-[13px] font-[500] leading-[24px] text-neutral-700 md:text-[16px]">
+            Your account has been successfully created! Signing you into <br />
+            your dashboard to start exploring real estate opportunities.
           </h5>
         </div>
-        <Link to="/login">
-          <div className="flex justify-center">
-            <Button
-              text="Continue"
-              type="submit"
-              className="mt-[30px] h-[48px] w-[250px] rounded-xl bg-brand-base text-white"
-            />
-          </div>
-        </Link>
       </div>
+      <Preloader
+        onComplete={() => navigate("/login")}
+        showBottomIcon={false}
+        className="flex justify-center pt-[30px]"
+      />
       {/* bottomIcon */}
       <div className="md:flex hidden">
         <BottomIcon width={"406"} height={"200"} />
@@ -80,4 +79,4 @@ const SuccessInformation = () => {
     </>
   );
 };
-export default SuccessInformation;
+export default Congratulations;

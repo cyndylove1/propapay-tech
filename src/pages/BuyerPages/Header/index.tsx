@@ -39,12 +39,12 @@ const Header: React.FC<HeaderProps> = ({
         >
           <RiMenuLine />
         </div>
-        <div className="flex hidden items-center gap-4 lg:flex">
+        <div className="lg:flex flex items-center hidden gap-4">
           <span
             onClick={() => {
               setIsCollapsed(!isCollapsed);
             }}
-            className="cursor-pointer text-neutral-950"
+            className="text-neutral-950 cursor-pointer"
           >
             <svg
               width="24"
@@ -75,7 +75,7 @@ const Header: React.FC<HeaderProps> = ({
           </span>
           <div className="relative flex hidden h-[40px] w-[170px] items-center rounded-lg border-[1px] border-neutral-200 shadow-sm md:flex">
             {/* Icon before Select */}
-            <span>
+            <span className="absolute flex items-center">
               <svg
                 className="text-green-500 mx-[5px]"
                 width="20"
@@ -368,22 +368,23 @@ const Header: React.FC<HeaderProps> = ({
             </span>
 
             {/* Select Dropdown */}
-            <SelectTag className="border-none bg-transparent pr-8 text-[14px] font-[600] leading-[20px] text-neutral-950">
+            <SelectTag className="border-none bg-transparent w-full px-8 text-[14px] font-[600] leading-[20px] text-neutral-950">
               <option className="">Propa Homes</option>
               <option>Nigeria</option>
             </SelectTag>
           </div>
-          <div className="hidden md:flex">
+          {/* search bar */}
+          <div className="md:flex hidden">
             <SearchBar placeholder="Search..." className="w-27 h-[36px" />
           </div>
         </div>
 
         {/* Right Section - Icons */}
-        <div className="text-gray-500 flex items-center gap-6">
+        <div className="flex items-center gap-6 text-gray-500">
           {/* moon */}
           <span
             onClick={handleThemeSwitch}
-            className="cursor-pointer text-neutral-700"
+            className="text-neutral-700 cursor-pointer"
           >
             {theme === "dark" ? (
               <MdOutlineLightMode size={20} />
@@ -392,7 +393,7 @@ const Header: React.FC<HeaderProps> = ({
             )}
           </span>
           {/* bell */}
-          <span className="cursor-pointer text-neutral-700">
+          <span className="text-neutral-700 cursor-pointer">
             <svg
               width="18"
               height="20"

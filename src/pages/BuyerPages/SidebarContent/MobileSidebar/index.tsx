@@ -9,7 +9,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
   return (
     <>
       <div
-        className={`fixed left-0 top-0 z-50 w-[250px] overflow-y-auto border-r-[1px] border-neutral-200 bg-neutral-50 bg-white shadow-md transition-transform duration-300 dark:bg-[#1F2937] lg:hidden ${
+        className={`fixed left-0 h-screen top-0 z-50 w-[250px] overflow-y-auto border-r-[1px] border-neutral-200 bg-neutral-50 bg-white shadow-md transition-transform duration-300 dark:bg-[#1F2937] lg:hidden ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } flex flex-col justify-between`}
       >
@@ -467,7 +467,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
               )}
             </NavLink>
             <NavLink
-              to="/favourites"
+              to="/favourite"
               className={({ isActive }: { isActive: boolean }) =>
                 `relative flex h-[40px] w-[250px] items-center gap-4 ${
                   isActive ? "font-bold text-white" : "text-neutral-700"

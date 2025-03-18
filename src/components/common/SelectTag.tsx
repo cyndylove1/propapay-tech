@@ -20,14 +20,14 @@ const SelectTag: React.FC<SelectTagProps> = ({
       <select
         value={value}
         onChange={onChange}
-        className={`appearance-none border-[1px] outline-none bg-transparent ${className}`}
+        className={`focus:border-brand-500 appearance-none border-[1px] bg-transparent outline-none ${className}`}
       >
         {children}
       </select>
 
       {/* Dropdown Icon */}
       <svg
-        className={`text-gray-500 pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 transform ${iconClassName}`}
+        className={`pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 transform text-gray-500 ${iconClassName}`}
         xmlns="http://www.w3.org/2000/svg"
         width="12"
         height="8"

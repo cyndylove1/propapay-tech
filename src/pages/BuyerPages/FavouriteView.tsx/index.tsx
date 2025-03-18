@@ -7,14 +7,14 @@ import Label from "@/components/common/Label";
 import Input from "@/components/common/Input";
 import avatar from "@/assets/images/Avatar.png";
 
-const PropertiesView: React.FC = () => {
+const FavouriteView: React.FC = () => {
   return (
     <>
-      <div className="h-[1200px]">
+      <div className="">
         <div className="flex items-center justify-between px-4 py-[20px]">
           <div>
-            <h2 className="text-[24px] font-[600] leading-[32px] text-neutral-950">
-              Property Details
+            <h2 className="md:text-[24px] text-[18px] font-[600] leading-[32px] text-neutral-950">
+              Favourite Details
             </h2>
           </div>
           <button className="bg-brand-base flex h-[36px] w-[123px] items-center justify-center gap-[12px] rounded-lg">
@@ -750,4 +750,4 @@ const PropertiesView: React.FC = () => {
     </>
   );
 };
-export default PropertiesView;
+export default FavouriteView;

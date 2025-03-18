@@ -10,6 +10,7 @@ const PropertiesLists = () => {
         path="/properties/lists"
         route="/properties"
       />
+      <NavLink to="/properties/view">
       <div className="h-[1200px]">
         {Array(3)
           .fill({})
@@ -170,7 +171,7 @@ const PropertiesLists = () => {
                   </span>
                   <NavLink to="/properties/view">
                     <Button
-                      text="View"
+                      text="Buy Now"
                       stroke="#12725B"
                       type="button"
                       className="mr-4 h-[36px] w-[97px] rounded-[8px] border-[1px] border-brand-base text-[14px] text-brand-base"
@@ -322,7 +323,8 @@ const PropertiesLists = () => {
               </div>
             </div>
           ))}
-      </div>
+        </div>
+      </NavLink>
     </>
   );
 };

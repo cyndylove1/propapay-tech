@@ -5,14 +5,16 @@ interface ButtonProps {
   type?: "button" | "submit" | "reset";
   className?: string;
   stroke?: string;
+  onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, type, className, stroke ="white" }) => {
+const Button: React.FC<ButtonProps> = ({ text, type, className, onClick, stroke ="white" }) => {
   return (
     <div className="flex items-center">
       <button
         type={type}
         className={`flex items-center justify-center font-[600] ${className}`}
+        onClick={onClick}
       >
         <span className="flex items-center gap-4">
           <div>{text}</div>

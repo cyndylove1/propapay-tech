@@ -1,14 +1,13 @@
-import { useNavigate } from "react-router-dom";
-import Preloader from "@/components/Preloader";
-import Logo from "@/components/common/Logo";
 import BottomIcon from "@/components/common/BottomIcon";
+import Button from "@/components/common/Button";
+import Logo from "@/components/common/Logo";
+import { Link } from "react-router";
 
-const Congratulations = () => {
-  const navigate = useNavigate();
+const PasswordChanged = () => {
   return (
     <>
       <div className="bg-white">
-        <div className="px-4 pt-[20px]">
+        <div className="px-4 pt-[20px] md:px-10">
           <Logo className="h-[40px] w-[150px]" />
         </div>
 
@@ -59,19 +58,25 @@ const Congratulations = () => {
 
         <div className="text-center">
           <h2 className="pt-[30px] text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-950 md:text-[36px]">
-            Creating your account<span className="dots"></span>
+            Great! your password <br />
+            has been changed.
           </h2>
-          <h5 className="pt-[5px] text-[13px] font-[500] leading-[24px] text-neutral-700 md:text-[16px]">
-            Your account has been successfully created! Signing you into <br />
-            your dashboard to start exploring real estate opportunities.
+          <h5 className="pt-[5px] text-[16px] font-[500] leading-[24px] text-neutral-700">
+            Your password has been successfully reset. Please <br /> use your
+            new password to access your account.
           </h5>
         </div>
+        <Link to="/login">
+          <div className="flex justify-center">
+            <Button
+              text="Sign In"
+              type="submit"
+              className="bg-brand-base mt-[30px] h-[48px] w-[250px] rounded-xl text-white"
+            />
+          </div>
+        </Link>
       </div>
-      <Preloader
-        onComplete={() => navigate("/login")}
-        showBottomIcon={false}
-        className="flex justify-center pt-[30px]"
-      />
+
       {/* bottomIcon */}
       <div className="md:flex hidden">
         <BottomIcon width={"406"} height={"200"} />
@@ -79,4 +84,4 @@ const Congratulations = () => {
     </>
   );
 };
-export default Congratulations;
+export default PasswordChanged;

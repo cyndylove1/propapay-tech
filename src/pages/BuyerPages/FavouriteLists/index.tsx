@@ -1,6 +1,7 @@
 import favourites from "@/assets/images/Rectangle 2911 (1).png";
 import ContentHeader from "@/components/ContentHeader";
 import Button from "@/components/common/Button";
+import { NavLink } from "react-router";
 const FavouriteLists = () => {
   
   return (
@@ -10,6 +11,7 @@ const FavouriteLists = () => {
         path="/favourites/lists"
         route="/favourites"
       />
+      <NavLink to="/favourite/view">
       <div className="h-[1200px]">
         {Array(3)
           .fill({})
@@ -169,7 +171,7 @@ const FavouriteLists = () => {
                     ₦25,000,000
                   </span>
                   <Button
-                    text="View"
+                    text="Buy Now"
                     stroke="#12725B"
                     type="button"
                     className="mr-4 h-[36px] w-[97px] rounded-[8px] border-[1px] border-brand-base text-[14px] text-brand-base"
@@ -273,6 +275,7 @@ const FavouriteLists = () => {
             </div>
           ))}
       </div>
+      </NavLink>
     </>
   );
 };

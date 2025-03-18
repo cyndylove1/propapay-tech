@@ -65,24 +65,7 @@ const Transaction: React.FC = () => {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M16.25 14.5833C16.25 15.7339 15.3173 16.6667 14.1667 16.6667C13.0161 16.6667 12.0834 15.7339 12.0834 14.5833C12.0834 13.4327 13.0161 12.5 14.1667 12.5C15.3173 12.5 16.25 13.4327 16.25 14.5833Z"
-                    stroke="white"
-                    stroke-width="1.5"
-                  />
-                  <path
-                    d="M7.91667 14.5833C7.91667 15.7339 6.98393 16.6667 5.83333 16.6667C4.68274 16.6667 3.75 15.7339 3.75 14.5833C3.75 13.4327 4.68274 12.5 5.83333 12.5C6.98393 12.5 7.91667 13.4327 7.91667 14.5833Z"
-                    stroke="white"
-                    stroke-width="1.5"
-                  />
-                  <path
-                    d="M12.0834 14.5835H7.91669M16.25 14.5835H16.886C17.0693 14.5835 17.161 14.5835 17.238 14.5739C17.8057 14.5031 18.253 14.0559 18.3238 13.4881C18.3334 13.4111 18.3334 13.3194 18.3334 13.1361V10.8335C18.3334 7.84195 15.9082 5.41683 12.9167 5.41683M1.66669 3.3335L10 3.3335C11.1785 3.3335 11.7678 3.3335 12.1339 3.69961C12.5 4.06573 12.5 4.65498 12.5 5.8335L12.5 12.9168M1.66669 10.6252L1.66669 12.5002C1.66669 13.279 1.66669 13.6684 1.83416 13.9585C1.94387 14.1485 2.10166 14.3063 2.29169 14.416C2.58175 14.5835 2.97117 14.5835 3.75002 14.5835"
-                    stroke="white"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M1.66669 5.8335L6.66669 5.8335M1.66669 8.3335H5.00002"
+                    d="M16.6744 1.66699V4.27715C16.6744 4.52204 16.3682 4.6329 16.2114 4.44477C14.6855 2.73991 12.4681 1.66699 10 1.66699C5.39765 1.66699 1.66669 5.39795 1.66669 10.0003C1.66669 14.6027 5.39765 18.3337 10 18.3337C14.6024 18.3337 18.3334 14.6027 18.3334 10.0003"
                     stroke="white"
                     stroke-width="1.5"
                     stroke-linecap="round"
@@ -91,7 +74,7 @@ const Transaction: React.FC = () => {
                 </svg>
               </span>
               <h3 className="text-[14px] font-[600] leading-[20px] text-[#FFF]">
-                Track Status
+                Synchronize
               </h3>
             </button>
           </div>
@@ -109,59 +92,60 @@ const Transaction: React.FC = () => {
             </div>
 
             <div className="mt-4 flex w-full flex-col gap-[16px] md:mt-0 md:w-fit md:flex-row">
-              <div className="relative flex items-center gap-[8px] rounded-lg border-[1px] border-neutral-200 p-[8px] shadow-sm">
-                <span className="">
+              <div className="relative flex h-[36px] w-[158px] items-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] shadow-sm dark:bg-[#fff]">
+                <span className="absolute flex items-center px-2">
                   <svg
-                    width="20"
+                    width="18"
                     height="20"
-                    viewBox="0 0 20 20"
+                    viewBox="0 0 18 20"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M15 1.66699V3.33366M5 1.66699V3.33366"
-                      stroke="#6D7177"
+                      d="M14 1.6665V3.33317M4 1.6665V3.33317"
+                      stroke="#6B6F75"
                       stroke-width="1.5"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                     <path
-                      d="M9.99622 10.834H10.0037M9.99622 14.1673H10.0037M13.3258 10.834H13.3333M6.66663 10.834H6.6741M6.66663 14.1673H6.6741"
-                      stroke="#6D7177"
+                      d="M8.99622 10.833H9.0037M8.99622 14.1663H9.0037M12.3258 10.833H12.3333M5.66663 10.833H5.6741M5.66663 14.1663H5.6741"
+                      stroke="#6B6F75"
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                     <path
-                      d="M2.91663 6.66699H17.0833"
-                      stroke="#6D7177"
+                      d="M1.91663 6.6665H16.0833"
+                      stroke="#6B6F75"
                       stroke-width="1.5"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                     <path
-                      d="M2.08331 10.2027C2.08331 6.57161 2.08331 4.75607 3.12675 3.62803C4.17018 2.5 5.84956 2.5 9.20831 2.5H10.7916C14.1504 2.5 15.8298 2.5 16.8732 3.62803C17.9166 4.75607 17.9166 6.57161 17.9166 10.2027V10.6306C17.9166 14.2617 17.9166 16.0773 16.8732 17.2053C15.8298 18.3333 14.1504 18.3333 10.7916 18.3333H9.20831C5.84956 18.3333 4.17018 18.3333 3.12675 17.2053C2.08331 16.0773 2.08331 14.2617 2.08331 10.6306V10.2027Z"
-                      stroke="#6D7177"
+                      d="M1.08331 10.2027C1.08331 6.57161 1.08331 4.75607 2.12675 3.62803C3.17018 2.5 4.84956 2.5 8.20831 2.5H9.79165C13.1504 2.5 14.8298 2.5 15.8732 3.62803C16.9166 4.75607 16.9166 6.57161 16.9166 10.2027V10.6306C16.9166 14.2617 16.9166 16.0773 15.8732 17.2053C14.8298 18.3333 13.1504 18.3333 9.79165 18.3333H8.20831C4.84956 18.3333 3.17018 18.3333 2.12675 17.2053C1.08331 16.0773 1.08331 14.2617 1.08331 10.6306V10.2027Z"
+                      stroke="#6B6F75"
                       stroke-width="1.5"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                     <path
-                      d="M2.5 6.66699H17.5"
-                      stroke="#6D7177"
+                      d="M1.5 6.6665H16.5"
+                      stroke="#6B6F75"
                       stroke-width="1.5"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                   </svg>
                 </span>
-                <SelectTag className="w-full border-none pr-8 text-[14px] font-[500] leading-[20px] text-neutral-700">
+                <SelectTag className="w-full border-none bg-transparent px-8 text-[14px] font-[500] leading-[20px] text-neutral-700">
                   <option className="">Last 30 Days</option>
-                  <option>Last 30 Days</option>
+                  <option>Sort By</option>
                 </SelectTag>
               </div>
+
               <button
-                className="flex items-center gap-[4px] rounded-lg border-[1px] border-neutral-200 p-2"
+                className="flex items-center gap-[4px] w-[97px] h-[36px] rounded-lg border-[1px] border-neutral-200 p-2"
                 onClick={() => setIsOpen(true)}
               >
                 <span className="">
@@ -212,12 +196,12 @@ const Transaction: React.FC = () => {
                     />
                   </svg>
                 </span>
-                <h3 className="text-[14px] font-[500] leading-[20px] text-neutral-700">
+                <h3 className="text-[14px] px-2 font-[500] leading-[20px] text-neutral-700">
                   Filter
                 </h3>
               </button>
-              <div className="relative flex items-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] p-[8px] shadow-sm dark:bg-[#fff]">
-                <span className="">
+              <div className="relative flex h-[36px] w-[122px] items-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] shadow-sm dark:bg-[#fff]">
+                <span className="absolute flex items-center px-2">
                   <svg
                     width="18"
                     height="18"
@@ -262,7 +246,7 @@ const Transaction: React.FC = () => {
                     />
                   </svg>
                 </span>
-                <SelectTag className="w-full border-none bg-transparent pr-8 text-[14px] font-[500] leading-[20px] text-neutral-700">
+                <SelectTag className="w-full border-none bg-transparent px-8 text-[14px] font-[500] leading-[20px] text-neutral-700">
                   <option className="">Sort By</option>
                   <option>Sort By</option>
                 </SelectTag>
@@ -442,26 +426,39 @@ const Transaction: React.FC = () => {
                               >
                                 <path
                                   d="M0.5 20C0.5 9.23045 9.23045 0.5 20 0.5C30.7696 0.5 39.5 9.23045 39.5 20C39.5 30.7696 30.7696 39.5 20 39.5C9.23045 39.5 0.5 30.7696 0.5 20Z"
-                                  fill="#32B56A"
+                                  fill="url(#paint0_linear_3385_50531)"
                                 />
                                 <path
                                   d="M0.5 20C0.5 9.23045 9.23045 0.5 20 0.5C30.7696 0.5 39.5 9.23045 39.5 20C39.5 30.7696 30.7696 39.5 20 39.5C9.23045 39.5 0.5 30.7696 0.5 20Z"
-                                  stroke="#32B56A"
+                                  stroke="#C1F1D5"
                                 />
                                 <path
                                   d="M20 26.6664L20 13.333"
-                                  stroke="#1C1D1E"
+                                  stroke="#32B56A"
                                   stroke-width="1.5"
                                   stroke-linecap="round"
                                   stroke-linejoin="round"
                                 />
                                 <path
                                   d="M24.1666 22.4994C24.1666 22.4994 21.0979 26.666 19.9999 26.666C18.9019 26.666 15.8333 22.4993 15.8333 22.4993"
-                                  stroke="#1C1D1E"
+                                  stroke="#32B56A"
                                   stroke-width="1.5"
                                   stroke-linecap="round"
                                   stroke-linejoin="round"
                                 />
+                                <defs>
+                                  <linearGradient
+                                    id="paint0_linear_3385_50531"
+                                    x1="20"
+                                    y1="0"
+                                    x2="20"
+                                    y2="40"
+                                    gradientUnits="userSpaceOnUse"
+                                  >
+                                    <stop stop-color="#F1FCF5" />
+                                    <stop offset="1" stop-color="#C1F1D5" />
+                                  </linearGradient>
+                                </defs>
                               </svg>
                             </span>
                           </div>
@@ -471,13 +468,13 @@ const Transaction: React.FC = () => {
                             Send money to Farouq
                           </div>
                           <div className="text-[12px] font-[500] leading-[16px] text-neutral-700">
-                            Sent
+                            Credit
                           </div>
                         </div>
                       </div>
                     </td>
                     <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
-                      Debit Card
+                      Bank Transfer
                     </td>
                     <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
                       PD1468373HM1
@@ -490,7 +487,7 @@ const Transaction: React.FC = () => {
                     </td>
 
                     <th>
-                      <button className="flex w-[100px] items-center justify-center rounded-full bg-positive-50 p-[4px] text-[14px] font-[500]">
+                      <button className="bg-positive-50 flex h-[24px] w-[96px] items-center justify-center rounded-[4px] border-[1px] border-x-[#E5F9ED] border-b-[#d1f5e0] border-t-[#E5F9ED] text-[14px] font-[500]">
                         <span>
                           <svg
                             width="16"
@@ -502,7 +499,7 @@ const Transaction: React.FC = () => {
                             <circle cx="8" cy="8" r="3" fill="#32B56A" />
                           </svg>
                         </span>
-                        <h3 className="text-[12px] text-positive-500">
+                        <h3 className="text-positive-500 text-[12px]">
                           Collected
                         </h3>
                       </button>
@@ -557,26 +554,39 @@ const Transaction: React.FC = () => {
                               >
                                 <path
                                   d="M0.5 20C0.5 9.23045 9.23045 0.5 20 0.5C30.7696 0.5 39.5 9.23045 39.5 20C39.5 30.7696 30.7696 39.5 20 39.5C9.23045 39.5 0.5 30.7696 0.5 20Z"
-                                  fill="#32B56A"
+                                  fill="url(#paint0_linear_3385_43803)"
                                 />
                                 <path
                                   d="M0.5 20C0.5 9.23045 9.23045 0.5 20 0.5C30.7696 0.5 39.5 9.23045 39.5 20C39.5 30.7696 30.7696 39.5 20 39.5C9.23045 39.5 0.5 30.7696 0.5 20Z"
-                                  stroke="#32B56A"
+                                  stroke="#C1F1D5"
                                 />
                                 <path
                                   d="M20 26.6664L20 13.333"
-                                  stroke="#1C1D1E"
+                                  stroke="#32B56A"
                                   stroke-width="1.5"
                                   stroke-linecap="round"
                                   stroke-linejoin="round"
                                 />
                                 <path
                                   d="M24.1666 22.4994C24.1666 22.4994 21.0979 26.666 19.9999 26.666C18.9019 26.666 15.8333 22.4993 15.8333 22.4993"
-                                  stroke="#1C1D1E"
+                                  stroke="#32B56A"
                                   stroke-width="1.5"
                                   stroke-linecap="round"
                                   stroke-linejoin="round"
                                 />
+                                <defs>
+                                  <linearGradient
+                                    id="paint0_linear_3385_43803"
+                                    x1="20"
+                                    y1="0"
+                                    x2="20"
+                                    y2="40"
+                                    gradientUnits="userSpaceOnUse"
+                                  >
+                                    <stop stop-color="#F1FCF5" />
+                                    <stop offset="1" stop-color="#C1F1D5" />
+                                  </linearGradient>
+                                </defs>
                               </svg>
                             </span>
                           </div>
@@ -586,7 +596,7 @@ const Transaction: React.FC = () => {
                             Watercress Crescent Home
                           </div>
                           <div className="text-overflow text-[12px] font-[500] leading-[16px] text-neutral-700">
-                            210 Jericho Highway, Comfort Island, Ibadan
+                            Credit
                           </div>
                         </div>
                       </div>
@@ -605,7 +615,7 @@ const Transaction: React.FC = () => {
                     </td>
 
                     <th>
-                      <button className="flex w-[100px] items-center justify-center rounded-full bg-negative-50 p-[4px] text-[14px] font-[500] text-negative-500">
+                      <button className="bg-negative-50 text-negative-500 flex w-[100px] items-center justify-center rounded-full p-[4px] text-[14px] font-[500]">
                         <span>
                           <svg
                             width="16"
@@ -666,26 +676,39 @@ const Transaction: React.FC = () => {
                               >
                                 <path
                                   d="M0.5 20C0.5 9.23045 9.23045 0.5 20 0.5C30.7696 0.5 39.5 9.23045 39.5 20C39.5 30.7696 30.7696 39.5 20 39.5C9.23045 39.5 0.5 30.7696 0.5 20Z"
-                                  fill="#32B56A"
+                                  fill="url(#paint0_linear_3385_43803)"
                                 />
                                 <path
                                   d="M0.5 20C0.5 9.23045 9.23045 0.5 20 0.5C30.7696 0.5 39.5 9.23045 39.5 20C39.5 30.7696 30.7696 39.5 20 39.5C9.23045 39.5 0.5 30.7696 0.5 20Z"
-                                  stroke="#32B56A"
+                                  stroke="#C1F1D5"
                                 />
                                 <path
                                   d="M20 26.6664L20 13.333"
-                                  stroke="#1C1D1E"
+                                  stroke="#32B56A"
                                   stroke-width="1.5"
                                   stroke-linecap="round"
                                   stroke-linejoin="round"
                                 />
                                 <path
                                   d="M24.1666 22.4994C24.1666 22.4994 21.0979 26.666 19.9999 26.666C18.9019 26.666 15.8333 22.4993 15.8333 22.4993"
-                                  stroke="#1C1D1E"
+                                  stroke="#32B56A"
                                   stroke-width="1.5"
                                   stroke-linecap="round"
                                   stroke-linejoin="round"
                                 />
+                                <defs>
+                                  <linearGradient
+                                    id="paint0_linear_3385_43803"
+                                    x1="20"
+                                    y1="0"
+                                    x2="20"
+                                    y2="40"
+                                    gradientUnits="userSpaceOnUse"
+                                  >
+                                    <stop stop-color="#F1FCF5" />
+                                    <stop offset="1" stop-color="#C1F1D5" />
+                                  </linearGradient>
+                                </defs>
                               </svg>
                             </span>
                           </div>
@@ -695,13 +718,13 @@ const Transaction: React.FC = () => {
                             Watercress Crescent Home
                           </div>
                           <div className="text-overflow text-[12px] font-[500] leading-[16px] text-neutral-700">
-                            210 Jericho Highway, Comfort Island, Ibadan
+                            Credit
                           </div>
                         </div>
                       </div>
                     </td>
                     <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
-                      Deposit
+                      Wallet Funds
                     </td>
                     <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
                       PD1468373HM1
@@ -714,7 +737,7 @@ const Transaction: React.FC = () => {
                     </td>
 
                     <th>
-                      <button className="flex w-[100px] items-center justify-center rounded-full bg-warning-50 p-[4px] text-[14px] font-[500]">
+                      <button className="bg-warning-50 flex w-[100px] items-center justify-center rounded-full p-[4px] text-[14px] font-[500]">
                         <span>
                           <svg
                             width="16"
@@ -726,7 +749,131 @@ const Transaction: React.FC = () => {
                             <circle cx="8" cy="8" r="3" fill="#FFC107" />
                           </svg>
                         </span>
-                        <h3 className="text-[12px] text-warning-500">
+                        <h3 className="text-warning-500 text-[12px]">
+                          Pending
+                        </h3>
+                      </button>
+                    </th>
+                    <td>
+                      <button className="flex h-[32px] w-[32px] items-center justify-center rounded-[8px]">
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17.5 10C17.5 9.30964 16.9404 8.75 16.25 8.75C15.5596 8.75 15 9.30964 15 10C15 10.6904 15.5596 11.25 16.25 11.25C16.9404 11.25 17.5 10.6904 17.5 10Z"
+                            stroke="#1C1D1E"
+                            stroke-width="1.5"
+                          />
+                          <path
+                            d="M11.25 10C11.25 9.30964 10.6904 8.75 10 8.75C9.30964 8.75 8.75 9.30964 8.75 10C8.75 10.6904 9.30964 11.25 10 11.25C10.6904 11.25 11.25 10.6904 11.25 10Z"
+                            stroke="#1C1D1E"
+                            stroke-width="1.5"
+                          />
+                          <path
+                            d="M5 10C5 9.30964 4.44036 8.75 3.75 8.75C3.05964 8.75 2.5 9.30964 2.5 10C2.5 10.6904 3.05964 11.25 3.75 11.25C4.44036 11.25 5 10.6904 5 10Z"
+                            stroke="#1C1D1E"
+                            stroke-width="1.5"
+                          />
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <Checkbox />
+                    </th>
+                    <td className="">
+                      <div className="flex items-center gap-3">
+                        <div className="avatar">
+                          <div className="">
+                            <span>
+                              <svg
+                                width="40"
+                                height="40"
+                                viewBox="0 0 40 40"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M0.5 20C0.5 9.23045 9.23045 0.5 20 0.5C30.7696 0.5 39.5 9.23045 39.5 20C39.5 30.7696 30.7696 39.5 20 39.5C9.23045 39.5 0.5 30.7696 0.5 20Z"
+                                  fill="url(#paint0_linear_3385_52429)"
+                                />
+                                <path
+                                  d="M0.5 20C0.5 9.23045 9.23045 0.5 20 0.5C30.7696 0.5 39.5 9.23045 39.5 20C39.5 30.7696 30.7696 39.5 20 39.5C9.23045 39.5 0.5 30.7696 0.5 20Z"
+                                  stroke="#F8D0D0"
+                                />
+                                <path
+                                  d="M20 13.333L20 26.6664"
+                                  stroke="#D84E4E"
+                                  stroke-width="1.5"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                                <path
+                                  d="M24.1665 17.4996C24.1665 17.4996 21.0978 13.333 19.9998 13.333C18.9018 13.333 15.8332 17.4997 15.8332 17.4997"
+                                  stroke="#D84E4E"
+                                  stroke-width="1.5"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                                <defs>
+                                  <linearGradient
+                                    id="paint0_linear_3385_52429"
+                                    x1="20"
+                                    y1="0"
+                                    x2="20"
+                                    y2="40"
+                                    gradientUnits="userSpaceOnUse"
+                                  >
+                                    <stop stop-color="#FDF3F3" />
+                                    <stop offset="1" stop-color="#F8D0D0" />
+                                  </linearGradient>
+                                </defs>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                        <div>
+                          <div className="text-[14px] font-[600] leading-[20px] text-neutral-950">
+                            Watercress Crescent Home
+                          </div>
+                          <div className="text-overflow text-[12px] font-[500] leading-[16px] text-neutral-700">
+                            Debit
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                      Wallet Funds
+                    </td>
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                      PD1468373HM1
+                    </td>
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                      October 10, 2025
+                    </td>
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                      ₦25,000,000
+                    </td>
+
+                    <th>
+                      <button className="bg-warning-50 flex w-[100px] items-center justify-center rounded-full p-[4px] text-[14px] font-[500]">
+                        <span>
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle cx="8" cy="8" r="3" fill="#FFC107" />
+                          </svg>
+                        </span>
+                        <h3 className="text-warning-500 text-[12px]">
                           Pending
                         </h3>
                       </button>

@@ -1,24 +1,24 @@
 import "./App.css";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import UserType from "./pages/UserType";
-import SignUp from "./pages/SignUp";
+import UserType from "./pages/Auth/UserType";
+import SignUp from "./pages/Auth/SignUp";
 import Preloader from "./components/Preloader";
-import Congratulations from "./pages/Congratulations";
-import RegisterWelcome from "./pages/RegisterWelcome";
-import Login from "./pages/Login";
-import VerifyEmailRegister from "./pages/VerifyEmailRegister";
-import VerifyEmailLogin from "./pages/VerifyEmailLogin";
-import ForgotPassword from "./pages/ForgotPassword";
-import CreateNewPassword from "./pages/CreateNewPassword";
-import PasswordChanged from "./pages/PasswordChanged";
+import Congratulations from "./pages/Auth/Congratulations";
+import RegisterWelcome from "./pages/Auth/RegisterWelcome";
+import Login from "./pages/Auth/Login";
+import VerifyEmailRegister from "./pages/Auth/VerifyEmailRegister";
+import VerifyEmailLogin from "./pages/Auth/VerifyEmailLogin";
+import ForgotPassword from "./pages/Auth/ForgotPassword";
+import CreateNewPassword from "./pages/Auth/CreateNewPassword";
+import PasswordChanged from "./pages/Auth/PasswordChanged";
 import BuyerDashboard from "./layout/Buyer";
 import DashBoard from "./pages/BuyerPages/Dashboard";
 import Properties from "./pages/BuyerPages/Properties";
-import PersonalInformation from "./pages/PersonalInformation";
-import NextOfKin from "./pages/NextOfKin";
-import BankDetails from "./pages/BankDetails";
-import SuccessInformation from "./pages/SuccesInfomation";
+import PersonalInformation from "./pages/Auth/PersonalInformation";
+import NextOfKin from "./pages/Auth/NextOfKin";
+import BankDetails from "./pages/Auth/BankDetails";
+import SuccessInformation from "./pages/Auth/SuccesInfomation";
 import Favourites from "./pages/BuyerPages/Favourites";
 import Assets from "./pages/BuyerPages/Assets";
 import Bookings from "./pages/BuyerPages/Bookings";
@@ -37,12 +37,14 @@ import BuyLand from "./pages/BuyerPages/BuyLand";
 import FavouriteLists from "./pages/BuyerPages/FavouriteLists";
 import AssetLists from "./pages/BuyerPages/AssetLists";
 import PropertiesLists from "./pages/BuyerPages/PropertiesList";
-import PropertiesView from "./pages/BuyerPages/PropertiesView/PropertiesView";
+import PropertiesView from "./pages/BuyerPages/PropertiesView";
 import Document from "./pages/BuyerPages/Document";
 import Integration from "./pages/BuyerPages/Integration";
-import EmptyState from "./components/EmptyState";
+import FavouriteView from "./pages/BuyerPages/FavouriteView.tsx";
+import ReminderEdit from "./components/PaymentReminder/ReminderEdit.tsx";
 
 function App() {
+  const [scheduleOpen, setScheduleOpen] = useState<boolean>(false);
   const [loading, setLoading] = useState(true);
   const location = useLocation();
 
@@ -82,15 +84,24 @@ function App() {
           <Route path="/next-kin" element={<NextOfKin />} />
           <Route path="/bank-details" element={<BankDetails />} />
           <Route path="/success-info" element={<SuccessInformation />} />
-          <Route path="/empty" element={<EmptyState />} />
+          <Route
+            path="/payment"
+            element={
+              <ReminderEdit
+                isOpenMenu={scheduleOpen}
+                onClose={() => setScheduleOpen(false)}
+              />
+            }
+          />
 
           <Route element={<BuyerDashboard />}>
             <Route path="/dashboard" element={<DashBoard />} />
             <Route path="/properties" element={<Properties />} />
             <Route path="/properties/lists" element={<PropertiesLists />} />
             <Route path="/properties/view" element={<PropertiesView />} />
-            <Route path="/favourites" element={<Favourites />} />
-            <Route path="/favourites/lists" element={<FavouriteLists />} />
+            <Route path="/favourite" element={<Favourites />} />
+            <Route path="/favourite/lists" element={<FavouriteLists />} />
+            <Route path="/favourite/view" element={<FavouriteView />} />
             <Route path="/assets" element={<Assets />} />
             <Route path="/assets/lists" element={<AssetLists />} />
             <Route path="/bookings" element={<Bookings />} />

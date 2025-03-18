@@ -1,7 +1,13 @@
+import { useState } from "react";
 import favourites from "@/assets/images/Rectangle 2911 (1).png";
 import ContentHeader from "@/components/ContentHeader";
 import Button from "@/components/common/Button";
-const Assets = () => {
+import Modal from "@/components/Modal";
+
+
+
+const Assets: React.FC = () => {
+  const [isModalOpen, setModalOpen] = useState<boolean>(false);
   return (
     <>
       <ContentHeader text="My Assets" path="/assets/lists" route="/assets" />
@@ -226,15 +232,18 @@ const Assets = () => {
                   ₦25,000,000
                 </h2>
                 <Button
-                  text="Document"
+                  text="View"
                   stroke="#12725B"
                   type="button"
+                  onClick={() => setModalOpen(true)}
                   className="h-[36px] w-[132px] rounded-[8px] border-[1px] border-brand-base text-[14px] text-brand-base"
                 />
               </div>
             </div>
           ))}
+         <Modal title="Property Details" isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
       </div>
+     
     </>
   );
 };

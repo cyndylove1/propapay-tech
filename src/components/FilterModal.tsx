@@ -7,7 +7,7 @@ interface ModalProps {
   onClose: () => void;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
+const FilterModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
@@ -98,26 +98,39 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 </SelectTag>
               </div>
             </div>
-
             <div>
-              <label className="block mb-1 text-sm text-gray-600">
-                Start Date
-              </label>
-              <input
-                type="date"
-                className="focus:ring-green-500 focus:outline-none w-full p-2 border rounded-md"
-              />
+              <div className="mx-4">
+                <Label text="Property" htmlFor="status" />
+                <SelectTag
+                  // onChange={(e) => setTitle(e.target.value)}
+                  className="h-[56px] w-full rounded-[12px] border-neutral-200 px-2"
+                >
+                  <option
+                    value=""
+                    className="text-[16px] font-[400] leading-[19px]"
+                  >
+                    Angle Blue, Lekki
+                  </option>
+                </SelectTag>
+              </div>
+            </div>
+            <div>
+              <div className="mx-4">
+                <Label text="Property" htmlFor="status" />
+                <SelectTag
+                  // onChange={(e) => setTitle(e.target.value)}
+                  className="h-[56px] w-full rounded-[12px] border-neutral-200 px-2"
+                >
+                  <option
+                    value=""
+                    className="text-[16px] font-[400] leading-[19px]"
+                  >
+                    Angle Blue, Lekki
+                  </option>
+                </SelectTag>
+              </div>
             </div>
 
-            <div>
-              <label className="block mb-1 text-sm text-gray-600">
-                End Date
-              </label>
-              <input
-                type="date"
-                className="focus:ring-green-500 focus:outline-none w-full p-2 border rounded-md"
-              />
-            </div>
           </div>
 
           {/* Modal Footer */}
@@ -138,4 +151,4 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   );
 };
 
-export default Modal;
+export default FilterModal;

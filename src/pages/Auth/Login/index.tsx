@@ -8,7 +8,7 @@ import Label from "@/components/common/Label";
 import RegisterFooter from "@/components/RegisterFooter";
 import RegisterHeader from "@/components/RegisterHeader";
 import Checkbox from "@/components/common/Checkbox";
-import Spinner from "@/components/Spinner"
+import Spinner from "@/components/common/Spinner"
 
 const Login: React.FC = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);

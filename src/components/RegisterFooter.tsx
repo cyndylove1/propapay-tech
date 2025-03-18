@@ -8,7 +8,7 @@ const RegisterFooter = () => {
         <p>© 2025 PropaPay - All Rights Reserved</p>
 
         {/* Right Side - Language Selector */}
-        <div className="relative items-center gap-[2px] rounded-lg md:flex">
+        <div className="relative items-center gap-[2px] rounded-lg bg-brand-50 md:flex">
           <span>
             <svg
               width="20"
@@ -46,7 +46,7 @@ const RegisterFooter = () => {
               />
             </svg>
           </span>
-          <SelectTag className="border-none bg-transparent pr-8 text-[14px] font-[500] leading-[20px] text-neutral-500">
+          <SelectTag className="border-none text-[14px] font-[500] leading-[20px] text-neutral-500">
             <option className="">ENG</option>
             <option>SPANISH</option>
           </SelectTag>

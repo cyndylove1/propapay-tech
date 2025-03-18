@@ -458,7 +458,7 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
               )}
             </NavLink>
             <NavLink
-              to="/favourites"
+              to="/favourite"
               className={({ isActive }: { isActive: boolean }) =>
                 `relative flex h-[40px] w-[250px] items-center gap-4 ${
                   isActive ? "font-bold text-white" : "text-neutral-700"

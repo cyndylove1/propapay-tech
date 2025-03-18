@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-
+import Modal from "./Modal";
 
 interface DropdownMenuProps {
   CloseMenu: () => void;
@@ -7,22 +7,23 @@ interface DropdownMenuProps {
 
 const DropdownMenu: React.FC<DropdownMenuProps> = ({ CloseMenu }) => {
   const [activeItem, setActiveItem] = useState<string | null>(null);
-   const dropdownRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [isModalOpen, setModalOpen] = useState<boolean>(false);
 
   // Close dropdown when clicking outside
-   useEffect(() => {
-     const handleClickOutside = (event: MouseEvent) => {
-       if (
-         dropdownRef.current &&
-         !dropdownRef.current.contains(event.target as Node)
-       ) {
-         CloseMenu();
-       }
-     };
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        CloseMenu();
+      }
+    };
 
-     document.addEventListener("mousedown", handleClickOutside);
-     return () => document.removeEventListener("mousedown", handleClickOutside);
-   }, [CloseMenu]);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [CloseMenu]);
 
   return (
     <>
@@ -33,15 +34,18 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ CloseMenu }) => {
       ></div>
 
       {/* Dropdown menu */}
-      <div className="absolute right-10 top-[19rem] z-50 w-[200px] translate-x-0 transform rounded-xl bg-white shadow-md transition-transform">
+      <div className="absolute right-10 top-[19rem] z-50 w-[200px] translate-x-0 transform rounded-md bg-white shadow-md transition-transform">
         <ul className="flex flex-col">
           <li
-            className={`flex cursor-pointer items-center justify-center gap-[12px] rounded-md p-2 ${
+            className={`justify-left flex cursor-pointer items-center gap-[12px] rounded-md px-6 py-2 ${
               activeItem === "view-details"
                 ? "bg-brand-50 font-[600]"
                 : "text-neutral-700 hover:bg-neutral-50"
             }`}
-            onClick={() => setActiveItem("view-details")}
+            onClick={() => {
+              setModalOpen(true);
+              setActiveItem("view-details");
+            }}
           >
             <span>
               <svg
@@ -74,7 +78,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ CloseMenu }) => {
             </h2>
           </li>
           <li
-            className={`flex cursor-pointer items-center justify-center gap-[12px] rounded-md p-2 ${
+            className={`justify-left flex cursor-pointer items-center gap-[12px] rounded-md px-6 py-2 ${
               activeItem === "download"
                 ? "bg-brand-50 font-[600]"
                 : "text-neutral-700 hover:bg-neutral-50"
@@ -91,13 +95,13 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ CloseMenu }) => {
               >
                 <path
                   d="M2.50012 11.667L2.69499 12.2191C3.45345 14.3681 3.83269 15.4426 4.69797 16.0548C5.56325 16.667 6.7027 16.667 8.98159 16.667H11.0187C13.2975 16.667 14.437 16.667 15.3023 16.0548C16.1676 15.4426 16.5468 14.3681 17.3053 12.2191L17.5001 11.667"
-                  stroke={activeItem === "download" ? "#12725B" : "#6d7177"}
+                  stroke={activeItem === "download" ? "#12725B" : "#6B6F75"}
                   stroke-width="1.5"
                   stroke-linecap="round"
                 />
                 <path
                   d="M10.0001 11.6668V3.3335M10.0001 11.6668C9.41662 11.6668 8.32642 10.0049 7.91681 9.5835M10.0001 11.6668C10.5837 11.6668 11.6739 10.0049 12.0835 9.5835"
-                  stroke={activeItem === "download" ? "#12725B" : "#6d7177"}
+                  stroke={activeItem === "download" ? "#12725B" : "#6B6F75"}
                   stroke-width="1.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -107,15 +111,16 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ CloseMenu }) => {
             <h2
               className={`text-[12px] font-[600] leading-[16px] ${
                 activeItem === "download"
-                  ? "text-brand-base"
+                  ? "text-[#12725B]"
                   : "text-neutral-700"
               }`}
             >
               Download
             </h2>
           </li>
+
           <li
-            className={`flex cursor-pointer items-center justify-center gap-[12px] rounded-md p-2 ${
+            className={`justify-left flex cursor-pointer items-center gap-[12px] rounded-md px-6 py-2 ${
               activeItem === "share"
                 ? "bg-brand-50 font-[600]"
                 : "text-neutral-700 hover:bg-neutral-50"
@@ -148,7 +153,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ CloseMenu }) => {
             </h2>
           </li>
           <li
-            className={`flex cursor-pointer items-center justify-center gap-[12px] rounded-md p-2 ${
+            className={`justify-left flex cursor-pointer items-center gap-[12px] rounded-md px-6 py-2 ${
               activeItem === "delivery"
                 ? "bg-brand-50 font-[600]"
                 : "text-neutral-700 hover:bg-neutral-50"
@@ -200,7 +205,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ CloseMenu }) => {
             </h2>
           </li>
           <li
-            className={`flex cursor-pointer items-center justify-center gap-[12px] rounded-md p-2 ${
+            className={`justify-left flex cursor-pointer items-center gap-[12px] rounded-md px-6 py-2 ${
               activeItem === "document"
                 ? "bg-brand-50 font-[600]"
                 : "text-neutral-700 hover:bg-neutral-50"
@@ -243,7 +248,9 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ CloseMenu }) => {
             </span>
             <h2
               className={`text-[12px] font-[600] leading-[16px] ${
-                activeItem === "document" ? "text-brand-base" : "text-neutral-700"
+                activeItem === "document"
+                  ? "text-brand-base"
+                  : "text-neutral-700"
               }`}
             >
               Print Document
@@ -251,6 +258,11 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ CloseMenu }) => {
           </li>
         </ul>
       </div>
+      <Modal
+        title="Document Details"
+        isOpen={isModalOpen}
+        onClose={() => setModalOpen(false)}
+      />
     </>
   );
 };

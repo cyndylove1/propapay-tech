@@ -3,15 +3,14 @@ import Button from "@/components/common/Button";
 import Logo from "@/components/common/Logo";
 import { Link } from "react-router";
 
-const PasswordChanged = () => {
+const SuccessInformation = () => {
   return (
     <>
-      <div className="bg-white">
-        <div className="px-4 pt-[20px]">
-          <Logo className="h-[40px] w-[150px]" />
-        </div>
-
-        <div className="flex items-center justify-center pt-[50px]">
+      <div className="px-4 pt-[20px] md:px-10">
+        <Logo className="h-[40px] w-[150px]" />
+      </div>
+      <div className="">
+        <div className="flex justify-center pt-[2rem]">
           <svg
             width="182"
             height="125"
@@ -55,34 +54,30 @@ const PasswordChanged = () => {
             </defs>
           </svg>
         </div>
-        
         <div className="text-center">
-          <h2 className="pt-[30px] md:text-[36px] text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-950">
-            Great! your password <br />
-            has been changed.
+          <h2 className="pt-[30px] text-[25px] font-[600] leading-[48px] tracking-tighter text-neutral-950 md:text-[36px]">
+            Your application is under <br /> review.
           </h2>
           <h5 className="pt-[5px] text-[16px] font-[500] leading-[24px] text-neutral-700">
-            Your password has been successfully reset. Please <br /> use your
-            new password to access your account.
+            Your data is being processed. We will verify <br /> your information
+            and respond shortly.
           </h5>
         </div>
         <Link to="/login">
           <div className="flex justify-center">
             <Button
-              text="Sign In"
+              text="Continue"
               type="submit"
-              className="mt-[30px] h-[48px] w-[250px] rounded-xl bg-brand-base text-white"
+              className="bg-brand-base mt-[30px] h-[48px] w-[250px] rounded-xl text-white"
             />
           </div>
         </Link>
       </div>
-
       {/* bottomIcon */}
       <div className="md:flex hidden">
         <BottomIcon width={"406"} height={"200"} />
       </div>
-      
     </>
   );
 };
-export default PasswordChanged;
+export default SuccessInformation;

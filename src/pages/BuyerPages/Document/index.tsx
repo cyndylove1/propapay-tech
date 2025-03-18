@@ -92,7 +92,7 @@ const Document: React.FC = () => {
                 </svg>
               </span>
               <h3 className="text-[14px] font-[600] leading-[20px] text-white">
-                Synchronize
+                Track Status
               </h3>
             </button>
           </div>
@@ -109,9 +109,9 @@ const Document: React.FC = () => {
               />
             </div>
 
-            <div className="mt-4 flex w-full flex-col gap-[16px] md:mt-0 md:w-fit md:flex-row">
-              <div className="relative flex items-center gap-[8px] rounded-lg border-[1px] border-neutral-200 p-[8px] shadow-sm">
-                <span>
+             <div className="mt-4 flex w-full flex-col gap-[16px] md:mt-0 md:w-fit md:flex-row">
+              <div className="relative flex h-[36px] w-[158px] items-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] shadow-sm dark:bg-[#fff]">
+                <span className="absolute flex items-center px-2">
                   <svg
                     width="18"
                     height="20"
@@ -121,51 +121,52 @@ const Document: React.FC = () => {
                   >
                     <path
                       d="M14 1.6665V3.33317M4 1.6665V3.33317"
-                      stroke="#6D7177"
+                      stroke="#6B6F75"
                       stroke-width="1.5"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                     <path
                       d="M8.99622 10.833H9.0037M8.99622 14.1663H9.0037M12.3258 10.833H12.3333M5.66663 10.833H5.6741M5.66663 14.1663H5.6741"
-                      stroke="#6D7177"
+                      stroke="#6B6F75"
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                     <path
                       d="M1.91663 6.6665H16.0833"
-                      stroke="#6D7177"
+                      stroke="#6B6F75"
                       stroke-width="1.5"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                     <path
                       d="M1.08331 10.2027C1.08331 6.57161 1.08331 4.75607 2.12675 3.62803C3.17018 2.5 4.84956 2.5 8.20831 2.5H9.79165C13.1504 2.5 14.8298 2.5 15.8732 3.62803C16.9166 4.75607 16.9166 6.57161 16.9166 10.2027V10.6306C16.9166 14.2617 16.9166 16.0773 15.8732 17.2053C14.8298 18.3333 13.1504 18.3333 9.79165 18.3333H8.20831C4.84956 18.3333 3.17018 18.3333 2.12675 17.2053C1.08331 16.0773 1.08331 14.2617 1.08331 10.6306V10.2027Z"
-                      stroke="#6D7177"
+                      stroke="#6B6F75"
                       stroke-width="1.5"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                     <path
                       d="M1.5 6.6665H16.5"
-                      stroke="#6D7177"
+                      stroke="#6B6F75"
                       stroke-width="1.5"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                   </svg>
                 </span>
-                <SelectTag className="w-full border-none bg-transparent pr-8 text-[14px] font-[500] leading-[20px] text-neutral-700">
+                <SelectTag className="w-full border-none bg-transparent px-8 text-[14px] font-[500] leading-[20px] text-neutral-700">
                   <option className="">Last 30 Days</option>
-                  <option>Last 30 Days</option>
+                  <option>Sort By</option>
                 </SelectTag>
               </div>
+
               <button
-                className="flex items-center gap-[4px] rounded-lg border-[1px] border-[#DEE1E4] p-2"
+                className="flex items-center gap-[4px] w-[97px] h-[36px] rounded-lg border-[1px] border-neutral-200 p-2"
                 onClick={() => setIsOpen(true)}
               >
-                <span className="text-[#6D7177] dark:text-[#c4c7cd]">
+                <span className="">
                   <svg
                     width="18"
                     height="16"
@@ -213,49 +214,49 @@ const Document: React.FC = () => {
                     />
                   </svg>
                 </span>
-                <h3 className="text-[14px] font-[500] leading-[20px] text-neutral-700">
+                <h3 className="text-[14px] px-2 font-[500] leading-[20px] text-neutral-700">
                   Filter
                 </h3>
               </button>
-              <div className="relative flex items-center gap-[8px] rounded-lg border-[1px] border-neutral-200 bg-white p-[8px] shadow-sm">
-                <span>
+              <div className="relative flex h-[36px] w-[122px] items-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] shadow-sm dark:bg-[#fff]">
+                <span className="absolute flex items-center px-2">
                   <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 18 18"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M9.16669 6.6665L17.5 6.66657"
+                      d="M8.16669 5.66699L16.5 5.66705"
                       stroke="#6D7177"
                       stroke-width="1.5"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                     <path
-                      d="M9.16669 10H17.5"
+                      d="M8.16669 9H16.5"
                       stroke="#6D7177"
                       stroke-width="1.5"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                     <path
-                      d="M9.16669 13.3335H17.5"
+                      d="M8.16669 12.333H16.5"
                       stroke="#6D7177"
                       stroke-width="1.5"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                     <path
-                      d="M9.16669 3.3335H17.5"
+                      d="M8.16669 2.33301H16.5"
                       stroke="#6D7177"
                       stroke-width="1.5"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                     <path
-                      d="M4.58333 17.5V2.5M4.58333 17.5C3.99981 17.5 2.90961 15.8381 2.5 15.4167M4.58333 17.5C5.16686 17.5 6.25706 15.8381 6.66667 15.4167"
+                      d="M3.58333 16.5V1.5M3.58333 16.5C2.99981 16.5 1.90961 14.8381 1.5 14.4167M3.58333 16.5C4.16686 16.5 5.25706 14.8381 5.66667 14.4167"
                       stroke="#6D7177"
                       stroke-width="1.5"
                       stroke-linecap="round"
@@ -263,7 +264,7 @@ const Document: React.FC = () => {
                     />
                   </svg>
                 </span>
-                <SelectTag className="w-full border-none bg-transparent pr-8 text-[14px] font-[500] leading-[20px] text-neutral-700">
+                <SelectTag className="w-full border-none bg-transparent px-8 text-[14px] font-[500] leading-[20px] text-neutral-700">
                   <option className="">Sort By</option>
                   <option>Sort By</option>
                 </SelectTag>
@@ -516,6 +517,7 @@ const Document: React.FC = () => {
         {OpenMenu && <DropdownMenu CloseMenu={() => setOpenMenu(false)} />}
         <FilterModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
         <ExportModal Open={Open} Close={() => setOpen(false)} />
+        
       </div>
     </>
   );
