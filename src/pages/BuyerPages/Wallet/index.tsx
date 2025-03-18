@@ -110,7 +110,7 @@ const Wallet = () => {
               </div>
               <div className="flex gap-3">
                 <button
-                  className="flex h-[40px] w-[144px] items-center justify-center gap-2 rounded-full bg-white"
+                  className="flex h-[40px] md:w-[144px] w-[135px] items-center justify-center gap-2 rounded-full bg-white"
                   onClick={() => setIsOpen(true)}
                 >
                   <svg
@@ -139,7 +139,7 @@ const Wallet = () => {
                     Add Money
                   </h3>
                 </button>
-                <button className="flex h-[40px] w-[144px] items-center justify-center gap-2 rounded-full bg-white">
+                <button className="flex h-[40px] md:w-[144px] w-[135px] items-center justify-center gap-2 rounded-full bg-white">
                   <svg
                     width="20"
                     height="20"
@@ -189,7 +189,7 @@ const Wallet = () => {
                   </h3>
                 </button>
                 <div
-                  className="flex md:h-[44px] md:w-[44px] h-[30px] w-[30px] items-center justify-center rounded-full bg-white"
+                  className="flex md:h-[44px] md:w-[44px] h-[40px] w-[40px] items-center justify-center rounded-full bg-white"
                   onClick={toggleMenuDropdown}
                 >
                   <svg
