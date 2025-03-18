@@ -92,7 +92,7 @@ const Transaction: React.FC = () => {
             </div>
 
             <div className="mt-4 flex w-full flex-col gap-[16px] md:mt-0 md:w-fit md:flex-row">
-              <div className="relative flex h-[36px] w-[158px] items-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] shadow-sm dark:bg-[#fff]">
+              <div className="relative flex h-[36px] md:w-[158px] w-full items-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] shadow-sm dark:bg-[#fff]">
                 <span className="absolute flex items-center px-2">
                   <svg
                     width="18"
@@ -145,7 +145,7 @@ const Transaction: React.FC = () => {
               </div>
 
               <button
-                className="flex items-center gap-[4px] w-[97px] h-[36px] rounded-lg border-[1px] border-neutral-200 p-2"
+                className="flex items-center gap-[4px] md:w-[97px] w-full h-[36px] rounded-lg border-[1px] border-neutral-200 p-2"
                 onClick={() => setIsOpen(true)}
               >
                 <span className="">
@@ -200,7 +200,7 @@ const Transaction: React.FC = () => {
                   Filter
                 </h3>
               </button>
-              <div className="relative flex h-[36px] w-[122px] items-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] shadow-sm dark:bg-[#fff]">
+              <div className="relative flex h-[36px] md:w-[122px] w-full items-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] shadow-sm dark:bg-[#fff]">
                 <span className="absolute flex items-center px-2">
                   <svg
                     width="18"
