@@ -21,19 +21,11 @@ import BankDetails from "./pages/Auth/BankDetails";
 import SuccessInformation from "./pages/Auth/SuccesInfomation";
 import Favourites from "./pages/BuyerPages/Favourites";
 import Assets from "./pages/BuyerPages/Assets";
-import Bookings from "./pages/BuyerPages/Bookings";
 import Transactions from "./pages/BuyerPages/Transaction";
 import Wallet from "./pages/BuyerPages/Wallet";
-import WalletTransactions from "./pages/BuyerPages/WalletTransaction";
 import Insight from "./pages/BuyerPages/Insights";
-import Instalment from "./pages/BuyerPages/Instalment";
 import Settings from "./pages/BuyerPages/Settings";
-import ProfileInformation from "./pages/BuyerPages/ProfileInformation";
-import SecuritySettings from "./pages/BuyerPages/SecuritySettings";
-import NotificationSettings from "./pages/BuyerPages/NotificationSettings";
-import Preference from "./pages/BuyerPages/Preference";
 import HelpCenter from "./pages/BuyerPages/HelpCenter";
-import BuyLand from "./pages/BuyerPages/BuyLand";
 import FavouriteLists from "./pages/BuyerPages/FavouriteLists";
 import AssetLists from "./pages/BuyerPages/AssetLists";
 import PropertiesLists from "./pages/BuyerPages/PropertiesList";
@@ -42,6 +34,8 @@ import Document from "./pages/BuyerPages/Document";
 import Integration from "./pages/BuyerPages/Integration";
 import FavouriteView from "./pages/BuyerPages/FavouriteView.tsx";
 import ReminderEdit from "./components/PaymentReminder/ReminderEdit.tsx";
+import FlexPayment from "./pages/BuyerPages/FlexPayment/index.tsx";
+
 
 function App() {
   const [scheduleOpen, setScheduleOpen] = useState<boolean>(false);
@@ -63,7 +57,7 @@ function App() {
       {showPreloader ? (
         <Preloader
           onComplete={() => setLoading(false)}
-          className="flex h-screen items-center justify-center"
+          className="flex items-center justify-center h-screen"
         />
       ) : (
         <Routes>
@@ -104,31 +98,14 @@ function App() {
             <Route path="/favourite/view" element={<FavouriteView />} />
             <Route path="/assets" element={<Assets />} />
             <Route path="/assets/lists" element={<AssetLists />} />
-            <Route path="/bookings" element={<Bookings />} />
             <Route path="/transactions" element={<Transactions />} />
             <Route path="/wallet" element={<Wallet />} />
-            <Route
-              path="/wallet-transaction"
-              element={<WalletTransactions />}
-            />
             <Route path="/document" element={<Document />} />
             <Route path="/insight" element={<Insight />} />
-            <Route path="/flex-payment" element={<Instalment />} />
-            <Route path="/settings" element={<Settings />}>
-              <Route
-                path="/settings/profile"
-                element={<ProfileInformation />}
-              />
-              <Route path="/settings/security" element={<SecuritySettings />} />
-              <Route
-                path="/settings/notifications"
-                element={<NotificationSettings />}
-              />
-              <Route path="/settings/preference" element={<Preference />} />
-            </Route>
+            <Route path="/flex-payment" element={<FlexPayment/>} />
+            <Route path="/settings" element={<Settings />}/>
             <Route path="/integration" element={<Integration />} />
             <Route path="/help-center" element={<HelpCenter />}>
-              <Route path="/help-center/buy" element={<BuyLand />} />
             </Route>
           </Route>
         </Routes>

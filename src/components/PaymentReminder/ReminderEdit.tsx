@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import EyeToggle from "../EyeToggle";
 import Btn from "../common/Btn";
+import payment from "@/assets/images/Flexible Widget-1.png"
 
 interface PaymentMenuProps {
   isOpenMenu: boolean;
@@ -61,11 +62,20 @@ const ReminderEdit: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose }) => {
           </span>
         </div>
 
-        {/* Request Details */}
+        {/* Reminder Details */}
         <div className="mx-[10px] rounded-xl border-[1px] border-neutral-200 bg-white p-2">
-          <div className="">
-            <div className="m-2 h-[128px] rounded-2xl border-[1px] border-neutral-200 bg-neutral-50">
-              <div className="flex items-center justify-between px-4 pt-4">
+          <div className="relative w-full pb-4">
+            {/* Background Image */}
+            <img
+              src={payment}
+              alt=""
+              className="h-[120px] w-full rounded-xl border-[1px] border-neutral-200 object-cover"
+            />
+
+            {/* Content Overlay */}
+            <div className="absolute inset-0 flex flex-col justify-between p-4">
+              {/* Top Section */}
+              <div className="flex items-center justify-between">
                 <h2 className="text-[16px] font-[600] leading-[24px] text-neutral-700">
                   Available Balance
                 </h2>
@@ -76,7 +86,9 @@ const ReminderEdit: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose }) => {
                   />
                 </div>
               </div>
-              <h2 className="px-4 text-[36px] font-[700]">
+
+              {/* Balance Text */}
+              <h2 className="text-[36px] font-[700]">
                 {showVisibility ? (
                   <>
                     <span>&#8358;</span>861,375
@@ -88,7 +100,7 @@ const ReminderEdit: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose }) => {
               </h2>
             </div>
           </div>
-          
+
           {/* form */}
           <div>
             <div className="mx-2 mt-4 flex h-[72px] items-center justify-between rounded-xl border-[1px] border-neutral-200 p-[16px]">
@@ -186,7 +198,7 @@ const ReminderEdit: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose }) => {
                     className="text-[14px] font-[600] leading-[20px] text-neutral-700"
                   />
                 </div>
-                <button className="bg-brand-base flex h-[48px] w-full items-center justify-center gap-2 rounded-[8px] text-white">
+                <button className="flex h-[48px] w-full items-center justify-center gap-2 rounded-[8px] bg-brand-base text-white">
                   <span>
                     <svg
                       width="20"

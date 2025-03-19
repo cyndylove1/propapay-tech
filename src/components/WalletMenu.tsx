@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import RequestMenu from "./RequestMenu";
-import SchedulePaymentMenu from "./SchedulePaymentMenu";
 import PaymentReminder from "./PaymentReminder/PaymentReminder";
+import AutoPaymentMenu from "./AutoPaymentMenu";
+import AutoSaveMenu from "./AutoSaveMenu";
 
 interface WalletMenuProps {
   WalletMenu: () => void;
@@ -12,7 +13,8 @@ const WalletMenu: React.FC<WalletMenuProps> = ({ WalletMenu }) => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
-  const [scheduleOpen, setScheduleOpen] = useState<boolean>(false);
+  const [autoOpen, setAutoOpen] = useState<boolean>(false);
+  const [isAutoSave, setAutoSave] = useState<boolean>(false);
   
 
   // Close dropdown when clicking outside
@@ -48,6 +50,7 @@ const WalletMenu: React.FC<WalletMenuProps> = ({ WalletMenu }) => {
                 : "text-neutral-700 hover:bg-neutral-50"
             }`}
             onClick={() => {
+               setAutoSave(true);
               setActiveItem("auto-save");
             }}
           >
@@ -188,13 +191,13 @@ const WalletMenu: React.FC<WalletMenuProps> = ({ WalletMenu }) => {
           </li>
           <li
             className={`justify-left flex cursor-pointer items-center gap-[12px] rounded-md px-6 py-2 ${
-              activeItem === "schedule-payments"
+              activeItem === "auto-payments"
                 ? "bg-brand-50 font-[600]"
                 : "text-neutral-700 hover:bg-neutral-50"
             }`}
             onClick={() => {
-              setScheduleOpen(true);
-              setActiveItem("schedule-payments");
+              setAutoOpen(true);
+              setActiveItem("auto-payments");
             }}
           >
             <span>
@@ -208,7 +211,7 @@ const WalletMenu: React.FC<WalletMenuProps> = ({ WalletMenu }) => {
                 <path
                   d="M9.16602 10.834H13.3327M6.66602 10.834H6.6735M10.8327 14.1673H6.66602M13.3327 14.1673H13.3252"
                   stroke={
-                    activeItem === "schedule-payments" ? "#12725b" : "#6B6F75"
+                    activeItem === "auto-payments" ? "#12725b" : "#6B6F75"
                   }
                   stroke-width="1.5"
                   stroke-linecap="round"
@@ -217,7 +220,7 @@ const WalletMenu: React.FC<WalletMenuProps> = ({ WalletMenu }) => {
                 <path
                   d="M15 1.66699V3.33366M5 1.66699V3.33366"
                   stroke={
-                    activeItem === "schedule-payments" ? "#12725b" : "#6B6F75"
+                    activeItem === "auto-payments" ? "#12725b" : "#6B6F75"
                   }
                   stroke-width="1.5"
                   stroke-linecap="round"
@@ -226,7 +229,7 @@ const WalletMenu: React.FC<WalletMenuProps> = ({ WalletMenu }) => {
                 <path
                   d="M2.08301 10.2027C2.08301 6.57161 2.08301 4.75607 3.12644 3.62803C4.16987 2.5 5.84925 2.5 9.20801 2.5H10.7913C14.1501 2.5 15.8295 2.5 16.8729 3.62803C17.9163 4.75607 17.9163 6.57161 17.9163 10.2027V10.6306C17.9163 14.2617 17.9163 16.0773 16.8729 17.2053C15.8295 18.3333 14.1501 18.3333 10.7913 18.3333H9.20801C5.84925 18.3333 4.16987 18.3333 3.12644 17.2053C2.08301 16.0773 2.08301 14.2617 2.08301 10.6306V10.2027Z"
                   stroke={
-                    activeItem === "schedule-payments" ? "#12725b" : "#6B6F75"
+                    activeItem === "auto-payments" ? "#12725b" : "#6B6F75"
                   }
                   stroke-width="1.5"
                   stroke-linecap="round"
@@ -235,7 +238,7 @@ const WalletMenu: React.FC<WalletMenuProps> = ({ WalletMenu }) => {
                 <path
                   d="M2.5 6.66699H17.5"
                   stroke={
-                    activeItem === "schedule-payments" ? "#12725b" : "#6B6F75"
+                    activeItem === "auto-payments" ? "#12725b" : "#6B6F75"
                   }
                   stroke-width="1.5"
                   stroke-linecap="round"
@@ -245,12 +248,12 @@ const WalletMenu: React.FC<WalletMenuProps> = ({ WalletMenu }) => {
             </span>
             <h2
               className={`text-[12px] font-[600] leading-[16px] ${
-                activeItem === "schedule-payments"
+                activeItem === "auto-payments"
                   ? "text-brand-base"
                   : "text-neutral-700"
               }`}
             >
-              Schedule Payments
+              Auto Payments
             </h2>
           </li>
           <li
@@ -295,10 +298,11 @@ const WalletMenu: React.FC<WalletMenuProps> = ({ WalletMenu }) => {
           </li>
         </ul>
       </div>|
-      <SchedulePaymentMenu
-        isScheduleMenu={scheduleOpen}
-        onClose={() => setScheduleOpen(false)}
+      <AutoPaymentMenu
+        isAutoMenu={autoOpen}
+        onClose={() => setAutoOpen(false)}
       />
+      <AutoSaveMenu isAutoSaveMenu={isAutoSave} onClose={() => setAutoSave(false)} />
       <PaymentReminder isOpenMenu={isMenuOpen} onClose={() => setMenuOpen(false)} />
       <RequestMenu isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </>

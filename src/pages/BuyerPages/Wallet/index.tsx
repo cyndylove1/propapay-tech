@@ -5,10 +5,12 @@ import SelectTag from "@/components/common/SelectTag";
 import WalletMenu from "@/components/WalletMenu";
 import { NavLink } from "react-router";
 import AddMoneyModal from "@/components/AddMoney/AddMoneyModal";
+import ReceiveMoneyModal from "@/components/RecieveMoney/ReceiveMoneyModal";
 
 const Wallet = () => {
   const [OpenMenu, setOpenMenu] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [OpenModal, setOpenModal] = useState(false);
   const [showVisibility, setShowVisibility] = useState(false);
 
   const toggleMenuDropdown = () => {
@@ -25,10 +27,14 @@ const Wallet = () => {
         <h2 className="px-4 pt-4 text-[24px] font-[600] leading-[32px]">
           Wallet
         </h2>
-        <div className="m-4 flex md:flex-row flex-col gap-[24px]">
-          <div className="relative md:h-[204px] h-[220px] w-full">
+        <div className="m-4 flex flex-col gap-[24px] md:flex-row">
+          <div className="relative h-[220px] w-full md:h-[204px]">
             {/* Background Image */}
-            <img src={balance} alt="Balance" className="rounded-3xl w-full h-full" />
+            <img
+              src={balance}
+              alt="Balance"
+              className="rounded-xl w-full h-full"
+            />
 
             {/* Overlay Container */}
             <div className="bg-black/50 rounded-t-xl absolute top-0 left-0 w-full gap-3 p-4">
@@ -42,7 +48,7 @@ const Wallet = () => {
                     togglePasswordVisibility={togglePasswordVisibility}
                   />
                 </div>
-                <div className="relative flex hidden md:h-[32px] w-[92px] items-center rounded-full border-[1px] border-brand-200 bg-brand-50 shadow-sm md:flex">
+                <div className="relative flex hidden w-[92px] items-center rounded-full border-[1px] border-brand-200 bg-brand-50 shadow-sm md:flex md:h-[32px]">
                   {/* Icon before Select */}
                   <span className="px-2">
                     <svg
@@ -76,7 +82,7 @@ const Wallet = () => {
 
                   {/* Select Dropdown */}
                   <SelectTag className="border-none pr-8 text-[14px] font-[600] leading-[20px] text-neutral-700">
-                    <option className="">ENG</option>
+                    <option className="">NGN</option>
                   </SelectTag>
                 </div>
               </div>
@@ -99,18 +105,22 @@ const Wallet = () => {
                           />
                         </svg>
                       </span>
-                      <h2 className="md:text-[36px] text-[30px] font-[700]">861,375.42</h2>
+                      <h2 className="text-[30px] font-[700] md:text-[36px]">
+                        861,375.42
+                      </h2>
                     </>
                   ) : (
                     <div>
-                      <h2 className="md:text-[36px] text-[30px]">* * * * * * *</h2>
+                      <h2 className="text-[30px] md:text-[36px]">
+                        * * * * * * *
+                      </h2>
                     </div>
                   )}
                 </div>
               </div>
               <div className="flex gap-3">
                 <button
-                  className="flex h-[40px] md:w-[144px] w-[135px] items-center justify-center gap-2 rounded-full bg-white"
+                  className="flex h-[40px] w-[135px] items-center justify-center gap-2 rounded-full bg-white md:w-[144px]"
                   onClick={() => setIsOpen(true)}
                 >
                   <svg
@@ -135,11 +145,14 @@ const Wallet = () => {
                       stroke-linejoin="round"
                     />
                   </svg>
-                  <h3 className="text-[12px] md:text-[14px] font-[600] leading-[20px] text-brand-base">
+                  <h3 className="text-[12px] font-[600] leading-[20px] text-brand-base md:text-[14px]">
                     Add Money
                   </h3>
                 </button>
-                <button className="flex h-[40px] md:w-[144px] w-[135px] items-center justify-center gap-2 rounded-full bg-white">
+                <button
+                  className="flex h-[40px] w-[135px] items-center justify-center gap-2 rounded-full bg-white md:w-[144px]"
+                  onClick={() => setOpenModal(true)}
+                >
                   <svg
                     width="20"
                     height="20"
@@ -184,12 +197,12 @@ const Wallet = () => {
                     />
                   </svg>
 
-                  <h3 className="md:text-[14px] text-[12px] font-[600] leading-[20px] text-brand-base">
+                  <h3 className="text-[12px] font-[600] leading-[20px] text-brand-base md:text-[14px]">
                     Receive
                   </h3>
                 </button>
                 <div
-                  className="flex md:h-[44px] md:w-[44px] h-[40px] w-[40px] items-center justify-center rounded-full bg-white"
+                  className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-white md:h-[44px] md:w-[44px]"
                   onClick={toggleMenuDropdown}
                 >
                   <svg
@@ -522,7 +535,7 @@ const Wallet = () => {
                 </svg>
               </span>
               <div className="">
-                <h2 className="md:text-[16px] text-[14px] font-[600] leading-[28px] text-neutral-950">
+                <h2 className="text-[14px] font-[600] leading-[28px] text-neutral-950 md:text-[16px]">
                   Recent Transactions
                 </h2>
                 <h6 className="text-[12px] font-[500] leading-[16px] text-neutral-700">
@@ -976,6 +989,10 @@ const Wallet = () => {
         </div>
       </div>
       <AddMoneyModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      <ReceiveMoneyModal
+        OpenModal={OpenModal}
+        CloseModal={() => setOpenModal(false)}
+      />
       {OpenMenu && <WalletMenu WalletMenu={() => setOpenMenu(false)} />}
     </>
   );

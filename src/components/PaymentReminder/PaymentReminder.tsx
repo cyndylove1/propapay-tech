@@ -34,7 +34,6 @@ const PaymentReminder = ({ isOpenMenu, onClose }: PaymentReminderProps) => {
             onSubmit={handleFormSubmit}
           />
         ))}
-      <button onClick={onClose}>Close Menu</button>
     </div>
   );
 };

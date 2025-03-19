@@ -180,7 +180,7 @@ const AddMoneyModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
               </svg>
             )}
             <div>
-              <h2 className="text-[16px] font-[600] leading-[19px] text-neutral-950">
+              <h2 className="text-[20px] font-[600] leading-[19px] text-neutral-950">
                 Add funds to your wallet
               </h2>
               <h6 className="text-[14px] font-[500] leading-[20px] text-neutral-700">
@@ -214,7 +214,6 @@ const AddMoneyModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         {selectedMethod ? (
-          // Show input fields when a method is selected
           <div className="">
             <div className="flex items-center gap-2 rounded-[12px] border-[1px] border-brand-base p-4">
               {selectedMethod.icon}
@@ -231,26 +230,8 @@ const AddMoneyModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             {/* select currency */}
             <div className="mt-4">
               <Label text="Currency" htmlFor="Currency" className="" />
-              <div className="relative">
-                <span className="absolute left-3 top-[14px] flex items-center">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0 10C0 14.2997 2.71375 17.9651 6.52176 19.3781V0.62207C2.71375 2.03496 0 5.70043 0 10Z"
-                      fill="#008751"
-                    />
-                    <path
-                      d="M19.9998 10C19.9998 5.70043 17.286 2.03496 13.478 0.62207V19.3781C17.286 17.9651 19.9998 14.2997 19.9998 10Z"
-                      fill="#008751"
-                    />
-                  </svg>
-                </span>
-                <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-10 py-3 text-[14px] font-[600] leading-[20px] text-neutral-950 focus:border-brand-500">
+              <div className="">
+                <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 py-3 text-[14px] font-[600] leading-[20px] text-neutral-950 focus:border-brand-500">
                   <option className="">Naira</option>
                   <option>Nigeria</option>
                 </SelectTag>
@@ -264,7 +245,7 @@ const AddMoneyModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 className="h-[48px] w-full"
               />
             </div>
-            <div className="mt-6 mb-4">
+            <div className="my-6">
               <Button
                 type="button"
                 text="Continue"
@@ -292,7 +273,7 @@ const AddMoneyModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 </div>
               </div>
             ))}
-            <div className="mt-6 mb-4">
+            <div className="my-6">
               <Button
                 type="button"
                 text="Continue"

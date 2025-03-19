@@ -25,7 +25,7 @@ const Modal: React.FC<PropertyModalProps> = ({ isOpen, onClose, title }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex justify-end bg-[#000] bg-opacity-50">
+    <div className="fixed inset-0 z-50 flex justify-end">
       <div
         className={`h-screen w-[550px] transform overflow-y-auto rounded-lg bg-neutral-50 shadow-lg transition-all duration-300 ${
           showModal ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
@@ -298,7 +298,7 @@ const Modal: React.FC<PropertyModalProps> = ({ isOpen, onClose, title }) => {
                   <Btn
                     text="Cancel"
                     type="button"
-                    className="text-[14px] font-[600] leading-[20px] text-neutral-700"
+                    className="text-[14px] h-[44px] font-[600] leading-[20px] text-neutral-700"
                   />
                 </div>
                 <button className="flex w-full items-center justify-center gap-2 rounded-[8px] bg-brand-base p-[12px] text-[14px] font-[600] leading-[20px] text-white">
