@@ -237,14 +237,18 @@ const AddMoneyModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 </SelectTag>
               </div>
             </div>
-
             <div className="mt-4">
-              <Label text="Amount" htmlFor="Amount" className="" />
-              <Input
-                placeholder="Enter your amount"
-                className="h-[48px] w-full"
-              />
+              <Label text="Amount" />
+              <div className="relative flex h-[48px] items-center justify-between rounded-xl border-[1px] border-neutral-200 px-4 focus-within:border-brand-500">
+                <Input className="text-neutral-500 w-full bg-transparent border-none outline-none" />
+                <div className="flex items-center gap-2">
+                  <span className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    NGN
+                  </span>
+                </div>
+              </div>
             </div>
+
             <div className="my-6">
               <Button
                 type="button"
