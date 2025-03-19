@@ -73,7 +73,7 @@ const TableHeader = () => {
               </svg>
             </span>
             <SelectTag className="w-full border-none bg-transparent px-8 text-[14px] font-[500] leading-[20px] text-neutral-700">
-              <option className="">Last 30 Days</option>
+              <option>Last 30 Days</option>
             </SelectTag>
           </div>
 

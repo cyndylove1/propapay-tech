@@ -19,7 +19,6 @@ export const sidebarItems: SidebarDataProps[] = [
         path: "/dashboard",
         icon: (isActive) => (
           <svg
-          
             width="20"
             height="20"
             viewBox="0 0 20 20"
@@ -55,7 +54,7 @@ export const sidebarItems: SidebarDataProps[] = [
         Label: "Wallet",
         path: "/wallet",
         icon: (isActive) => {
-          console.log("IsActive:", isActive); // Debugging to check if value is updating correctly
+          console.log("IsActive:", isActive);
 
           return (
             <svg
@@ -68,8 +67,8 @@ export const sidebarItems: SidebarDataProps[] = [
             >
               <path
                 d="M13.3333 11.6665C13.3333 12.3569 13.8929 12.9165 14.5833 12.9165C15.2736 12.9165 15.8333 12.3569 15.8333 11.6665C15.8333 10.9761 15.2736 10.4165 14.5833 10.4165C13.8929 10.4165 13.3333 10.9761 13.3333 11.6665Z"
-                stroke={isActive ? "#12725b" : "#4E5257"} // Dynamically change stroke color
-                fill={isActive ? "white" : "none"} // Dynamically change fill color
+                stroke={isActive ? "#12725b" : "#4E5257"} 
+                fill={isActive ? "white" : "none"} 
                 strokeWidth="1.5"
               />
               <path
@@ -114,7 +113,7 @@ export const sidebarItems: SidebarDataProps[] = [
             <path
               d="M18.3333 12.9165C18.3333 13.837 15.9082 14.5832 12.9167 14.5832C9.92512 14.5832 7.5 13.837 7.5 12.9165"
               stroke={isActive ? "#12725b" : "#4E5257"}
-              // fill={isActive ? "white" : "none"}
+              fill={isActive ? "white" : "none"}
               stroke-width="1.5"
             />
             <path

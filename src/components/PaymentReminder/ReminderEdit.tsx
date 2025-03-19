@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import EyeToggle from "../EyeToggle";
 import Btn from "../common/Btn";
-import payment from "@/assets/images/Flexible Widget-1.png"
+import payment from "@/assets/images/Flexible Widget-1.png";
 
 interface PaymentMenuProps {
   isOpenMenu: boolean;
@@ -11,6 +11,10 @@ interface PaymentMenuProps {
 const ReminderEdit: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [showVisibility, setShowVisibility] = useState(false);
+  const [isSelected, setIsSelected] = useState(false);
+  const [isLongPressed, setIsLongPressed] = useState(false);
+
+  let pressTimer: NodeJS.Timeout;
   const togglePasswordVisibility = () => {
     setShowVisibility((prev) => !prev);
   };
@@ -28,6 +32,27 @@ const ReminderEdit: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose }) => {
   }, [isOpenMenu]);
 
   if (!isOpenMenu) return null;
+
+  const handleClick = () => {
+    setIsSelected(!isSelected);
+  };
+
+  // Handle long press to change icon
+  const handleLongPress = () => {
+    pressTimer = setTimeout(() => {
+      setIsLongPressed(true);
+    }, 800);
+  };
+  // Reset to edit icon when long-pressing delete icon
+  const handleDeleteLongPress = () => {
+    pressTimer = setTimeout(() => {
+      setIsLongPressed(false);
+    }, 800);
+  };
+
+  const handleRelease = () => {
+    clearTimeout(pressTimer);
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex justify-end">
@@ -63,13 +88,13 @@ const ReminderEdit: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose }) => {
         </div>
 
         {/* Reminder Details */}
-        <div className="mx-[10px] rounded-xl border-[1px] border-neutral-200 bg-white p-2">
+        <div className="mx-[10px] h-full rounded-xl border-[1px] border-neutral-200 bg-white p-4">
           <div className="relative w-full pb-4">
             {/* Background Image */}
             <img
               src={payment}
               alt=""
-              className="h-[120px] w-full rounded-xl border-[1px] border-neutral-200 object-cover"
+              className="h-[112px] w-full rounded-xl border-[1px] border-neutral-200 object-cover"
             />
 
             {/* Content Overlay */}
@@ -88,7 +113,7 @@ const ReminderEdit: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose }) => {
               </div>
 
               {/* Balance Text */}
-              <h2 className="text-[36px] font-[700]">
+              <h2 className="pb-4 text-[30px] font-[700]">
                 {showVisibility ? (
                   <>
                     <span>&#8358;</span>861,375
@@ -103,7 +128,12 @@ const ReminderEdit: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose }) => {
 
           {/* form */}
           <div>
-            <div className="mx-2 mt-4 flex h-[72px] items-center justify-between rounded-xl border-[1px] border-neutral-200 p-[16px]">
+            <div
+              className={`mt-4 flex h-[72px] w-full items-center justify-between rounded-xl border-[1px] px-4 py-[16px] ${
+                isSelected ? "border-brand-base" : "border-neutral-200"
+              }`}
+              onClick={handleClick}
+            >
               <div className="flex items-center gap-4">
                 <span>
                   <svg
@@ -115,7 +145,7 @@ const ReminderEdit: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose }) => {
                   >
                     <path
                       d="M0.5 20C0.5 9.23045 9.23045 0.5 20 0.5C30.7696 0.5 39.5 9.23045 39.5 20C39.5 30.7696 30.7696 39.5 20 39.5C9.23045 39.5 0.5 30.7696 0.5 20Z"
-                      fill="url(#paint0_linear_3437_26473)"
+                      fill="url(#paint0_linear_3601_14424)"
                     />
                     <path
                       d="M0.5 20C0.5 9.23045 9.23045 0.5 20 0.5C30.7696 0.5 39.5 9.23045 39.5 20C39.5 30.7696 30.7696 39.5 20 39.5C9.23045 39.5 0.5 30.7696 0.5 20Z"
@@ -137,7 +167,7 @@ const ReminderEdit: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose }) => {
                     />
                     <defs>
                       <linearGradient
-                        id="paint0_linear_3437_26473"
+                        id="paint0_linear_3601_14424"
                         x1="20"
                         y1="0"
                         x2="20"
@@ -159,43 +189,91 @@ const ReminderEdit: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose }) => {
                   </h5>
                 </div>
               </div>
-              <span>
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11.7274 3.2382C12.3484 2.56539 12.6589 2.22899 12.9889 2.03276C13.785 1.55929 14.7653 1.54457 15.5746 1.99393C15.9101 2.18016 16.2301 2.50709 16.8702 3.16096C17.5103 3.81483 17.8303 4.14176 18.0126 4.48443C18.4525 5.31126 18.4381 6.31265 17.9746 7.12591C17.7825 7.46296 17.4532 7.78014 16.7946 8.4145L8.95821 15.9622C7.71008 17.1644 7.08602 17.7655 6.30607 18.0701C5.52612 18.3747 4.66868 18.3523 2.95382 18.3075L2.7205 18.3014C2.19844 18.2877 1.93741 18.2809 1.78567 18.1087C1.63393 17.9365 1.65465 17.6706 1.69608 17.1388L1.71858 16.85C1.83519 15.3533 1.89349 14.6049 2.18577 13.9322C2.47805 13.2594 2.98221 12.7132 3.99054 11.6207L11.7274 3.2382Z"
-                    stroke="#1C1D1E"
-                    stroke-width="1.5"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M10.832 3.33398L16.6654 9.16732"
-                    stroke="#1C1D1E"
-                    stroke-width="1.5"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M11.666 18.334L18.3327 18.334"
-                    stroke="#1C1D1E"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+              {/* Long Press to Change Icon */}
+              <span
+                onMouseDown={
+                  isLongPressed ? handleDeleteLongPress : handleLongPress
+                }
+                onMouseUp={handleRelease}
+                onMouseLeave={handleRelease}
+                onTouchStart={
+                  isLongPressed ? handleDeleteLongPress : handleLongPress
+                }
+                onTouchEnd={handleRelease}
+              >
+                {isLongPressed ? (
+                  // Delete Icon
+                  <svg
+                    width="18"
+                    height="20"
+                    viewBox="0 0 18 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.25 4.58398L14.7336 12.9382C14.6016 15.0727 14.5356 16.1399 14.0006 16.9072C13.7361 17.2866 13.3955 17.6067 13.0006 17.8473C12.2018 18.334 11.1325 18.334 8.99395 18.334C6.8526 18.334 5.78192 18.334 4.98254 17.8464C4.58733 17.6054 4.24666 17.2847 3.98224 16.9047C3.4474 16.1361 3.38288 15.0674 3.25384 12.9299L2.75 4.58398"
+                      stroke="#1C1D1E"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M1.5 4.58366H16.5M12.3798 4.58366L11.8109 3.4101C11.433 2.63054 11.244 2.24076 10.9181 1.99766C10.8458 1.94374 10.7692 1.89578 10.6892 1.85424C10.3283 1.66699 9.8951 1.66699 9.02877 1.66699C8.14069 1.66699 7.69665 1.66699 7.32974 1.86209C7.24842 1.90533 7.17082 1.95524 7.09774 2.0113C6.76803 2.26424 6.58386 2.66829 6.2155 3.47637L5.71077 4.58366"
+                      stroke="#1C1D1E"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M6.91602 13.75L6.91602 8.75"
+                      stroke="#1C1D1E"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M11.084 13.75L11.084 8.75"
+                      stroke="#1C1D1E"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                ) : (
+                  // Edit Icon
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11.7274 3.2382C12.3484 2.56539 12.6589 2.22899 12.9889 2.03276C13.785 1.55929 14.7653 1.54457 15.5746 1.99393C15.9101 2.18016 16.2301 2.50709 16.8702 3.16096C17.5103 3.81483 17.8303 4.14176 18.0126 4.48443C18.4525 5.31126 18.4381 6.31265 17.9746 7.12591C17.7825 7.46296 17.4532 7.78014 16.7946 8.4145L8.95821 15.9622C7.71008 17.1644 7.08602 17.7655 6.30607 18.0701C5.52612 18.3747 4.66868 18.3523 2.95382 18.3075L2.7205 18.3014C2.19844 18.2877 1.93741 18.2809 1.78567 18.1087C1.63393 17.9365 1.65465 17.6706 1.69608 17.1388L1.71858 16.85C1.83519 15.3533 1.89349 14.6049 2.18577 13.9322C2.47805 13.2594 2.98221 12.7132 3.99054 11.6207L11.7274 3.2382Z"
+                      stroke="#1C1D1E"
+                      stroke-width="1.5"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10.832 3.33398L16.6654 9.16732"
+                      stroke="#1C1D1E"
+                      stroke-width="1.5"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M11.666 18.334L18.3327 18.334"
+                      stroke="#1C1D1E"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                )}
               </span>
             </div>
             <div>
-              <div className="mx-2 mt-[10rem] flex items-center justify-between gap-[24px]">
+              <div className="mx-2 mt-[18rem] flex items-center justify-between gap-[24px]">
                 <div className="w-full rounded-[8px] border-[1px] border-neutral-200">
                   <Btn
                     text="Cancel"
                     type="button"
-                    className="text-[14px] font-[600] leading-[20px] text-neutral-700"
+                    className="h-[48px] text-[14px] font-[600] leading-[20px] text-neutral-700"
                   />
                 </div>
                 <button className="flex h-[48px] w-full items-center justify-center gap-2 rounded-[8px] bg-brand-base text-white">

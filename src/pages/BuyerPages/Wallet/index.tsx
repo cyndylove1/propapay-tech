@@ -33,11 +33,11 @@ const Wallet = () => {
             <img
               src={balance}
               alt="Balance"
-              className="rounded-xl w-full h-full"
+              className="h-full w-full rounded-xl"
             />
 
             {/* Overlay Container */}
-            <div className="bg-black/50 rounded-t-xl absolute top-0 left-0 w-full gap-3 p-4">
+            <div className="bg-black/50 absolute left-0 top-0 w-full gap-3 rounded-t-xl p-4">
               <div className="flex items-center justify-between">
                 <div className="flex gap-3 text-white">
                   <h1 className="text-[16px] font-[500] leading-[24px]">
@@ -48,9 +48,9 @@ const Wallet = () => {
                     togglePasswordVisibility={togglePasswordVisibility}
                   />
                 </div>
-                <div className="relative flex hidden w-[92px] items-center rounded-full border-[1px] border-brand-200 bg-brand-50 shadow-sm md:flex md:h-[32px]">
+                <div className="relative flex hidden w-[92px] items-center rounded-full border-[1px] border-brand-200 bg-brand-50 md:flex md:h-[32px]">
                   {/* Icon before Select */}
-                  <span className="px-2">
+                  <span className="absolute flex items-center px-2">
                     <svg
                       width="16"
                       height="16"
@@ -81,7 +81,7 @@ const Wallet = () => {
                   </span>
 
                   {/* Select Dropdown */}
-                  <SelectTag className="border-none pr-8 text-[14px] font-[600] leading-[20px] text-neutral-700">
+                  <SelectTag className="w-full border-none pl-7 text-[14px] font-[600] leading-[20px] text-neutral-700">
                     <option className="">NGN</option>
                   </SelectTag>
                 </div>
@@ -469,35 +469,33 @@ const Wallet = () => {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g filter="url(#filter0_d_3365_54185)">
+                  <g filter="url(#filter0_d_3601_41923)">
                     <path
-                      d="M2 9C2 4.58172 5.58172 1 10 1H34C38.4183 1 42 4.58172 42 9V33C42 37.4183 38.4183 41 34 41H10C5.58172 41 2 37.4183 2 33V9Z"
+                      d="M2 21C2 9.95431 10.9543 1 22 1C33.0457 1 42 9.95431 42 21C42 32.0457 33.0457 41 22 41C10.9543 41 2 32.0457 2 21Z"
                       fill="white"
                     />
                     <path
-                      d="M2.5 9C2.5 4.85786 5.85786 1.5 10 1.5H34C38.1421 1.5 41.5 4.85786 41.5 9V33C41.5 37.1421 38.1421 40.5 34 40.5H10C5.85786 40.5 2.5 37.1421 2.5 33V9Z"
+                      d="M2.5 21C2.5 10.2304 11.2304 1.5 22 1.5C32.7696 1.5 41.5 10.2304 41.5 21C41.5 31.7696 32.7696 40.5 22 40.5C11.2304 40.5 2.5 31.7696 2.5 21Z"
                       stroke="#DEE1E4"
                     />
                     <path
-                      d="M25.3333 22.667C25.3333 23.3573 25.893 23.917 26.5833 23.917C27.2737 23.917 27.8333 23.3573 27.8333 22.667C27.8333 21.9766 27.2737 21.417 26.5833 21.417C25.893 21.417 25.3333 21.9766 25.3333 22.667Z"
-                      stroke="#4E5257"
-                      stroke-width="1.5"
-                    />
-                    <path
-                      d="M27.75 17.667C27.8047 17.3977 27.8333 17.119 27.8333 16.8337C27.8333 14.5325 25.9679 12.667 23.6667 12.667C21.3655 12.667 19.5 14.5325 19.5 16.8337C19.5 17.119 19.5287 17.3977 19.5834 17.667"
-                      stroke="#4E5257"
-                      stroke-width="1.5"
-                    />
-                    <path
-                      d="M17.8333 17.6617H25.3333C27.6904 17.6617 28.8689 17.6617 29.6011 18.3943C30.3333 19.1269 30.3333 20.3059 30.3333 22.6641V24.3316C30.3333 26.6897 30.3333 27.8688 29.6011 28.6014C28.8689 29.334 27.6904 29.334 25.3333 29.334H20.3333C17.1906 29.334 15.6193 29.334 14.643 28.3572C13.6667 27.3804 13.6667 25.8083 13.6667 22.6641V20.9966C13.6667 17.8524 13.6667 16.2803 14.643 15.3035C15.4289 14.5172 16.6004 14.3639 18.6667 14.334H20.3333"
+                      d="M15.5983 27.4017C14.5 26.3033 14.5 24.5355 14.5 21C14.5 17.4645 14.5 15.6967 15.5983 14.5983C16.6967 13.5 18.4645 13.5 22 13.5C25.5355 13.5 27.3033 13.5 28.4017 14.5983C29.5 15.6967 29.5 17.4645 29.5 21C29.5 24.5355 29.5 26.3033 28.4017 27.4017C27.3033 28.5 25.5355 28.5 22 28.5C18.4645 28.5 16.6967 28.5 15.5983 27.4017Z"
                       stroke="#4E5257"
                       stroke-width="1.5"
                       stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M17.8333 22.6663L20.1607 20.3389C20.4862 20.0135 21.0138 20.0135 21.3393 20.3389L22.6607 21.6604C22.9862 21.9859 23.5138 21.9859 23.8393 21.6604L26.1667 19.333"
+                      stroke="#4E5257"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
                     />
                   </g>
                   <defs>
                     <filter
-                      id="filter0_d_3365_54185"
+                      id="filter0_d_3601_41923"
                       x="0"
                       y="0"
                       width="44"
@@ -522,12 +520,12 @@ const Wallet = () => {
                       <feBlend
                         mode="normal"
                         in2="BackgroundImageFix"
-                        result="effect1_dropShadow_3365_54185"
+                        result="effect1_dropShadow_3601_41923"
                       />
                       <feBlend
                         mode="normal"
                         in="SourceGraphic"
-                        in2="effect1_dropShadow_3365_54185"
+                        in2="effect1_dropShadow_3601_41923"
                         result="shape"
                       />
                     </filter>

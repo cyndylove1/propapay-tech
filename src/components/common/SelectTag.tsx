@@ -27,7 +27,7 @@ const SelectTag: React.FC<SelectTagProps> = ({
 
       {/* Dropdown Icon */}
       <svg
-        className={`pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 transform text-gray-500 ${iconClassName}`}
+        className={`pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 transform text-gray-500 ${iconClassName}`}
         xmlns="http://www.w3.org/2000/svg"
         width="12"
         height="8"

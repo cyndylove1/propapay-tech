@@ -143,41 +143,6 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
               </svg>
             </span>
         </div>
-        {/* <div className="flex items-center border-t-[1px] border-[#e6e7e7]">
-          <div className="mx-4 flex gap-3 py-[20px]">
-            <div className="relative">
-              <div className="h-[40px] w-[40px] rounded-full object-cover">
-                <img src={profile} alt="" />
-              </div>
-              <span className="absolute right-0 top-[25px] h-[10px] w-[10px] rounded-full border-2 border-white bg-[#32B56A]"></span>
-            </div>
-            <div>
-              <h3 className="text-[14px] font-[600] leading-[20px] text-neutral-950">
-                Joshiah Ovo
-              </h3>
-              <h4 className="text-[12px] font-[500] leading-[12px] text-neutral-700">
-                Joshiahovo@gmail.com
-              </h4>
-            </div>
-          </div>
-          <span>
-            <svg
-              width="8"
-              height="12"
-              viewBox="0 0 8 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1.50004 1C1.50004 1 6.49999 4.68244 6.5 6.00004C6.50001 7.31763 1.5 11 1.5 11"
-                stroke="#696E71"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </span>
-        </div> */}
       </div>
     </>
   );

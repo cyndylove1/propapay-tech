@@ -39,6 +39,7 @@ const Header: React.FC<HeaderProps> = ({
         >
           <RiMenuLine />
         </div>
+        {/* collapsed icon */}
         <div className="lg:flex flex items-center hidden gap-4">
           <span
             onClick={() => {
@@ -73,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({
               />
             </svg>
           </span>
-          <div className="relative flex hidden h-[40px] w-[170px] items-center rounded-lg border-[1px] border-neutral-200 shadow-sm md:flex">
+          <div className="relative flex hidden h-[40px] w-[170px] items-center rounded-lg border-[1px] border-neutral-200 md:flex">
             {/* Icon before Select */}
             <span className="absolute flex items-center">
               <svg

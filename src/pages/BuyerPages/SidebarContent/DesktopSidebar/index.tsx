@@ -43,7 +43,15 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ isCollapsed }) => {
         <aside className="text-white">
           {sidebarItems.map((section) => (
             <div key={section.title} className="mb-4">
-              <h2 className="px-6 py-[20px] text-[12px] font-[600] leading-[16px] text-neutral-500">
+              <h2
+                className={`py-[20px] text-[12px] font-[600] leading-[16px] text-neutral-500 ${
+                  section.title === "MAIN"
+                    ? "px-6"
+                    : section.title === "OTHERS"
+                      ? "px-4"
+                      : ""
+                }`}
+              >
                 {section.title}
               </h2>
               <ul>
@@ -61,7 +69,7 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ isCollapsed }) => {
                       }
                     >
                       {({ isActive }: { isActive: boolean }) => (
-                        <div className="relative flex w-full items-center">
+                        <div className="relative flex items-center w-full">
                           {/* Green Left Border when Active */}
                           {isActive && (
                             <div className="absolute left-0 h-[24px] w-[5px] rounded-[5px] bg-brand-base"></div>

@@ -79,7 +79,7 @@ const AutoPaymentMenu: React.FC<AutoPaymentMenuProps> = ({
             <img
               src={schedule}
               alt=""
-              className="h-[120px] w-full rounded-xl border-[1px] border-neutral-200 object-cover"
+              className="h-[112px] w-full rounded-xl border-[1px] border-neutral-200 object-cover"
             />
 
             {/* Content Overlay */}
@@ -98,7 +98,7 @@ const AutoPaymentMenu: React.FC<AutoPaymentMenuProps> = ({
               </div>
 
               {/* Balance Text */}
-              <h2 className="text-[36px] font-[700]">
+              <h2 className="text-[30px] font-[700] pb-4">
                 {showVisibility ? (
                   <>
                     <span>&#8358;</span>861,375

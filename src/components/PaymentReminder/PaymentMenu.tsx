@@ -38,10 +38,9 @@ const PaymentMenu: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose, onSubmit
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(); 
-    onClose(); 
+    onSubmit();
+    onClose();
   };
-
 
   return (
     <div className="fixed inset-0 z-50 flex justify-end">
@@ -84,7 +83,7 @@ const PaymentMenu: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose, onSubmit
               <img
                 src={payment}
                 alt=""
-                className="h-[120px] w-full rounded-xl border-[1px] border-neutral-200 object-cover"
+                className="h-[112px] w-full rounded-xl border-[1px] border-neutral-200 object-cover"
               />
 
               {/* Content Overlay */}
@@ -103,7 +102,7 @@ const PaymentMenu: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose, onSubmit
                 </div>
 
                 {/* Balance Text */}
-                <h2 className="text-[36px] font-[700]">
+                <h2 className="text-[30px] font-[700] pb-4">
                   {showVisibility ? (
                     <>
                       <span>&#8358;</span>861,375
