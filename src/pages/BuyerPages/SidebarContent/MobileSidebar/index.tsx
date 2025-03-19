@@ -10,7 +10,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
   return (
     <>
       <div
-        className={`fixed left-0 top-0 z-50 h-screen w-[250px] overflow-y-auto border-r-[1px] border-neutral-200 bg-neutral-50 bg-white shadow-md transition-transform duration-300 dark:bg-[#1F2937] lg:hidden ${
+        className={`fixed left-0 top-0 z-50 h-screen w-[250px] overflow-y-auto overflow-hidden border-r-[1px] border-neutral-200 bg-neutral-50 bg-white shadow-md transition-transform duration-300 dark:bg-[#1F2937] lg:hidden ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } flex flex-col justify-between`}
       >
@@ -57,7 +57,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
         </div>
 
         {/* Navigation Items */}
-        <aside className="">
+        <aside className="w-[250px] flex-1">
           {sidebarItems.map((section) => (
             <div key={section.title} className="mb-4">
               <h2 className="px-6 py-[20px] text-[12px] font-[600] leading-[16px] text-neutral-500">
