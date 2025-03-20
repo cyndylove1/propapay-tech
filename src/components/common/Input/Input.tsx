@@ -1,3 +1,4 @@
+import { InputErrorIcon } from "@/assets/icons";
 import { InputHTMLAttributes, ReactNode, forwardRef, useState } from "react";
 import { FiEyeOff, FiEye } from "react-icons/fi";
 
@@ -58,7 +59,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           <input
             ref={ref}
             type={inputType}
-            className={`h-12 w-full rounded-lg border bg-white px-4 py-3 ${leftIcon ? "pl-9" : "pl-4"} ${rightIcon || shouldShowPasswordToggle ? "pr-8" : "pr-4"} ${error ? "border-red-500 focus:ring-red-500 focus:border-red-500" : "border-neutral-200 focus-within:border-brand-500"} text-sm font-medium leading-5 placeholder:text-neutral-500 focus-within:border-brand-500 focus:outline-0 ${className || ""} `}
+            className={`h-12 w-full rounded-lg border bg-white px-4 py-3 ${leftIcon ? "pl-9" : "pl-4"} ${rightIcon || shouldShowPasswordToggle ? "pr-8" : "pr-4"} ${error ? "border-negative-500 focus:border-negative-500 focus:shadow-[0_1px_2px_0_#E4E5E73D]" : "border-neutral-200 focus-within:border-brand-500"} text-sm font-medium leading-5 placeholder:text-neutral-500 focus-within:border-brand-500 focus:outline-0 focus:shadow-[0_0_0_4px_#EEFBF6] ${className || ""} `}
             {...props}
           />
 
@@ -83,7 +84,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           </div>
         </div>
         {error && errorMessage && (
-          <p className="text-red-600 mt-1 text-sm">{errorMessage}</p>
+          <div className="flex items-center gap-1">
+            <span>
+              <InputErrorIcon />
+            </span>
+            <p className="text-negative-500 mt-1 text-xs leading-4 font-medium">{errorMessage}</p>
+          </div>
         )}
       </div>
     );
