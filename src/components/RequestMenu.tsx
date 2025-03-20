@@ -84,7 +84,7 @@ const RequestMenu: React.FC<RequestMenuProps> = ({ isOpen, onClose }) => {
                 <h2 className="text-[16px] font-[600] leading-[24px] text-neutral-700 ">
                   Available Balance
                 </h2>
-                <div className="flex h-[32px] w-[32px] justify-center rounded-full bg-neutral-950">
+                <div className="flex h-[32px] w-[32px] justify-center rounded-full bg-neutral-base">
                   <EyeToggle
                     showVisibility={showVisibility}
                     togglePasswordVisibility={togglePasswordVisibility}
@@ -127,7 +127,7 @@ const RequestMenu: React.FC<RequestMenuProps> = ({ isOpen, onClose }) => {
               </div>
               <div className="py-2">
                 <Label text="File Type" />
-                <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 text-[14px] leading-[20px] text-neutral-950">
+                <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 text-[14px] leading-[20px] text-neutral-base">
                   <option className="">PDF</option>
                   <option></option>
                 </SelectTag>

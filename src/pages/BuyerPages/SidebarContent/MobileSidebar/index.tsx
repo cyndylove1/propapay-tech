@@ -117,7 +117,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({isSidebarOpen, toggleSideb
               <span className="absolute right-0 top-[25px] h-[10px] w-[10px] rounded-full border-2 border-white bg-[#32B56A]"></span>
             </div>
               <div>
-                <h3 className="text-[14px] font-[600] leading-[20px] text-neutral-950">
+                <h3 className="text-[14px] font-[600] leading-[20px] text-neutral-base">
                   Joshiah Ovo
                 </h3>
                 <h4 className="text-[12px] font-[500] leading-[12px] text-neutral-700">

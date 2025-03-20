@@ -32,7 +32,7 @@ const PropertiesLists = () => {
               <div className="flex flex-col w-full">
                 {/* Title & Address */}
                 <div className="pt-4">
-                  <h3 className="lg:text-[20px] md:text-[17px] font-[600] leading-[28px] text-neutral-950">
+                  <h3 className="lg:text-[20px] md:text-[17px] font-[600] leading-[28px] text-neutral-base">
                     Watercress Crescent Home
                   </h3>
                   <p className="pt-2 text-[16px] font-[500] leading-[24px] text-neutral-700">

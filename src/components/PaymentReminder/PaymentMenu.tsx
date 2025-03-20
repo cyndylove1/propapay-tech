@@ -7,7 +7,7 @@ import InputEmail from "../common/InputEmail";
 import Btn from "../common/Btn";
 import Button from "../common/Button";
 import payment from "@/assets/images/Flexible Widget-1.png"
-import Input from "../common/Input";
+import Input from "../common/Input/Input";
 
 interface PaymentMenuProps {
   isOpenMenu: boolean;
@@ -93,7 +93,7 @@ const PaymentMenu: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose, onSubmit
                   <h2 className="text-[16px] font-[600] leading-[24px] text-neutral-700">
                     Available Balance
                   </h2>
-                  <div className="flex h-[32px] w-[32px] justify-center rounded-full bg-neutral-950">
+                  <div className="flex h-[32px] w-[32px] justify-center rounded-full bg-neutral-base">
                     <EyeToggle
                       showVisibility={showVisibility}
                       togglePasswordVisibility={togglePasswordVisibility}
@@ -119,7 +119,7 @@ const PaymentMenu: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose, onSubmit
               <div className="px-2">
                 <div className="py-2">
                   <Label text="Property" />
-                  <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 text-[14px] leading-[20px] text-neutral-950">
+                  <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 text-[14px] leading-[20px] text-neutral-base">
                     <option className="">Watercress Crescent Home</option>
                     <option></option>
                   </SelectTag>
@@ -129,7 +129,7 @@ const PaymentMenu: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose, onSubmit
                   <div className="relative flex h-[48px] items-center justify-between rounded-xl border-[1px] border-neutral-200 px-4 focus-within:border-brand-500">
                     <Input className="text-neutral-500 w-full bg-transparent border-none outline-none" />
                     <div className="">
-                      <span className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                      <span className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                         NGN
                       </span>
                     </div>
@@ -137,14 +137,14 @@ const PaymentMenu: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose, onSubmit
                 </div>
                 <div className="py-2">
                   <Label text="Frequency" />
-                  <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 text-[14px] leading-[20px] text-neutral-950">
+                  <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 text-[14px] leading-[20px] text-neutral-base">
                     <option className="">Weekly</option>
                     <option></option>
                   </SelectTag>
                 </div>
                 <div className="py-2">
                   <Label text="Alert Method" />
-                  <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 text-[14px] leading-[20px] text-neutral-950">
+                  <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 text-[14px] leading-[20px] text-neutral-base">
                     <option className="">Email Address</option>
                     <option></option>
                   </SelectTag>

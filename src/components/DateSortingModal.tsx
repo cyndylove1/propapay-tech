@@ -24,7 +24,7 @@ const DateSortingModal: React.FC<ModalProps> = ({ isDateOpen, onCloseDate }) => 
           {/* Modal Header */}
           <div className="border-b-[1px] border-neutral-200">
             <div className="item-center flex justify-between p-4">
-              <h2 className="text-[16px] font-[600] leading-[19px] text-neutral-950">
+              <h2 className="text-[16px] font-[600] leading-[19px] text-neutral-base">
                 Date Sorting
               </h2>
               <button onClick={onCloseDate}>

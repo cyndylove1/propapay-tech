@@ -55,7 +55,7 @@ const SuccessInformation = () => {
           </svg>
         </div>
         <div className="text-center">
-          <h2 className="pt-[30px] text-[25px] font-[600] leading-[48px] tracking-tighter text-neutral-950 md:text-[36px]">
+          <h2 className="pt-[30px] text-[25px] font-[600] leading-[48px] tracking-tighter text-neutral-base md:text-[36px]">
             Your application is under <br /> review.
           </h2>
           <h5 className="pt-[5px] text-[16px] font-[500] leading-[24px] text-neutral-700">

@@ -97,7 +97,7 @@ const Favourites = () => {
                   </span>
                 </div>
                 <div className="px-2 py-4">
-                  <h2 className="text-[18px] font-[600] leading-[24px] text-neutral-950">
+                  <h2 className="text-[18px] font-[600] leading-[24px] text-neutral-base">
                     Watercress Crescent Home
                   </h2>
                   <h5 className="pt-2 text-[14px] font-[500] leading-[20px] text-neutral-700">

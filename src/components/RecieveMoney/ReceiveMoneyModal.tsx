@@ -90,7 +90,7 @@ const ReceiveMoneyModal: React.FC<RecieveModalProps> = ({
               </svg>
             </span>
             <div>
-              <h2 className="text-[20px] font-[600] leading-[28px] text-neutral-950">
+              <h2 className="text-[20px] font-[600] leading-[28px] text-neutral-base">
                 Receive money with ease
               </h2>
               <p className="text-[14px] font-[500] leading-[20px] text-neutral-700">
@@ -185,7 +185,7 @@ const ReceiveMoneyModal: React.FC<RecieveModalProps> = ({
               </svg>
             </span>
             <div>
-              <h2 className="text-[16px] font-[600] leading-[24px] text-neutral-950">
+              <h2 className="text-[16px] font-[600] leading-[24px] text-neutral-base">
                 Bank Transfer
               </h2>
               <h6 className="text-[14px] font-[500] leading-[20px] text-neutral-700">
@@ -264,7 +264,7 @@ const ReceiveMoneyModal: React.FC<RecieveModalProps> = ({
             </span>
             <div>
               <div className="flex gap-3">
-                <h2 className="text-[16px] font-[600] leading-[24px] text-neutral-950">
+                <h2 className="text-[16px] font-[600] leading-[24px] text-neutral-base">
                   Get QR Code
                 </h2>
                 {/* coming soon */}
@@ -341,7 +341,7 @@ const ReceiveMoneyModal: React.FC<RecieveModalProps> = ({
             </span>
             <div>
               <div className="flex gap-3">
-                <h2 className="text-[16px] font-[600] leading-[24px] text-neutral-950">
+                <h2 className="text-[16px] font-[600] leading-[24px] text-neutral-base">
                   Payment Link
                 </h2>
                 {/* coming soon */}

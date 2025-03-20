@@ -185,4 +185,3 @@ export const paymentMethods: PaymentMethod[] = [
     ),
   },
 ];
-// export default paymentMethods;

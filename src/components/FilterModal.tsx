@@ -24,7 +24,7 @@ const FilterModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           {/* Modal Header */}
           <div className="border-b-[1px] border-neutral-200">
             <div className="item-center flex justify-between p-4">
-              <h2 className="text-[16px] font-[600] leading-[19px] text-neutral-950">
+              <h2 className="text-[16px] font-[600] leading-[19px] text-neutral-base">
                 Filter Transaction
               </h2>
               <button onClick={onClose}>

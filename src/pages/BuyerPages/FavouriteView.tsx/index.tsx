@@ -4,7 +4,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 import properties from "@/assets/images/image.png";
 import Checkbox from "@/components/common/Checkbox";
 import Label from "@/components/common/Label";
-import Input from "@/components/common/Input";
+import Input from "@/components/common/Input/Input";
 import avatar from "@/assets/images/Avatar.png";
 
 const FavouriteView: React.FC = () => {
@@ -13,7 +13,7 @@ const FavouriteView: React.FC = () => {
       <div className="">
         <div className="flex items-center justify-between px-4 py-[20px]">
           <div>
-            <h2 className="md:text-[24px] text-[18px] font-[600] leading-[32px] text-neutral-950">
+            <h2 className="md:text-[24px] text-[18px] font-[600] leading-[32px] text-neutral-base">
               Favourite Details
             </h2>
           </div>
@@ -86,7 +86,7 @@ const FavouriteView: React.FC = () => {
             </div>
             <div className="flex justify-between px-4">
               <div>
-                <h2 className="text-[15px] font-[600] leading-[32px] text-neutral-950 md:text-[24px]">
+                <h2 className="text-[15px] font-[600] leading-[32px] text-neutral-base md:text-[24px]">
                   Diamond Manco Apartment
                 </h2>
                 <h6 className="text-[14px] font-[500] leading-[20px] text-neutral-800">
@@ -707,7 +707,7 @@ const FavouriteView: React.FC = () => {
                       />
                     </svg>
                   </span>
-                  <h4 className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                  <h4 className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                     Message
                   </h4>
                 </button>

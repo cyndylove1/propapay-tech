@@ -24,7 +24,7 @@ const ContentHeader: React.FC<HeaderProps> = ({ text, path, route }) => {
         </h2>
         <div className="flex items-center gap-4">
           <button
-            className={`flex hidden h-[36px] w-[93px] items-center justify-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] md:flex ${isActive ? "bg-[#12725B] text-white" : ""}`}
+            className={`hidden h-[36px] w-[93px] items-center justify-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] md:flex ${isActive ? "bg-[#12725B] text-white" : ""}`}
             onClick={() => navigate(route)}
           >
             <span
@@ -66,7 +66,7 @@ const ContentHeader: React.FC<HeaderProps> = ({ text, path, route }) => {
             </h3>
           </button>
           <button
-            className={`flex hidden h-[36px] w-[93px] items-center justify-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] md:flex ${Active ? "bg-[#12725B] text-white" : ""}`}
+            className={`hidden h-[36px] w-[93px] items-center justify-center gap-[8px] rounded-lg border-[1px] border-[#E5E6E8] md:flex ${Active ? "bg-[#12725B] text-white" : ""}`}
             onClick={() => navigate(path)}
           >
             <span

@@ -17,7 +17,7 @@ const Transaction: React.FC = () => {
       {/* Header title */}
       <div className="h-[1000px]">
         <div className="flex items-center justify-between px-4 pt-[20px]">
-          <h2 className="text-[18px] font-[600] leading-[32px] text-neutral-950 md:text-[24px]">
+          <h2 className="text-[18px] font-[600] leading-[32px] text-neutral-base md:text-[24px]">
             Transactions
           </h2>
           <div className="flex items-center gap-[12px]">
@@ -290,7 +290,7 @@ const Transaction: React.FC = () => {
                           </div>
                         </div>
                         <div>
-                          <div className="text-[14px] font-[600] leading-[20px] text-neutral-950">
+                          <div className="text-[14px] font-[600] leading-[20px] text-neutral-base">
                             Send money to Farouq
                           </div>
                           <div className="text-[12px] font-[500] leading-[16px] text-neutral-700">
@@ -299,16 +299,16 @@ const Transaction: React.FC = () => {
                         </div>
                       </div>
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       Bank Transfer
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       PD1468373HM1
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       October 10, 2025
                     </td>
-                    <td className="whitespace-nowrap text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="whitespace-nowrap text-[14px] font-[500] leading-[20px] text-neutral-base">
                       +₦25,000,000
                     </td>
 
@@ -418,7 +418,7 @@ const Transaction: React.FC = () => {
                           </div>
                         </div>
                         <div>
-                          <div className="text-[14px] font-[600] leading-[20px] text-neutral-950">
+                          <div className="text-[14px] font-[600] leading-[20px] text-neutral-base">
                             Watercress Crescent Home
                           </div>
                           <div className="text-overflow text-[12px] font-[500] leading-[16px] text-neutral-700">
@@ -427,16 +427,16 @@ const Transaction: React.FC = () => {
                         </div>
                       </div>
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       Bank Transfer
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       PD1468373HM1
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       October 10, 2025
                     </td>
-                    <td className="whitespace-nowrap text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="whitespace-nowrap text-[14px] font-[500] leading-[20px] text-neutral-base">
                       +₦25,000,000
                     </td>
 
@@ -540,7 +540,7 @@ const Transaction: React.FC = () => {
                           </div>
                         </div>
                         <div>
-                          <div className="text-[14px] font-[600] leading-[20px] text-neutral-950">
+                          <div className="text-[14px] font-[600] leading-[20px] text-neutral-base">
                             Watercress Crescent Home
                           </div>
                           <div className="text-overflow text-[12px] font-[500] leading-[16px] text-neutral-700">
@@ -549,16 +549,16 @@ const Transaction: React.FC = () => {
                         </div>
                       </div>
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       Wallet Funds
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       PD1468373HM1
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       October 10, 2025
                     </td>
-                    <td className="whitespace-nowrap text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="whitespace-nowrap text-[14px] font-[500] leading-[20px] text-neutral-base">
                       +₦25,000,000
                     </td>
 
@@ -664,7 +664,7 @@ const Transaction: React.FC = () => {
                           </div>
                         </div>
                         <div>
-                          <div className="text-[14px] font-[600] leading-[20px] text-neutral-950">
+                          <div className="text-[14px] font-[600] leading-[20px] text-neutral-base">
                             Watercress Crescent Home
                           </div>
                           <div className="text-overflow text-[12px] font-[500] leading-[16px] text-neutral-700">
@@ -673,16 +673,16 @@ const Transaction: React.FC = () => {
                         </div>
                       </div>
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       Wallet Funds
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       PD1468373HM1
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       October 10, 2025
                     </td>
-                    <td className="whitespace-nowrap text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="whitespace-nowrap text-[14px] font-[500] leading-[20px] text-neutral-base">
                       -₦25,000,000
                     </td>
 

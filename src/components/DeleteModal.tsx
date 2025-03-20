@@ -241,7 +241,7 @@ const DeleteModal: React.FC<SuccessModalProps> = ({ onClose }) => {
         </div>
 
         {/* Title */}
-        <h2 className=" text-[24px] font-[600] text-neutral-950">
+        <h2 className=" text-[24px] font-[600] text-neutral-base">
           Are you sure?
         </h2>
 

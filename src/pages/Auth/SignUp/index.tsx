@@ -44,7 +44,7 @@ const SignUp: React.FC = () => {
           <div className=" flex justify-center">
             <div className="pt-[50px] xl:w-[480px] w-full ">
             <div className="text-center">
-              <h2 className="text-[25px] font-[600] leading-[48px] md:tracking-tight text-neutral-950 md:text-[36px]">
+              <h2 className="text-[25px] font-[600] leading-[48px] md:tracking-tight text-neutral-base md:text-[36px]">
                 Register with Propa Homes
               </h2>
               <h6 className="mb-[30px] text-[16px] font-[500] leading-[24px] text-neutral-700">

@@ -16,7 +16,7 @@ const Cover: React.FC = () => {
   ];
 
   return (
-    <div className="xl:m-4 md:flex relative flex hidden m-4 overflow-hidden">
+    <div className="xl:m-4 md:flex relative hidden m-4 overflow-hidden">
       {/* Cover Image */}
       <div className="relative w-full">
         <img
@@ -52,9 +52,9 @@ const Cover: React.FC = () => {
             <video
               src={video}
               autoPlay
-              loop
+              loop={true}
               muted
-              controls
+              controls={false}
               className="mask-video absolute top-0 left-0 z-20 object-cover w-full h-full"
             />
           </div>
@@ -74,21 +74,21 @@ const Cover: React.FC = () => {
             >
               <SwiperSlide>
                 <div className="flex flex-col items-center justify-center text-center">
-                  <h1 className="mt-6 text-[25px] font-[600] leading-[48px] text-white xl:text-[30px] xl:text-[36px]">
+                  <h1 className="mt-6 text-[25px] font-[600] leading-[48px] text-white xl:text-[36px]">
                     Speedy, easy and secure.
                   </h1>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div className="flex flex-col items-center justify-center text-center">
-                  <h1 className="mt-6 text-[25px] font-[600] leading-[48px] text-white xl:text-[30px] xl:text-[36px]">
+                  <h1 className="mt-6 text-[25px] font-[600] leading-[48px] text-white xl:text-[36px]">
                     Flexible payment options.
                   </h1>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div className="flex flex-col items-center justify-center text-center">
-                  <h1 className="mt-6 text-[25px] font-[600] leading-[48px] text-white xl:text-[30px] xl:text-[36px]">
+                  <h1 className="mt-6 text-[25px] font-[600] leading-[48px] text-white xl:text-[36px]">
                     Put your money to work.
                   </h1>
                 </div>

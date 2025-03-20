@@ -333,7 +333,7 @@ const Wallet = () => {
                     </defs>
                   </svg>
                 </span>
-                <h2 className="text-[16px] font-[500] leading-[24px] text-neutral-950">
+                <h2 className="text-[16px] font-[500] leading-[24px] text-neutral-base">
                   Credits Health
                 </h2>
               </div>
@@ -533,7 +533,7 @@ const Wallet = () => {
                 </svg>
               </span>
               <div className="">
-                <h2 className="text-[14px] font-[600] leading-[28px] text-neutral-950 md:text-[16px]">
+                <h2 className="text-[14px] font-[600] leading-[28px] text-neutral-base md:text-[16px]">
                   Recent Transactions
                 </h2>
                 <h6 className="text-[12px] font-[500] leading-[16px] text-neutral-700">
@@ -662,7 +662,7 @@ const Wallet = () => {
                           </div>
                         </div>
                         <div>
-                          <div className="text-[14px] font-[600] leading-[20px] text-neutral-950">
+                          <div className="text-[14px] font-[600] leading-[20px] text-neutral-base">
                             Funds added via bank transfer
                           </div>
                           <div className="text-[12px] font-[500] leading-[16px] text-neutral-700">
@@ -671,16 +671,16 @@ const Wallet = () => {
                         </div>
                       </div>
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       Bank Transfer
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       PD1468373HM1
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       Oct 10, 2025 12:15 PM
                     </td>
-                    <td className="whitespace-nowrap text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="whitespace-nowrap text-[14px] font-[500] leading-[20px] text-neutral-base">
                       +₦25,000,000
                     </td>
                     <th>
@@ -786,7 +786,7 @@ const Wallet = () => {
                           </div>
                         </div>
                         <div>
-                          <div className="text-[14px] font-[600] leading-[20px] text-neutral-950">
+                          <div className="text-[14px] font-[600] leading-[20px] text-neutral-base">
                             Funds added via bank transfer
                           </div>
                           <div className="text-[12px] font-[500] leading-[16px] text-neutral-700">
@@ -795,16 +795,16 @@ const Wallet = () => {
                         </div>
                       </div>
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       Bank Transfer
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       PD1468373HM1
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       Oct 10, 2025 12:15 PM
                     </td>
-                    <td className="whitespace-nowrap text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="whitespace-nowrap text-[14px] font-[500] leading-[20px] text-neutral-base">
                       +₦25,000,000
                     </td>
                     <th>
@@ -910,7 +910,7 @@ const Wallet = () => {
                           </div>
                         </div>
                         <div>
-                          <div className="text-[14px] font-[600] leading-[20px] text-neutral-950">
+                          <div className="text-[14px] font-[600] leading-[20px] text-neutral-base">
                             Funds added via bank transfer
                           </div>
                           <div className="text-[12px] font-[500] leading-[16px] text-neutral-700">
@@ -919,16 +919,16 @@ const Wallet = () => {
                         </div>
                       </div>
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       Wallet Funds
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       PD1468373HM1
                     </td>
-                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       Oct 10, 2025 12:15 PM
                     </td>
-                    <td className="whitespace-nowrap text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <td className="whitespace-nowrap text-[14px] font-[500] leading-[20px] text-neutral-base">
                       ₦25,000,000
                     </td>
                     <th>

@@ -104,7 +104,7 @@ const ReminderEdit: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose }) => {
                 <h2 className="text-[16px] font-[600] leading-[24px] text-neutral-700">
                   Available Balance
                 </h2>
-                <div className="flex h-[32px] w-[32px] justify-center rounded-full bg-neutral-950">
+                <div className="flex h-[32px] w-[32px] justify-center rounded-full bg-neutral-base">
                   <EyeToggle
                     showVisibility={showVisibility}
                     togglePasswordVisibility={togglePasswordVisibility}
@@ -181,7 +181,7 @@ const ReminderEdit: React.FC<PaymentMenuProps> = ({ isOpenMenu, onClose }) => {
                   </svg>
                 </span>
                 <div>
-                  <h3 className="text-[14px] font-[600] leading-[20px] text-neutral-950">
+                  <h3 className="text-[14px] font-[600] leading-[20px] text-neutral-base">
                     Watercress Crescent Home
                   </h3>
                   <h5 className="text-[12px] font-[500] leading-[16px] text-neutral-700">

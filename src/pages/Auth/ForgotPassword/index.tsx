@@ -142,7 +142,7 @@ const ForgotPassword = () => {
           <div className="flex justify-center">
             <div className="w-full xl:w-[480px]">
               <div className="text-center">
-                <h2 className="text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-950 md:text-[36px]">
+                <h2 className="text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-base md:text-[36px]">
                   Forgot Password
                 </h2>
                 <h6 className="text-[16px] font-[500] leading-[24px] text-neutral-700">

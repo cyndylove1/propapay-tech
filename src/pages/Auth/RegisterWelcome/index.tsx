@@ -333,7 +333,7 @@ const RegisterWelcome = () => {
             </svg>
           </span>
           <div className="py-[30px] text-center">
-            <h2 className="text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-950 md:text-[36px]">
+            <h2 className="text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-base md:text-[36px]">
               Sign up for Propa Homes
             </h2>
             <h3 className="pt-2 text-[13px] font-[500] leading-[24px] text-neutral-700 md:text-[16px]">

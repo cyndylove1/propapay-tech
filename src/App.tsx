@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router";
 import { useState, useEffect } from "react";
 import UserType from "./pages/Auth/UserType";
 import SignUp from "./pages/Auth/SignUp";

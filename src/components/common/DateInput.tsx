@@ -69,7 +69,7 @@ const DateInput: React.FC<DateInputProps> = ({ className }) => {
       <input
         type="date"
         ref={dateInputRef}
-        className="w-full cursor-pointer appearance-none bg-transparent p-2 px-8 text-[14px] font-medium leading-[20px] text-neutral-950 outline-none [&::-webkit-calendar-picker-indicator]:hidden"
+        className="w-full cursor-pointer appearance-none bg-transparent p-2 px-8 text-[14px] font-medium leading-[20px] text-neutral-base outline-none [&::-webkit-calendar-picker-indicator]:hidden"
       />
     </div>
   );

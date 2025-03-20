@@ -57,7 +57,7 @@ const PasswordChanged = () => {
         </div>
 
         <div className="text-center">
-          <h2 className="pt-[30px] text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-950 md:text-[36px]">
+          <h2 className="pt-[30px] text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-base md:text-[36px]">
             Great! your password <br />
             has been changed.
           </h2>

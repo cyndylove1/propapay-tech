@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "../common/Button";
 import Line from "../Line";
-import Input from "../common/Input";
+import Input from "../common/Input/Input";
 import Label from "../common/Label";
 import SelectTag from "../common/SelectTag";
 import PaymentMethod, { paymentMethods} from "./data";
@@ -180,7 +180,7 @@ const AddMoneyModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
               </svg>
             )}
             <div>
-              <h2 className="text-[20px] font-[600] leading-[19px] text-neutral-950">
+              <h2 className="text-[20px] font-[600] leading-[19px] text-neutral-base">
                 Add funds to your wallet
               </h2>
               <h6 className="text-[14px] font-[500] leading-[20px] text-neutral-700">
@@ -218,7 +218,7 @@ const AddMoneyModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             <div className="flex items-center gap-2 rounded-[12px] border-[1px] border-brand-base p-4">
               {selectedMethod.icon}
               <div>
-                <h2 className="text-[16px] font-[600] leading-[24px] text-neutral-950">
+                <h2 className="text-[16px] font-[600] leading-[24px] text-neutral-base">
                   {selectedMethod.title}
                 </h2>
                 <p className="text-[14px] font-[500] leading-[20px] text-neutral-700">
@@ -231,7 +231,7 @@ const AddMoneyModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             <div className="mt-4">
               <Label text="Currency" htmlFor="Currency" className="" />
               <div className="">
-                <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 py-3 text-[14px] font-[600] leading-[20px] text-neutral-950 focus:border-brand-500">
+                <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 py-3 text-[14px] font-[600] leading-[20px] text-neutral-base focus:border-brand-500">
                   <option className="">Naira</option>
                   <option>Nigeria</option>
                 </SelectTag>
@@ -242,7 +242,7 @@ const AddMoneyModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
               <div className="relative flex h-[48px] items-center justify-between rounded-xl border-[1px] border-neutral-200 px-4 focus-within:border-brand-500">
                 <Input className="text-neutral-500 w-full bg-transparent border-none outline-none" />
                 <div className="flex items-center gap-2">
-                  <span className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                  <span className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                     NGN
                   </span>
                 </div>
@@ -268,7 +268,7 @@ const AddMoneyModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
               >
                 {method.icon}
                 <div>
-                  <h2 className="text-[16px] font-[600] leading-[24px] text-neutral-950">
+                  <h2 className="text-[16px] font-[600] leading-[24px] text-neutral-base">
                     {method.title}
                   </h2>
                   <p className="text-[14px] font-[500] leading-[20px] text-neutral-700">

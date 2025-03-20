@@ -113,7 +113,7 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ isCollapsed }) => {
             </div>
             {!isCollapsed && (
               <div>
-                <h3 className="text-[14px] font-[600] leading-[20px] text-neutral-950">
+                <h3 className="text-[14px] font-[600] leading-[20px] text-neutral-base">
                   Joshiah Ovo
                 </h3>
                 <h4 className="text-[12px] font-[500] leading-[12px] text-neutral-700">

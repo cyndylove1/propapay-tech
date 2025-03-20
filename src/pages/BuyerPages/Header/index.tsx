@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({
     <>
       <div className="flex h-[72px] w-full items-center justify-between border-b-[1px] border-neutral-200 bg-white px-4">
         <div
-          className="flex text-[30px] text-neutral-950 lg:hidden"
+          className="flex text-[30px] text-neutral-base lg:hidden"
           onClick={onMenuClick}
         >
           <RiMenuLine />
@@ -45,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({
             onClick={() => {
               setIsCollapsed(!isCollapsed);
             }}
-            className="text-neutral-950 cursor-pointer"
+            className="text-neutral-base cursor-pointer"
           >
             <svg
               width="24"
@@ -369,7 +369,7 @@ const Header: React.FC<HeaderProps> = ({
             </span>
 
             {/* Select Dropdown */}
-            <SelectTag className="border-none bg-transparent w-full px-8 text-[14px] font-[600] leading-[20px] text-neutral-950">
+            <SelectTag className="border-none bg-transparent w-full px-8 text-[14px] font-[600] leading-[20px] text-neutral-base">
               <option className="">Propa Homes</option>
               <option>Nigeria</option>
             </SelectTag>

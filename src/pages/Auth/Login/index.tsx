@@ -9,6 +9,7 @@ import RegisterFooter from "@/components/RegisterFooter";
 import RegisterHeader from "@/components/RegisterHeader";
 import Checkbox from "@/components/common/Checkbox";
 import Spinner from "@/components/common/Spinner"
+import Input from "@/components/common/Input/Input";
 
 const Login: React.FC = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -33,7 +34,7 @@ const Login: React.FC = () => {
         </div>
       )}
 
-      <div className="md:mr-0 md:ml-4 md:grid-cols-2 grid h-screen grid-cols-1 mx-4 bg-white">
+      <div className="md:mr-0 md:ml-4 md:grid-cols-2 grid h-screen md:h-full grid-cols-1 mx-4 bg-white">
         <div className="">
           <RegisterHeader
             btnText="Sign Up"
@@ -43,7 +44,7 @@ const Login: React.FC = () => {
           <div className="flex justify-center">
             <div className="mt-[5rem] w-full md:mt-[10rem] xl:mx-0 xl:w-[480px]">
               <div className="text-center">
-                <h2 className="md:text-[36px] text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-950">
+                <h2 className="md:text-[36px] text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-base">
                   Sign in to Propa Homes
                 </h2>
                 <h6 className="text-[16px] font-[500] leading-[24px] text-neutral-700">
@@ -59,6 +60,7 @@ const Login: React.FC = () => {
                     placeholder="Enter your email Address"
                     id="email"
                   />
+                  <Input type="email" placeholder="Enter email address" label="Email Address" />
                 </div>
                 <div className="mt-[5px]">
                   <Label text="Password" htmlFor="password" />

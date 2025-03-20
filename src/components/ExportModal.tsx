@@ -113,10 +113,10 @@ const ExportModal: React.FC<ExportProps> = ({ Open, Close }) => {
                   </svg>
                 </span>
                 <div>
-                  <h2 className="text-[16px] font-[600] leading-[24px] text-neutral-950">
+                  <h2 className="text-[16px] font-[600] leading-[24px] text-neutral-base">
                     Export Documents
                   </h2>
-                  <h6 className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                  <h6 className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                     Total export : 4 files
                   </h6>
                 </div>
@@ -152,7 +152,7 @@ const ExportModal: React.FC<ExportProps> = ({ Open, Close }) => {
                     </div>
 
                     <div>
-                      <h2 className="text-[14px] font-[600] leading-[20px] text-neutral-950">
+                      <h2 className="text-[14px] font-[600] leading-[20px] text-neutral-base">
                         documents.csv
                       </h2>
                       <h4 className="text-[12px] font-[500] leading-[16px] text-neutral-600">
@@ -202,7 +202,7 @@ const ExportModal: React.FC<ExportProps> = ({ Open, Close }) => {
                     </div>
 
                     <div>
-                      <h2 className="text-[14px] font-[600] leading-[20px] text-neutral-950">
+                      <h2 className="text-[14px] font-[600] leading-[20px] text-neutral-base">
                         documents.xls
                       </h2>
                       <h4 className="text-[12px] font-[500] leading-[16px] text-neutral-600">
@@ -243,7 +243,7 @@ const ExportModal: React.FC<ExportProps> = ({ Open, Close }) => {
                     </div>
 
                     <div>
-                      <h2 className="text-[14px] font-[600] leading-[20px] text-neutral-950">
+                      <h2 className="text-[14px] font-[600] leading-[20px] text-neutral-base">
                         documents.json
                       </h2>
                       <h4 className="text-[12px] font-[500] leading-[16px] text-neutral-600">
@@ -274,7 +274,7 @@ const ExportModal: React.FC<ExportProps> = ({ Open, Close }) => {
                     </div>
 
                     <div>
-                      <h2 className="text-[14px] font-[600] leading-[20px] text-neutral-950">
+                      <h2 className="text-[14px] font-[600] leading-[20px] text-neutral-base">
                         documents.pdf
                       </h2>
                       <h4 className="text-[12px] font-[500] leading-[16px] text-neutral-600">
@@ -298,7 +298,7 @@ const ExportModal: React.FC<ExportProps> = ({ Open, Close }) => {
                     </div>
 
                     <div>
-                      <h2 className="text-[14px] font-[600] leading-[20px] text-neutral-950">
+                      <h2 className="text-[14px] font-[600] leading-[20px] text-neutral-base">
                         documents.docx
                       </h2>
                       <h4 className="text-[12px] font-[500] leading-[16px] text-neutral-600">

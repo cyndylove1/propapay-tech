@@ -8,7 +8,7 @@ const RegisterFooter = () => {
         <p>© 2025 PropaPay - All Rights Reserved</p>
 
         {/* Right Side - Language Selector */}
-        <div className="relative flex hidden w-[92px] items-center md:flex md:h-[32px]">
+        <div className="relative  hidden w-[92px] items-center md:flex md:h-[32px]">
           <span className="absolute flex items-center px-2">
             <svg
               width="15"

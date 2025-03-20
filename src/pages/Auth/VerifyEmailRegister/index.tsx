@@ -138,7 +138,7 @@ const VerifyEmailRegister = () => {
           <div className="flex justify-center">
             <div className="w-full h-full xl:w-[480px]">
               <div className="text-center">
-                <h2 className="md:text-[36px] text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-950">
+                <h2 className="md:text-[36px] text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-base">
                   Enter 6-digits code
                 </h2>
                 <h6 className="py-[5px] text-[16px] font-[500] leading-[24px] text-neutral-700">

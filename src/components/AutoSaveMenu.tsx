@@ -5,7 +5,7 @@ import DateInput from "./common/DateInput";
 import SelectTag from "./common/SelectTag";
 import Btn from "./common/Btn";
 import Button from "./common/Button";
-import Input from "./common/Input";
+import Input from "./common/Input/Input";
 import schedule from "@/assets/images/Flexible Widget.png";
 
 interface AutoPaymentMenuProps {
@@ -89,7 +89,7 @@ const AutoSaveMenu: React.FC<AutoPaymentMenuProps> = ({
                 <h2 className="text-[16px] font-[600] leading-[24px] text-neutral-700">
                   Available Balance
                 </h2>
-                <div className="flex h-[32px] w-[32px] justify-center rounded-full bg-neutral-950">
+                <div className="flex h-[32px] w-[32px] justify-center rounded-full bg-neutral-base">
                   <EyeToggle
                     showVisibility={showVisibility}
                     togglePasswordVisibility={togglePasswordVisibility}
@@ -115,7 +115,7 @@ const AutoSaveMenu: React.FC<AutoPaymentMenuProps> = ({
             <div className="px-2">
               <div className="py-2">
                 <Label text="Property" />
-                <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 text-[14px] leading-[20px] text-neutral-950">
+                <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 text-[14px] leading-[20px] text-neutral-base">
                   <option className="">Watercress Crescent Home</option>
                   <option></option>
                 </SelectTag>
@@ -125,7 +125,7 @@ const AutoSaveMenu: React.FC<AutoPaymentMenuProps> = ({
                 <div className="relative flex h-[48px] items-center justify-between rounded-xl border-[1px] border-neutral-200 px-4 focus-within:border-brand-500">
                   <Input className="text-neutral-500 w-full bg-transparent border-none outline-none" />
                   <div className="flex items-center gap-2">
-                    <span className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+                    <span className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                       NGN
                     </span>
                   </div>
@@ -133,27 +133,27 @@ const AutoSaveMenu: React.FC<AutoPaymentMenuProps> = ({
               </div>
               <div className="py-2">
                 <Label text="Frequency" />
-                <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 text-[14px] leading-[20px] text-neutral-950">
+                <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 text-[14px] leading-[20px] text-neutral-base">
                   <option className="">Weekly</option>
                   <option></option>
                 </SelectTag>
               </div>
               <div className="py-2">
                 <Label text="Day of the Weekly" />
-                <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 text-[14px] leading-[20px] text-neutral-950">
+                <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 text-[14px] leading-[20px] text-neutral-base">
                   <option className="">10th</option>
                   <option></option>
                 </SelectTag>
               </div>
               <div className="py-2">
                 <Label text="Time" />
-                <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 text-[14px] leading-[20px] text-neutral-950">
+                <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 text-[14px] leading-[20px] text-neutral-base">
                   <option className="">12:00pm</option>
                 </SelectTag>
               </div>
               <div className="py-2">
                 <Label text="Funding Source" />
-                <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 text-[14px] leading-[20px] text-neutral-950">
+                <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-4 text-[14px] leading-[20px] text-neutral-base">
                   <option className="">Wallet Balance</option>
                 </SelectTag>
               </div>
@@ -167,13 +167,13 @@ const AutoSaveMenu: React.FC<AutoPaymentMenuProps> = ({
               </div>
             </div>
             <div className="mx-2 mt-6 h-[68px] rounded-xl border-[1px] border-neutral-200 bg-neutral-50 py-2 px-4">
-              <h5 className="text-[14px] font-[500] leading-[20px] text-neutral-950">
+              <h5 className="text-[14px] font-[500] leading-[20px] text-neutral-base">
                 Next payment
                 <span className="text-neutral-600">
                   (based on your settings)
                 </span>
               </h5>
-              <h6 className="text-[12px] font-[600] leading-[16px] text-neutral-950 pt-[2px]">
+              <h6 className="text-[12px] font-[600] leading-[16px] text-neutral-base pt-[2px]">
                 October 10, 2025 <span className="font-[500]">for</span> ₦300,000
               </h6>
             </div>
