@@ -2,27 +2,24 @@ import { useState } from "react";
 import { Link } from "react-router";
 import Button from "@/components/common/Button";
 import Cover from "@/components/common/Cover";
-import InputEmail from "@/components/common/InputEmail";
-import InputPassword from "@/components/common/InputPassword";
-import Label from "@/components/common/Label";
 import RegisterFooter from "@/components/RegisterFooter";
 import RegisterHeader from "@/components/RegisterHeader";
 import Checkbox from "@/components/common/Checkbox";
-import Spinner from "@/components/common/Spinner"
+import Spinner from "@/components/common/Spinner";
 import Input from "@/components/common/Input/Input";
+import { MailIcon, PadlockIcon } from "@/assets/icons";
 
 const Login: React.FC = () => {
-  const [passwordVisible, setPasswordVisible] = useState(false);
   const [password, setPassword] = useState<string>("");
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
-    setLoading(true); 
+    setLoading(true);
 
     setTimeout(() => {
-      setLoading(false); 
+      setLoading(false);
     }, 3000);
   };
 
@@ -34,7 +31,7 @@ const Login: React.FC = () => {
         </div>
       )}
 
-      <div className="md:mr-0 md:ml-4 md:grid-cols-2 grid h-screen md:h-full grid-cols-1 mx-4 bg-white">
+      <div className="mx-4 grid h-screen grid-cols-1 bg-white md:ml-4 md:mr-0 md:h-full md:grid-cols-2">
         <div className="">
           <RegisterHeader
             btnText="Sign Up"
@@ -44,7 +41,7 @@ const Login: React.FC = () => {
           <div className="flex justify-center">
             <div className="mt-[5rem] w-full md:mt-[10rem] xl:mx-0 xl:w-[480px]">
               <div className="text-center">
-                <h2 className="md:text-[36px] text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-base">
+                <h2 className="text-neutral-base text-[25px] font-[600] leading-[48px] tracking-tight md:text-[36px]">
                   Sign in to Propa Homes
                 </h2>
                 <h6 className="text-[16px] font-[500] leading-[24px] text-neutral-700">
@@ -52,34 +49,32 @@ const Login: React.FC = () => {
                   your account.
                 </h6>
               </div>
-              <form onSubmit={handleLogin}>
-                <div className="">
-                  <Label text="Email Address" htmlFor="email" />
-                  <InputEmail
+              <form onSubmit={handleLogin} className="flex flex-col gap-6">
+                <div className="flex flex-col gap-4">
+                  <Input
+                    leftIcon={<MailIcon />}
+                    leftIconClassName="top-[2px]"
                     type="email"
-                    placeholder="Enter your email Address"
-                    id="email"
+                    placeholder="Enter email address"
+                    label="Email Address"
                   />
-                  <Input type="email" placeholder="Enter email address" label="Email Address" />
-                </div>
-                <div className="mt-[5px]">
-                  <Label text="Password" htmlFor="password" />
-                  <InputPassword
+                
+                  <Input
+                    type="password"
+                    leftIcon={<PadlockIcon />}
+                    showPasswordToggle={true}
+                    label="Password"
                     id="password"
                     value={password}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                       setPassword(e.target.value)
                     }
                     placeholder="Enter your Password"
-                    showVisibility={passwordVisible}
-                    togglePasswordVisibility={() =>
-                      setPasswordVisible(!passwordVisible)
-                    }
                   />
-                </div>
-                <div className="mb-6 flex items-center justify-between pt-[10px]">
+                
+                <div className="flex items-center justify-between ">
                   <div className="flex items-center">
-                    <Checkbox/>
+                    <Checkbox />
                     <label className="ml-2 cursor-pointer text-[14px] font-[600] leading-[20px] text-neutral-800">
                       Remember me
                     </label>
@@ -89,6 +84,7 @@ const Login: React.FC = () => {
                       Forgot Password
                     </h1>
                   </Link>
+                </div>
                 </div>
                 <Button
                   text="Continue"
