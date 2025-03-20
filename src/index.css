@@ -32,3 +32,25 @@
   font-family: 'Labil Grotesk Basic', sans-serif;
 }
 
+@layer utilities {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus {
+    font-family: 'Labil Grotesk Basic', sans-serif !important;
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    font-weight: 500 !important;
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    -webkit-text-fill-color: black !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  .dark input:-webkit-autofill,
+  .dark input:-webkit-autofill:hover, 
+  .dark input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px #1F2937 inset !important;
+    -webkit-text-fill-color: white !important;
+  }
+}
+
+
