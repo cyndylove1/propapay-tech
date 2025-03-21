@@ -19,11 +19,12 @@ export default {
         "neutral-800": "#36393D",
         
         "neutral-700": "#4E5257",
+        "brand-base": "#12725B",
         "brand-50": "#EEFBF6",
         "brand-100": "#CFF0E8",
         "brand-200": "#AFEBD2",
         "brand-500": "#33A691",
-        "brand-base": "#12725B",
+        
         "negative-50": "#FDF3F3",
         "negative-500": "#D84E4E",
         "positive-50": "#F1FCF5",
@@ -38,5 +39,5 @@ export default {
       },
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [],
 };
