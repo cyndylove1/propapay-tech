@@ -12,7 +12,7 @@ export default {
         white: "#FFFFFF",
         "neutral-base": "#1C1D1E",
         "neutral-50": "#F7F8F9",
-        "neutral-100": "#E8EAEC",
+        "neutral-100": "#E6E8EA",
         "neutral-200": "#DEE1E4",
         "neutral-500": "#888D93",
         "neutral-600": "#6D7177",
