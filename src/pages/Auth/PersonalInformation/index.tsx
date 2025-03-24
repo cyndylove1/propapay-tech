@@ -2,7 +2,7 @@ import RegisterHeader from "@/components/Header";
 import Label from "@/components/common/Label";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import Button from "@/components/common/Button";
+import Button from "@/components/common/Button/Button";
 import Input from "@/components/common/InputName";
 import Line from "@/components/Line";
 import InputEmail from "@/components/common/InputEmail";

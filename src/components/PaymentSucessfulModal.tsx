@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Button from "./common/Button";
+import Button from "./common/Button/Button";
 
 interface SuccessModalProps {
   onClose: () => void;

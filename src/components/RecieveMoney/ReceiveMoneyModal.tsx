@@ -1,6 +1,6 @@
 import React from "react";
 import Line from "../Line";
-import Button from "../common/Button";
+import Button from "../common/Button/Button";
 
 interface RecieveModalProps {
   OpenModal: boolean;

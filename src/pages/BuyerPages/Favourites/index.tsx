@@ -1,5 +1,5 @@
 import favourites from "@/assets/images/Rectangle 2911 (1).png";
-import Button from "@/components/common/Button";
+import Button from "@/components/common/Button/Button";
 import ContentHeader from "@/components/ContentHeader";
 import { NavLink } from "react-router";
 const Favourites = () => {

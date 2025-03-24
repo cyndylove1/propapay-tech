@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Button from "@/components/common/Button";
+import Button from "@/components/common/Button/Button";
 import Cover from "@/components/common/Cover";
 import InputEmail from "@/components/common/InputEmail";
 import InputPassword from "@/components/common/InputPassword";

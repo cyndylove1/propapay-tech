@@ -4,7 +4,7 @@ import Label from "./common/Label";
 import DateInput from "./common/DateInput";
 import SelectTag from "./common/SelectTag";
 import Btn from "./common/Btn";
-import Button from "./common/Button";
+import Button from "./common/Button/Button";
 import Input from "./common/Input/Input";
 import schedule from "@/assets/images/Flexible Widget.png";
 

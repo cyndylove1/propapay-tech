@@ -1,4 +1,4 @@
-import Button from "@/components/common/Button";
+import Button from "@/components/common/Button/Button";
 import Cover from "@/components/common/Cover";
 import InputEmail from "@/components/common/InputEmail";
 import Label from "@/components/common/Label";

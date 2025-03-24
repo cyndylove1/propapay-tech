@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Label from "@/components/common/Label";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import Button from "@/components/common/Button";
+import Button from "@/components/common/Button/Button";
 import Line from "@/components/Line";
 import { Link } from "react-router";
 import BottomIcon from "@/components/common/BottomIcon";

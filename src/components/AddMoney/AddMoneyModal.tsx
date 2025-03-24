@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "../common/Button";
+import Button from "../common/Button/Button";
 import Line from "../Line";
 import Input from "../common/Input/Input";
 import Label from "../common/Label";

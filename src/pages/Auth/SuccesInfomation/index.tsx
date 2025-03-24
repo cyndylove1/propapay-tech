@@ -1,5 +1,5 @@
 import BottomIcon from "@/components/common/BottomIcon";
-import Button from "@/components/common/Button";
+import Button from "@/components/common/Button/Button";
 import Logo from "@/components/common/Logo";
 import { Link } from "react-router";
 

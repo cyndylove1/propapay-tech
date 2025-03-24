@@ -5,7 +5,7 @@ import DateInput from "./common/DateInput";
 import SelectTag from "./common/SelectTag";
 import InputEmail from "./common/InputEmail";
 import Btn from "./common/Btn";
-import Button from "./common/Button";
+import Button from "./common/Button/Button";
 import request from "@/assets/images/Flexible Widget-3.png"
 
 interface RequestMenuProps {

@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router";
-import Button from "@/components/common/Button";
+import Button from "@/components/common/Button/Button";
 import Cover from "@/components/common/Cover";
 import RegisterFooter from "@/components/RegisterFooter";
 import RegisterHeader from "@/components/RegisterHeader";
 import Checkbox from "@/components/common/Checkbox";
 import Spinner from "@/components/common/Spinner";
 import Input from "@/components/common/Input/Input";
-import { MailIcon, PadlockIcon } from "@/assets/icons";
+import { MailIcon, PadlockIcon, ArrowIcon } from "@/assets/icons";
 
 const Login: React.FC = () => {
   const [password, setPassword] = useState<string>("");
@@ -89,7 +89,10 @@ const Login: React.FC = () => {
                 <Button
                   text="Continue"
                   type="submit"
-                  className="h-[48px] w-full rounded-xl bg-brand-base text-white"
+                  className="w-full"
+                  icon={<ArrowIcon className="w-full h-full stroke-white" />}
+                  iconClassName="pt-[5px] pb-1"
+                  iconPosition="right"
                 />
               </form>
             </div>

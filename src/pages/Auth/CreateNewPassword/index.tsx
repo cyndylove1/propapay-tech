@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Button from "@/components/common/Button";
+import Button from "@/components/common/Button/Button";
 import Cover from "@/components/common/Cover";
 import Label from "@/components/common/Label";
 import RegisterFooter from "@/components/RegisterFooter";
