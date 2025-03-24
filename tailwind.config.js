@@ -21,7 +21,7 @@ export default {
         "neutral-700": "#4E5257",
         "brand-base": "#12725B",
         "brand-50": "#EEFBF6",
-        "brand-100": "#CFF0E8",
+        "brand-100": "#D6F5E6",
         "brand-200": "#AFEBD2",
         "brand-500": "#33A691",
         
