@@ -20,7 +20,7 @@ export default function GridCard({
   badge,
 }: PropertyCardProps) {
   return (
-    <div className="flex flex-col rounded-xl border border-neutral-100 p-2 drop-shadow-[0_2px_4px_0_#1C1D1E0A]">
+    <div className="flex flex-col rounded-xl border border-neutral-100 p-2 shadow-[0_2px_4px_0_#1C1D1E0A]">
       {/* Image */}
       <div
         style={{
@@ -28,11 +28,11 @@ export default function GridCard({
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-        className={`rounded-lg bg-[50%_50%] p-3`}
+        className={`rounded-lg bg-[50%_50%] h-[240px] w-full p-3`}
       >
         <div className="flex items-center justify-between">
           <PropertyBadge label={badge} />
-          <span className="h-11 w-11 rounded-full bg-[#FFFFFFCC] p-3 drop-shadow-[0_2px_4px_0_#1C1D1E0A]">
+          <span className="h-11 w-11 rounded-full bg-[#FFFFFFCC] p-3 shadow-[0_2px_4px_0_#1C1D1E0A]">
             <FavouriteIcon />
           </span>
         </div>
@@ -82,9 +82,10 @@ export default function GridCard({
           </h1>
           <Button
             text="Buy Now"
-            className="h-9 rounded-lg border border-brand-base bg-transparent px-4 py-2 text-sm font-semibold leading-5 text-brand-base drop-shadow-[0_1_2_0_#375DFB14]"
+            className="h-9 rounded-lg border border-brand-base bg-transparent px-4 py-2 text-sm font-semibold leading-5 text-brand-base shadow-[0_1_2_0_#375DFB14]"
             icon={<ArrowIcon className="h-full w-full stroke-brand-base" />}
             iconPosition="right"
+            iconClassName="pt-[5px] pb-1"
           />
         </div>
       </div>
