@@ -6,3 +6,4 @@ export {default as FavouriteIcon} from "./FavouriteIcon";
 export {default as SingleBedIcon} from "./SingleBedIcon";
 export {default as BathtubIcon} from "./BathtubIcon";
 export {default as AreaMeterIcon} from "./AreaMeterIcon";
+export {default as PaperPlaneIcon} from "./PaperPlaneIcon";
