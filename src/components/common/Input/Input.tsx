@@ -1,6 +1,7 @@
 import { InputErrorIcon } from "@/assets/icons";
 import { InputHTMLAttributes, ReactNode, forwardRef, useState } from "react";
 import { FiEyeOff, FiEye } from "react-icons/fi";
+import { twMerge } from "tailwind-merge";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   leftIcon?: ReactNode;
@@ -10,6 +11,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   showPasswordToggle?: boolean;
   leftIconClassName?: string;
+  labelClassName?: string;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -24,6 +26,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       showPasswordToggle = false,
       label,
       leftIconClassName,
+      labelClassName,
       ...props
     },
     ref,
@@ -44,7 +47,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="w-full">
         {label && (
-          <label className="text-neutral-base mb-1 block text-sm font-semibold">
+          <label
+            className={twMerge(
+              "mb-1 block text-sm font-semibold text-neutral-base",
+              labelClassName,
+            )}
+          >
             {label}
           </label>
         )}
@@ -59,7 +67,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           <input
             ref={ref}
             type={inputType}
-            className={`h-12 w-full rounded-lg border bg-white px-4 py-3 ${leftIcon ? "pl-9" : "pl-4"} ${rightIcon || shouldShowPasswordToggle ? "pr-8" : "pr-4"} ${error ? "border-negative-500 focus:border-negative-500 focus:shadow-[0_1px_2px_0_#E4E5E73D]" : "border-neutral-200 focus-within:border-brand-500"} text-sm font-medium leading-5 placeholder:text-neutral-500 focus-within:border-brand-500 focus:outline-0 focus:shadow-[0_0_0_4px_#EEFBF6] ${className || ""} `}
+            className={twMerge(
+              `h-12 w-full rounded-lg border bg-white px-4 py-3 ${leftIcon ? "pl-9" : "pl-4"} ${rightIcon || shouldShowPasswordToggle ? "pr-8" : "pr-4"} ${error ? "border-negative-500 focus:border-negative-500 focus:shadow-[0_1px_2px_0_#E4E5E73D]" : "border-neutral-200 focus-within:border-brand-500"} text-sm font-medium leading-5 placeholder:text-neutral-500 focus-within:border-brand-500 focus:shadow-[0_0_0_4px_#EEFBF6] focus:outline-0`,
+              className,
+            )}
             {...props}
           />
 
@@ -67,7 +78,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             {shouldShowPasswordToggle && (
               <button
                 type="button"
-                className="text-gray-500 hover:text-gray-700 p-1 focus:outline-none"
+                className="p-1 text-gray-500 hover:text-gray-700 focus:outline-none"
                 onClick={togglePasswordVisibility}
                 tabIndex={-1}
               >
@@ -88,7 +99,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             <span>
               <InputErrorIcon />
             </span>
-            <p className="text-negative-500 mt-1 text-xs leading-4 font-medium">{errorMessage}</p>
+            <p className="mt-1 text-xs font-medium leading-4 text-negative-500">
+              {errorMessage}
+            </p>
           </div>
         )}
       </div>
