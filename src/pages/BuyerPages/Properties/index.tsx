@@ -12,21 +12,20 @@ const Properties = () => {
       />
       {/* content */}
       <NavLink to="/properties/view">
-        <div className="grid gap-6 p-[20px] md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
-          {propertiesData
-            .map((data, index) => (
-              <GridCard 
+        <div className="grid gap-6 p-[20px] md:grid-cols-2 xl:grid-cols-3">
+          {propertiesData.map((data, index) => (
+            <GridCard
               key={index}
-                propertyName={data.propertyName}
-                propertyLocation={data.propertyLocation}
-                beds={data.beds}
-                bathrooms={data.bathrooms}
-                area={data.area}
-                price={data.price}
-                image={data.image}
-                badge={data.badge}
-              />
-            ))}
+              propertyName={data.propertyName}
+              propertyLocation={data.propertyLocation}
+              beds={data.beds}
+              bathrooms={data.bathrooms}
+              area={data.area}
+              price={data.price}
+              image={data.image}
+              badge={data.badge}
+            />
+          ))}
         </div>
       </NavLink>
     </>
