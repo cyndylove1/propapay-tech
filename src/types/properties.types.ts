@@ -8,3 +8,14 @@ export interface PropertyCardProps {
     image: string;
     badge: string;
 }
+
+export interface PropertyFacilitiesProps {
+    bedroom: number | string;
+    bathroom: number | string;
+    homeSystem: number | string;
+    gym: number | string;
+    parking: number | string;
+    area: number | string;
+    pool: number | string;
+    garden: number | string;
+}
