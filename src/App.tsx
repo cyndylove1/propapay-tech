@@ -29,7 +29,7 @@ import HelpCenter from "./pages/BuyerPages/HelpCenter";
 import FavouriteLists from "./pages/BuyerPages/FavouriteLists";
 import AssetLists from "./pages/BuyerPages/AssetLists";
 import PropertiesLists from "./pages/BuyerPages/PropertiesList";
-import PropertiesView from "./pages/BuyerPages/PropertiesView";
+import PropertyDetails from "./pages/BuyerPages/PropertyDetails";
 import Document from "./pages/BuyerPages/Document";
 import Integration from "./pages/BuyerPages/Integration";
 import FavouriteView from "./pages/BuyerPages/FavouriteView.tsx";
@@ -92,7 +92,7 @@ function App() {
             <Route path="/dashboard" element={<DashBoard />} />
             <Route path="/properties" element={<Properties />} />
             <Route path="/properties/lists" element={<PropertiesLists />} />
-            <Route path="/properties/view" element={<PropertiesView />} />
+            <Route path="/properties/view" element={<PropertyDetails />} />
             <Route path="/favourite" element={<Favourites />} />
             <Route path="/favourite/lists" element={<FavouriteLists />} />
             <Route path="/favourite/view" element={<FavouriteView />} />
