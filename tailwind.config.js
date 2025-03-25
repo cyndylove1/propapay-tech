@@ -5,7 +5,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        bodyFont: ["Labil Grotesk Basic"],
+        labil: ["Labil Grotesk Basic"],
+        inter: ["Inter"],
       },
 
       colors: {
@@ -17,14 +18,19 @@ export default {
         "neutral-500": "#888D93",
         "neutral-600": "#6D7177",
         "neutral-800": "#36393D",
-        
         "neutral-700": "#4E5257",
+
         "brand-base": "#12725B",
         "brand-50": "#EEFBF6",
         "brand-100": "#D6F5E6",
         "brand-200": "#AFEBD2",
         "brand-500": "#33A691",
-        
+
+        sulu: {
+          base: "#A8EB6B",
+          400: "#88DD3E",
+        },
+
         "negative-50": "#FDF3F3",
         "negative-500": "#D84E4E",
         "positive-50": "#F1FCF5",

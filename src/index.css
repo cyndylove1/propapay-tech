@@ -2,12 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @font-face {
-  font-family: 'Labil Grotesk Basic';
-  src: url('/fonts/._LabilGroteskLite-Thin.otf') format('otf');
-  font-weight: 400; 
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets/fonts/Inter.ttf') format('truetype');
   font-style: normal;
-} */
+}
 @font-face {
   font-family: 'Labil Grotesk Basic';
   src: url('./assets/fonts/LabilGrotesk-Medium.ttf') format('truetype');
