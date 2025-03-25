@@ -31,6 +31,10 @@ export default {
           400: "#88DD3E",
         },
 
+        blue: {
+          600: "#294CD6",
+        },
+
         "negative-50": "#FDF3F3",
         "negative-500": "#D84E4E",
         "positive-50": "#F1FCF5",
