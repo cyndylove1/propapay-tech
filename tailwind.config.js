@@ -24,7 +24,7 @@ export default {
         "brand-50": "#EEFBF6",
         "brand-100": "#D6F5E6",
         "brand-200": "#AFEBD2",
-        "brand-500": "#33A691",
+        "brand-500": "#23A681",
 
         sulu: {
           base: "#A8EB6B",

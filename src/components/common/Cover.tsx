@@ -16,92 +16,76 @@ const Cover: React.FC = () => {
   ];
 
   return (
-    <div className="xl:m-4 md:flex relative hidden m-4 overflow-hidden">
-      {/* Cover Image */}
-      <div className="relative w-full">
-        <img
-          src={cover}
-          alt="Cover Image"
-          className="rounded-xl object-cover w-full h-full"
-        />
+    <div
+      style={{
+        backgroundImage: `url(${cover})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+      className="hidden h-screen w-full flex-col justify-between overflow-hidden rounded-2xl bg-[50%_50%] p-[64px] md:flex"
+    >
+      <div className="flex flex-col gap-[40px] mb-10">
+        <Marquee direction="left" autoFill={true}>
+          {companyNames.map((name, index) => (
+            <span className="text-white px-8" key={index}>{name}</span>
+          ))}
+        </Marquee>
 
-        {/* Overlay Content */}
-        <div className="xl:top-0 absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full px-4">
-          {/* Marquee */}
-          <Marquee direction="left">
-            {Array(3)
-              .fill(companyNames)
-              .flat()
-              .map((company, index) => (
-                <span
-                  key={index}
-                  className="px-6 text-[20px] font-[500] text-white"
-                >
-                  {company}
-                </span>
-              ))}
-          </Marquee>
-
-          {/* Playback Video */}
-          <div className="relative mx-auto my-[8rem] flex justify-center xl:w-[416px]">
-            <img
-              src={playback}
-              alt="Playback"
-              className="rounded-xl relative z-10 w-full h-auto"
-            />
-            <video
-              src={video}
-              autoPlay
-              loop={true}
-              muted
-              controls={false}
-              className="mask-video absolute top-0 left-0 z-20 object-cover w-full h-full"
-            />
-          </div>
-
-          {/* Swiper Slider */}
-          <div className="relative w-full">
-            {/* Custom Pagination Positioned Above */}
-            <div className="swiper-pagination absolute left-1/2 top-[-40px] z-10 flex -translate-x-1/2"></div>
-
-            <Swiper
-              modules={[Navigation, Autoplay, Pagination]}
-              spaceBetween={20}
-              slidesPerView={1}
-              pagination={{ clickable: true, el: ".swiper-pagination" }}
-              loop={true}
-              autoplay={{ delay: 2000 }}
-            >
-              <SwiperSlide>
-                <div className="flex flex-col items-center justify-center text-center">
-                  <h1 className="mt-6 text-[25px] font-[600] leading-[48px] text-white xl:text-[36px]">
-                    Speedy, easy and secure.
-                  </h1>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="flex flex-col items-center justify-center text-center">
-                  <h1 className="mt-6 text-[25px] font-[600] leading-[48px] text-white xl:text-[36px]">
-                    Flexible payment options.
-                  </h1>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="flex flex-col items-center justify-center text-center">
-                  <h1 className="mt-6 text-[25px] font-[600] leading-[48px] text-white xl:text-[36px]">
-                    Put your money to work.
-                  </h1>
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
-
-          <h6 className="pt-4 text-center font-[500] leading-[24px] text-white md:text-[13px] xl:text-[16px]">
-            Welcome to PropaPay! You're one step closer to enhancing your
-            business <br /> operations. Please provide the following information
-            to get started.
-          </h6>
+        <div className="relative mx-auto flex w-2/3 justify-center">
+          <img
+            src={playback}
+            alt="Playback"
+            className="relative z-10 h-auto w-full rounded-xl"
+          />
+          <video
+            src={video}
+            autoPlay
+            loop={true}
+            muted
+            controls={false}
+            className="mask-video absolute left-0 top-0 z-20 h-full w-full object-cover"
+          />
         </div>
+      </div>
+
+      <div className="relative w-full">
+        {/* Custom Pagination Positioned Above */}
+        <div className="swiper-pagination mx-auto w-full"></div>
+
+        <Swiper
+          modules={[Navigation, Autoplay, Pagination]}
+          spaceBetween={20}
+          slidesPerView={1}
+          pagination={{ clickable: true, el: ".swiper-pagination" }}
+          loop={true}
+          autoplay={{ delay: 2000 }}
+        >
+          <SwiperSlide>
+            <div className="flex flex-col items-center justify-center text-center">
+              <h1 className="text-[28px] font-[600] leading-[48px] text-white">
+                Speedy, easy and secure.
+              </h1>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex flex-col items-center justify-center text-center">
+              <h1 className="text-[28px] font-[600] leading-[48px] text-white">
+                Flexible payment options.
+              </h1>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex flex-col items-center justify-center text-center">
+              <h1 className="text-[28px] font-[600] leading-[48px] text-white">
+                Put your money to work.
+              </h1>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+        <p className="pt-4 text-center font-medium leading-[24px] text-white md:text-[13px] xl:text-[16px]">
+          Welcome to PropaPay! You're one step closer to enhancing your business
+          operations. Please provide the following information to get started.
+        </p>
       </div>
     </div>
   );

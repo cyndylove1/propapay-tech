@@ -23,3 +23,4 @@ export {default as Checkmark} from "./Checkmark";
 export {default as CallIcon} from "./CallIcon";
 export {default as MessageIcon} from "./MessageIcon";
 export {default as CalendarIcon} from "./CalendarIcon";
+export {default as HomesLogo} from "./HomesLogo";

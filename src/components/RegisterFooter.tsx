@@ -3,9 +3,9 @@ import SelectTag from "./common/SelectTag";
 const RegisterFooter = () => {
   return (
     <>
-      <footer className="mt-auto flex w-full items-center justify-between py-4 text-[12px] text-neutral-500">
+      <footer className="flex w-full items-center justify-between py-8 px-[64px]">
         {/* Left Side - Copyright */}
-        <p>© 2025 PropaPay - All Rights Reserved</p>
+        <p className="font-medium text-sm leading-5 text-neutral-700">© 2025 PropaPay - All Rights Reserved</p>
 
         {/* Right Side - Language Selector */}
         <div className="relative  hidden w-[92px] items-center md:flex md:h-[32px]">
@@ -48,12 +48,11 @@ const RegisterFooter = () => {
           </span>
 
           {/* Select Dropdown */}
-          <SelectTag className="w-full border-none pl-7 text-[14px] font-[500] leading-[20px] text-neutral-500">
+          <SelectTag className="w-full border-none pl-7 text-sm font-medium leading-5 text-neutral-700">
             <option className="">ENG</option>
           </SelectTag>
         </div>
       </footer>
-      <div></div>
     </>
   );
 };
