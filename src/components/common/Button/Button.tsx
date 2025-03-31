@@ -1,7 +1,7 @@
 import { twMerge } from "tailwind-merge";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  text: string;
+  text?: string;
   type?: "button" | "submit" | "reset";
   className?: string;
   icon?: React.ReactNode;
@@ -24,7 +24,7 @@ export default function Button({
     <button
       type={type}
       className={twMerge(
-        `flex h-12 items-center justify-center gap-2 rounded-xl px-4 py-3 text-base leading-6 text-white bg-brand-base font-medium`,
+        `flex h-12 items-center justify-center gap-2 rounded-xl bg-brand-base px-4 py-3 text-base font-medium leading-6 text-white`,
         className,
       )}
       onClick={onClick}
@@ -33,7 +33,7 @@ export default function Button({
       {icon && iconPosition === "left" && (
         <span className={twMerge("h-5 w-5", iconClassName)}>{icon}</span>
       )}
-      <span>{text}</span>
+      {text && <span>{text}</span>}
       {icon && iconPosition === "right" && (
         <span className={twMerge("h-5 w-5", iconClassName)}>{icon}</span>
       )}
