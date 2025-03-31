@@ -29,6 +29,7 @@ export {default as NigeriaIcon} from "./NigeriaIcon";
 export {default as PlusIcon} from "./PlusIcon";
 export {default as ArrowIcon2} from "./ArrowIcon2";
 export {default as HorizontalMoreIcon} from "./HorizontalMoreIcon";
+export {default as SortIcon} from "./SortIcon";
 export {default as LineChart} from "./LineChart";
 export {default as Pattern} from "./Pattern";
 export {default as WalletLine} from "./WalletLine";
