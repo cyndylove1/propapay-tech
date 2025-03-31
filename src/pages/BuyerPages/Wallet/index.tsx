@@ -6,6 +6,11 @@ import WalletMenu from "@/components/WalletMenu";
 import { NavLink } from "react-router";
 import AddMoneyModal from "@/components/AddMoney/AddMoneyModal";
 import ReceiveMoneyModal from "@/components/RecieveMoney/ReceiveMoneyModal";
+import NotificationBanner from "@/components/Buyer/Wallet/NotificationBanner";
+import WalletCard from "@/components/Buyer/Wallet/WalletCard";
+import AdvertCard from "@/components/Buyer/Wallet/AdvertCard";
+import { Column, CustomTable } from "@/components/Table";
+import { ArrowIcon2 } from "@/assets/icons";
 
 const Wallet = () => {
   const [OpenMenu, setOpenMenu] = useState(false);
@@ -21,8 +26,141 @@ const Wallet = () => {
     setShowVisibility((prev) => !prev);
   };
 
+  const columns: Column[] = [
+    {
+      id: "description",
+      header: "Description",
+      accessorKey: "description",
+      enableSorting: true,
+      cell: (item) => (
+        <div className="flex gap-3">
+          <span className="w-10 h-10 rounded-full border border-positive-200 bg-[linear-gradient(180deg,#F1FCF5_100%,#C1F1D5_100%)] p-[10px]">
+            <ArrowIcon2 />
+          </span>
+        <div className="flex flex-col gap-1">
+          <h3 className="font-semibold text-sm leading-5 text-neutral-base">{item.description}</h3>
+          <h4 className="font-medium text-xs leading-4 text-neutral-700">Credit</h4>
+        </div>
+        </div>
+      )
+    },
+    {
+      id: "method",
+      header: "Method",
+      accessorKey: "method",
+      enableSorting: true,
+    },
+    {
+      id: "transaction_id",
+      header: "Transaction ID",
+      accessorKey: "transaction_id",
+      enableSorting: true,
+    },
+    {
+      id: "date",
+      header: "Date",
+      accessorKey: "date",
+      enableSorting: true,
+    },
+    {
+      id: "amount",
+      header: "Amount",
+      accessorKey: "amount",
+      enableSorting: true,
+    },
+    {
+      id: "status",
+      header: "Status",
+      accessorKey: "status",
+      enableSorting: true,
+      cell: (item) => (
+        <div
+          className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
+            item.status === "active"
+              ? "bg-green-100 text-green-800"
+              : item.status === "inactive"
+                ? "bg-gray-100 text-gray-800"
+                : "bg-yellow-100 text-yellow-800"
+          }`}
+        >
+          {item.status.charAt(0).toUpperCase() + item.status.slice(1)}
+        </div>
+      ),
+    },
+  ];
+
+  const data = [
+    { id: "1", description: "Funds added via bank transfer", method: "Bank Transfer", "transaction_id": "PD1468373HM1", date: "Oct 10, 2025 12:15 PM", amount: "+ ₦25,000,000", status: "active" },
+    {
+      id: "2",
+      description: "Funds added via bank transfer",
+      method: "Bank Transfer",
+      "transaction_id": "PD1468373HM1",
+      date: "Oct 10, 2025 12:15 PM",
+      amount: "+ ₦25,000,000",
+      status: "inactive",
+    },
+    {
+      id: "3",
+      description: "Funds deducted for watercress",
+      method: "Bank Transfer",
+      "transaction_id": "PD1468373HM1",
+      date: "Oct 10, 2025 12:15 PM",
+      amount: "+ ₦25,000,000",
+      status: "pending",
+    },
+    {
+      id: "4",
+      description: "Funds added via bank transfer",
+      method: "Bank Transfer",
+      "transaction_id": "PD1468373HM1",
+      date: "Oct 10, 2025 12:15 PM",
+      amount: "+ ₦25,000,000",
+      status: "active",
+    },
+    {
+      id: "5",
+      description: "Funds deducted for watercress",
+      method: "Bank Transfer",
+      "transaction_id": "PD1468373HM1",
+      date: "Oct 10, 2025 12:15 PM",
+      amount: "+ ₦25,000,000",
+      status: "inactive",
+    },
+  ];
+
+  const handleSelectionChange = (selectedRows: string[]) => {
+    console.log("Selected rows:", selectedRows);
+  };
+
   return (
     <>
+      <div className="flex flex-col">
+        <NotificationBanner notificationText="Auto payment is set for ₦300,000.00 on the 10th of every month." />
+
+        <div className="flex flex-col gap-6 px-8 py-6">
+          <h1 className="text-[24px] font-semibold leading-8">Wallet</h1>
+
+          <div className="flex gap-6">
+            <WalletCard />
+            <div className="flex-1">
+              <AdvertCard
+                header="Invest Smarter"
+                description="Track and manage your portfolio with real-time insights and ease."
+              />
+            </div>
+          </div>
+          {/* Table */}
+          <div className="p-4">
+            <CustomTable
+              data={data}
+              columns={columns}
+              onRowSelectionChange={handleSelectionChange}
+            />
+          </div>
+        </div>
+      </div>
+
       <div>
         <h2 className="px-4 pt-4 text-[24px] font-[600] leading-[32px]">
           Wallet
@@ -37,7 +175,7 @@ const Wallet = () => {
             />
 
             {/* Overlay Container */}
-            <div className="bg-black/50 absolute left-0 top-0 w-full gap-3 rounded-t-xl p-4">
+            <div className="absolute left-0 top-0 w-full gap-3 rounded-t-xl bg-black/50 p-4">
               <div className="flex items-center justify-between">
                 <div className="flex gap-3 text-white">
                   <h1 className="text-[16px] font-[500] leading-[24px]">
@@ -48,7 +186,7 @@ const Wallet = () => {
                     togglePasswordVisibility={togglePasswordVisibility}
                   />
                 </div>
-                <div className="relative flex hidden w-[92px] items-center rounded-full border-[1px] border-brand-200 bg-brand-50 md:flex md:h-[32px]">
+                <div className="relative hidden w-[92px] items-center rounded-full border-[1px] border-brand-200 bg-brand-50 md:flex md:h-[32px]">
                   {/* Icon before Select */}
                   <span className="absolute flex items-center px-2">
                     <svg
