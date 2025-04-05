@@ -35,6 +35,7 @@ import Integration from "./pages/BuyerPages/Integration";
 import FavouriteView from "./pages/BuyerPages/FavouriteView.tsx";
 import ReminderEdit from "./components/PaymentReminder/ReminderEdit.tsx";
 import FlexPayment from "./pages/BuyerPages/FlexPayment/index.tsx";
+import DashboardLayout from "./layout/Buyer/DasboardLayout.tsx";
 
 
 function App() {
@@ -88,7 +89,7 @@ function App() {
             }
           />
 
-          <Route element={<BuyerDashboard />}>
+          <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<DashBoard />} />
             <Route path="/properties" element={<Properties />} />
             <Route path="/properties/lists" element={<PropertiesLists />} />

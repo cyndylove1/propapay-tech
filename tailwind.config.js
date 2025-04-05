@@ -43,6 +43,10 @@ export default {
   			'warning-50': '#FFFFEA',
   			'warning-500': '#FFC107',
   			'melRose-500': '#7C58FA',
+
+			surface: {
+				700: "#20232D",
+			},
   			darkGray: '#2E2E2E',
   			primaryColor: '#0F0F10',
   			grey: '#EAEDF2',
