@@ -1,30 +1,35 @@
-import { useState } from "react";
 import { Link } from "react-router";
 import Button from "@/components/common/Button/Button";
 import Cover from "@/components/common/Cover";
 import RegisterFooter from "@/components/RegisterFooter";
 import Checkbox from "@/components/common/Input/Checkbox";
-import Spinner from "@/components/common/Spinner";
+import Spinner from "@/components/common/Loaders/Spinner";
 import Input from "@/components/common/Input/Input";
 import { MailIcon, PadlockIcon, ArrowIcon, HomesLogo } from "@/assets/icons";
+import { useForm } from "react-hook-form";
+import { useAuth } from "@/hooks/useAuth";
+
+interface LoginData {
+  email: string;
+  password: string;
+}
 
 const Login: React.FC = () => {
-  const [password, setPassword] = useState<string>("");
-  const [loading, setLoading] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginData>()
 
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
+  const { login, isLoading } = useAuth();
 
-    setLoading(true);
-
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
+  const handleLogin = async (data: LoginData) => {
+    await login(data.email, data.password)
   };
 
   return (
     <>
-      {loading && (
+      {isLoading && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#000] bg-opacity-50">
           <Spinner />
         </div>
@@ -59,7 +64,7 @@ const Login: React.FC = () => {
               </p>
             </div>
 
-            <form onSubmit={handleLogin} className="flex flex-col gap-6">
+            <form onSubmit={handleSubmit(handleLogin)} className="flex flex-col gap-6">
               <div className="flex flex-col gap-4">
                 <Input
                   leftIcon={<MailIcon />}
@@ -67,6 +72,9 @@ const Login: React.FC = () => {
                   type="email"
                   placeholder="Enter email address"
                   label="Email Address"
+                  {...register("email", {required: "Email is required"})}
+                  error={!!errors.email}
+                  errorMessage={errors.email?.message}
                 />
 
                 <Input
@@ -75,11 +83,10 @@ const Login: React.FC = () => {
                   showPasswordToggle={true}
                   label="Password"
                   id="password"
-                  value={password}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                    setPassword(e.target.value)
-                  }
                   placeholder="Enter your Password"
+                  {...register("password", {required: "Password is required"})}
+                  error={!!errors.password}
+                  errorMessage={errors.password?.message}
                 />
 
                 <div className="flex items-center justify-between">
