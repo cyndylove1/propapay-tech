@@ -4,8 +4,25 @@ import Cover from "@/components/common/Cover";
 import OTPInput from "@/components/common/Input/OTPInput";
 import RegisterFooter from "@/components/RegisterFooter";
 import { Link } from "react-router";
+import { useAuth } from "@/hooks/useAuth";
+import { useRegistration } from "@/context/RegistrationContext";
 
 export default function VerifyEmail() {
+  const { verifyEmail } = useAuth();
+  const { registrationData, resetRegistrationData } = useRegistration();
+
+  const handleVerify = async (otp: string) => {
+    try {
+      await verifyEmail(Number(otp), registrationData.email );
+      
+      // Reset registration data on successful registration
+      resetRegistrationData();
+    } catch(error) {
+      console.log("Otp error", error)
+    }
+    
+  };
+
   return (
     <>
       <div className="flex h-screen overflow-hidden">
@@ -42,7 +59,7 @@ export default function VerifyEmail() {
               </h1>
               <p className="text-center text-base font-medium text-neutral-700">
                 A confirmation code has been sent to your email address,{" "}
-                <span className="text-brand-base">josiahovo@gmail.com</span> to
+                <span className="text-brand-base">{registrationData.email}</span> to
                 verify your identity.
               </p>
             </div>
@@ -52,7 +69,7 @@ export default function VerifyEmail() {
                 <div className="w-full border border-neutral-200"></div>
               </div>
 
-              <OTPInput length={6} onComplete={() => {}} />
+              <OTPInput length={6} onComplete={handleVerify} />
 
               <div className="flex flex-col gap-5">
                 <Button
