@@ -22,7 +22,7 @@ const Cover: React.FC = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      className="hidden h-screen w-full flex-col justify-between overflow-hidden rounded-2xl bg-[50%_50%] p-[64px] md:flex"
+      className="hidden h-full w-full flex-col justify-between overflow-hidden rounded-2xl bg-[50%_50%] p-[64px] md:flex"
     >
       <div className="flex flex-col gap-[40px] mb-10">
         <Marquee direction="left" autoFill={true}>
@@ -31,7 +31,7 @@ const Cover: React.FC = () => {
           ))}
         </Marquee>
 
-        <div className="relative mx-auto flex w-2/3 justify-center">
+        <div className="relative mx-auto flex w-[60%] justify-center">
           <img
             src={playback}
             alt="Playback"
