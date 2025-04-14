@@ -1,9 +1,9 @@
 import { IconProps } from "@/types/common.types";
 import Structure from "./Structure";
 
-export default function InputErrorIcon({ width = 14, height = 14 }: IconProps) {
+export default function InputErrorIcon({ width = 14, height = 14, className }: IconProps) {
   return (
-    <Structure width={width} height={height}>
+    <Structure width={width} height={height} className={className + " w-full h-full"}>
       <g id="elements">
         <path
           id="Subtract"

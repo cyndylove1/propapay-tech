@@ -43,6 +43,8 @@ export {default as SettingsIcon} from "./SettingsIcon";
 export {default as IntegrationIcon} from "./IntegrationIcon";
 export {default as HelpIcon} from "./HelpIcon";
 export {default as TriggerIcon} from "./TriggerIcon";
+export {default as ProfileIcon} from "./ProfileIcon";
+export {default as CustomOtpIcon} from "./CustomOtpIcon";
 export {default as LineChart} from "./LineChart";
 export {default as Pattern} from "./Pattern";
 export {default as WalletLine} from "./WalletLine";
