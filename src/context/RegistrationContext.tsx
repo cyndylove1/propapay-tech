@@ -4,7 +4,7 @@ import { UserType } from './AuthContext';
 // Define the registration data interface
 export interface RegistrationData {
   userType: UserType;
-  country: string;
+  countryName: string;
   phoneNumber: string;
   firstName: string;
   lastName: string;
@@ -16,7 +16,7 @@ export interface RegistrationData {
 // Initial registration data
 const initialRegistrationData: RegistrationData = {
   userType: 'buyer',
-  country: '',
+  countryName: '',
   phoneNumber: '',
   firstName: '',
   lastName: '',

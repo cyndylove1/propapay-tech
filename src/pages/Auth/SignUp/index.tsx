@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Button from "@/components/common/Button/Button";
 import Cover from "@/components/common/Cover";
 import RegisterFooter from "@/components/RegisterFooter";
-import Spinner from "@/components/common/Spinner";
+import Spinner from "@/components/common/Loaders/Spinner";
 import Input from "@/components/common/Input/Input";
 import {
   MailIcon,
@@ -19,7 +19,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { useRegistration } from "@/context/RegistrationContext";
 
 export default function Signup() {
-  const { registrationData, updateRegistrationData, resetRegistrationData } = useRegistration();
+  const { registrationData, updateRegistrationData } = useRegistration();
   const { registerUser, isLoading } = useAuth();
 
   const {
@@ -49,7 +49,7 @@ export default function Signup() {
     const completeRegistrationData = {
       ...data,
       userType: registrationData.userType,
-      country: registrationData.country,
+      countryName: registrationData.countryName,
       phoneNumber: registrationData.phoneNumber
     };
 
@@ -57,8 +57,6 @@ export default function Signup() {
     
     try {
       await registerUser(completeRegistrationData);
-      // Reset registration data on successful registration
-      resetRegistrationData();
     } catch (error) {
       console.error('Registration failed:', error);
     }

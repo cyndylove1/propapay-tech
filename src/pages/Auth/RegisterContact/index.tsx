@@ -5,14 +5,14 @@ import "react-phone-input-2/lib/style.css";
 import Button from "@/components/common/Button/Button";
 import Line from "@/components/Line";
 import { Link } from "react-router";
-import { useNavigate } from 'react-router';
-import { useForm, Controller } from 'react-hook-form';
-import { useRegistration } from '@/context/RegistrationContext';
+import { useNavigate } from "react-router";
+import { useForm, Controller } from "react-hook-form";
+import { useRegistration } from "@/context/RegistrationContext";
 import BottomIcon from "@/components/common/BottomIcon";
-import SelectTag from "@/components/common/SelectTag";
+// import SelectTag from "@/components/common/SelectTag";
 
 interface ContactFormData {
-  country: string;
+  countryName: string;
   phoneNumber: string;
 }
 
@@ -27,25 +27,23 @@ const RegisterContact = () => {
     formState: { errors },
   } = useForm<ContactFormData>({
     defaultValues: {
-      country: registrationData.country,
+      countryName: registrationData.countryName,
       phoneNumber: registrationData.phoneNumber,
     },
   });
 
   const onSubmit = (data: ContactFormData) => {
     updateRegistrationData(data);
-    navigate('/signup');
+    navigate("/signup");
   };
 
   // Pre-register phoneNumber field to handle it manually
   register("phoneNumber");
 
-
-
   return (
     <>
       <Header />
-      <div className="mx-4  flex justify-center bg-white">
+      <div className="mx-4 flex justify-center bg-white">
         <div className="mb-[5rem] h-[644px] w-full rounded-xl border-[1px] border-neutral-200 md:w-[500px]">
           <span className="flex justify-center pt-[30px]">
             <svg
@@ -374,7 +372,7 @@ const RegisterContact = () => {
               account and begin your real estate journey.
             </h3>
           </div>
-          <div className="md:px-8 px-4">
+          <div className="px-4 md:px-8">
             <Line />
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="mt-[20px]">
@@ -419,16 +417,18 @@ const RegisterContact = () => {
                       </svg>
                     </span>
                     <select
-              id="country"
-              className={`w-full rounded-lg border ${
-                errors.country ? 'border-red-500' : 'border-gray-300'
-              } p-3 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary`}
-              {...register('country', { required: 'Country is required' })}
-            >
-              <option value="">Select your country</option>
-              
-                <option value={"Nigeria"}>Nigeria</option>
-            </select>
+                      id="country"
+                      className={`w-full rounded-lg border pl-8 ${
+                        errors.countryName ? "border-red-500" : "border-gray-300"
+                      } p-3 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary`}
+                      {...register("countryName", {
+                        required: "Country is required",
+                      })}
+                    >
+                      <option value="">Select your country</option>
+
+                      <option value={"Nigeria"}>Nigeria</option>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -438,8 +438,7 @@ const RegisterContact = () => {
                   name="phoneNumber"
                   control={control}
                   rules={{
-                    required: 'Phone number is required',
-                    
+                    required: "Phone number is required",
                   }}
                   render={({ field }) => (
                     <PhoneInput
@@ -461,19 +460,19 @@ const RegisterContact = () => {
                   )}
                 />
                 <span>{errors.phoneNumber?.message}</span>
-                <span>{errors.country?.message}</span>
+                <span>{errors.countryName?.message}</span>
               </div>
               <Button
-                text="Get Started - It&apos;s free"
+                text="Get Started - It's free"
                 type="submit"
                 onClick={handleSubmit(onSubmit)}
-                className="bg-brand-base mt-[30px] h-[48px] w-full rounded-xl text-white"
+                className="mt-[30px] h-[48px] w-full rounded-xl bg-brand-base text-white"
               />
               <p className="flex items-center justify-center gap-[3px] pb-10 pt-4 text-center text-[16px]">
-                <h5 className="text-neutral-800 tracking-tighter">
+                <h5 className="tracking-tighter text-neutral-800">
                   Have an account?{" "}
                 </h5>
-                <Link to="/login" className="text-brand-base font-[600]">
+                <Link to="/login" className="font-[600] text-brand-base">
                   {" "}
                   Sign In
                 </Link>
@@ -482,7 +481,7 @@ const RegisterContact = () => {
           </div>
         </div>
       </div>
-      <div className="md:flex hidden">
+      <div className="hidden md:flex">
         <BottomIcon width={"406"} height={"200"} />
       </div>
     </>
