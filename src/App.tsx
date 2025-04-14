@@ -2,7 +2,7 @@ import "./App.css";
 import { Route, Routes, useLocation } from "react-router";
 import { useState, useEffect } from "react";
 import UserType from "./pages/Auth/UserType";
-import SignUp from "./pages/Auth/SignUp";
+import Signup from "./pages/Auth/SignUp";
 import Preloader from "./components/Preloader";
 import Congratulations from "./pages/Auth/Congratulations";
 import RegisterWelcome from "./pages/Auth/RegisterWelcome";
@@ -12,7 +12,6 @@ import VerifyEmailLogin from "./pages/Auth/VerifyEmailLogin";
 import ForgotPassword from "./pages/Auth/ForgotPassword";
 import CreateNewPassword from "./pages/Auth/CreateNewPassword";
 import PasswordChanged from "./pages/Auth/PasswordChanged";
-import BuyerDashboard from "./layout/Buyer";
 import DashBoard from "./pages/BuyerPages/Dashboard";
 import Properties from "./pages/BuyerPages/Properties";
 import PersonalInformation from "./pages/Auth/PersonalInformation";
@@ -36,7 +35,12 @@ import FavouriteView from "./pages/BuyerPages/FavouriteView.tsx";
 import ReminderEdit from "./components/PaymentReminder/ReminderEdit.tsx";
 import FlexPayment from "./pages/BuyerPages/FlexPayment/index.tsx";
 import DashboardLayout from "./layout/Buyer/DasboardLayout.tsx";
+import VerifyEmail from "./pages/Auth/VerifyEmail/index.tsx";
+import { configureAxios } from "./config/axiosConfig.ts";
+import ScrollToTop from "./components/ScrollToTop.tsx";
+import { ToastContainer } from "react-toastify";
 
+configureAxios();
 
 function App() {
   const [scheduleOpen, setScheduleOpen] = useState<boolean>(false);
@@ -55,16 +59,29 @@ function App() {
 
   return (
     <>
+      <ScrollToTop />
+      <ToastContainer
+        limit={1}
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       {showPreloader ? (
         <Preloader
           onComplete={() => setLoading(false)}
-          className="flex items-center justify-center h-screen"
+          className="flex h-screen items-center justify-center"
         />
       ) : (
         <Routes>
           <Route path="/user-type" element={<UserType />} />
-          <Route path="/" element={<RegisterWelcome />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/welcome" element={<RegisterWelcome />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/verify-email" element={<VerifyEmail />} />
           <Route path="/verify-register" element={<VerifyEmailRegister />} />
           <Route path="/verify-login" element={<VerifyEmailLogin />} />
           <Route path="/login" element={<Login />} />
@@ -90,7 +107,7 @@ function App() {
           />
 
           <Route element={<DashboardLayout />}>
-            <Route path="/dashboard" element={<DashBoard />} />
+            <Route path="/" element={<DashBoard />} />
             <Route path="/properties" element={<Properties />} />
             <Route path="/properties/lists" element={<PropertiesLists />} />
             <Route path="/properties/view" element={<PropertyDetails />} />
@@ -103,11 +120,10 @@ function App() {
             <Route path="/wallet" element={<Wallet />} />
             <Route path="/document" element={<Document />} />
             <Route path="/insight" element={<Insight />} />
-            <Route path="/flex-payment" element={<FlexPayment/>} />
-            <Route path="/settings" element={<Settings />}/>
+            <Route path="/flex-payment" element={<FlexPayment />} />
+            <Route path="/settings" element={<Settings />} />
             <Route path="/integration" element={<Integration />} />
-            <Route path="/help-center" element={<HelpCenter />}>
-            </Route>
+            <Route path="/help-center" element={<HelpCenter />}></Route>
           </Route>
         </Routes>
       )}
