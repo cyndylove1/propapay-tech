@@ -17,7 +17,7 @@ export function configureAxios() {
     axios.interceptors.response.eject(responseInterceptorId);
   }
 
-  const baseURL = process.env.BASE_URL;
+  const baseURL = import.meta.env.VITE_BASE_URL;
   // const REQUEST_API_KEY = process.env.REACT_APP_API_KEY;
 
   axios.defaults.baseURL = baseURL;
