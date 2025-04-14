@@ -5,14 +5,47 @@ import "react-phone-input-2/lib/style.css";
 import Button from "@/components/common/Button/Button";
 import Line from "@/components/Line";
 import { Link } from "react-router";
+import { useNavigate } from 'react-router';
+import { useForm, Controller } from 'react-hook-form';
+import { useRegistration } from '@/context/RegistrationContext';
 import BottomIcon from "@/components/common/BottomIcon";
 import SelectTag from "@/components/common/SelectTag";
 
-const RegisterWelcome = () => {
+interface ContactFormData {
+  country: string;
+  phoneNumber: string;
+}
+
+const RegisterContact = () => {
+  const { registrationData, updateRegistrationData } = useRegistration();
+  const navigate = useNavigate();
+
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm<ContactFormData>({
+    defaultValues: {
+      country: registrationData.country,
+      phoneNumber: registrationData.phoneNumber,
+    },
+  });
+
+  const onSubmit = (data: ContactFormData) => {
+    updateRegistrationData(data);
+    navigate('/signup');
+  };
+
+  // Pre-register phoneNumber field to handle it manually
+  register("phoneNumber");
+
+
+
   return (
     <>
       <Header />
-      <div className="mx-4 mt-[5rem] flex justify-center bg-white">
+      <div className="mx-4  flex justify-center bg-white">
         <div className="mb-[5rem] h-[644px] w-full rounded-xl border-[1px] border-neutral-200 md:w-[500px]">
           <span className="flex justify-center pt-[30px]">
             <svg
@@ -343,7 +376,7 @@ const RegisterWelcome = () => {
           </div>
           <div className="md:px-8 px-4">
             <Line />
-            <form action="">
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="mt-[20px]">
                 <Label text="Select Country" htmlFor="Country" /> <br />
                 <div className="w-full">
@@ -385,33 +418,55 @@ const RegisterWelcome = () => {
                         />
                       </svg>
                     </span>
-                    <SelectTag className="h-[48px] w-full rounded-xl border-neutral-200 px-10 py-3 text-neutral-500 focus:border-brand-500">
-                      <option className=""> Select a country...</option>
-                      <option>Nigeria</option>
-                    </SelectTag>
+                    <select
+              id="country"
+              className={`w-full rounded-lg border ${
+                errors.country ? 'border-red-500' : 'border-gray-300'
+              } p-3 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary`}
+              {...register('country', { required: 'Country is required' })}
+            >
+              <option value="">Select your country</option>
+              
+                <option value={"Nigeria"}>Nigeria</option>
+            </select>
                   </div>
                 </div>
               </div>
               <div className="mt-[5px]">
                 <Label text="Phone Number" htmlFor="phoneNumber" />
-                <PhoneInput
-                  country={"ng"}
-                  containerStyle={{ height: "48px", borderRadius: "12px" }}
-                  inputStyle={{
-                    height: "48px",
-                    width: "100%",
-                    borderRadius: "12px",
-                    borderColor: "#CFD2D1",
-                    marginTop: "5px",
-                    color: "#888D93",
+                <Controller
+                  name="phoneNumber"
+                  control={control}
+                  rules={{
+                    required: 'Phone number is required',
+                    
                   }}
-                  onFocus={(e) => (e.target.style.borderColor = "#33A691")}
-                  onBlur={(e) => (e.target.style.borderColor = "#CFD2D1")}
+                  render={({ field }) => (
+                    <PhoneInput
+                      country={"ng"}
+                      value={field.value}
+                      onChange={(value) => field.onChange(value)}
+                      containerStyle={{ height: "48px", borderRadius: "12px" }}
+                      inputStyle={{
+                        height: "48px",
+                        width: "100%",
+                        borderRadius: "12px",
+                        borderColor: "#CFD2D1",
+                        marginTop: "5px",
+                        color: "#888D93",
+                      }}
+                      onFocus={(e) => (e.target.style.borderColor = "#33A691")}
+                      onBlur={field.onBlur}
+                    />
+                  )}
                 />
+                <span>{errors.phoneNumber?.message}</span>
+                <span>{errors.country?.message}</span>
               </div>
               <Button
-                text="Get Started - It’s free"
+                text="Get Started - It&apos;s free"
                 type="submit"
+                onClick={handleSubmit(onSubmit)}
                 className="bg-brand-base mt-[30px] h-[48px] w-full rounded-xl text-white"
               />
               <p className="flex items-center justify-center gap-[3px] pb-10 pt-4 text-center text-[16px]">
@@ -433,4 +488,4 @@ const RegisterWelcome = () => {
     </>
   );
 };
-export default RegisterWelcome;
+export default RegisterContact;

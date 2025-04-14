@@ -16,22 +16,52 @@ import PasswordChecker from "@/components/PasswordChecker";
 import PasswordStrength from "@/components/PasswordStrength";
 import { RegisterData } from "@/context/AuthContext";
 import { useAuth } from "@/hooks/useAuth";
+import { useRegistration } from "@/context/RegistrationContext";
 
 export default function Signup() {
+  const { registrationData, updateRegistrationData, resetRegistrationData } = useRegistration();
+  const { registerUser, isLoading } = useAuth();
 
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<RegisterData>();
+  } = useForm<RegisterData>({
+    defaultValues: {
+      firstName: registrationData.firstName,
+      lastName: registrationData.lastName,
+      email: registrationData.email,
+      password: registrationData.password,
+      confirmPassword: registrationData.confirmPassword,
+    }
+  });
 
   const password = watch("password");
-  const {registerUser, isLoading} = useAuth();
+
 
 
   const onSubmit = async (data: RegisterData) => {
-    await registerUser(data);
+    // Update registration data with form values
+    updateRegistrationData(data);
+    
+    // Combine all registration data
+    const completeRegistrationData = {
+      ...data,
+      userType: registrationData.userType,
+      country: registrationData.country,
+      phoneNumber: registrationData.phoneNumber
+    };
+
+    console.log("registration Data", completeRegistrationData)
+    
+    try {
+      await registerUser(completeRegistrationData);
+      // Reset registration data on successful registration
+      resetRegistrationData();
+    } catch (error) {
+      console.error('Registration failed:', error);
+    }
   };
 
   return (
@@ -51,9 +81,10 @@ export default function Signup() {
         {/* R.H.S */}
         <div className="flex flex-col justify-between overflow-auto lg:w-[55%]">
           <header className="flex items-center justify-between px-[64px] pb-4 pt-8">
-            <span className="h-10 w-10">
-              <HomesLogo />
-            </span>
+  
+              <span className="h-10 w-10 ">
+                <HomesLogo />
+              </span>
             <div className="flex items-center gap-4">
               <p className="text-sm font-medium leading-5 text-neutral-700">
                 Have an account?

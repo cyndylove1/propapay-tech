@@ -1,11 +1,11 @@
 import "./App.css";
 import { Route, Routes, useLocation } from "react-router";
 import { useState, useEffect } from "react";
-import UserType from "./pages/Auth/UserType";
+import UserTypeSelection from "./pages/Auth/UserType";
 import Signup from "./pages/Auth/SignUp";
 import Preloader from "./components/Preloader";
 import Congratulations from "./pages/Auth/Congratulations";
-import RegisterWelcome from "./pages/Auth/RegisterWelcome";
+import RegisterContact from "./pages/Auth/RegisterContact";
 import Login from "./pages/Auth/Login";
 import VerifyEmailRegister from "./pages/Auth/VerifyEmailRegister";
 import VerifyEmailLogin from "./pages/Auth/VerifyEmailLogin";
@@ -78,8 +78,8 @@ function App() {
         />
       ) : (
         <Routes>
-          <Route path="/user-type" element={<UserType />} />
-          <Route path="/welcome" element={<RegisterWelcome />} />
+          <Route path="/user-type" element={<UserTypeSelection />} />
+          <Route path="/register-contact" element={<RegisterContact />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/verify-email" element={<VerifyEmail />} />
           <Route path="/verify-register" element={<VerifyEmailRegister />} />

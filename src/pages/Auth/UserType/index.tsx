@@ -1,9 +1,12 @@
 import BottomIcon from "@/components/common/BottomIcon";
 import Header from "@/components/Header";
 import { useState } from "react";
+import { useNavigate } from "react-router";
+import { UserType } from '@/context/AuthContext';
+import { useRegistration } from '@/context/RegistrationContext';
  
 
-const UserType: React.FC = () => {
+const UserTypeSelection: React.FC = () => {
   const [selectedRole, setSelectedRole] = useState<string | null>(null);
   const roles: string[] = [
     "Buyer",
@@ -12,6 +15,15 @@ const UserType: React.FC = () => {
     "Realtor",
     "Developer",
   ];
+
+  const { updateRegistrationData, goToNextStep } = useRegistration();
+  const navigate = useNavigate();
+
+  const handleUserTypeSelect = (userType: UserType) => {
+    updateRegistrationData({ userType });
+    goToNextStep();
+    navigate('/register-contact');
+  };
 
   // SVGs for each role
   const roleIcons: { [key: string]: JSX.Element } = {
@@ -236,7 +248,7 @@ const UserType: React.FC = () => {
           {roles.map((role, index) => (
             <div
               key={index}
-              onClick={() => setSelectedRole(role)}
+              onClick={() => {setSelectedRole(role); handleUserTypeSelect(role.toLowerCase() as UserType)}}
               className={`flex h-[180px] w-full cursor-pointer flex-col items-center justify-center gap-[6px] rounded-xl border-[1px] xl:w-[180px] ${
                 selectedRole === role ? "border-[#23A681]" : "border-[#cfd2d1]"
               }`}
@@ -258,4 +270,4 @@ const UserType: React.FC = () => {
   );
 };
 
-export default UserType;
+export default UserTypeSelection;

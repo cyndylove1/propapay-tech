@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-interface SelectTagProps {
+interface SelectTagProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   children: ReactNode;
@@ -14,6 +14,7 @@ const SelectTag: React.FC<SelectTagProps> = ({
   children,
   className,
   iconClassName,
+  ...rest
 }) => {
   return (
     <div className="relative w-full">
@@ -21,6 +22,7 @@ const SelectTag: React.FC<SelectTagProps> = ({
         value={value}
         onChange={onChange}
         className={`focus:border-brand-500 appearance-none border-[1px] bg-transparent outline-none ${className}`}
+        {...rest}
       >
         {children}
       </select>
