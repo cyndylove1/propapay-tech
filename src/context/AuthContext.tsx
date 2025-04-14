@@ -52,6 +52,8 @@ export interface RegisterData {
   password: string;
   confirmPassword: string;
   userType?: UserType;
+  country?: string;
+  phoneNumber?: string;
 }
 
 
