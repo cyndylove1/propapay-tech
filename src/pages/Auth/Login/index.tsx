@@ -31,6 +31,7 @@ const Login: React.FC = () => {
       )}
 
       <div className="flex h-screen flex-col lg:flex-row">
+        {/* L.H.S */}
         <div className="flex flex-col justify-between lg:w-[55%]">
           <header className="flex items-center justify-between px-[64px] pb-4 pt-8">
             <span className="h-10 w-10"><HomesLogo /></span>
@@ -106,7 +107,8 @@ const Login: React.FC = () => {
           </div>
           <RegisterFooter />
         </div>
-        <div className="w-[45%] hidden lg:block">
+        {/* R.H.S */}
+        <div className="w-[45%] hidden lg:block py-3 pr-3">
             <Cover />
         </div>
       </div>
