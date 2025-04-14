@@ -95,11 +95,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           </div>
         </div>
         {error && errorMessage && (
-          <div className="flex items-center gap-1">
-            <span>
+          <div className="flex items-center gap-1 mt-1">
+            <span className="w-[14px] h-[14px]">
               <InputErrorIcon />
             </span>
-            <p className="mt-1 text-xs font-medium leading-4 text-negative-500">
+            <p className="text-xs font-medium leading-4 text-negative-500">
               {errorMessage}
             </p>
           </div>
