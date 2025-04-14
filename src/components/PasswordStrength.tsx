@@ -7,7 +7,7 @@ interface PasswordStrengthProps {
 const PasswordStrength: React.FC<PasswordStrengthProps> = ({ password }) => {
   const hasUppercase = /[A-Z]/.test(password);
   const hasNumber = /[0-9]/.test(password);
-  const isLongEnough = password.length >= 8;
+  const isLongEnough = password?.length >= 8;
 
   // Calculate password strength
   let strength = 0;
@@ -34,15 +34,15 @@ const PasswordStrength: React.FC<PasswordStrengthProps> = ({ password }) => {
 
   return (
     <div>
-      <div className="flex mt-3 space-x-2">
+      <div className="flex gap-2">
         {Array.from({ length: 6 }).map((_, index) => (
           <div
             key={index}
-            className={`h-[4px] w-[73px] rounded-md ${getBarColor(index)}`}
+            className={`h-[4px] w-full rounded-md ${getBarColor(index)}`}
           />
         ))}
       </div>
-      {password.length > 0 && (
+      {password?.length > 0 && (
         <h2 className="pt-[5px] text-[12px] font-[500] leading-[16px] text-neutral-600">
           {getStrengthText()}
         </h2>

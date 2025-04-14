@@ -9,11 +9,11 @@ interface PasswordCheckerProps {
 const PasswordChecker: React.FC<PasswordCheckerProps> = ({ password }) => {
   const hasUppercase = /[A-Z]/.test(password);
   const hasNumber = /[0-9]/.test(password);
-  const isLongEnough = password.length >= 8;
+  const isLongEnough = password?.length >= 8;
 
   return (
     <div className="validation">
-      <div className="mt-[20px] flex items-center gap-[12px]">
+      <div className="flex items-center gap-[12px]">
         <span className={hasUppercase ? "text-[#32b56a]" : "text-[#888D93]"}>
           {hasUppercase ? <IoCheckmarkCircle /> : <IoIosCloseCircle />}
         </span>
