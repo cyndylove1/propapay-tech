@@ -86,7 +86,7 @@ function App() {
           <Route path="/verify-login" element={<VerifyEmailLogin />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/new-password" element={<CreateNewPassword />} />
+          <Route path="/reset-password" element={<CreateNewPassword />} />
           <Route path="/congratulations" element={<Congratulations />} />
           <Route path="/password-changed" element={<PasswordChanged />} />
           <Route
@@ -107,7 +107,7 @@ function App() {
           />
 
           <Route element={<DashboardLayout />}>
-            <Route path="/" element={<DashBoard />} />
+            <Route path="/dashboard" element={<DashBoard />} />
             <Route path="/properties" element={<Properties />} />
             <Route path="/properties/lists" element={<PropertiesLists />} />
             <Route path="/properties/view" element={<PropertyDetails />} />

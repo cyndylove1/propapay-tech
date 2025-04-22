@@ -45,7 +45,7 @@ const Login: React.FC = () => {
                 Don't have an account?
               </p>
               <Link
-                to="/signup"
+                to="/user-type"
                 className="rounded-lg border border-neutral-200 px-2 py-[6px] text-sm font-medium leading-5 text-neutral-700 shadow-[0_1px_2px_0_#5258660F]"
               >
                 Sign Up

@@ -113,9 +113,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       password: string;
     }) => {
       const response = await axios.post("/auth/login", { email, password });
-      return response.data;
+      return response.data.data;
     },
     onSuccess: (data) => {
+      console.log("Login data", data);
       const { token, user } = data;
 
       // Store token and user data
@@ -133,14 +134,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         error: null,
       });
 
-      toast.success("Login successful!");
+      navigate("/dashboard");
 
       // Redirect based on user type and verification status
-      if (!user.isEmailVerified) {
-        navigate("/verify-email");
-      } else {
-        navigate("/dashboard");
-      }
+      // if (!user.isEmailVerified) {
+      //   navigate("/verify-email");
+      // } else {
+      //   navigate("/dashboard");
+      // }
     },
     onError: (error: unknown) => {
       const errorMessage =
@@ -153,18 +154,18 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         error: errorMessage,
         isLoading: false,
       }));
-      toast.error(errorMessage);
     },
   });
 
   // Register mutation
   const registerMutation = useMutation({
-    mutationFn: async (userData: RegisterData) => {
+    mutationFn: async (userData: Partial<RegisterData>) => {
       const response = await axios.post("/auth/register", userData);
       return response.data;
     },
     onSuccess: () => {
-      toast.success("Registration successful! Please verify your email.");
+      // toast.success("Registration successful! Please verify your email.");
+      setAuthState((prev) => ({ ...prev, isLoading: false }));
       navigate("/verify-email");
     },
     onError: (error: unknown) => {
@@ -173,8 +174,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           ? error.message
           : (error as { response?: { data?: { message?: string } } })?.response
               ?.data?.message || "Registration failed. Please try again.";
-      setAuthState((prev) => ({ ...prev, error: errorMessage }));
-      toast.error(errorMessage);
+      setAuthState((prev) => ({ ...prev, error: errorMessage, isLoading: false }));
     },
   });
 
@@ -193,13 +193,21 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setAuthState((prev) => ({
           ...prev,
           user: updatedUser,
+          isLoading: false
         }));
       }
 
-      toast.success("Email verified successfully!");
-      navigate("/dashboard");
+      // toast.success("Email verified successfully!");
+      navigate("/login");
     },
-    
+    onError: (error: unknown) => {
+      const errorMessage =
+        error instanceof Error
+          ? error.message
+          : (error as { response?: { data?: { message?: string } } })?.response
+              ?.data?.message || "Registration failed. Please try again.";
+      setAuthState((prev) => ({ ...prev, error: errorMessage, isLoading: false }));
+    },
   });
 
   // Forgot password mutation
@@ -209,7 +217,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       return response.data;
     },
     onSuccess: () => {
-      toast.success("Password reset instructions sent to your email!");
       navigate("/login");
     },
     onError: (error: unknown) => {
@@ -218,8 +225,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           ? error.message
           : (error as { response?: { data?: { message?: string } } })?.response
               ?.data?.message || "Failed to process request. Please try again.";
-      setAuthState((prev) => ({ ...prev, error: errorMessage }));
-      toast.error(errorMessage);
+      setAuthState((prev) => ({ ...prev, error: errorMessage, isLoading: false }));
     },
   });
 
@@ -250,8 +256,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           ? error.message
           : (error as { response?: { data?: { message?: string } } })?.response
               ?.data?.message || "Password reset failed. Please try again.";
-      setAuthState((prev) => ({ ...prev, error: errorMessage }));
-      toast.error(errorMessage);
+      setAuthState((prev) => ({ ...prev, error: errorMessage, isLoading: false }));
     },
   });
 
@@ -273,16 +278,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       toast.success("Profile updated successfully!");
       queryClient.invalidateQueries({ queryKey: ["userProfile"] });
-    },
-    onError: (error: unknown) => {
-      const errorMessage =
-        error instanceof Error
-          ? error.message
-          : (error as { response?: { data?: { message?: string } } })?.response
-              ?.data?.message || "Profile update failed. Please try again.";
-      setAuthState((prev) => ({ ...prev, error: errorMessage }));
-      toast.error(errorMessage);
-    },
+    }
   });
 
   // Change password mutation
@@ -303,15 +299,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     onSuccess: () => {
       toast.success("Password changed successfully!");
     },
-    onError: (error: unknown) => {
-      const errorMessage =
-        error instanceof Error
-          ? error.message
-          : (error as { response?: { data?: { message?: string } } })?.response
-              ?.data?.message || "Password change failed. Please try again.";
-      setAuthState((prev) => ({ ...prev, error: errorMessage }));
-      toast.error(errorMessage);
-    },
   });
 
   // Login function
@@ -327,7 +314,13 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     if (!userData.userType) {
       userData.userType = authState.userType;
     }
-    await registerMutation.mutateAsync(userData);
+    
+    // Extract confirmPassword from userData and create a new object without it
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { confirmPassword, ...userDataWithoutConfirmPassword } = userData;
+    
+    // Send the payload without confirmPassword
+    await registerMutation.mutateAsync(userDataWithoutConfirmPassword);
   };
 
   // Logout function

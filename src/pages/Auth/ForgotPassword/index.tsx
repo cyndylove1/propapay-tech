@@ -1,23 +1,60 @@
 import Button from "@/components/common/Button/Button";
 import Cover from "@/components/common/Cover";
-import InputEmail from "@/components/common/InputEmail";
-import Label from "@/components/common/Label";
+import Spinner from "@/components/common/Loaders/Spinner";
 import Line from "@/components/Line";
 import RegisterFooter from "@/components/RegisterFooter";
-import RegisterHeader from "@/components/RegisterHeader";
 import { Link } from "react-router";
+import { useAuth } from "@/hooks/useAuth";
+import { HomesLogo, MailIcon } from "@/assets/icons";
+import { useForm } from "react-hook-form";
+import Input from "@/components/common/Input/Input";
+
+interface ForgotPasswordData {
+  email: string;
+}
 
 const ForgotPassword = () => {
+  const { isLoading, forgotPassword } = useAuth();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ForgotPasswordData>();
+
+  const onSubmit = async (data: ForgotPasswordData) => {
+    await forgotPassword(data.email);
+  };
+
   return (
     <>
-      <div className="md:ml-4 md:mr-0 md:grid-cols-2 grid h-screen grid-cols-1 mx-4 bg-white">
-        <div className="">
-          <RegisterHeader
-            btnText="Sign Up"
-            linkTo="/signup"
-            account="Don't have an account?"
-          />
-          <span className="flex justify-center pb-[20px] pt-[7rem]">
+      {isLoading && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#000] bg-opacity-50">
+          <Spinner />
+        </div>
+      )}
+
+      <div className="flex h-screen overflow-hidden flex-col lg:flex-row">
+        {/* L.H.S */}
+        <div className="flex flex-col justify-between lg:w-[55%]">
+          <header className="flex items-center justify-between px-[64px] pb-4 pt-8">
+            <span className="h-10 w-10">
+              <HomesLogo />
+            </span>
+            <div className="flex items-center gap-4">
+              <p className="text-sm font-medium leading-5 text-neutral-700">
+                Don't have an account?
+              </p>
+              <Link
+                to="/user-type"
+                className="rounded-lg border border-neutral-200 px-2 py-[6px] text-sm font-medium leading-5 text-neutral-700 shadow-[0_1px_2px_0_#5258660F]"
+              >
+                Sign Up
+              </Link>
+            </div>
+          </header>
+
+          <div className="flex flex-col gap-5 px-[120px]">
+          <span className="flex justify-center">
             <svg
               width="88"
               height="88"
@@ -139,36 +176,40 @@ const ForgotPassword = () => {
               </defs>
             </svg>
           </span>
-          <div className="flex justify-center">
-            <div className="w-full xl:w-[480px]">
-              <div className="text-center">
-                <h2 className="text-[25px] font-[600] leading-[48px] tracking-tight text-neutral-base md:text-[36px]">
-                  Forgot Password
-                </h2>
-                <h6 className="text-[16px] font-[500] leading-[24px] text-neutral-700">
-                  Enter your email address, and we'll send you a 6-digit code to
-                  verify your identity and reset your password.
-                </h6>
+            <div className="flex flex-col gap-2">
+              <h1 className="text-center text-[36px] font-semibold leading-[48px] text-neutral-base">
+              Forgot Password
+              </h1>
+              <p className="text-center text-base font-medium leading-6 text-neutral-700">
+              Enter your email address, and we'll send you a 6-digit code to
+              verify your identity and reset your password.
+              </p>
+            </div>
+            <Line />
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="flex flex-col gap-6"
+            >
+              <div className="flex flex-col gap-4">
+                <Input
+                  leftIcon={<MailIcon />}
+                  leftIconClassName="top-[2px]"
+                  type="email"
+                  placeholder="Enter email address"
+                  label="Email Address"
+                  {...register("email", { required: "Email is required" })}
+                  error={!!errors.email}
+                  errorMessage={errors.email?.message}
+                />
               </div>
-              <Line />
-              <form action="">
-                <div className="pt-2">
-                  <Label text="Email Address" htmlFor="email" />
-                  <InputEmail
-                    placeholder="Enter your email Address"
-                    type="email"
-                    id="email"
-                  />
-                </div>
-                <div className="mt-[30px]">
-                  <Button
-                    text="Continue"
-                    type="submit"
-                    className="bg-brand-base h-[48px] w-full rounded-xl text-white"
-                  />
-                </div>
-                <p className="flex items-center justify-center gap-[3px] pt-4 text-center text-[16px]">
-                  <h5 className="text-neutral-700 font-[500] tracking-tighter">
+              <Button
+                text="Continue"
+                type="submit"
+                className="w-full"
+                iconClassName="pt-[5px] pb-1"
+              />
+              <p className="flex items-center justify-center gap-[3px] text-center text-[16px]">
+                  <h5 className="font-[500] tracking-tighter text-neutral-700">
                     Remember password?{" "}
                   </h5>
                   <Link to="/login" className="font-[600] text-brand-base">
@@ -176,17 +217,16 @@ const ForgotPassword = () => {
                     Sign In
                   </Link>
                 </p>
-              </form>
-            </div>
+            </form>
           </div>
-          <div className="mx-4 pt-[20rem]">
-            <RegisterFooter />
-          </div>
+          <RegisterFooter />
         </div>
-        <div className="md:flex hidden">
+        {/* R.H.S */}
+        <div className="hidden w-[45%] py-3 pr-3 lg:block">
           <Cover />
         </div>
       </div>
+
     </>
   );
 };
