@@ -163,10 +163,15 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       const response = await axios.post("/auth/register", userData);
       return response.data;
     },
-    onSuccess: () => {
+    onSuccess: (data) => {
       // toast.success("Registration successful! Please verify your email.");
       setAuthState((prev) => ({ ...prev, isLoading: false }));
-      navigate("/verify-email");
+      if (data.message === "User already exists") {
+        navigate("/login");
+      } else {
+        navigate("/verify-email");
+      }
+      
     },
     onError: (error: unknown) => {
       const errorMessage =

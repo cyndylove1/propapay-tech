@@ -26,6 +26,7 @@ export default function BuyerSidebar() {
       "https://res.cloudinary.com/di3qlrrgj/image/upload/v1742938995/26364dc17ad40120217008c73c625960_kgz2sr.png",
   };
 
+  console.log("path", pathname)
   return (
     <>
       <Sidebar collapsible="icon" className="">
@@ -51,8 +52,8 @@ export default function BuyerSidebar() {
 
         {/* Main */}
         <SidebarContent className="group-data-[collapsible=icon]:px-2">
-          <SidebarGroup>
-            <SidebarGroupLabel>MAIN</SidebarGroupLabel>
+          <SidebarGroup className="px-4 group-data-[collapsible=icon]:px-0">
+            <SidebarGroupLabel className="px-4">MAIN</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu className="gap-0">
                 {main.map((item) => (
@@ -61,9 +62,9 @@ export default function BuyerSidebar() {
                     className="flex p-0 group-data-[collapsible=icon]:flex-row group-data-[collapsible=icon]:justify-center"
                   >
                     <SidebarMenuButton
-                      className="gap-3 px-3 py-[10px] group-data-[collapsible=icon]:size-11 data-[active=true]:bg-gradient-to-r data-[active=true]:from-brand-base data-[active=true]:to-brand-500 text-neutral-700 data-[active=true]:text-white"
+                      className="gap-3 px-3 py-[10px] group-data-[collapsible=icon]:size-11 data-[active=true]:bg-gradient-to-r data-[active=true]:from-brand-base data-[active=true]:to-brand-500 text-neutral-700 data-[active=true]:text-white data-[active=true]:[&>svg]:stroke-white"
                       tooltip={item.title}
-                      isActive={pathname === item.url}
+                      isActive={pathname.startsWith(item.url)}
                       asChild
                     >
                       <NavLink to={item.url} className={ `flex items-center gap-3 `}>
@@ -80,8 +81,8 @@ export default function BuyerSidebar() {
           </SidebarGroup>
 
           {/* Other */}
-          <SidebarGroup>
-            <SidebarGroupLabel>OTHER</SidebarGroupLabel>
+          <SidebarGroup className="px-4 group-data-[collapsible=icon]:px-0">
+            <SidebarGroupLabel className="px-4">OTHER</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu className="gap-0">
                 {others.map((item) => (
@@ -90,12 +91,13 @@ export default function BuyerSidebar() {
                     className={`flex p-0 group-data-[collapsible=icon]:flex-row group-data-[collapsible=icon]:justify-center ${item.title === "Settings" ? "mt-8 group-data-[collapsible=icon]:mt-5" : ""}`}
                   >
                     <SidebarMenuButton
-                      className="gap-3 px-3 py-[10px] group-data-[collapsible=icon]:size-11 data-[active=true]:bg-gradient-to-r data-[active=true]:from-brand-base data-[active=true]:to-brand-500 text-neutral-700 data-[active=true]:text-white"
+                      className="gap-3 px-3 py-[10px] group-data-[collapsible=icon]:size-11 data-[active=true]:bg-gradient-to-r data-[active=true]:from-brand-base data-[active=true]:to-brand-500 text-neutral-700 data-[active=true]:text-white data-[active=true]:[&>svg]:stroke-white"
                       tooltip={item.title}
-                      isActive={pathname === item.url}
+                      isActive={pathname.startsWith(item.url)}
                       asChild
                     >
                       <NavLink to={item.url} className={`flex items-center gap-3`}>
+                      {/* {pathname === item.url && <div className="absolute left-0 h-[24px] w-1 rounded-[5px] bg-white"></div>} */}
                         <item.icon />
                         <span className="font-labil text-sm font-semibold leading-5  group-data-[collapsible=icon]:hidden">
                           {item.title}
