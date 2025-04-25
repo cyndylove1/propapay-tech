@@ -4,7 +4,6 @@ import {
   QueryFunctionContext, 
   UseQueryOptions,
   useMutation,
-  useQuery,
   useQueryClient,
   UseMutationOptions,
   QueryKey
@@ -85,20 +84,20 @@ export const fetchData = async <T>(
   return response.data.data;
 };
 
-// Custom useQuery hook with simplified API
-export const useApiQuery = <TData = unknown, TError = ApiError>(
-  endpoint: string,
-  params?: Record<string, any>,
-  options?: Omit<UseQueryOptions<TData, TError, TData, QueryKey>, 'queryKey' | 'queryFn'>
-) => {
-  const queryKey = createQueryKey(endpoint, params);
+// Custom useQuery hook with simplified API(moved to separate hook file)
+// export const useApiQuery = <TData = unknown, TError = ApiError>(
+//   endpoint: string,
+//   params?: Record<string, any>,
+//   options?: Omit<UseQueryOptions<TData, TError, TData, QueryKey>, 'queryKey' | 'queryFn'>
+// ) => {
+//   const queryKey = createQueryKey(endpoint, params);
   
-  return useQuery<TData, TError, TData, QueryKey>({
-    queryKey,
-    queryFn: ({ queryKey, signal }) => fetchData<TData>({ queryKey, signal }),
-    ...options,
-  });
-};
+//   return useQuery<TData, TError, TData, QueryKey>({
+//     queryKey,
+//     queryFn: ({ queryKey, signal }) => fetchData<TData>({ queryKey, signal }),
+//     ...options,
+//   });
+// };
 
 // Generic mutation function
 export const mutateData = async <TData, TVariables>(
