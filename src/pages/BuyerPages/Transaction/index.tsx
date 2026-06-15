@@ -127,10 +127,7 @@ const Transaction: React.FC = () => {
     console.log("Selected rows:", selectedRows);
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const toggleMenuDropdown = () => {
-    setOpenMenu((prev) => !prev);
-  };
+  
   return (
     <>
       {/* Header title */}
