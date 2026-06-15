@@ -2,10 +2,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { Navigation, Autoplay } from "swiper/modules";
 import properties from "@/assets/images/image.png";
-import Checkbox from "@/components/common/Checkbox";
 import Label from "@/components/common/Label";
 import Input from "@/components/common/Input/Input";
 import avatar from "@/assets/images/Avatar.png";
+import Checkbox from "@/components/common/Input/Checkbox";
+
 
 const FavouriteView: React.FC = () => {
   return (

@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Checkbox from "@/components/common/Checkbox";
 import images from "@/assets/images/Rectangle 2911 (1).png";
 import ExportModal from "@/components/ExportModal";
 import DropdownMenu from "@/components/DropdownMenu";
 import TableHeader from "@/components/TableHeader";
+import Checkbox from "@/components/common/Input/Checkbox";
 
 const Document: React.FC = () => {
   const [Open, setOpen] = useState<boolean>(false);
@@ -254,7 +254,7 @@ const Document: React.FC = () => {
                   {/* row 1 */}
                   <tr className="border-[1px] border-neutral-200">
                     <th>
-                      <Checkbox />
+                      <Checkbox/>
                     </th>
                     <td className="">
                       <div className="flex items-center gap-3">

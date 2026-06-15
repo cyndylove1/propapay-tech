@@ -12,11 +12,8 @@ export default function DashboardLayout() {
         <main className="w-full">
           <div className="flex">
             {/* <CustomTrigger /> */}
-            <Header
-                        
-                      />
+            <Header />
           </div>
-          
           <Outlet />
         </main>
       </SidebarProvider>

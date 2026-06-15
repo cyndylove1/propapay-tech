@@ -34,14 +34,14 @@ export default function BuyerSidebar() {
           className={`h-[72px] ${
             open
               ? "border-b border-sidebar-border px-6 py-[21.95px]"
-              : "border-b border-sidebar-border"}`
-          }
+              : "border-b border-sidebar-border"
+          }`}
         >
           <SidebarMenu>
             <SidebarMenuItem>
               {/* w-[126px] [&>svg]:size-10  */}
               <SidebarMenuButton
-                className={`hover:bg-transparent ${open ? " w-[126px] h-full p-0 " : ""}`}
+                className={`hover:bg-transparent ${open ? "h-full w-[126px] p-0" : ""}`}
                 asChild
               >
                 {open ? <NamedLogo /> : <Logo />}
@@ -62,14 +62,17 @@ export default function BuyerSidebar() {
                     className="flex p-0 group-data-[collapsible=icon]:flex-row group-data-[collapsible=icon]:justify-center"
                   >
                     <SidebarMenuButton
-                      className="gap-3 px-3 py-[10px] group-data-[collapsible=icon]:size-11 data-[active=true]:bg-gradient-to-r data-[active=true]:from-brand-base data-[active=true]:to-brand-500 text-neutral-700 data-[active=true]:text-white data-[active=true]:[&>svg]:stroke-white"
+                      className="gap-3 px-3 py-[10px] text-neutral-700 data-[active=true]:bg-gradient-to-r data-[active=true]:from-brand-base data-[active=true]:to-brand-500 data-[active=true]:text-white group-data-[collapsible=icon]:size-11 data-[active=true]:[&>svg]:stroke-white"
                       tooltip={item.title}
                       isActive={pathname.startsWith(item.url)}
                       asChild
                     >
-                      <NavLink to={item.url} className={ `flex items-center gap-3 `}>
+                      <NavLink
+                        to={item.url}
+                        className={`flex items-center gap-3`}
+                      >
                         <item.icon />
-                        <span className="font-labil text-sm font-semibold leading-5  group-data-[collapsible=icon]:hidden">
+                        <span className="font-labil text-sm font-semibold leading-5 group-data-[collapsible=icon]:hidden">
                           {item.title}
                         </span>
                       </NavLink>
@@ -91,15 +94,18 @@ export default function BuyerSidebar() {
                     className={`flex p-0 group-data-[collapsible=icon]:flex-row group-data-[collapsible=icon]:justify-center ${item.title === "Settings" ? "mt-8 group-data-[collapsible=icon]:mt-5" : ""}`}
                   >
                     <SidebarMenuButton
-                      className="gap-3 px-3 py-[10px] group-data-[collapsible=icon]:size-11 data-[active=true]:bg-gradient-to-r data-[active=true]:from-brand-base data-[active=true]:to-brand-500 text-neutral-700 data-[active=true]:text-white data-[active=true]:[&>svg]:stroke-white"
+                      className="gap-3 px-3 py-[10px] text-neutral-700 data-[active=true]:bg-gradient-to-r data-[active=true]:from-brand-base data-[active=true]:to-brand-500 data-[active=true]:text-white group-data-[collapsible=icon]:size-11 data-[active=true]:[&>svg]:stroke-white"
                       tooltip={item.title}
                       isActive={pathname.startsWith(item.url)}
                       asChild
                     >
-                      <NavLink to={item.url} className={`flex items-center gap-3`}>
-                      {/* {pathname === item.url && <div className="absolute left-0 h-[24px] w-1 rounded-[5px] bg-white"></div>} */}
+                      <NavLink
+                        to={item.url}
+                        className={`flex items-center gap-3`}
+                      >
+                        {/* {pathname === item.url && <div className="absolute left-0 h-[24px] w-1 rounded-[5px] bg-white"></div>} */}
                         <item.icon />
-                        <span className="font-labil text-sm font-semibold leading-5  group-data-[collapsible=icon]:hidden">
+                        <span className="font-labil text-sm font-semibold leading-5 group-data-[collapsible=icon]:hidden">
                           {item.title}
                         </span>
                       </NavLink>
@@ -113,7 +119,7 @@ export default function BuyerSidebar() {
 
         {/* Footer */}
         <SidebarFooter
-          className={`border-t border-sidebar-border py-2 pl-2 pr-0`}
+          className={`border-t border-sidebar-border py-2 pl-2 pr-0 group-data-[collapsible=icon]:px-0`}
         >
           <NavUser user={user} />
         </SidebarFooter>

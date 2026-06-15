@@ -7,7 +7,7 @@ import {
   getFromLocalStorage,
   removeFromLocalStorage,
   saveToLocalStorage,
-} from "@/utils/storageUtils";
+} from "@/types/utils/storageUtils";
 
 export type UserType = "buyer" | "developer" | "admin";
 
@@ -171,7 +171,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       } else {
         navigate("/verify-email");
       }
-      
     },
     onError: (error: unknown) => {
       const errorMessage =
@@ -179,7 +178,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           ? error.message
           : (error as { response?: { data?: { message?: string } } })?.response
               ?.data?.message || "Registration failed. Please try again.";
-      setAuthState((prev) => ({ ...prev, error: errorMessage, isLoading: false }));
+      setAuthState((prev) => ({
+        ...prev,
+        error: errorMessage,
+        isLoading: false,
+      }));
     },
   });
 
@@ -198,7 +201,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setAuthState((prev) => ({
           ...prev,
           user: updatedUser,
-          isLoading: false
+          isLoading: false,
         }));
       }
 
@@ -211,7 +214,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           ? error.message
           : (error as { response?: { data?: { message?: string } } })?.response
               ?.data?.message || "Registration failed. Please try again.";
-      setAuthState((prev) => ({ ...prev, error: errorMessage, isLoading: false }));
+      setAuthState((prev) => ({
+        ...prev,
+        error: errorMessage,
+        isLoading: false,
+      }));
     },
   });
 
@@ -230,7 +237,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           ? error.message
           : (error as { response?: { data?: { message?: string } } })?.response
               ?.data?.message || "Failed to process request. Please try again.";
-      setAuthState((prev) => ({ ...prev, error: errorMessage, isLoading: false }));
+      setAuthState((prev) => ({
+        ...prev,
+        error: errorMessage,
+        isLoading: false,
+      }));
     },
   });
 
@@ -261,7 +272,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           ? error.message
           : (error as { response?: { data?: { message?: string } } })?.response
               ?.data?.message || "Password reset failed. Please try again.";
-      setAuthState((prev) => ({ ...prev, error: errorMessage, isLoading: false }));
+      setAuthState((prev) => ({
+        ...prev,
+        error: errorMessage,
+        isLoading: false,
+      }));
     },
   });
 
@@ -283,7 +298,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       toast.success("Profile updated successfully!");
       queryClient.invalidateQueries({ queryKey: ["userProfile"] });
-    }
+    },
   });
 
   // Change password mutation
@@ -319,11 +334,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     if (!userData.userType) {
       userData.userType = authState.userType;
     }
-    
+
     // Extract confirmPassword from userData and create a new object without it
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { confirmPassword, ...userDataWithoutConfirmPassword } = userData;
-    
+
     // Send the payload without confirmPassword
     await registerMutation.mutateAsync(userDataWithoutConfirmPassword);
   };

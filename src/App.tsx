@@ -78,7 +78,7 @@ function App() {
         />
       ) : (
         <Routes>
-          <Route path="/user-type" element={<UserTypeSelection />} />
+          <Route path="/" element={<UserTypeSelection />} />
           <Route path="/register-contact" element={<RegisterContact />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/verify-email" element={<VerifyEmail />} />

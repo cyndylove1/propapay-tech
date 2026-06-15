@@ -1,7 +1,7 @@
 import axios from "axios";
 // import { baseURL, REQUEST_API_KEY } from "../apiConstants";
 import { toast } from "react-toastify";
-import { getFromLocalStorage } from "@/utils/storageUtils";
+import { getFromLocalStorage } from "@/types/utils/storageUtils";
 
 // Keep track of interceptors to remove them before adding new ones
 let requestInterceptorId: number | null = null;
@@ -12,7 +12,7 @@ export function configureAxios() {
   if (requestInterceptorId !== null) {
     axios.interceptors.request.eject(requestInterceptorId);
   }
-  
+
   if (responseInterceptorId !== null) {
     axios.interceptors.response.eject(responseInterceptorId);
   }
@@ -31,7 +31,7 @@ export function configureAxios() {
       if (token) {
         config.headers.Authorization = `Bearer ${token}`;
       }
-      
+
       // Set default toast behavior
       config.headers["x-show-toast"] = config.headers["x-show-toast"] || "true";
 
